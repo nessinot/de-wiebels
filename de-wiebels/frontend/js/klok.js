@@ -46,3 +46,34 @@ export function zetKlok(svg, uur, minuut) {
   svg.querySelector('.wijzer-uur').style.transform = `rotate(${h.uur}deg)`;
   svg.querySelector('.wijzer-minuut').style.transform = `rotate(${h.minuut}deg)`;
 }
+
+const GETALLEN = ['twaalf', 'één', 'twee', 'drie', 'vier', 'vijf', 'zes', 'zeven', 'acht', 'negen', 'tien', 'elf', 'twaalf', 'dertien', 'veertien'];
+
+function uurWoord(uur) {
+  return GETALLEN[uur % 12];
+}
+
+// Nederlandse notatie: "tien voor half vier", "vijf over half acht", "kwart voor twaalf".
+export function tijdInWoorden(uur, minuut) {
+  const dit = uurWoord(uur);
+  const volgend = uurWoord(uur + 1);
+  if (minuut === 0) return `${dit} uur`;
+  if (minuut === 15) return `kwart over ${dit}`;
+  if (minuut === 30) return `half ${volgend}`;
+  if (minuut === 45) return `kwart voor ${volgend}`;
+  if (minuut < 15) return `${GETALLEN[minuut]} over ${dit}`;
+  if (minuut < 30) return `${GETALLEN[30 - minuut]} voor half ${volgend}`;
+  if (minuut < 45) return `${GETALLEN[minuut - 30]} over half ${volgend}`;
+  return `${GETALLEN[60 - minuut]} voor ${volgend}`;
+}
+
+export const DAGDELEN = [
+  { van: 0, naam: 'nacht', woorden: "'s nachts", icoon: '🌙' },
+  { van: 6, naam: 'ochtend', woorden: "'s ochtends", icoon: '🌅' },
+  { van: 12, naam: 'middag', woorden: "'s middags", icoon: '☀️' },
+  { van: 18, naam: 'avond', woorden: "'s avonds", icoon: '🌆' },
+];
+
+export function dagdeel(uur) {
+  return [...DAGDELEN].reverse().find((d) => uur >= d.van);
+}
