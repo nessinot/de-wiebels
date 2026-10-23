@@ -9,7 +9,7 @@ const GEHEIM_AANTAL = 3;
 const GEHEIM_TIJD = 2000;
 
 export const profielkeuze = {
-  maak({ toon }) {
+  maak({ toon, herstelFocus }) {
     const el = maakEl();
     let profielen = [];
     let blauw = [];
@@ -41,6 +41,13 @@ export const profielkeuze = {
         toon('wereldkaart');
       },
       nieuw: () => toon('profielMaken'),
+    });
+
+    // Na synchronisatie kunnen er profielen bij zijn gekomen (bijvoorbeeld na het wissen van de cache).
+    window.addEventListener('wiebels:gesynchroniseerd', () => {
+      if (!el.isConnected || el.hidden) return;
+      teken();
+      herstelFocus();
     });
 
     teken();

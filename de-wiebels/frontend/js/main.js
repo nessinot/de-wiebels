@@ -1,6 +1,7 @@
 import { kiesVolgende } from './focus.js';
 import { actieVoorToets } from './toetsen.js';
 import { schermen } from './schermen/index.js';
+import { startSync } from './sync.js';
 
 const podium = document.getElementById('podium');
 
@@ -128,3 +129,4 @@ window.addEventListener('popstate', () => {
 window.addEventListener('resize', schaalPodium);
 schaalPodium();
 toon('profielkeuze');
+startSync();
