@@ -564,3 +564,24 @@
 .winkel-melding { font-size: 40px; }
 
 .winkelknop .klein { font-size: 28px; }
+
+/* Tijdrace */
+.race-keuzes {
+  flex-wrap: wrap;
+  gap: 36px;
+}
+
+.race-keuzes .keuzeknop {
+  width: 500px;
+  padding: 28px 36px;
+  gap: 8px;
+}
+
+.race-keuzes .keuzeknop strong { font-size: 52px; }
+
+.race-uitslag {
+  margin: 0;
+  font-size: 180px;
+  font-weight: bold;
+  color: var(--accent);
+}
