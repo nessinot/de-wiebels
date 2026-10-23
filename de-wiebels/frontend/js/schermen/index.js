@@ -1,0 +1,7 @@
+import { bedieningstest } from './bedieningstest.js';
+import { tweedeScherm } from './tweede-scherm.js';
+import { profielkeuze } from './profielkeuze.js';
+import { profielMaken } from './profiel-maken.js';
+import { wereldkaart } from './wereldkaart.js';
+
+export const schermen = { bedieningstest, tweedeScherm, profielkeuze, profielMaken, wereldkaart };

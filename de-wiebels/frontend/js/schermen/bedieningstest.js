@@ -2,8 +2,6 @@
 
 const KLEUREN = ['rood', 'groen', 'geel', 'blauw'];
 
-let info;
-
 export const bedieningstest = {
   maak({ toon }) {
     const el = document.createElement('section');
@@ -28,7 +26,6 @@ export const bedieningstest = {
           <p class="kleurtellers">
             ${KLEUREN.map((k) => `<span class="kleur kleur-${k}">0</span>`).join('')}
           </p>
-          <p class="melding" data-veld="melding"></p>
         </div>
       </div>
     `;
@@ -37,7 +34,7 @@ export const bedieningstest = {
     const tellers = Object.fromEntries(KLEUREN.map((k) => [k, 0]));
     const cijfers = [];
 
-    info = {
+    const info = {
       toets(code, actie) {
         veld('toets').textContent = `${actie} (${code})`;
       },
@@ -48,9 +45,6 @@ export const bedieningstest = {
       cijfer(c) {
         cijfers.push(c);
         veld('cijfers').textContent = cijfers.slice(-10).join(' ');
-      },
-      melding(tekst) {
-        veld('melding').textContent = tekst;
       },
     };
 
@@ -65,18 +59,14 @@ export const bedieningstest = {
         veld('gekozen').textContent = knop.textContent;
       });
     });
-    return el;
-  },
-
-  bijToets({ actie, code, cijfer }) {
-    info.toets(code, actie);
-    if (KLEUREN.includes(actie)) info.kleur(actie);
-    if (actie === 'cijfer') info.cijfer(cijfer);
-    return false;
-  },
-
-  bijTerugOpStart(bron) {
-    const via = bron === 'browser' ? 'browser-terug' : 'toets';
-    info.melding(`Terug opgevangen (${via}): de app blijft open ✔`);
+    return {
+      el,
+      bijToets({ actie, code, cijfer }) {
+        info.toets(code ?? '—', actie);
+        if (KLEUREN.includes(actie)) info.kleur(actie);
+        if (actie === 'cijfer') info.cijfer(cijfer);
+        return false;
+      },
+    };
   },
 };

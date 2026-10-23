@@ -1,0 +1,50 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { maakOpslag, STANDAARD_INSTELLINGEN } from '../de-wiebels/frontend/js/opslag.js';
+import { nieuwProfiel, MAX_NAAM } from '../de-wiebels/frontend/js/profiel.js';
+
+function nepOpslag() {
+  const data = new Map();
+  return { getItem: (k) => (data.has(k) ? data.get(k) : null), setItem: (k, v) => data.set(k, String(v)) };
+}
+
+test('nieuw profiel volgt het datamodel en het gekozen startniveau', () => {
+  const p = nieuwProfiel({ naam: '  Speler 1  ', avatar: '🐱', startniveau: 'gevorderd' });
+  assert.equal(p.naam, 'Speler 1');
+  assert.equal(p.thema, 'ruimte');
+  assert.deepEqual(p.niveaus, { plus: 2, min: 2, keer: 1, delen: 1, klok: 1 });
+  assert.equal(p.munten, 0);
+  assert.deepEqual(p.verzameling, []);
+  assert.match(p.id, /^p-[a-z0-9]+$/);
+});
+
+test('naam wordt ingekort tot de maximale lengte', () => {
+  const p = nieuwProfiel({ naam: 'A'.repeat(30), avatar: '🐶' });
+  assert.equal(p.naam.length, MAX_NAAM);
+});
+
+test('profielen bewaren, teruglezen en verwijderen', () => {
+  const opslag = nepOpslag();
+  const o = maakOpslag(() => opslag);
+  const a = nieuwProfiel({ naam: 'Speler 1', avatar: '🐱' }, new Date('2026-01-01'));
+  const b = nieuwProfiel({ naam: 'Speler 2', avatar: '🐶' }, new Date('2026-01-02'));
+  o.bewaarProfiel(b);
+  o.bewaarProfiel(a);
+  assert.deepEqual(o.alleProfielen().map((p) => p.naam), ['Speler 1', 'Speler 2']);
+  a.munten = 7;
+  o.bewaarProfiel(a);
+  assert.equal(o.alleProfielen()[0].munten, 7);
+  o.verwijderProfiel(a.id);
+  assert.deepEqual(o.alleProfielen().map((p) => p.naam), ['Speler 2']);
+});
+
+test('instellingen hebben standaardwaarden en kapotte data breekt niets', () => {
+  const opslag = nepOpslag();
+  const o = maakOpslag(() => opslag);
+  assert.deepEqual(o.instellingen(), STANDAARD_INSTELLINGEN);
+  o.bewaarInstellingen({ geluid: false });
+  assert.equal(o.instellingen().geluid, false);
+  assert.equal(o.instellingen().pin, '1234');
+  opslag.setItem('wiebels:profielen', '{kapot');
+  assert.deepEqual(o.alleProfielen(), []);
+});

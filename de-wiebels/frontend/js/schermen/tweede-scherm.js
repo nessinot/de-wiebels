@@ -13,6 +13,6 @@ export const tweedeScherm = {
       </div>
     `;
     el.querySelector('[data-terug]').addEventListener('click', () => terug('knop'));
-    return el;
+    return { el };
   },
 };
