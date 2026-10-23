@@ -1,5 +1,6 @@
 // Oefenronde: tien vragen met vier antwoorden. Een fout wordt rustig verbeterd en later opnieuw gevraagd.
 
+import { geefBeloning, voegXpToe } from '../beloningen.js';
 import { maakEl } from '../dom.js';
 import { speel } from '../geluid.js';
 import { maakVraag, maakVragen, vraagUitId } from '../generators/index.js';
@@ -54,8 +55,10 @@ export const ronde = {
       const sterren = sterrenVoor(r.goedEerst, r.aantal);
       p.sterren[level.id] = Math.max(p.sterren[level.id] || 0, sterren);
       p.munten += r.munten;
+      const nieuweWiebel = sterren >= 1 && geefBeloning(p, level.id);
+      const gegroeid = voegXpToe(p, r.goed);
       bewaar();
-      toon('resultaat', { levelId: level.id, goedEerst: r.goedEerst, aantal: r.aantal, sterren, munten: r.munten }, { vervang: true });
+      toon('resultaat', { levelId: level.id, goedEerst: r.goedEerst, aantal: r.aantal, sterren, munten: r.munten, nieuweWiebel, gegroeid }, { vervang: true });
     }
 
     // Na een reeks goed of meerdere fouten verandert de stap; nog niet gestelde nieuwe vragen

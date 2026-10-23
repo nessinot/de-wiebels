@@ -26,12 +26,15 @@ export const wereldkaart = {
               </button>`;
           }).join('')}
         </div>
-        <div class="knoppenrij" data-onderbalk></div>
+        <div class="knoppenrij onderbalk">
+          <button class="knop" data-focus data-actie="scherm" data-waarde="collectie">🎒 Verzameling</button>
+        </div>
       `;
     }
 
     opKlik(el, {
       wereld: (v) => toon('levelkeuze', { vaardigheid: v }),
+      scherm: (naam) => toon(naam),
     });
 
     teken();

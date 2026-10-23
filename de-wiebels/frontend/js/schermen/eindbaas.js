@@ -1,5 +1,6 @@
 // Eindbaas van een wereld: een snelle ronde met een levensbalk en milde, instelbare tijdsdruk.
 
+import { geefBeloning, voegXpToe } from '../beloningen.js';
 import { maakEl, opKlik } from '../dom.js';
 import { BAAS_BELONING, BAAS_LEVENS, TIJD_PER_VRAAG, baasVraag, nieuwGevecht, verwerk } from '../baas.js';
 import { speel } from '../geluid.js';
@@ -53,7 +54,8 @@ export const eindbaas = {
 
     function gewonnen() {
       p.munten += BAAS_BELONING;
-      if (!p.verzameling.includes(`baas:${v}`)) p.verzameling.push(`baas:${v}`);
+      geefBeloning(p, `baas:${v}`);
+      voegXpToe(p, BAAS_LEVENS); // elke treffer was een goed antwoord
       bewaar();
       speel('gewonnen');
       vuurwerk(el, 600, 350);

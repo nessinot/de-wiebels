@@ -1,5 +1,6 @@
 // Herbruikbare stukjes weergave voor meerdere schermen.
 
+import { huisdierStadium } from './beloningen.js';
 import { esc } from './dom.js';
 
 export function sterrenHtml(aantal, max = 3) {
@@ -8,6 +9,11 @@ export function sterrenHtml(aantal, max = 3) {
 
 export function avatarHtml(profiel, klasse = '') {
   return `<span class="avatar ${klasse}">${profiel.avatar}</span>`;
+}
+
+export function huisdierHtml(profiel, thema) {
+  const stadium = thema.huisdier[huisdierStadium(profiel.huisdier.xp)];
+  return `<span class="huisdier">${stadium.emoji}</span>`;
 }
 
 export function totaalSterren(profiel) {

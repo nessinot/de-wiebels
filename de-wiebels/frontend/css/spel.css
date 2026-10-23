@@ -417,3 +417,65 @@
 }
 
 .baas-emoji.verslagen { transform: rotate(180deg); opacity: 0.6; }
+
+/* Verzameling en huisdier */
+.kopregel {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.kopregel h1 { margin-right: auto; }
+
+.collectie-indeling {
+  display: flex;
+  gap: 48px;
+}
+
+.huisdier-paneel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 420px;
+  padding: 32px;
+  border-radius: 32px;
+  background: var(--vlak);
+  text-align: center;
+}
+
+.huisdier { font-size: 200px; line-height: 1; display: inline-block; animation: zweef 3s ease-in-out infinite; }
+.huisdier-paneel strong { font-size: 52px; }
+.groeibalk div { background: var(--goed); }
+
+.wiebels {
+  display: grid;
+  grid-template-columns: repeat(10, 112px);
+  gap: 16px;
+  align-content: start;
+}
+
+.wiebel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  height: 112px;
+  border-radius: 24px;
+  background: var(--vlak);
+  font-size: 72px;
+}
+
+.wiebel.onbekend { color: var(--tekst-zacht); opacity: 0.4; font-size: 56px; }
+
+.beloningen { min-height: 120px; }
+
+.beloning {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 44px;
+}
+
+.beloning .huisdier { font-size: 100px; }
+.onderbalk { position: absolute; left: 0; right: 0; bottom: 54px; }

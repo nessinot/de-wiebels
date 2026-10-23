@@ -1,0 +1,37 @@
+// Wiebels verzamelen en het huisdier laten groeien. De verzameling is thema-onafhankelijk;
+// het thema bepaalt alleen hoe elke Wiebel eruitziet.
+
+import { BELONINGEN } from './levels.js';
+
+export const HUISDIER_GRENZEN = [0, 50, 200, 500];
+const KLEURVARIANT = 70; // graden kleurverschuiving per extra ronde door de lijst
+
+export function wiebelVoor(beloningId, thema) {
+  const i = BELONINGEN.indexOf(beloningId);
+  const n = thema.wiebels.length;
+  const variant = Math.floor(i / n);
+  return { ...thema.wiebels[i % n], filter: variant ? `hue-rotate(${variant * KLEURVARIANT}deg)` : '' };
+}
+
+// Geeft true als de beloning nieuw is.
+export function geefBeloning(profiel, beloningId) {
+  if (profiel.verzameling.includes(beloningId)) return false;
+  profiel.verzameling.push(beloningId);
+  return true;
+}
+
+export function huisdierStadium(xp) {
+  return HUISDIER_GRENZEN.filter((grens) => xp >= grens).length - 1;
+}
+
+// Hoeveel goede antwoorden nog tot het volgende stadium (null als het huisdier volgroeid is).
+export function totVolgendStadium(xp) {
+  const volgende = HUISDIER_GRENZEN.find((grens) => grens > xp);
+  return volgende === undefined ? null : volgende - xp;
+}
+
+export function voegXpToe(profiel, aantal) {
+  const voor = huisdierStadium(profiel.huisdier.xp);
+  profiel.huisdier.xp += aantal;
+  return huisdierStadium(profiel.huisdier.xp) > voor;
+}
