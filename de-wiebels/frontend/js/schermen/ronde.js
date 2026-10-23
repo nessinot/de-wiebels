@@ -1,6 +1,8 @@
 // Oefenronde: tien vragen met vier antwoorden. Een fout wordt rustig verbeterd en later opnieuw gevraagd.
 
 import { maakEl, opKlik } from '../dom.js';
+import { speel } from '../geluid.js';
+import { vuurwerk } from '../vuurwerk.js';
 import { maakVraag, maakVragen, vraagUitId } from '../generators/index.js';
 import { digitaal, zetKlok } from '../klok.js';
 import { levelVan } from '../levels.js';
@@ -87,8 +89,9 @@ export const ronde = {
       if (r.wachtrij.length) return teken();
       const sterren = sterrenVoor(r.goedEerst, r.aantal);
       p.sterren[level.id] = Math.max(p.sterren[level.id] || 0, sterren);
+      p.munten += r.munten;
       bewaar();
-      toon('resultaat', { levelId: level.id, goedEerst: r.goedEerst, aantal: r.aantal, sterren }, { vervang: true });
+      toon('resultaat', { levelId: level.id, goedEerst: r.goedEerst, aantal: r.aantal, sterren, munten: r.munten }, { vervang: true });
     }
 
     // Bij een klokvraag draaien de wijzers van het gekozen antwoord naar de goede tijd.
@@ -146,9 +149,18 @@ export const ronde = {
       el.querySelectorAll('.optie').forEach((o) => o.classList.add('gekozen-niet'));
       goedKnop?.classList.replace('gekozen-niet', 'optie-goed');
       if (uitslag.goed) {
-        melding.textContent = 'Goed zo!';
-        setTimeout(volgende, PAUZE_GOED);
+        const muntTekst = uitslag.munten ? ` +${uitslag.munten} 🪙` : '';
+        melding.textContent = uitslag.bonus ? `${uitslag.combo} op rij!${muntTekst}` : `Goed zo!${muntTekst}`;
+        if (uitslag.bonus) {
+          speel('combo');
+          vuurwerk(el);
+          setTimeout(volgende, PAUZE_GOED * 1.6);
+        } else {
+          speel('goed');
+          setTimeout(volgende, PAUZE_GOED);
+        }
       } else {
+        speel('fout');
         knop.classList.add('optie-fout');
         toonKlokAnimatie(uitslag.vraag, sleutel);
         melding.innerHTML = `<span>Het goede antwoord is <strong>${goedHtml}</strong>.</span>

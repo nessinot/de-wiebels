@@ -31,3 +31,24 @@ test('sterrengrenzen', () => {
   assert.equal(sterrenVoor(5), 1);
   assert.equal(sterrenVoor(4), 0);
 });
+
+test('munten: één per in één keer goed, plus combo-bonus bij 3, 5 en 10 op rij', () => {
+  const r = nieuweRonde(vragen);
+  const bonussen = [];
+  while (r.wachtrij.length) bonussen.push(beantwoord(r, 'g').bonus);
+  assert.deepEqual(bonussen, [0, 0, 2, 0, 5, 0, 0, 0, 0, 10]);
+  assert.equal(r.munten, 10 + 2 + 5 + 10);
+});
+
+test('een fout breekt de combo en een herkansing geeft geen munt', () => {
+  const r = nieuweRonde(vragen);
+  beantwoord(r, 'g');
+  beantwoord(r, 'g');
+  beantwoord(r, 'fout');
+  assert.equal(r.combo, 0);
+  beantwoord(r, 'g');
+  beantwoord(r, 'g');
+  const herkansing = beantwoord(r, 'g');
+  assert.equal(herkansing.vraag.id, 'v2');
+  assert.equal(herkansing.munten, 2); // geen munt voor de vraag zelf, wel de bonus voor 3 op rij
+});

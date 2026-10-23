@@ -18,7 +18,7 @@ export const resultaat = {
     const el = maakEl(`
       <h1 class="titel-groot">${TEKSTEN[gegevens.sterren]}</h1>
       <div class="resultaat-sterren">${sterrenHtml(gegevens.sterren)}</div>
-      <p class="ondertitel">${gegevens.goedEerst} van de ${gegevens.aantal} in één keer goed</p>
+      <p class="ondertitel">${gegevens.goedEerst} van de ${gegevens.aantal} in één keer goed · +${gegevens.munten} 🪙</p>
       <div class="knoppenrij" data-beloningen></div>
       <div class="knoppenrij">
         ${volgendeOpen ? '<button class="knop knop-hoofd" data-focus data-actie="volgende">Volgend level →</button>' : ''}
