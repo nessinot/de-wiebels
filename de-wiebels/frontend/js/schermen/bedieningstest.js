@@ -24,6 +24,7 @@ export const bedieningstest = {
           <p>Laatste toets: <strong data-veld="toets">—</strong></p>
           <p>Gekozen: <strong data-veld="gekozen">—</strong></p>
           <p>Cijfers: <strong data-veld="cijfers">—</strong></p>
+          <p>Laatste Terug: <strong data-veld="terug">—</strong></p>
           <p class="kleurtellers">
             ${KLEUREN.map((k) => `<span class="kleur kleur-${k}">0</span>`).join('')}
           </p>
@@ -52,6 +53,11 @@ export const bedieningstest = {
         veld('melding').textContent = tekst;
       },
     };
+
+    window.addEventListener('wiebels:terug', ({ detail }) => {
+      const via = detail.bron === 'browser' ? 'browser-terug' : detail.bron;
+      veld('terug').textContent = `${via}, buffer ${detail.buffer}/3`;
+    });
 
     el.querySelectorAll('.test-raster .knop').forEach((knop) => {
       knop.addEventListener('click', () => {

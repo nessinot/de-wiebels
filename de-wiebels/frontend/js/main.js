@@ -53,6 +53,7 @@ export function toon(naam, gegevens) {
 }
 
 export function terug(bron = 'toets') {
+  window.dispatchEvent(new CustomEvent('wiebels:terug', { detail: { bron, buffer } }));
   if (stapel.length === 1) {
     actief().scherm.bijTerugOpStart?.(bron);
     return;
@@ -63,6 +64,7 @@ export function terug(bron = 'toets') {
 
 window.addEventListener('keydown', (e) => {
   const toets = actieVoorToets(e.keyCode);
+  if (toets?.actie !== 'terug') vulBuffer();
   if (!toets) return;
   e.preventDefault();
   if (actief().scherm.bijToets?.({ ...toets, code: e.keyCode })) return;
@@ -78,10 +80,22 @@ podium.addEventListener('mouseover', (e) => {
   if (el && actief().el.contains(el)) zetFocus(el);
 });
 
-// Vangnet: vangt de Terug van de browser op, zodat de app niet wordt verlaten.
-history.pushState({ wiebels: true }, '');
+// Vangnet voor Terug in de tv-browser: die geeft toets 461 niet door, maar gaat terug in de
+// geschiedenis. Daarom staan er extra stappen klaar. Chrome slaat stappen over die zonder
+// toetsdruk zijn toegevoegd, dus aanvullen gebeurt alleen bij een toets of klik.
+const BUFFER = 3;
+let buffer = 0;
+
+function vulBuffer() {
+  while (buffer < BUFFER) {
+    history.pushState({ wiebels: true }, '');
+    buffer += 1;
+  }
+}
+
+window.addEventListener('pointerdown', vulBuffer);
 window.addEventListener('popstate', () => {
-  history.pushState({ wiebels: true }, '');
+  buffer = Math.max(0, buffer - 1);
   terug('browser');
 });
 
