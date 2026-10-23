@@ -1,9 +1,11 @@
 // Kiest de juiste generator per vaardigheid.
 
 import { keerVraag, keerVraagUit } from './keer.js';
+import { klokVraag, klokVraagUit } from './klok.js';
 
 const GENERATORS = {
   keer: keerVraag,
+  klok: klokVraag,
 };
 
 export function maakVraag(level, stap = 1, rnd = Math.random) {
@@ -16,6 +18,10 @@ export function vraagUitId(id, rnd = Math.random) {
   if (soort === 'keer') {
     const [a, tafel] = rest.split('x').map(Number);
     return keerVraagUit(a, tafel, false, rnd);
+  }
+  if (soort === 'klok') {
+    const [, type, uur, minuut] = id.split(':');
+    return klokVraagUit(type, Number(uur), Number(minuut), 5, rnd);
   }
   return null;
 }

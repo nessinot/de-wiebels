@@ -2,11 +2,13 @@
 
 import { maakEl, opKlik } from '../dom.js';
 import { maakVragen } from '../generators/index.js';
+import { zetKlok } from '../klok.js';
 import { levelVan } from '../levels.js';
 import { bewaar, staat } from '../opslag.js';
 import { RONDE_LENGTE, beantwoord, huidigeVraag, nieuweRonde, sterrenVoor } from '../ronde.js';
 
 const PAUZE_GOED = 900;
+const KLOK_ANIMATIE = 400;
 const CIJFER_WACHT = 1500;
 
 export const ronde = {
@@ -27,7 +29,7 @@ export const ronde = {
           <span>${level.label}</span>
           <span class="voortgang">${Array.from({ length: r.aantal }, (_, i) => `<span class="${i < gedaan ? 'vol' : ''}"></span>`).join('')}</span>
         </div>
-        <div class="vraag">${vraag.tekst}</div>
+        <div class="vraag vraag-${vraag.soort || 'som'}">${vraag.tekst}</div>
         <div class="opties">
           ${vraag.opties.map((o) => `<button class="knop optie" data-focus data-actie="antwoord" data-waarde="${o.sleutel}">${o.html}</button>`).join('')}
         </div>
@@ -45,6 +47,19 @@ export const ronde = {
       toon('resultaat', { levelId: level.id, goedEerst: r.goedEerst, aantal: r.aantal, sterren }, { vervang: true });
     }
 
+    // Bij een klokvraag draaien de wijzers van het gekozen antwoord naar de goede tijd.
+    function toonKlokAnimatie(vraag, sleutel) {
+      const gekozen = vraag.opties.find((o) => o.sleutel === sleutel)?.tijd;
+      const svg = el.querySelector('.vraag .klok');
+      if (!vraag.klok || !gekozen || !svg) return;
+      svg.classList.add('zonder-animatie');
+      zetKlok(svg, gekozen.uur, gekozen.minuut);
+      setTimeout(() => {
+        svg.classList.remove('zonder-animatie');
+        zetKlok(svg, vraag.klok.uur, vraag.klok.minuut);
+      }, KLOK_ANIMATIE);
+    }
+
     function antwoord(sleutel, knop) {
       if (bezig) return;
       bezig = true;
@@ -58,6 +73,7 @@ export const ronde = {
         setTimeout(volgende, PAUZE_GOED);
       } else {
         knop.classList.add('optie-fout');
+        toonKlokAnimatie(uitslag.vraag, sleutel);
         melding.innerHTML = `<span>Het goede antwoord is <strong>${goedKnop.innerHTML}</strong>.</span>
           <button class="knop knop-hoofd" data-focus data-actie="verder">Verder</button>`;
         zetFocus(melding.querySelector('button'));
