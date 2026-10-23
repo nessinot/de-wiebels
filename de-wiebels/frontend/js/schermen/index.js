@@ -6,5 +6,6 @@ import { wereldkaart } from './wereldkaart.js';
 import { levelkeuze } from './levelkeuze.js';
 import { ronde } from './ronde.js';
 import { resultaat } from './resultaat.js';
+import { eindbaas } from './eindbaas.js';
 
-export const schermen = { bedieningstest, tweedeScherm, profielkeuze, profielMaken, wereldkaart, levelkeuze, ronde, resultaat };
+export const schermen = { bedieningstest, tweedeScherm, profielkeuze, profielMaken, wereldkaart, levelkeuze, ronde, resultaat, eindbaas };
