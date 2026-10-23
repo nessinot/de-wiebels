@@ -212,3 +212,63 @@
 .levelknop .sterren { font-size: 52px; }
 .baasknop { background: var(--vlak-licht); }
 .klein { font-size: 32px; color: var(--tekst-zacht); }
+
+/* Ronde */
+.rondekop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 44px;
+  color: var(--tekst-zacht);
+}
+
+.voortgang { display: flex; gap: 14px; }
+
+.voortgang span {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--vlak);
+}
+
+.voortgang span.vol { background: var(--accent); }
+
+.vraag {
+  font-size: 160px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.opties {
+  display: grid;
+  grid-template-columns: repeat(2, 640px);
+  gap: 40px 64px;
+  justify-content: center;
+}
+
+.optie {
+  height: 170px;
+  font-size: 96px;
+  font-weight: bold;
+}
+
+.optie.gekozen-niet { opacity: 0.35; }
+.optie.optie-goed { background: var(--goed); color: var(--achtergrond); }
+.optie.optie-fout { opacity: 0.6; text-decoration: line-through; }
+
+.terugkoppeling {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  min-height: 110px;
+  font-size: 56px;
+}
+
+/* Resultaat */
+.resultaat-sterren {
+  font-size: 220px;
+  text-align: center;
+  line-height: 1;
+}
