@@ -303,3 +303,28 @@
 .vraag-klok { line-height: 1; }
 .vraag-klok ~ .opties .optie { height: 150px; }
 .opties .klok { width: 150px; height: 150px; }
+
+/* Overige klokvragen */
+.digitale-tijd {
+  display: inline-block;
+  padding: 8px 48px;
+  border-radius: 24px;
+  background: #0a0a0a;
+  color: #ff5c5c;
+  font-family: "Courier New", monospace;
+  font-size: 150px;
+  letter-spacing: 8px;
+}
+
+.vraagregel { font-size: 56px; font-weight: normal; }
+.vraag-digitaal { line-height: 1.1; }
+.opties-tekst .optie { font-size: 50px; padding: 0 24px; }
+.opties-klok .optie { height: 200px; display: flex; align-items: center; justify-content: center; }
+.opties-klok .klok { width: 180px; height: 180px; }
+.vraag-digitaal ~ .opties-klok { grid-template-columns: repeat(4, 360px); }
+
+.zetbediening {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}

@@ -1,13 +1,9 @@
 // Klokvragen. Het level bepaalt de minutenstap (hele uren, halve uren, ... op de minuut).
 
-import { digitaal, klokSvg } from '../klok.js';
+import { dagdeel, digitaal, klokSvg, tijdInWoorden } from '../klok.js';
 import { kies, schud, willekeurig } from './opties.js';
 
 const uur12 = (uur) => ((uur + 11) % 12) + 1;
-
-function tijdOptie(uur, minuut) {
-  return { sleutel: `${uur12(uur)}:${minuut}`, html: digitaal(uur12(uur), minuut), tijd: { uur, minuut } };
-}
 
 // Foute tijden: verwisselde wijzers, een uur ernaast, een stap ernaast.
 export function fouteTijden(uur, minuut, stap) {
@@ -22,7 +18,15 @@ export function fouteTijden(uur, minuut, stap) {
   return kandidaten;
 }
 
-export function tijdOpties(uur, minuut, stap, rnd = Math.random) {
+// weergave bepaalt hoe een optie eruitziet: digitaal, als klokje of in woorden.
+const WEERGAVE = {
+  digitaal: (uur, minuut) => digitaal(uur12(uur), minuut),
+  klok: (uur, minuut) => klokSvg(uur, minuut),
+  woorden: (uur, minuut) => tijdInWoorden(uur, minuut),
+};
+
+export function tijdOpties(uur, minuut, stap, rnd = Math.random, weergave = 'digitaal') {
+  const tijdOptie = (u, m) => ({ sleutel: `${uur12(u)}:${m}`, html: WEERGAVE[weergave](u, m), tijd: { uur: u, minuut: m } });
   const goed = tijdOptie(uur, minuut);
   const fout = [];
   // De verwisselde wijzers zijn de meest voor de hand liggende fout en gaan altijd mee.
@@ -45,15 +49,60 @@ export function willekeurigeTijd(level, rnd = Math.random) {
   return { uur, minuut };
 }
 
+function klokVraagMet(uur, minuut, vraagtekst) {
+  return `<div class="klokvraag">${klokSvg(uur, minuut, 'klok-groot')}<span>${vraagtekst}</span></div>`;
+}
+
 const TYPES = {
+  // Wijzerklok → digitale tijd.
   lezen(uur, minuut, stap, rnd) {
-    const { goed, opties } = tijdOpties(uur, minuut, stap, rnd);
+    return { soort: 'klok', tekst: klokVraagMet(uur, minuut, 'Hoe laat is het?'), klok: { uur, minuut }, ...tijdOpties(uur, minuut, stap, rnd) };
+  },
+  // Wijzerklok → tijd in woorden.
+  woorden(uur, minuut, stap, rnd) {
+    return { soort: 'klok', optieSoort: 'tekst', tekst: klokVraagMet(uur, minuut, 'Hoe zeg je dit?'), klok: { uur, minuut }, ...tijdOpties(uur, minuut, stap, rnd, 'woorden') };
+  },
+  // Digitale tijd → welke wijzerklok hoort erbij.
+  digitaal(uur, minuut, stap, rnd) {
+    return {
+      soort: 'digitaal',
+      optieSoort: 'klok',
+      tekst: `<div class="digitale-tijd">${digitaal(uur, minuut)}</div><div class="vraagregel">Welke klok hoort erbij?</div>`,
+      ...tijdOpties(uur, minuut, stap, rnd, 'klok'),
+    };
+  },
+  // Wijzers zetten met de pijltjes: links/rechts de minuten, op/neer het uur.
+  zetten(uur, minuut, stap) {
     return {
       soort: 'klok',
-      tekst: `<div class="klokvraag">${klokSvg(uur, minuut, 'klok-groot')}<span>Hoe laat is het?</span></div>`,
+      interactief: 'zetten',
+      tekst: `<div class="klokvraag">${klokSvg(12, 0, 'klok-groot')}<span>Zet de klok op<br><strong>${tijdInWoorden(uur, minuut)}</strong></span></div>`,
       klok: { uur, minuut },
-      goed,
-      opties,
+      zetStap: stap === 1 || minuut % 5 ? 1 : 5,
+      goed: `${uur12(uur)}:${minuut}`,
+      opties: [],
+    };
+  },
+  // 24-uursklok → tijd in woorden met dagdeel.
+  dag(uur, minuut, stap, rnd) {
+    const optie = (u, m) => {
+      const d = dagdeel(u);
+      return { sleutel: `${u}:${m}`, html: `${d.icoon} ${tijdInWoorden(u, m)} ${d.woorden}` };
+    };
+    const goed = optie(uur, minuut);
+    const fout = [];
+    // Dezelfde tijd in het andere dagdeel is de kern van de oefening en gaat altijd mee.
+    const rest = schud([[(uur + 1) % 24, minuut], [(uur + 23) % 24, minuut], [uur, (minuut + 30) % 60], [(uur + 6) % 24, minuut]], rnd);
+    for (const [u, m] of [[(uur + 12) % 24, minuut], ...rest]) {
+      const o = optie(u, m);
+      if (fout.length < 3 && o.html !== goed.html && !fout.some((f) => f.html === o.html)) fout.push(o);
+    }
+    return {
+      soort: 'digitaal',
+      optieSoort: 'tekst',
+      tekst: `<div class="digitale-tijd">${digitaal(uur, minuut)}</div><div class="vraagregel">Hoe zeg je dit?</div>`,
+      goed: goed.sleutel,
+      opties: schud([goed, ...fout], rnd),
     };
   },
 };
@@ -63,7 +112,7 @@ export function klokVraagUit(type, uur, minuut, stap = 5, rnd = Math.random) {
 }
 
 export function klokTypes(level) {
-  return ['lezen'];
+  return level.uur24 ? ['dag', 'dag', 'lezen', 'zetten'] : ['lezen', 'woorden', 'digitaal', 'zetten'];
 }
 
 export function klokVraag(level, stap, rnd = Math.random) {

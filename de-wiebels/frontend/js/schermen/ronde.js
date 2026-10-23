@@ -2,7 +2,7 @@
 
 import { maakEl, opKlik } from '../dom.js';
 import { maakVragen } from '../generators/index.js';
-import { zetKlok } from '../klok.js';
+import { digitaal, zetKlok } from '../klok.js';
 import { levelVan } from '../levels.js';
 import { bewaar, staat } from '../opslag.js';
 import { RONDE_LENGTE, beantwoord, huidigeVraag, nieuweRonde, sterrenVoor } from '../ronde.js';
@@ -20,6 +20,7 @@ export const ronde = {
     let bezig = false;
     let cijfers = '';
     let cijferTimer;
+    let zetTijd = 0; // minuten na twaalf uur bij wijzers zetten
 
     function teken() {
       const vraag = huidigeVraag(r);
@@ -30,13 +31,39 @@ export const ronde = {
           <span class="voortgang">${Array.from({ length: r.aantal }, (_, i) => `<span class="${i < gedaan ? 'vol' : ''}"></span>`).join('')}</span>
         </div>
         <div class="vraag vraag-${vraag.soort || 'som'}">${vraag.tekst}</div>
-        <div class="opties">
+        ${vraag.interactief === 'zetten' ? zetKnoppen() : `
+        <div class="opties opties-${vraag.optieSoort || 'getal'}">
           ${vraag.opties.map((o) => `<button class="knop optie" data-focus data-actie="antwoord" data-waarde="${o.sleutel}">${o.html}</button>`).join('')}
-        </div>
+        </div>`}
         <div class="terugkoppeling" data-veld="terugkoppeling"></div>
       `;
-      zetFocus(el.querySelector('.optie'));
+      zetTijd = 0;
+      el.querySelector('.vraag .klok')?.classList.toggle('zonder-animatie', vraag.interactief === 'zetten');
+      zetFocus(el.querySelector('.optie, [data-actie="zetKlaar"]'));
       bezig = false;
+    }
+
+    function zetKnoppen() {
+      return `
+        <div class="zetbediening">
+          <button class="knop" data-actie="zet" data-waarde="-60">▼ uur</button>
+          <button class="knop" data-actie="zet" data-waarde="-1">◀ minuten</button>
+          <button class="knop knop-hoofd" data-focus data-actie="zetKlaar">Klaar ✓</button>
+          <button class="knop" data-actie="zet" data-waarde="1">minuten ▶</button>
+          <button class="knop" data-actie="zet" data-waarde="60">▲ uur</button>
+        </div>`;
+    }
+
+    // stappen: ±1 = één minutenstap, ±60 = een uur. De uurwijzer draait realistisch mee.
+    function verzet(stappen) {
+      const vraag = huidigeVraag(r);
+      const delta = Math.abs(stappen) === 60 ? stappen : stappen * vraag.zetStap;
+      zetTijd = (zetTijd + delta + 720) % 720;
+      zetKlok(el.querySelector('.vraag .klok'), Math.floor(zetTijd / 60), zetTijd % 60);
+    }
+
+    function zetSleutel() {
+      return `${Math.floor(zetTijd / 60) || 12}:${zetTijd % 60}`;
     }
 
     function volgende() {
@@ -49,8 +76,13 @@ export const ronde = {
 
     // Bij een klokvraag draaien de wijzers van het gekozen antwoord naar de goede tijd.
     function toonKlokAnimatie(vraag, sleutel) {
-      const gekozen = vraag.opties.find((o) => o.sleutel === sleutel)?.tijd;
       const svg = el.querySelector('.vraag .klok');
+      if (vraag.interactief === 'zetten') {
+        svg.classList.remove('zonder-animatie');
+        zetKlok(svg, vraag.klok.uur, vraag.klok.minuut);
+        return;
+      }
+      const gekozen = vraag.opties.find((o) => o.sleutel === sleutel)?.tijd;
       if (!vraag.klok || !gekozen || !svg) return;
       svg.classList.add('zonder-animatie');
       zetKlok(svg, gekozen.uur, gekozen.minuut);
@@ -65,28 +97,39 @@ export const ronde = {
       bezig = true;
       const uitslag = beantwoord(r, sleutel);
       const goedKnop = el.querySelector(`.optie[data-waarde="${uitslag.vraag.goed}"]`);
+      const goedHtml = goedKnop ? goedKnop.innerHTML : digitaal(uitslag.vraag.klok.uur, uitslag.vraag.klok.minuut);
       const melding = el.querySelector('[data-veld="terugkoppeling"]');
       el.querySelectorAll('.optie').forEach((o) => o.classList.add('gekozen-niet'));
-      goedKnop.classList.replace('gekozen-niet', 'optie-goed');
+      goedKnop?.classList.replace('gekozen-niet', 'optie-goed');
       if (uitslag.goed) {
         melding.textContent = 'Goed zo!';
         setTimeout(volgende, PAUZE_GOED);
       } else {
         knop.classList.add('optie-fout');
         toonKlokAnimatie(uitslag.vraag, sleutel);
-        melding.innerHTML = `<span>Het goede antwoord is <strong>${goedKnop.innerHTML}</strong>.</span>
+        melding.innerHTML = `<span>Het goede antwoord is <strong>${goedHtml}</strong>.</span>
           <button class="knop knop-hoofd" data-focus data-actie="verder">Verder</button>`;
         zetFocus(melding.querySelector('button'));
       }
     }
 
-    opKlik(el, { antwoord, verder: volgende });
+    opKlik(el, {
+      antwoord,
+      verder: volgende,
+      zet: (stappen) => !bezig && verzet(Number(stappen)),
+      zetKlaar: (_, knop) => antwoord(zetSleutel(), knop),
+    });
 
     teken();
     return {
       el,
       // Cijfertoetsen: typ het antwoord; zodra het overeenkomt met een optie wordt die gekozen.
       bijToets({ actie, cijfer }) {
+        const pijl = { links: -1, rechts: 1, omlaag: -60, omhoog: 60 }[actie];
+        if (pijl && !bezig && huidigeVraag(r)?.interactief === 'zetten') {
+          verzet(pijl);
+          return true;
+        }
         if (actie !== 'cijfer' || bezig) return false;
         clearTimeout(cijferTimer);
         cijfers += cijfer;
