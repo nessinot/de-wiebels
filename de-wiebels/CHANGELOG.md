@@ -1,5 +1,13 @@
 # Wijzigingen
 
+## 0.4.0
+
+De voortgang staat nu veilig op de Home Assistant-server, en er is een ouderscherm.
+
+- Voortgang wordt op de server bewaard en blijft dus behouden als de cache van de tv wordt gewist. Zonder verbinding speelt het spel gewoon door en synchroniseert het later.
+- Ouderscherm: druk op het profielscherm drie keer op de blauwe knop en voer de pincode in (standaard 1234). Daar stel je per kind de niveaus en de tijdsdruk in, zie je de zwakke plekken, zet je het geluid aan of uit, wijzig je de pincode en kun je alle data exporteren en importeren. De bedieningstest staat hier nu ook.
+- Na een update laadt de tv meteen de nieuwe versie.
+
 ## 0.3.0
 
 Het spel wordt echt een spel.

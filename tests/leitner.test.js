@@ -64,3 +64,12 @@ test('moeilijkheid omhoog na vijf goed, omlaag na twee fout, binnen 0–2', () =
   assert.equal(volgendeStap(0, 0, 3), 0);
   assert.equal(volgendeStap(1, 3, 0), 1);
 });
+
+test('item-id\'s worden leesbaar voor het ouderscherm', async () => {
+  const { itemTekst } = await import('../de-wiebels/frontend/js/weergave.js');
+  assert.equal(itemTekst('keer:7x8'), '7 × 8');
+  assert.equal(itemTekst('delen:56:8'), '56 : 8');
+  assert.equal(itemTekst('plus:34+57'), '34 + 57');
+  assert.equal(itemTekst('min:91-38'), '91 − 38');
+  assert.equal(itemTekst('klok:lezen:4:5'), '🕒 4:05');
+});

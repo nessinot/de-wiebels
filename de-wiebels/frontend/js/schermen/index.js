@@ -11,5 +11,7 @@ import { collectie } from './collectie.js';
 import { winkel } from './winkel.js';
 import { tijdrace, tijdraceKeuze } from './tijdrace.js';
 import { themakeuze } from './themakeuze.js';
+import { pincode } from './pincode.js';
+import { ouderscherm } from './ouderscherm.js';
 
-export const schermen = { bedieningstest, tweedeScherm, profielkeuze, profielMaken, wereldkaart, levelkeuze, ronde, resultaat, eindbaas, collectie, winkel, tijdrace, tijdraceKeuze, themakeuze };
+export const schermen = { bedieningstest, tweedeScherm, profielkeuze, profielMaken, wereldkaart, levelkeuze, ronde, resultaat, eindbaas, collectie, winkel, tijdrace, tijdraceKeuze, themakeuze, pincode, ouderscherm };

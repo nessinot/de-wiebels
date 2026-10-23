@@ -604,3 +604,74 @@
 }
 
 .thema-emoji { font-size: 140px; line-height: 1; }
+
+/* Pincode en ouderscherm */
+.pinbolletjes {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.pinbolletjes span {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 6px solid var(--tekst-zacht);
+}
+
+.pinbolletjes span.vol { background: var(--accent); border-color: var(--accent); }
+.pinbolletjes.fout { animation: schud 0.5s; }
+.pinbolletjes.fout span { border-color: var(--rood); }
+
+.pinpad {
+  display: grid;
+  grid-template-columns: repeat(3, 140px);
+  gap: 20px;
+  justify-content: center;
+}
+
+.ouder-indeling {
+  display: flex;
+  gap: 48px;
+}
+
+.ouder-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 400px;
+}
+
+.ouder-menu .knop { text-align: left; font-size: 42px; }
+.ouder-paneel { flex: 1; font-size: 38px; }
+.ouder-paneel h2 { margin: 0 0 20px; font-size: 56px; }
+.ouder-paneel h3 { margin: 28px 0 12px; font-size: 44px; }
+
+.ouder-niveaus {
+  display: grid;
+  grid-template-columns: 160px 90px 1fr 90px;
+  gap: 14px 20px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.ouder-label { font-weight: bold; }
+.ouder-waarde { text-align: center; }
+.knop-klein { padding: 12px 0; font-size: 40px; }
+.knoppenrij.links { justify-content: flex-start; }
+.knop-gevaar { background: #7a2323; }
+
+.zwakke-plekken {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 40px;
+  margin: 0;
+}
+
+.zwakke-plekken small { color: var(--tekst-zacht); font-size: 30px; }
+
+.ouder-knoppen {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}

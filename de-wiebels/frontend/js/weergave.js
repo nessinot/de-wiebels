@@ -40,6 +40,17 @@ export function themaKnoppen(huidig) {
     </div>`;
 }
 
+// Leesbare omschrijving van een item-id, voor het overzicht van zwakke plekken.
+export function itemTekst(id) {
+  const [soort, a, b, c] = id.split(':');
+  if (soort === 'keer') return a.replace('x', ' × ');
+  if (soort === 'delen') return `${a} : ${b}`;
+  if (soort === 'plus') return a.replace('+', ' + ');
+  if (soort === 'min') return a.replace('-', ' − ');
+  if (soort === 'klok') return `🕒 ${b}:${String(c).padStart(2, '0')}`;
+  return id;
+}
+
 export function totaalSterren(profiel) {
   return Object.values(profiel.sterren).reduce((som, n) => som + n, 0);
 }

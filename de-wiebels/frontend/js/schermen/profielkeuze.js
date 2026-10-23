@@ -60,7 +60,7 @@ export const profielkeuze = {
         blauw = [...blauw.filter((t) => nu - t < GEHEIM_TIJD), nu];
         if (blauw.length >= GEHEIM_AANTAL) {
           blauw = [];
-          toon('bedieningstest');
+          toon('pincode');
         }
         return true;
       },
