@@ -28,6 +28,7 @@ export const wereldkaart = {
         </div>
         <div class="knoppenrij onderbalk">
           <button class="knop" data-focus data-actie="scherm" data-waarde="collectie">🎒 Verzameling</button>
+          <button class="knop" data-focus data-actie="scherm" data-waarde="winkel">🛒 Winkeltje</button>
         </div>
       `;
     }

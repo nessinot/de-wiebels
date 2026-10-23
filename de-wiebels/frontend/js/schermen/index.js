@@ -8,5 +8,6 @@ import { ronde } from './ronde.js';
 import { resultaat } from './resultaat.js';
 import { eindbaas } from './eindbaas.js';
 import { collectie } from './collectie.js';
+import { winkel } from './winkel.js';
 
-export const schermen = { bedieningstest, tweedeScherm, profielkeuze, profielMaken, wereldkaart, levelkeuze, ronde, resultaat, eindbaas, collectie };
+export const schermen = { bedieningstest, tweedeScherm, profielkeuze, profielMaken, wereldkaart, levelkeuze, ronde, resultaat, eindbaas, collectie, winkel };

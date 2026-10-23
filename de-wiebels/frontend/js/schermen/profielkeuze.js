@@ -3,6 +3,7 @@
 import { esc, maakEl, opKlik } from '../dom.js';
 import { opslag, staat } from '../opslag.js';
 import { pasThemaToe, STANDAARD_THEMA } from '../themas/index.js';
+import { avatarHtml } from '../weergave.js';
 
 const GEHEIM_AANTAL = 3;
 const GEHEIM_TIJD = 2000;
@@ -22,7 +23,7 @@ export const profielkeuze = {
         <div class="profielen">
           ${profielen.map((p) => `
             <button class="knop profielknop" data-focus data-actie="kies" data-waarde="${p.id}">
-              <span class="avatar-groot">${p.avatar}</span>
+              ${avatarHtml(p, 'avatar-groot')}
               <span class="profielnaam">${esc(p.naam)}</span>
             </button>`).join('')}
           <button class="knop profielknop" data-focus data-actie="nieuw">
