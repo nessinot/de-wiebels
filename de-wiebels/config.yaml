@@ -1,0 +1,13 @@
+name: "De Wiebels"
+version: "0.0.1"
+slug: "de-wiebels"
+description: "Oefen rekenen en klokkijken op de tv, met de afstandsbediening."
+url: "https://github.com/nessinot/de-wiebels"
+arch:
+  - aarch64
+  - amd64
+init: false
+ports:
+  8765/tcp: 8765
+ports_description:
+  8765/tcp: "Webpagina van het spel"
