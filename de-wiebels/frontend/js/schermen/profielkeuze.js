@@ -2,6 +2,7 @@
 
 import { esc, maakEl, opKlik } from '../dom.js';
 import { opslag, staat } from '../opslag.js';
+import { pasThemaToe, STANDAARD_THEMA } from '../themas/index.js';
 
 const GEHEIM_AANTAL = 3;
 const GEHEIM_TIJD = 2000;
@@ -14,6 +15,7 @@ export const profielkeuze = {
 
     function teken() {
       profielen = opslag.alleProfielen();
+      pasThemaToe(STANDAARD_THEMA);
       el.innerHTML = `
         <h1 class="titel-groot">De Wiebels</h1>
         <p class="ondertitel">Wie gaat er spelen?</p>
@@ -34,6 +36,7 @@ export const profielkeuze = {
     opKlik(el, {
       kies(id) {
         staat.profiel = profielen.find((p) => p.id === id);
+        pasThemaToe(staat.profiel.thema);
         toon('wereldkaart');
       },
       nieuw: () => toon('profielMaken'),

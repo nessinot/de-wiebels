@@ -4,6 +4,7 @@ import { esc, maakEl, opKlik } from '../dom.js';
 import { STARTNIVEAUS } from '../levels.js';
 import { opslag, staat } from '../opslag.js';
 import { AVATARS, MAX_NAAM, nieuwProfiel } from '../profiel.js';
+import { pasThemaToe } from '../themas/index.js';
 
 const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const STAPPEN = ['naam', 'avatar', 'niveau'];
@@ -83,6 +84,7 @@ export const profielMaken = {
         const profiel = nieuwProfiel({ ...keuze, startniveau });
         opslag.bewaarProfiel(profiel);
         staat.profiel = profiel;
+        pasThemaToe(profiel.thema);
         toon('wereldkaart', {}, { vervang: true });
       },
     });

@@ -53,6 +53,7 @@ function verplaatsFocus(richting) {
 const ctx = { toon, terug, terugTot, zetFocus, herstelFocus };
 
 export function toon(naam, gegevens = {}, { vervang = false } = {}) {
+  if (!schermen[naam]) return;
   if (vervang && stapel.length) stapel.pop().el.remove();
   else actief()?.el.setAttribute('hidden', '');
   const inst = schermen[naam].maak({ ...ctx, gegevens });

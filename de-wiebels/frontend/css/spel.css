@@ -122,3 +122,93 @@
 
 .keuzeknop strong { font-size: 64px; }
 .keuzeknop span { font-size: 40px; color: var(--tekst-zacht); }
+
+/* Topbalk */
+.topbalk {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 44px;
+}
+
+.avatar-klein { font-size: 80px; line-height: 1; }
+.topnaam { font-weight: bold; margin-right: auto; }
+
+.teller {
+  padding: 8px 28px;
+  border-radius: 40px;
+  background: var(--vlak);
+}
+
+.sterren { color: var(--accent); letter-spacing: 4px; }
+.sterren .leeg { color: var(--tekst); opacity: 0.25; }
+
+/* Wereldkaart */
+.werelden {
+  position: relative;
+  flex: 1;
+}
+
+.wereldknop {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 340px;
+  padding: 24px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.wereldknop.heeft-focus { background: var(--vlak); }
+.wereldknop.heeft-focus::after { border-radius: 50%; }
+.wereld-emoji { font-size: 170px; line-height: 1.1; }
+.wereld-0 { left: 40px; top: 40px; }
+.wereld-1 { left: 420px; top: 300px; }
+.wereld-2 { left: 780px; top: 20px; }
+.wereld-3 { left: 1100px; top: 320px; }
+.wereld-4 { left: 1380px; top: 30px; }
+
+.knoppenrij {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+}
+
+.decor span {
+  position: absolute;
+  font-size: 60px;
+  opacity: 0.35;
+  animation: zweef 6s ease-in-out infinite;
+}
+
+.decor-0 { left: 330px; top: 140px; }
+.decor-1 { left: 1000px; top: 600px; animation-delay: -2s; }
+.decor-2 { left: 1700px; top: 640px; animation-delay: -4s; }
+.decor-3 { left: 160px; top: 760px; animation-delay: -1s; }
+
+@keyframes zweef {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-24px); }
+}
+
+/* Levelkeuze */
+.levels {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+}
+
+.levelknop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 28px 16px;
+  font-size: 44px;
+}
+
+.levelknop .sterren { font-size: 52px; }
+.baasknop { background: var(--vlak-licht); }
+.klein { font-size: 32px; color: var(--tekst-zacht); }

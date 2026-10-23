@@ -1,15 +1,40 @@
-// Wereldkaart: voorlopig alleen een begroeting.
+// Wereldkaart: elke vaardigheid is een wereld.
 
-import { esc, maakEl } from '../dom.js';
+import { maakEl, opKlik } from '../dom.js';
+import { VAARDIGHEDEN, LEVELS, levelOpen } from '../levels.js';
 import { staat } from '../opslag.js';
+import { thema } from '../themas/index.js';
+import { topbalk } from '../weergave.js';
 
 export const wereldkaart = {
-  maak() {
-    const p = staat.profiel;
-    const el = maakEl(`
-      <h1>Hallo ${esc(p.naam)}! <span class="avatar-groot">${p.avatar}</span></h1>
-      <p class="ondertitel">De werelden komen eraan.</p>
-    `);
-    return { el };
+  maak({ toon }) {
+    const el = maakEl();
+
+    function teken() {
+      const p = staat.profiel;
+      const t = thema(p.thema);
+      el.innerHTML = `
+        <div class="decor">${t.decor.map((d, i) => `<span class="decor-${i}">${d}</span>`).join('')}</div>
+        ${topbalk(p)}
+        <div class="werelden">
+          ${VAARDIGHEDEN.map((v, i) => {
+            const open = LEVELS[v].some((l) => levelOpen(p, l));
+            return `
+              <button class="knop wereldknop wereld-${i}" data-focus data-actie="wereld" data-waarde="${v}" ${open ? '' : 'disabled'}>
+                <span class="wereld-emoji">${open ? t.werelden[v].emoji : '🔒'}</span>
+                <span>${t.werelden[v].naam}</span>
+              </button>`;
+          }).join('')}
+        </div>
+        <div class="knoppenrij" data-onderbalk></div>
+      `;
+    }
+
+    opKlik(el, {
+      wereld: (v) => toon('levelkeuze', { vaardigheid: v }),
+    });
+
+    teken();
+    return { el, bijTerugkomst: teken };
   },
 };
