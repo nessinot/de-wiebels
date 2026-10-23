@@ -1,0 +1,132 @@
+:root {
+  --achtergrond: #14102b;
+  --vlak: #2d2563;
+  --vlak-licht: #3f3585;
+  --tekst: #fff8e7;
+  --focus: #ffd23f;
+  --goed: #5ee07a;
+  --rood: #ff5c5c;
+  --groen: #4cd964;
+  --geel: #ffd23f;
+  --blauw: #4da3ff;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--achtergrond);
+  color: var(--tekst);
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Vast podium van 1920×1080; main.js schaalt het passend in het venster. */
+#podium {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1920px;
+  height: 1080px;
+  transform: translate(-50%, -50%) scale(var(--schaal, 1));
+}
+
+.scherm {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  padding: 54px 96px; /* safe area: 5% van de randen */
+  font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.scherm[hidden] { display: none; }
+
+h1 {
+  margin: 0;
+  font-size: 80px;
+}
+
+.knop {
+  position: relative;
+  border: none;
+  border-radius: 24px;
+  background: var(--vlak);
+  color: var(--tekst);
+  font: inherit;
+  font-size: 48px;
+  padding: 24px 40px;
+  cursor: pointer;
+}
+
+.knop.heeft-focus { background: var(--vlak-licht); }
+
+/* Focusrand: los vlak eromheen dat pulseert via transform. */
+.knop.heeft-focus::after {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border: 8px solid var(--focus);
+  border-radius: 34px;
+  pointer-events: none;
+  animation: pulseer 1.2s ease-in-out infinite;
+}
+
+@keyframes pulseer {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+.melding {
+  font-size: 44px;
+  color: var(--goed);
+  min-height: 56px;
+}
+
+/* Bedieningstest */
+.test-indeling {
+  display: flex;
+  gap: 64px;
+  flex: 1;
+}
+
+.test-raster {
+  display: grid;
+  grid-template-columns: repeat(3, 240px);
+  grid-template-rows: repeat(4, 130px);
+  grid-template-areas:
+    "a b c"
+    "d d e"
+    "f g e"
+    "h h h";
+  gap: 36px;
+}
+
+.test-info p { margin: 0 0 24px; }
+
+.test-rij {
+  display: flex;
+  gap: 48px;
+}
+
+.kleurtellers {
+  display: flex;
+  gap: 24px;
+}
+
+.kleur {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 80px;
+  border-radius: 40px;
+  color: var(--achtergrond);
+  font-weight: bold;
+}
+
+.kleur-rood { background: var(--rood); }
+.kleur-groen { background: var(--groen); }
+.kleur-geel { background: var(--geel); }
+.kleur-blauw { background: var(--blauw); }
