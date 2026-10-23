@@ -30,6 +30,7 @@ export const wereldkaart = {
           <button class="knop" data-focus data-actie="scherm" data-waarde="collectie">🎒 Verzameling</button>
           <button class="knop" data-focus data-actie="scherm" data-waarde="winkel">🛒 Winkeltje</button>
           <button class="knop" data-focus data-actie="scherm" data-waarde="tijdraceKeuze">⏱️ Tijdrace</button>
+          <button class="knop" data-focus data-actie="scherm" data-waarde="themakeuze">🎨 Thema</button>
         </div>
       `;
     }

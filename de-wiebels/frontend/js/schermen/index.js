@@ -10,5 +10,6 @@ import { eindbaas } from './eindbaas.js';
 import { collectie } from './collectie.js';
 import { winkel } from './winkel.js';
 import { tijdrace, tijdraceKeuze } from './tijdrace.js';
+import { themakeuze } from './themakeuze.js';
 
-export const schermen = { bedieningstest, tweedeScherm, profielkeuze, profielMaken, wereldkaart, levelkeuze, ronde, resultaat, eindbaas, collectie, winkel, tijdrace, tijdraceKeuze };
+export const schermen = { bedieningstest, tweedeScherm, profielkeuze, profielMaken, wereldkaart, levelkeuze, ronde, resultaat, eindbaas, collectie, winkel, tijdrace, tijdraceKeuze, themakeuze };

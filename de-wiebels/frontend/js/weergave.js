@@ -3,6 +3,7 @@
 import { huisdierStadium } from './beloningen.js';
 import { actief } from './cosmetica.js';
 import { esc } from './dom.js';
+import { THEMAS } from './themas/index.js';
 
 export function sterrenHtml(aantal, max = 3) {
   return `<span class="sterren">${'★'.repeat(aantal)}<span class="leeg">${'★'.repeat(max - aantal)}</span></span>`;
@@ -26,6 +27,17 @@ export function huisdierHtml(profiel, thema) {
   const stadium = thema.huisdier[huisdierStadium(profiel.huisdier.xp)];
   const deco = actief(profiel, 'deco');
   return `<span class="huisdier">${stadium.emoji}${deco ? `<span class="avatar-deco">${deco.emoji}</span>` : ''}</span>`;
+}
+
+export function themaKnoppen(huidig) {
+  return `
+    <div class="themas">
+      ${Object.values(THEMAS).map((t) => `
+        <button class="knop themaknop${t.id === huidig ? ' winkel-aan' : ''}" data-focus data-actie="thema" data-waarde="${t.id}"
+          style="background: ${t.kleuren.vlak}; color: ${t.kleuren.tekst}">
+          <span class="thema-emoji">${t.emoji}</span><span>${t.naam}</span>
+        </button>`).join('')}
+    </div>`;
 }
 
 export function totaalSterren(profiel) {

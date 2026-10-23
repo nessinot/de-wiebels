@@ -1,8 +1,18 @@
 // Alle thema's delen dezelfde spellogica; alleen de presentatie verschilt.
 
+import dierenopvang from './dierenopvang.js';
+import dinoEiland from './dino-eiland.js';
+import magischBos from './magisch-bos.js';
+import onderwater from './onderwater.js';
 import ruimte from './ruimte.js';
 
-export const THEMAS = { ruimte };
+export const THEMAS = {
+  ruimte,
+  'magisch-bos': magischBos,
+  'dino-eiland': dinoEiland,
+  onderwater,
+  dierenopvang,
+};
 
 export const STANDAARD_THEMA = 'ruimte';
 

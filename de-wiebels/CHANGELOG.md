@@ -1,5 +1,16 @@
 # Wijzigingen
 
+## 0.3.0
+
+Het spel wordt echt een spel.
+
+- Munten voor elk antwoord dat in één keer goed is, met bonusmunten en vuurwerk bij 3, 5 en 10 goed op rij. Vrolijke geluidjes bij goed, een zacht geluid bij fout.
+- Elke wereld heeft een eindbaas: elk goed antwoord raakt de baas. Fouten kosten niets. Tijdsdruk staat standaard uit.
+- Verzamel Wiebels: elk gehaald level en elke verslagen eindbaas levert er een op. Je eigen huisdier-Wiebel groeit in vier stappen mee met het aantal goede antwoorden.
+- Winkeltje: koop hoedjes, kleuren en decoratie voor je avatar en huisdier.
+- Tijdrace: twintig sommen zo snel mogelijk. Je speelt alleen tegen je eigen record.
+- Vijf thema's: Ruimte, Magisch bos, Dino-eiland, Onderwater en Dierenopvang. Kies er een bij het maken van je profiel en wissel wanneer je wilt; je voortgang blijft bewaard.
+
 ## 0.2.0
 
 Alle leerstof is er.

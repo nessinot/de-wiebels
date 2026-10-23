@@ -585,3 +585,22 @@
   font-weight: bold;
   color: var(--accent);
 }
+
+/* Thema's */
+.themas {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  margin-top: 40px;
+}
+
+.themaknop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 300px;
+  padding: 40px 16px;
+}
+
+.thema-emoji { font-size: 140px; line-height: 1; }

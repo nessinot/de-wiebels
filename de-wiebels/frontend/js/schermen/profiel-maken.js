@@ -1,18 +1,19 @@
-// Nieuw profiel in drie stappen: naam, avatar, startniveau.
+// Nieuw profiel in vier stappen: naam, avatar, thema, startniveau.
 
 import { esc, maakEl, opKlik } from '../dom.js';
 import { STARTNIVEAUS } from '../levels.js';
 import { opslag, staat } from '../opslag.js';
 import { AVATARS, MAX_NAAM, nieuwProfiel } from '../profiel.js';
-import { pasThemaToe } from '../themas/index.js';
+import { pasThemaToe, STANDAARD_THEMA } from '../themas/index.js';
+import { themaKnoppen } from '../weergave.js';
 
 const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-const STAPPEN = ['naam', 'avatar', 'niveau'];
+const STAPPEN = ['naam', 'avatar', 'thema', 'niveau'];
 
 export const profielMaken = {
   maak({ toon, zetFocus, herstelFocus }) {
     const el = maakEl();
-    const keuze = { naam: '', avatar: null };
+    const keuze = { naam: '', avatar: null, thema: STANDAARD_THEMA };
     let stap = 0;
 
     function tekenNaam() {
@@ -37,6 +38,10 @@ export const profielMaken = {
       `;
     }
 
+    function tekenThema() {
+      return `<h1>Kies je wereld</h1>${themaKnoppen(keuze.thema)}`;
+    }
+
     function tekenNiveau() {
       return `
         <h1>Hoe goed kun je het al?</h1>
@@ -51,7 +56,7 @@ export const profielMaken = {
     }
 
     function teken() {
-      el.innerHTML = { naam: tekenNaam, avatar: tekenAvatar, niveau: tekenNiveau }[STAPPEN[stap]]();
+      el.innerHTML = { naam: tekenNaam, avatar: tekenAvatar, thema: tekenThema, niveau: tekenNiveau }[STAPPEN[stap]]();
       herstelFocus();
     }
 
@@ -78,6 +83,11 @@ export const profielMaken = {
       avatar(a) {
         keuze.avatar = a;
         stap = 2;
+        teken();
+      },
+      thema(id) {
+        keuze.thema = id;
+        stap = 3;
         teken();
       },
       niveau(startniveau) {
