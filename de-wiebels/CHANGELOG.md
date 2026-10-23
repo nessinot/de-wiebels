@@ -1,5 +1,14 @@
 # Wijzigingen
 
+## 0.2.0
+
+Alle leerstof is er.
+
+- Plus en min (tot 10, tot 20, over het tiental, tientallen, tot 100 en tot 1000 met en zonder onthouden of lenen) en delen per tafel. Uitkomsten zijn nooit negatief en deelsommen gaan altijd op. Delen per tafel gaat open als de keertafel goed gaat.
+- Alle soorten klokvragen: wijzers zetten met de pijltjes, digitaal naar wijzerklok, tijd in woorden ("tien voor half vier") en de 24-uursklok met dagdeel ("half acht 's avonds").
+- Het spel onthoudt welke sommen lastig zijn: die komen vaker en sneller terug, wat al goed gaat komt minder vaak.
+- De moeilijkheid past zich aan: na een reeks goede antwoorden wordt het iets moeilijker, na een paar fouten iets makkelijker.
+
 ## 0.1.0
 
 Het eerste speelbare spel!

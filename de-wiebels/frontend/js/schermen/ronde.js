@@ -1,22 +1,39 @@
 // Oefenronde: tien vragen met vier antwoorden. Een fout wordt rustig verbeterd en later opnieuw gevraagd.
 
 import { maakEl, opKlik } from '../dom.js';
-import { maakVragen } from '../generators/index.js';
+import { maakVraag, maakVragen, vraagUitId } from '../generators/index.js';
 import { digitaal, zetKlok } from '../klok.js';
 import { levelVan } from '../levels.js';
+import { registreer, teHerhalen, volgendeStap } from '../leitner.js';
 import { bewaar, staat } from '../opslag.js';
 import { RONDE_LENGTE, beantwoord, huidigeVraag, nieuweRonde, sterrenVoor } from '../ronde.js';
 
 const PAUZE_GOED = 900;
 const KLOK_ANIMATIE = 400;
 const CIJFER_WACHT = 1500;
+const MAX_HERHALING = 4;
+
+// Vragen voor een ronde: eerst wat aan de beurt is om te herhalen, de rest nieuw.
+function stelRondeSamen(p, level, stap) {
+  const herhaling = teHerhalen(p.items, level.id, MAX_HERHALING)
+    .map((id) => vraagUitId(id))
+    .filter(Boolean)
+    .map((v) => ({ ...v, herhaling: true }));
+  const ids = new Set(herhaling.map((v) => v.id));
+  const nieuw = maakVragen(level, RONDE_LENGTE * 2, stap).filter((v) => !ids.has(v.id));
+  return [...herhaling, ...nieuw].slice(0, RONDE_LENGTE);
+}
 
 export const ronde = {
   maak({ toon, zetFocus, gegevens }) {
     const el = maakEl();
     const p = staat.profiel;
     const level = levelVan(gegevens.levelId);
-    const r = nieuweRonde(maakVragen(level, RONDE_LENGTE, 1));
+    let stap = p.moeilijkheid[level.id] ?? 1;
+    let reeksGoed = 0;
+    let reeksFout = 0;
+    const r = nieuweRonde(stelRondeSamen(p, level, stap));
+    const rondeIds = new Set(r.wachtrij.map((v) => v.id)); // alle vragen van deze ronde, ook al gestelde
     let bezig = false;
     let cijfers = '';
     let cijferTimer;
@@ -92,10 +109,37 @@ export const ronde = {
       }, KLOK_ANIMATIE);
     }
 
+    // Na een reeks goed of meerdere fouten verandert de stap; nog niet gestelde nieuwe vragen
+    // worden dan vervangen door vragen op de nieuwe stap.
+    function pasMoeilijkheidAan(goed) {
+      reeksGoed = goed ? reeksGoed + 1 : 0;
+      reeksFout = goed ? 0 : reeksFout + 1;
+      const nieuweStap = volgendeStap(stap, reeksGoed, reeksFout);
+      if (nieuweStap === stap) return;
+      stap = nieuweStap;
+      p.moeilijkheid[level.id] = stap;
+      reeksGoed = 0;
+      reeksFout = 0;
+      r.wachtrij = r.wachtrij.map((v) => {
+        if (v.herhaling || r.fouten.has(v.id)) return v;
+        for (let i = 0; i < 50; i++) {
+          const nieuw = maakVraag(level, stap);
+          if (!rondeIds.has(nieuw.id)) {
+            rondeIds.add(nieuw.id);
+            return nieuw;
+          }
+        }
+        return v;
+      });
+    }
+
     function antwoord(sleutel, knop) {
       if (bezig) return;
       bezig = true;
       const uitslag = beantwoord(r, sleutel);
+      registreer(p.items, uitslag.vraag.id, uitslag.goed, level.id);
+      pasMoeilijkheidAan(uitslag.goed);
+      bewaar();
       const goedKnop = el.querySelector(`.optie[data-waarde="${uitslag.vraag.goed}"]`);
       const goedHtml = goedKnop ? goedKnop.innerHTML : digitaal(uitslag.vraag.klok.uur, uitslag.vraag.klok.minuut);
       const melding = el.querySelector('[data-veld="terugkoppeling"]');
