@@ -97,7 +97,6 @@ function toonVorige() {
 }
 
 export function terug(bron = 'toets') {
-  window.dispatchEvent(new CustomEvent('wiebels:terug', { detail: { bron, buffer } }));
   if (stapel.length === 1) {
     actief().inst.bijTerugOpStart?.(bron);
     return;
@@ -150,6 +149,9 @@ window.addEventListener('popstate', () => {
   buffer = Math.max(0, buffer - 1);
   verwerk({ actie: 'terug', code: null, bron: 'browser' });
 });
+
+// Muziek aan of uit op de ouderpagina: na de synchronisatie meteen toepassen.
+window.addEventListener('wiebels:gesynchroniseerd', kiesMuziek);
 
 window.addEventListener('resize', schaalPodium);
 schaalPodium();

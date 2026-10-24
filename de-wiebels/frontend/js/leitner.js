@@ -31,7 +31,7 @@ export function teHerhalen(items, levelId, max, nu = new Date()) {
     .map(([id]) => id);
 }
 
-// Voor het ouderscherm: de items die het vaakst fout gingen en nog niet beheerst zijn.
+// Voor de ouderpagina: de items die het vaakst fout gingen en nog niet beheerst zijn.
 export function zwakkePlekken(items, max = 10) {
   return Object.entries(items)
     .filter(([, item]) => item.fout > 0 && item.bak < 4)
