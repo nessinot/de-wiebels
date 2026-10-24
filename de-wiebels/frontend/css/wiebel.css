@@ -28,6 +28,14 @@
 .w-arm.r, .w-arm-basis.r { transform-origin: 178px 160px; }
 .w-arm.r { animation-delay: -1.3s; }
 
+/* Spullen (spullen.js): met iets op het hoofd staan de voelsprieten opzij; met een paraplu of
+   parasol houdt de arm stil; ballonnen zwaaien zacht aan het touwtje. */
+.wiebel[data-hoofd] .w-spriet-basis.l { transform: rotate(-40deg); }
+.wiebel[data-hoofd] .w-spriet-basis.r { transform: rotate(40deg); }
+.wiebel[data-hand="paraplu"] .w-arm.r, .wiebel[data-hand="kikkerparaplu"] .w-arm.r, .wiebel[data-hand="parasol"] .w-arm.r { animation: none; }
+.w-ballon { transform-origin: 206px 192px; animation: w-ballon 3.4s ease-in-out infinite alternate; }
+@keyframes w-ballon { from { transform: rotate(-6deg); } to { transform: rotate(6deg); } }
+
 /* Gezicht: mond en ogen wisselen via data-mond en data-ogen op de Wiebel. */
 .w-mond-open { transform-origin: 120px 150px; transition: transform 60ms; }
 .w-mond-open, .w-mond-blij, .w-blije-ogen { display: none; }
@@ -66,7 +74,24 @@
 .vlok, .vlok-stil { fill: #fff; opacity: .9; }
 .vlok { animation: vlok linear infinite; }
 
+.spat { fill: #d6e4ff; opacity: 0; transform-box: fill-box; transform-origin: center; animation: spat linear infinite; }
+.blad { animation: vlok linear infinite; }
+.snipper { transform-box: fill-box; transform-origin: center; animation: snipper linear infinite; }
+.bel, .bel-stil { fill: none; stroke: #cfefff; stroke-width: 1.5; opacity: .7; }
+.bel { animation: stijg linear infinite; }
+.vuurvlieg { fill: #e9ff7a; animation: gloei ease-in-out infinite alternate; }
+.wier { transform-box: fill-box; transform-origin: 50% 100%; animation: wier 4s ease-in-out infinite alternate; }
+.dobber { transform-box: fill-box; transform-origin: center; animation: dobber 2.8s ease-in-out infinite alternate; }
+.kruip { transform-box: fill-box; animation: kruip 10s ease-in-out infinite alternate; }
+
 @keyframes twinkel { from { opacity: .25; } to { opacity: 1; } }
+@keyframes spat { 0%, 90% { opacity: 0; transform: scale(.3); } 94% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.8); } }
+@keyframes snipper { from { transform: translate(0, -10px) rotate(0deg); } to { transform: translate(-24px, 540px) rotate(540deg); } }
+@keyframes stijg { 0% { transform: translateY(0); opacity: 0; } 10% { opacity: .7; } 100% { transform: translateY(-420px); opacity: 0; } }
+@keyframes gloei { from { opacity: .15; transform: translate(0, 0); } to { opacity: 1; transform: translate(6px, -8px); } }
+@keyframes wier { from { transform: rotate(-6deg); } to { transform: rotate(6deg); } }
+@keyframes dobber { from { transform: translateY(0) rotate(-4deg); } to { transform: translateY(-8px) rotate(4deg); } }
+@keyframes kruip { from { transform: translateX(0); } to { transform: translateX(16px); } }
 @keyframes drijf { from { transform: translateX(-18px); } to { transform: translateX(18px); } }
 @keyframes val { from { transform: translateY(-20px); } to { transform: translateY(var(--eind)); } }
 @keyframes vlok { 0% { transform: translate(0, -10px); } 50% { transform: translate(9px, 265px); } 100% { transform: translate(-5px, 540px); } }
@@ -124,5 +149,6 @@
 .huisdier-paneel .wiebel, .beloning .wiebel { display: block; }
 
 @media (prefers-reduced-motion: reduce) {
-  .w-lijf, .w-ogen, .w-pupillen, .w-spriet, .w-arm, .w-ster, .twinkel, .drijf, .druppel, .vlok { animation: none; }
+  .w-lijf, .w-ogen, .w-pupillen, .w-spriet, .w-arm, .w-ster, .twinkel, .drijf, .druppel, .vlok,
+  .w-ballon, .spat, .blad, .snipper, .bel, .vuurvlieg, .wier, .dobber, .kruip { animation: none; }
 }

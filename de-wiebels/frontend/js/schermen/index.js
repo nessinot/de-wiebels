@@ -10,9 +10,10 @@ import { resultaat } from './resultaat.js';
 import { eindbaas } from './eindbaas.js';
 import { collectie } from './collectie.js';
 import { winkel } from './winkel.js';
+import { aanpassen } from './aanpassen.js';
 import { tijdrace, tijdraceKeuze } from './tijdrace.js';
 import { themakeuze } from './themakeuze.js';
 import { pincode } from './pincode.js';
 import { ouderscherm } from './ouderscherm.js';
 
-export const schermen = { bedieningstest, animatieproef, tweedeScherm, profielkeuze, profielMaken, wereldkaart, levelkeuze, ronde, resultaat, eindbaas, collectie, winkel, tijdrace, tijdraceKeuze, themakeuze, pincode, ouderscherm };
+export const schermen = { bedieningstest, animatieproef, tweedeScherm, profielkeuze, profielMaken, wereldkaart, levelkeuze, ronde, resultaat, eindbaas, collectie, winkel, aanpassen, tijdrace, tijdraceKeuze, themakeuze, pincode, ouderscherm };

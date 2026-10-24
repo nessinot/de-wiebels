@@ -1,0 +1,85 @@
+/* Hoofdmenu, Aanpassen en winkeltje: het venster met de eigen Wiebel, de werelden, tabs en kaartjes.
+   Indeling op het podium van 1920×1080, binnen de safe area. */
+
+/* Venster met de Wiebel in zijn scène. De rand en het bijsnijden zitten binnenin, zodat de
+   focusrand van de knop eromheen niet wegvalt. */
+.venster {
+  position: absolute; left: 96px; top: 180px; width: 720px; height: 560px; padding: 0;
+  border-radius: 44px; background: var(--vlak);
+}
+.venster.groot { width: 760px; height: 800px; }
+.venster.heeft-focus { background: var(--vlak); }
+.venster-binnen { position: absolute; inset: 0; overflow: hidden; border: 6px solid var(--vlak-licht); border-radius: 44px; }
+.venster .scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.venster .bubbel { text-align: left; }
+.venster.groot .bubbel { max-width: 640px; }
+
+/* Hoofdmenu */
+.hoofdmenu .werelden { position: absolute; left: 870px; top: 170px; width: 954px; height: 700px; }
+.wereldknop {
+  position: absolute; width: 300px; height: 330px; padding: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  border-radius: 50%; background: transparent;
+}
+.wereldknop.heeft-focus { background: var(--vlak); }
+.wereldknop.heeft-focus::after { border-radius: 50%; }
+.wereld-emoji { font-size: 150px; line-height: 1.1; }
+.wereld-naam { font-size: 40px; font-weight: bold; white-space: nowrap; }
+.wereld-ondertitel { font-size: 40px; color: var(--tekst-zacht); white-space: nowrap; }
+.wereld-0 { left: 0; top: 0; }
+.wereld-1 { left: 327px; top: 0; }
+.wereld-2 { left: 654px; top: 0; }
+.wereld-3 { left: 163px; top: 350px; }
+.wereld-4 { left: 490px; top: 350px; }
+.aanpassen-knop { position: absolute; left: 96px; top: 772px; width: 720px; height: 100px; padding: 0; }
+.hoofdmenu .onderbalk { bottom: 60px; gap: 24px; }
+/* Versiering op vrije plekken, niet achter het venster of de knoppen */
+.hoofdmenu .decor-0 { left: 1000px; top: 70px; }
+.hoofdmenu .decor-3 { left: 1720px; top: 890px; }
+
+/* Vliegen naar een wereld en inzoomen */
+.vlieger { position: absolute; z-index: 5; overflow: visible; pointer-events: none; }
+.zoom {
+  position: absolute; inset: 0; z-index: 6; display: grid; place-items: center;
+  background: radial-gradient(circle, var(--vlak) 0%, var(--achtergrond) 75%);
+}
+.zoom[hidden] { display: none; }
+.zoom-inhoud { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.zoom-emoji { font-size: 260px; line-height: 1; }
+.zoom-naam { font-size: 90px; font-weight: bold; }
+.zoom-ondertitel { font-size: 48px; color: var(--tekst-zacht); }
+
+/* Aanpassen en winkeltje: rechts de kast met tabs en kaartjes */
+.kast { position: absolute; left: 900px; top: 180px; width: 924px; height: 846px; display: flex; flex-direction: column; gap: 16px; }
+.tabs { display: flex; gap: 4px; }
+.tab { width: 88px; height: 88px; padding: 0; font-size: 46px; }
+.tab.actief, .tab.actief.heeft-focus { background: var(--accent); }
+.plek-titel { margin: 0; font-size: 52px; display: flex; align-items: baseline; gap: 24px; }
+.plek-titel .klein { font-size: 40px; font-weight: normal; }
+
+/* Drie kaartjes per rij; de kast scrollt mee met de focus (venster.js). De binnenrand geeft de
+   focusrand ruimte. */
+.kaarten {
+  position: relative; flex: 1; min-height: 0; margin: -20px; padding: 20px;
+  overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--vlak-licht) transparent;
+  display: grid; grid-template-columns: repeat(3, 284px); gap: 24px 28px; align-content: start;
+}
+.kaart {
+  height: 300px; padding: 12px; border-radius: 32px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+}
+.kaart.aan { background: var(--vlak-licht); box-shadow: inset 0 0 0 6px var(--accent); }
+.kaart.aan::before { content: "✓"; position: absolute; top: 10px; right: 22px; font-size: 44px; font-weight: bold; color: var(--accent); }
+.kaart-beeld { flex: none; width: 100%; height: 124px; display: block; }
+.kaart-emoji { font-size: 96px; line-height: 124px; }
+.kaart-naam { font-size: 40px; font-weight: bold; line-height: 1.1; text-align: center; }
+.kaart-prijs { font-size: 40px; font-weight: bold; color: var(--accent); }
+
+/* De gele koopknop onderin het venster van het winkeltje */
+.koopknop {
+  position: absolute; left: 126px; top: 846px; width: 700px; height: 110px; padding: 0; z-index: 3;
+  background: var(--accent); color: var(--achtergrond); font-size: 48px; font-weight: bold;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, .3);
+}
+.koopknop.heeft-focus { background: var(--accent); }
+.koopknop:disabled { opacity: 1; background: var(--vlak); color: var(--tekst-zacht); }

@@ -1,6 +1,7 @@
 // Het profiel van een Wiebelaar: aanmaken en vaste keuzelijsten.
 
 import { STARTNIVEAUS } from './levels.js';
+import { migreerCosmetica } from './spullen.js';
 
 export const AVATARS = ['🐱', '🐶', '🦊', '🐼', '🐸', '🐵', '🦄', '🐲', '🐙', '🦖', '🐧', '🐰'];
 
@@ -22,7 +23,7 @@ export function nieuwProfiel({ naam, avatar, kleur = STANDAARD_KLEUR, thema = 'r
     moeilijkheid: {},
     verzameling: [],
     huisdier: { xp: 0 },
-    cosmetica: { gekocht: [], actief: {} },
+    cosmetica: { gekocht: [], aan: {} },
     records: {},
     aangemaakt: nu.toISOString(),
     bijgewerkt: nu.toISOString(),
@@ -33,5 +34,13 @@ export function nieuwProfiel({ naam, avatar, kleur = STANDAARD_KLEUR, thema = 'r
 // aangeroepen; wat er al staat, blijft staan. Geeft hetzelfde profiel terug.
 export function vulAan(profiel) {
   profiel.wiebel = { kleur: STANDAARD_KLEUR, ...profiel.wiebel };
+  // Het oude winkeltje (actief: hoed, kleur, deco) wordt omgezet naar spullen per plek (aan);
+  // munten voor wat niet meer bestaat, gaan terug. Na het omzetten is er 'aan', dus gebeurt dit één keer.
+  if (!profiel.cosmetica) profiel.cosmetica = { gekocht: [], aan: {} };
+  else if (!profiel.cosmetica.aan) {
+    const { cosmetica, terug } = migreerCosmetica(profiel.cosmetica);
+    profiel.cosmetica = cosmetica;
+    profiel.munten = (profiel.munten ?? 0) + terug;
+  }
   return profiel;
 }

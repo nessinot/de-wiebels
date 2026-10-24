@@ -2,7 +2,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { GROEI, KLEUREN, ROMP, STADIUM_NAMEN, wiebelSvg } from '../de-wiebels/frontend/js/wiebel.js';
 import { HUISDIER_GRENZEN, huisdierStadium } from '../de-wiebels/frontend/js/beloningen.js';
-import { MAX_DEELTJES, SCENES, achtergrond, rng } from '../de-wiebels/frontend/js/scene.js';
+import { DEELTJES, MAX_DEELTJES, SCENES, achtergrond, rng } from '../de-wiebels/frontend/js/scene.js';
+import { SPULLEN } from '../de-wiebels/frontend/js/spullen.js';
 
 const ONDERDELEN = [
   'w-schaduw', 'w-sprong', 'w-kantel', 'w-lijf', 'w-romp', 'w-buik', 'w-voeten', 'w-voet',
@@ -96,11 +97,8 @@ test('rng met een vast zaad geeft een vaste reeks', () => {
 });
 
 test('scènes hebben het verwachte aantal deeltjes', () => {
-  const bewegend = (s) => {
-    const t = s.achter + s.voor;
-    return aantal(t, 'class="twinkel"') + aantal(t, 'class="druppel"') + aantal(t, 'class="vlok"');
-  };
-  assert.deepEqual(SCENES, ['sterren', 'regen', 'sneeuw']);
+  const bewegend = (s) => DEELTJES.reduce((som, k) => som + aantal(s.achter + s.voor, `class="${k}"`), 0);
+  assert.equal(SCENES.length, 11);
   assert.equal(aantal(achtergrond('sterren', 'p').achter, 'class="twinkel"'), MAX_DEELTJES);
   assert.equal(aantal(achtergrond('regen', 'p').voor, 'class="druppel"'), MAX_DEELTJES);
   assert.equal(aantal(achtergrond('sneeuw', 'p').voor, 'class="vlok"'), MAX_DEELTJES);
@@ -112,6 +110,19 @@ test('scènes hebben het verwachte aantal deeltjes', () => {
   assert.equal(aantal(achtergrond('regen', 'p', { stil: true }).voor, 'class="druppel-lijn"'), MAX_DEELTJES);
   assert.equal(aantal(achtergrond('sneeuw', 'p', { stil: true }).voor, 'class="vlok-stil"'), MAX_DEELTJES);
   assert.deepEqual(achtergrond('geen', 'p'), { achter: '', voor: '' });
+});
+
+test('met een paraplu ketsen druppels af, en samen blijven ze binnen de grens', () => {
+  for (const groei of [0.7, 1]) {
+    const regen = achtergrond('regen', 'p', { paraplu: true, groei }).voor;
+    assert.ok(aantal(regen, 'class="spat"') > 0, `spatjes bij groei ${groei}`);
+    assert.ok(aantal(regen, 'class="druppel"') + aantal(regen, 'class="spat"') <= MAX_DEELTJES);
+  }
+  assert.equal(aantal(achtergrond('regen', 'p').voor, 'class="spat"'), 0);
+});
+
+test('elke achtergrond in de winkel is een scène', () => {
+  assert.deepEqual(SPULLEN.filter((s) => s.plek === 'achtergrond').map((s) => s.id), SCENES);
 });
 
 test('scènes zijn bij hetzelfde zaad steeds gelijk', () => {

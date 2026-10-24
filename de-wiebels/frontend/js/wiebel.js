@@ -3,6 +3,8 @@
 // Lagen: w-sprong (springen) > w-kantel (kantelen) > w-lijf (rustig wiebelen), zodat CSS- en
 // WAAPI-animaties elkaar niet in de weg zitten.
 
+import { spul } from './spullen.js';
+
 export const KLEUREN = {
   paars: { naam: 'Paars', lijf: '#9b6bff', donker: '#5f36c4', buik: '#cdb3ff', spriet: '#ffd23f' },
   groen: { naam: 'Groen', lijf: '#4fd27a', donker: '#24914a', buik: '#b0f2c6', spriet: '#ff8cc6' },
@@ -42,26 +44,34 @@ const STER = 'M0,-9 L2.5,-2.5 L9,0 L2.5,2.5 L0,9 L-2.5,2.5 L-9,0 L-2.5,-2.5 Z';
 const sterretjes = () =>
   `<g class="w-sterren">${STERREN.map(([sx, sy]) => `<g transform="translate(${sx} ${sy})"><path class="w-ster" d="${STER}"/></g>`).join('')}</g>`;
 
-// Lege plek waar later een spul in getekend kan worden.
-const plek = (naam) => `<g class="w-plek" data-plek="${naam}"></g>`;
-
-// staat: { kleur, stadium } met stadium 0–3 (standaard 3, volgroeid). prefix maakt de ids uniek als
-// er meer Wiebels op één pagina staan. x, y en schaal plaatsen de Wiebel in de omringende SVG
+// staat: { kleur, stadium, aan } met stadium 0–3 (standaard 3, volgroeid) en aan = { plek: id } uit
+// spullen.js (alleen de draagbare plekken worden hier getekend). prefix maakt de ids uniek als er
+// meer Wiebels op één pagina staan. x, y en schaal plaatsen de Wiebel in de omringende SVG
 // (schaal 1 = 240×260); het stadium verandert alleen de figuur binnen dat vak.
 export function wiebelSvg(staat, prefix, { x = 0, y = 0, schaal = 1 } = {}) {
   const k = KLEUREN[staat.kleur] ?? KLEUREN.paars;
   const stadium = GROEI[staat.stadium] === undefined ? GROEI.length - 1 : staat.stadium;
+  const aan = staat.aan ?? {};
+  const op = (naam) => {
+    const s = spul(aan[naam]);
+    return s?.plek === naam && s.teken ? s : null;
+  };
+  // Ankerplek met het spul dat daar aan is (of leeg).
+  const plek = (naam) => `<g class="w-plek" data-plek="${naam}">${op(naam)?.teken(prefix) ?? ''}</g>`;
+  const mouw = op('lijf')?.mouw;
+  const extra = `${op('hoofd') ? ' data-hoofd="1"' : ''}${op('hand') ? ` data-hand="${aan.hand}"` : ''}`;
   return `<svg class="wiebel" x="${x}" y="${y}" width="${240 * schaal}" height="${260 * schaal}" viewBox="${viewBox(GROEI[stadium])}"
-      style="overflow:visible;--lijf:${k.lijf};--donker:${k.donker};--buik:${k.buik};--spriet:${k.spriet}" data-mond="rust" data-stadium="${stadium}">
+      style="overflow:visible;--lijf:${k.lijf};--donker:${k.donker};--buik:${k.buik};--spriet:${k.spriet}${mouw ? `;--mouw:${mouw}` : ''}" data-mond="rust" data-stadium="${stadium}"${extra}>
     <defs><clipPath id="${prefix}-romp"><path d="${ROMP}"/></clipPath></defs>
     <ellipse class="w-schaduw" cx="120" cy="238" rx="58" ry="9"/>
     <g class="w-sprong"><g class="w-kantel"><g class="w-lijf">
       ${stadium === GROEI.length - 1 ? sterretjes() : ''}
       <g class="w-spriet-basis l"><g class="w-spriet l">${spriet(106, -14, SPRIET[stadium])}</g></g>
       <g class="w-spriet-basis r"><g class="w-spriet r">${spriet(134, 16, SPRIET[stadium])}</g></g>
+      ${op('lijf')?.achter?.(prefix) ?? ''}
       <g class="w-arm-basis l"><g class="w-arm l"><path class="w-arm-rand" d="M62,160 Q38,170 34,192"/><path class="w-arm-vul" d="M62,160 Q38,170 34,192"/></g></g>
       <g class="w-arm-basis r"><g class="w-arm r"><path class="w-arm-rand" d="M178,160 Q202,170 206,192"/><path class="w-arm-vul" d="M178,160 Q202,170 206,192"/>${plek('hand')}</g></g>
-      <g class="w-voeten"><ellipse class="w-voet" cx="94" cy="229" rx="17" ry="10"/><ellipse class="w-voet" cx="146" cy="229" rx="17" ry="10"/></g>
+      ${op('voeten') ? '' : '<g class="w-voeten"><ellipse class="w-voet" cx="94" cy="229" rx="17" ry="10"/><ellipse class="w-voet" cx="146" cy="229" rx="17" ry="10"/></g>'}
       <path class="w-romp" d="${ROMP}"/>
       <ellipse class="w-buik" cx="120" cy="190" rx="46" ry="34"/>
       <ellipse cx="88" cy="100" rx="14" ry="8" fill="#fff" opacity=".25" transform="rotate(-30 88 100)"/>

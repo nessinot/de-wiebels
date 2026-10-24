@@ -14,9 +14,14 @@ export function avatarHtml(profiel, klasse = '') {
   return `<span class="avatar ${klasse}">${profiel.avatar}</span>`;
 }
 
-// De eigen Wiebel van het profiel, in zijn kleur en groeistadium (huisdier.xp is de groeimaat).
+// De eigen Wiebel van het profiel: kleur, groeistadium (huisdier.xp is de groeimaat) en wat hij aan
+// heeft (spullen.js).
+export function eigenWiebelStaat(profiel) {
+  return { ...profiel.wiebel, stadium: huisdierStadium(profiel.huisdier.xp), aan: { ...profiel.cosmetica.aan } };
+}
+
 export function eigenWiebelHtml(profiel, prefix, opties) {
-  return wiebelSvg({ ...profiel.wiebel, stadium: huisdierStadium(profiel.huisdier.xp) }, prefix, opties);
+  return wiebelSvg(eigenWiebelStaat(profiel), prefix, opties);
 }
 
 export function themaKnoppen(huidig) {

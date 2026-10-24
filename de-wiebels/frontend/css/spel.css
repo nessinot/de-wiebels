@@ -143,34 +143,6 @@
 .sterren { color: var(--accent); letter-spacing: 4px; }
 .sterren .leeg { color: var(--tekst); opacity: 0.25; }
 
-/* Wereldkaart */
-.werelden {
-  position: relative;
-  flex: 1;
-}
-
-.wereldknop {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  min-width: 340px; /* lange namen maken de knop breder */
-  padding: 24px;
-  border-radius: 50%;
-  background: transparent;
-}
-
-.wereldknop.heeft-focus { background: var(--vlak); }
-.wereldknop.heeft-focus::after { border-radius: 50%; }
-.wereld-emoji { font-size: 170px; line-height: 1.1; }
-.wereld-ondertitel { font-size: 40px; color: var(--tekst-zacht); }
-.wereld-0 { left: 40px; top: 40px; }
-.wereld-1 { left: 420px; top: 300px; }
-.wereld-2 { left: 780px; top: 20px; }
-.wereld-3 { left: 1100px; top: 320px; }
-.wereld-4 { left: 1380px; top: 30px; }
-
 .knoppenrij {
   display: flex;
   justify-content: center;
@@ -491,55 +463,8 @@
   line-height: 1;
 }
 
-/* Winkeltje */
-.winkel-indeling {
-  display: flex;
-  gap: 56px;
-}
-
-.winkel-voorbeeld {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 48px;
-  width: 340px;
-  padding: 40px 0;
-  border-radius: 32px;
-  background: var(--vlak);
-}
-
-
-.winkel-schappen h2 { margin: 0 0 8px; font-size: 36px; }
-
-.winkel-rij {
-  display: flex;
-  gap: 24px;
-  margin-bottom: 16px;
-}
-
-.winkelknop {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  width: 220px;
-  padding: 10px;
-  font-size: 34px;
-}
-
+/* Aan: de gekozen knop in een rij (thema's, ouderscherm, animatieproef) */
 .winkel-aan { box-shadow: inset 0 0 0 5px var(--goed); }
-.winkel-emoji { font-size: 56px; line-height: 1; }
-
-.kleurstaal {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-}
-
-.winkel-melding { font-size: 40px; }
-
-.winkelknop .klein { font-size: 28px; }
 
 /* Tijdrace */
 .race-keuzes {

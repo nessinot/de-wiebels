@@ -29,6 +29,7 @@ function zetFocus(el) {
   laag.focus?.classList.remove('heeft-focus');
   laag.focus = el;
   el.classList.add('heeft-focus');
+  laag.inst.bijFocus?.(el);
 }
 
 // Na het opnieuw tekenen van een scherm: focus terugzetten als het element weg is.
