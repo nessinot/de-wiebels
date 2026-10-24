@@ -38,6 +38,8 @@ python de-wiebels/backend/server.py        # lokaal starten: spel op poort 8765,
 
 De stem en de muziek zijn vooraf gemaakt met ElevenLabs en staan in `de-wiebels/frontend/geluid/`. Na het wijzigen van zinnen in `zinnen.js` maakt `python tools/maak-stemmen.py` (met `ELEVENLABS_API_KEY` in de omgeving) alleen de nieuwe of gewijzigde opnamen.
 
+De emoji komen uit een eigen kleurenlettertype in `de-wiebels/frontend/fonts/`, een uitsnede van Noto Color Emoji (OFL). Na het toevoegen van nieuwe emoji maakt `python tools/maak-emojifont.py <Noto-COLRv1.ttf> <LICENSE>` (met fonttools, brotli en regex) het lettertype opnieuw; de test `tests/emojifont.test.js` meldt ontbrekende emoji.
+
 ## Licentie
 
 MIT, zie [LICENSE](LICENSE).

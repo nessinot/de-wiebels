@@ -29,8 +29,8 @@ test('muziek normaal in de menu\'s, zacht in de sommen en het intro', () => {
   assert.ok(MUZIEK_ZACHT < MUZIEK_NORMAAL);
 });
 
-test('stil op de profielkeuze en bij profiel maken, als de muziek uit staat of zonder stuk', () => {
-  for (const scherm of ['profielkeuze', 'profielMaken']) {
+test('stil op de profielkeuze en bij de eerste start, als de muziek uit staat of zonder stuk', () => {
+  for (const scherm of ['profielkeuze', 'eersteStart']) {
     assert.equal(muziekKeuze(MUZIEK, scherm, 'ruimte', true), null, scherm);
   }
   assert.equal(muziekKeuze(MUZIEK, 'wereldkaart', 'ruimte', false), null);
