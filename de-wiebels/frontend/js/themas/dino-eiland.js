@@ -39,10 +39,4 @@ export default {
     { naam: 'Slakkie', emoji: '🐌' },
     { naam: 'Schorpie', emoji: '🦂' },
   ],
-  huisdier: [
-    { naam: 'Dino-ei', emoji: '🥚' },
-    { naam: 'Kleine dino', emoji: '🦎' },
-    { naam: 'Langnek', emoji: '🦕' },
-    { naam: 'Koning Rex', emoji: '🦖' },
-  ],
 };

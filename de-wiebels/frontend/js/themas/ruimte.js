@@ -39,10 +39,4 @@ export default {
     { naam: 'Satelliet', emoji: '🛰️' },
     { naam: 'Vallertje', emoji: '🌠' },
   ],
-  huisdier: [
-    { naam: 'Ruimte-ei', emoji: '🥚' },
-    { naam: 'Kleine Wiebel', emoji: '👾' },
-    { naam: 'Grote Wiebel', emoji: '👽' },
-    { naam: 'Wiebel-kapitein', emoji: '🛸' },
-  ],
 };

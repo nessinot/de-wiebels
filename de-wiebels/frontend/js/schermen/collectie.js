@@ -1,11 +1,12 @@
-// Verzameling van Wiebels en het eigen huisdier.
+// Verzameling van Wiebels en de eigen Wiebel met zijn groei.
 
 import { maakEl, opKlik } from '../dom.js';
 import { HUISDIER_GRENZEN, huisdierStadium, totVolgendStadium, wiebelVoor } from '../beloningen.js';
 import { BELONINGEN } from '../levels.js';
 import { staat } from '../opslag.js';
 import { thema } from '../themas/index.js';
-import { huisdierHtml } from '../weergave.js';
+import { eigenWiebelHtml } from '../weergave.js';
+import { STADIUM_NAMEN } from '../wiebel.js';
 
 export const collectie = {
   maak({ terug }) {
@@ -24,16 +25,16 @@ export const collectie = {
       </div>
       <div class="collectie-indeling">
         <div class="huisdier-paneel">
-          ${huisdierHtml(p, t)}
-          <strong>${t.huisdier[stadium].naam}</strong>
+          ${eigenWiebelHtml(p, 'verzameling', { schaal: 1.3 })}
+          <strong>${STADIUM_NAMEN[stadium]}</strong>
           <div class="levensbalk groeibalk"><div style="transform: scaleX(${deel})"></div></div>
           <span class="klein">${nog === null ? 'Helemaal volgroeid!' : `Nog ${nog} goede antwoorden tot de volgende stap`}</span>
         </div>
         <div class="wiebels">
           ${BELONINGEN.map((id) => {
-            if (!p.verzameling.includes(id)) return '<span class="wiebel onbekend">?</span>';
+            if (!p.verzameling.includes(id)) return '<span class="wiebeltje onbekend">?</span>';
             const w = wiebelVoor(id, t);
-            return `<span class="wiebel" title="${w.naam}"><span style="filter: ${w.filter}">${w.emoji}</span></span>`;
+            return `<span class="wiebeltje" title="${w.naam}"><span style="filter: ${w.filter}">${w.emoji}</span></span>`;
           }).join('')}
         </div>
       </div>

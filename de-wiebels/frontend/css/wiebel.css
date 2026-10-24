@@ -36,6 +36,12 @@
 .wiebel[data-ogen="blij"] .w-ogen { display: none; }
 .wiebel[data-ogen="blij"] .w-blije-ogen { display: inline; }
 
+/* Sterretjes van de Super-Wiebel */
+.w-ster { fill: #fff3a8; transform-box: fill-box; transform-origin: center; animation: w-twinkel 2.4s ease-in-out infinite; }
+.w-sterren g:nth-child(2) .w-ster { animation-delay: -.8s; }
+.w-sterren g:nth-child(3) .w-ster { animation-delay: -1.6s; }
+@keyframes w-twinkel { 0%, 100% { opacity: .15; transform: scale(.5); } 50% { opacity: 1; transform: scale(1.1); } }
+
 @keyframes w-wiebel {
   0%, 100% { transform: rotate(0deg) scale(1, 1); }
   25% { transform: rotate(-2.5deg) scale(1.03, .97); }
@@ -100,6 +106,23 @@
 /* Stilstaande Wiebels en scènes, zoals in kaartjes. */
 .stil, .stil * { animation: none !important; }
 
+/* Kies je Wiebel: alleen de Wiebel met focus beweegt. */
+.wiebelkaarten { display: flex; justify-content: center; gap: 40px; margin-top: 170px; }
+.wiebelkaart { position: relative; display: flex; flex-direction: column; align-items: center; gap: 8px; width: 300px; padding: 24px 0; }
+.wiebelkaart .wiebel { display: block; margin: -150px -80px -20px; } /* lege ruimte van de Mini-Wiebel wegsnijden */
+.wiebelkaart span:last-child { font-size: 44px; }
+.wiebelkaart:not(.heeft-focus) .wiebel * { animation: none; }
+/* Ballon boven de kaart; aan de randen uitgelijnd op de kaart, zodat hij binnen de safe area blijft. */
+.wiebelkaart .bubbel { top: auto; bottom: calc(100% + 24px); left: 50%; transform: translateX(-50%); width: max-content; max-width: 480px; }
+.wiebelkaart .bubbel::after { right: auto; left: calc(50% - .45em); }
+.wiebelkaart:first-child .bubbel { left: 0; transform: none; }
+.wiebelkaart:first-child .bubbel::after { left: calc(150px - .45em); }
+.wiebelkaart:last-child .bubbel { left: auto; right: 0; transform: none; }
+.wiebelkaart:last-child .bubbel::after { left: auto; right: calc(150px - .45em); }
+
+/* De eigen Wiebel in de verzameling en bij het resultaat */
+.huisdier-paneel .wiebel, .beloning .wiebel { display: block; }
+
 @media (prefers-reduced-motion: reduce) {
-  .w-lijf, .w-ogen, .w-pupillen, .w-spriet, .w-arm, .twinkel, .drijf, .druppel, .vlok { animation: none; }
+  .w-lijf, .w-ogen, .w-pupillen, .w-spriet, .w-arm, .w-ster, .twinkel, .drijf, .druppel, .vlok { animation: none; }
 }

@@ -13,20 +13,52 @@ export const KLEUREN = {
 
 export const ROMP = 'M120,68 C165,68 192,110 194,160 C196,205 168,232 120,232 C72,232 44,205 46,160 C48,110 75,68 120,68 Z';
 
+// Groei op de stadia van HUISDIER_GRENZEN (beloningen.js): de hele figuur schaalt rond de grond,
+// de voelsprieten worden langer en het laatste stadium krijgt twinkelende sterretjes.
+export const STADIUM_NAMEN = ['Mini-Wiebel', 'Kleine Wiebel', 'Grote Wiebel', 'Super-Wiebel'];
+export const GROEI = [0.7, 0.8, 0.9, 1];
+const SPRIET = [0.6, 0.75, 0.9, 1];
+const GROND = 238;
+const STERREN = [[34, 104], [66, 50], [212, 116]];
+
+const rond = (n) => +n.toFixed(1);
+
+// Kleiner stadium = ruimere viewBox: de figuur krimpt binnen hetzelfde vak en blijft op de grond
+// staan. Alle coördinaten (draaipunten, ankerplekken) blijven zo gelijk.
+function viewBox(groei) {
+  const b = 240 / groei;
+  const h = 260 / groei;
+  return [120 - b / 2, GROND - GROND / groei, b, h].map(rond).join(' ');
+}
+
+// Voelspriet vanaf de basis (bx, 76) naar de punt (bx + dx, 40) bij volle lengte.
+function spriet(bx, dx, lengte) {
+  const tip = [rond(bx + dx * lengte), rond(76 - 36 * lengte)];
+  const knik = [rond(bx + Math.sign(dx) * 8 * lengte), rond(76 - 20 * lengte)];
+  return `<path class="w-spriet-steel" d="M${bx},76 Q${knik} ${tip}"/><circle class="w-spriet-bol" cx="${tip[0]}" cy="${rond(tip[1] - 2)}" r="9"/>`;
+}
+
+const STER = 'M0,-9 L2.5,-2.5 L9,0 L2.5,2.5 L0,9 L-2.5,2.5 L-9,0 L-2.5,-2.5 Z';
+const sterretjes = () =>
+  `<g class="w-sterren">${STERREN.map(([sx, sy]) => `<g transform="translate(${sx} ${sy})"><path class="w-ster" d="${STER}"/></g>`).join('')}</g>`;
+
 // Lege plek waar later een spul in getekend kan worden.
 const plek = (naam) => `<g class="w-plek" data-plek="${naam}"></g>`;
 
-// staat: { kleur }. prefix maakt de ids uniek als er meer Wiebels op één pagina staan.
-// x, y en schaal plaatsen de Wiebel in de omringende SVG (schaal 1 = 240×260).
+// staat: { kleur, stadium } met stadium 0–3 (standaard 3, volgroeid). prefix maakt de ids uniek als
+// er meer Wiebels op één pagina staan. x, y en schaal plaatsen de Wiebel in de omringende SVG
+// (schaal 1 = 240×260); het stadium verandert alleen de figuur binnen dat vak.
 export function wiebelSvg(staat, prefix, { x = 0, y = 0, schaal = 1 } = {}) {
   const k = KLEUREN[staat.kleur] ?? KLEUREN.paars;
-  return `<svg class="wiebel" x="${x}" y="${y}" width="${240 * schaal}" height="${260 * schaal}" viewBox="0 0 240 260"
-      style="overflow:visible;--lijf:${k.lijf};--donker:${k.donker};--buik:${k.buik};--spriet:${k.spriet}" data-mond="rust">
+  const stadium = GROEI[staat.stadium] === undefined ? GROEI.length - 1 : staat.stadium;
+  return `<svg class="wiebel" x="${x}" y="${y}" width="${240 * schaal}" height="${260 * schaal}" viewBox="${viewBox(GROEI[stadium])}"
+      style="overflow:visible;--lijf:${k.lijf};--donker:${k.donker};--buik:${k.buik};--spriet:${k.spriet}" data-mond="rust" data-stadium="${stadium}">
     <defs><clipPath id="${prefix}-romp"><path d="${ROMP}"/></clipPath></defs>
     <ellipse class="w-schaduw" cx="120" cy="238" rx="58" ry="9"/>
     <g class="w-sprong"><g class="w-kantel"><g class="w-lijf">
-      <g class="w-spriet-basis l"><g class="w-spriet l"><path class="w-spriet-steel" d="M106,76 Q98,56 92,40"/><circle class="w-spriet-bol" cx="92" cy="38" r="9"/></g></g>
-      <g class="w-spriet-basis r"><g class="w-spriet r"><path class="w-spriet-steel" d="M134,76 Q142,56 150,40"/><circle class="w-spriet-bol" cx="150" cy="38" r="9"/></g></g>
+      ${stadium === GROEI.length - 1 ? sterretjes() : ''}
+      <g class="w-spriet-basis l"><g class="w-spriet l">${spriet(106, -14, SPRIET[stadium])}</g></g>
+      <g class="w-spriet-basis r"><g class="w-spriet r">${spriet(134, 16, SPRIET[stadium])}</g></g>
       <g class="w-arm-basis l"><g class="w-arm l"><path class="w-arm-rand" d="M62,160 Q38,170 34,192"/><path class="w-arm-vul" d="M62,160 Q38,170 34,192"/></g></g>
       <g class="w-arm-basis r"><g class="w-arm r"><path class="w-arm-rand" d="M178,160 Q202,170 206,192"/><path class="w-arm-vul" d="M178,160 Q202,170 206,192"/>${plek('hand')}</g></g>
       <g class="w-voeten"><ellipse class="w-voet" cx="94" cy="229" rx="17" ry="10"/><ellipse class="w-voet" cx="146" cy="229" rx="17" ry="10"/></g>

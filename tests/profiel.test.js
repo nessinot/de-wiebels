@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { maakOpslag, STANDAARD_INSTELLINGEN } from '../de-wiebels/frontend/js/opslag.js';
-import { nieuwProfiel, MAX_NAAM } from '../de-wiebels/frontend/js/profiel.js';
+import { nieuwProfiel, MAX_NAAM, vulAan } from '../de-wiebels/frontend/js/profiel.js';
 
 function nepOpslag() {
   const data = new Map();
@@ -16,6 +16,34 @@ test('nieuw profiel volgt het datamodel en het gekozen startniveau', () => {
   assert.equal(p.munten, 0);
   assert.deepEqual(p.verzameling, []);
   assert.match(p.id, /^p-[a-z0-9]+$/);
+  assert.deepEqual(p.wiebel, { kleur: 'paars' });
+  assert.deepEqual(p.huisdier, { xp: 0 });
+});
+
+test('nieuw profiel krijgt de gekozen Wiebel-kleur', () => {
+  const p = nieuwProfiel({ naam: 'Speler 1', avatar: '🐱', kleur: 'blauw' });
+  assert.deepEqual(p.wiebel, { kleur: 'blauw' });
+});
+
+test('vulAan geeft een oud profiel een paarse Wiebel en laat de rest staan', () => {
+  const oud = nieuwProfiel({ naam: 'Speler 1', avatar: '🐱' });
+  delete oud.wiebel;
+  oud.huisdier.xp = 120;
+  const kopie = structuredClone(oud);
+  assert.equal(vulAan(oud), oud);
+  assert.deepEqual(oud, { ...kopie, wiebel: { kleur: 'paars' } });
+  vulAan(oud);
+  assert.deepEqual(oud, { ...kopie, wiebel: { kleur: 'paars' } }, 'dubbel aanroepen verandert niets');
+  const groen = vulAan(nieuwProfiel({ naam: 'Speler 2', avatar: '🐶', kleur: 'groen' }));
+  assert.deepEqual(groen.wiebel, { kleur: 'groen' }, 'een gekozen kleur blijft');
+});
+
+test('profielen worden bij het laden aangevuld', () => {
+  const opslag = nepOpslag();
+  const oud = nieuwProfiel({ naam: 'Speler 1', avatar: '🐱' });
+  delete oud.wiebel;
+  opslag.setItem('wiebels:profielen', JSON.stringify({ [oud.id]: oud }));
+  assert.deepEqual(maakOpslag(() => opslag).alleProfielen()[0].wiebel, { kleur: 'paars' });
 });
 
 test('naam wordt ingekort tot de maximale lengte', () => {

@@ -1,4 +1,4 @@
-// Nieuw profiel in vier stappen: naam, avatar, thema, startniveau.
+// Nieuw profiel in vijf stappen: naam, avatar, Wiebel-kleur, thema, startniveau.
 
 import { esc, maakEl, opKlik } from '../dom.js';
 import { STARTNIVEAUS } from '../levels.js';
@@ -6,15 +6,20 @@ import { opslag, staat } from '../opslag.js';
 import { AVATARS, MAX_NAAM, nieuwProfiel } from '../profiel.js';
 import { pasThemaToe, STANDAARD_THEMA } from '../themas/index.js';
 import { themaKnoppen } from '../weergave.js';
+import { KLEUREN, wiebelSvg } from '../wiebel.js';
+import { blij, maakSpreker } from '../wiebel-beweging.js';
+import { willekeurigeZin } from '../zinnen.js';
 
 const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-const STAPPEN = ['naam', 'avatar', 'thema', 'niveau'];
+const STAPPEN = ['naam', 'avatar', 'wiebel', 'thema', 'niveau'];
+const NA_KLEURKEUZE = 2400; // ms: de gekozen Wiebel springt en zegt iets voor de volgende stap
 
 export const profielMaken = {
   maak({ toon, zetFocus, herstelFocus }) {
     const el = maakEl();
     const keuze = { naam: '', avatar: null, thema: STANDAARD_THEMA };
     let stap = 0;
+    let wachtOpVolgende = null;
 
     function tekenNaam() {
       return `
@@ -38,6 +43,21 @@ export const profielMaken = {
       `;
     }
 
+    // De Wiebels als grote kaarten, in het stadium waarin een nieuw profiel begint.
+    function tekenWiebel() {
+      return `
+        <h1>Kies je Wiebel</h1>
+        <div class="wiebelkaarten">
+          ${Object.entries(KLEUREN).map(([id, k]) => `
+            <button class="knop wiebelkaart" data-focus data-actie="kleur" data-waarde="${id}">
+              <span class="bubbel" hidden></span>
+              ${wiebelSvg({ kleur: id, stadium: 0 }, `kies-${id}`, { schaal: 1.6 })}
+              <span>${k.naam}</span>
+            </button>`).join('')}
+        </div>
+      `;
+    }
+
     function tekenThema() {
       return `<h1>Kies je wereld</h1>${themaKnoppen(keuze.thema)}`;
     }
@@ -56,7 +76,7 @@ export const profielMaken = {
     }
 
     function teken() {
-      el.innerHTML = { naam: tekenNaam, avatar: tekenAvatar, thema: tekenThema, niveau: tekenNiveau }[STAPPEN[stap]]();
+      el.innerHTML = { naam: tekenNaam, avatar: tekenAvatar, wiebel: tekenWiebel, thema: tekenThema, niveau: tekenNiveau }[STAPPEN[stap]]();
       herstelFocus();
     }
 
@@ -85,9 +105,20 @@ export const profielMaken = {
         stap = 2;
         teken();
       },
+      kleur(id, kaart) {
+        if (wachtOpVolgende) return;
+        keuze.kleur = id;
+        blij(kaart.querySelector('.wiebel'));
+        maakSpreker(kaart, true)(willekeurigeZin('kleurGekozen').tekst);
+        wachtOpVolgende = setTimeout(() => {
+          wachtOpVolgende = null;
+          stap = 3;
+          teken();
+        }, NA_KLEURKEUZE);
+      },
       thema(id) {
         keuze.thema = id;
-        stap = 3;
+        stap = 4;
         teken();
       },
       niveau(startniveau) {
@@ -104,6 +135,8 @@ export const profielMaken = {
       el,
       bijToets({ actie }) {
         if (actie !== 'terug' || stap === 0) return false;
+        clearTimeout(wachtOpVolgende);
+        wachtOpVolgende = null;
         stap -= 1;
         teken();
         return true;

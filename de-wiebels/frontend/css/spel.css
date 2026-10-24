@@ -447,8 +447,8 @@
   text-align: center;
 }
 
-.huisdier { font-size: 200px; line-height: 1; display: inline-block; animation: zweef 3s ease-in-out infinite; }
 .huisdier-paneel strong { font-size: 52px; }
+.groeibalk { background: var(--achtergrond); } /* het paneel heeft zelf de kleur van het vlak */
 .groeibalk div { background: var(--goed); }
 
 .wiebels {
@@ -458,7 +458,7 @@
   align-content: start;
 }
 
-.wiebel {
+.wiebeltje {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -469,7 +469,7 @@
   font-size: 72px;
 }
 
-.wiebel.onbekend { color: var(--tekst-zacht); opacity: 0.4; font-size: 56px; }
+.wiebeltje.onbekend { color: var(--tekst-zacht); opacity: 0.4; font-size: 56px; }
 
 .beloningen { min-height: 120px; }
 
@@ -480,10 +480,9 @@
   font-size: 44px;
 }
 
-.beloning .huisdier { font-size: 100px; }
 .onderbalk { position: absolute; left: 0; right: 0; bottom: 54px; }
 
-/* Avatar met cosmetica */
+/* Avatar */
 .avatar {
   position: relative;
   display: inline-flex;
@@ -491,31 +490,6 @@
   justify-content: center;
   line-height: 1;
 }
-
-.avatar-gezicht { position: relative; }
-
-.avatar-rand {
-  position: absolute;
-  inset: -0.12em;
-  border-radius: 50%;
-  opacity: 0.85;
-}
-
-.avatar-hoed {
-  position: absolute;
-  top: -0.45em;
-  font-size: 0.6em;
-}
-
-.avatar-deco {
-  position: absolute;
-  right: -0.35em;
-  bottom: -0.1em;
-  font-size: 0.45em;
-  animation: zweef 2.5s ease-in-out infinite;
-}
-
-.huisdier { position: relative; }
 
 /* Winkeltje */
 .winkel-indeling {
@@ -535,7 +509,6 @@
   background: var(--vlak);
 }
 
-.winkel-voorbeeld .huisdier { font-size: 140px; }
 
 .winkel-schappen h2 { margin: 0 0 8px; font-size: 36px; }
 

@@ -5,7 +5,9 @@ import { maakEl, opKlik } from '../dom.js';
 import { LEVELS, levelOpen, levelVan } from '../levels.js';
 import { staat } from '../opslag.js';
 import { thema } from '../themas/index.js';
-import { sterrenHtml } from '../weergave.js';
+import { eigenWiebelHtml, sterrenHtml } from '../weergave.js';
+import { STADIUM_NAMEN } from '../wiebel.js';
+import { blij } from '../wiebel-beweging.js';
 
 const TEKSTEN = ['Goed geoefend!', 'Mooi zo!', 'Heel goed!', 'Fantastisch!'];
 
@@ -22,11 +24,11 @@ export const resultaat = {
       const delen = [];
       if (gegevens.nieuweWiebel) {
         const w = wiebelVoor(level.id, t);
-        delen.push(`<span class="beloning"><span class="wiebel"><span style="filter: ${w.filter}">${w.emoji}</span></span> Nieuwe Wiebel: ${w.naam}!</span>`);
+        delen.push(`<span class="beloning"><span class="wiebeltje"><span style="filter: ${w.filter}">${w.emoji}</span></span> Nieuwe Wiebel: ${w.naam}!</span>`);
       }
       if (gegevens.gegroeid) {
-        const h = t.huisdier[huisdierStadium(p.huisdier.xp)];
-        delen.push(`<span class="beloning"><span class="huisdier">${h.emoji}</span> Je huisdier is gegroeid: ${h.naam}!</span>`);
+        const naam = STADIUM_NAMEN[huisdierStadium(p.huisdier.xp)];
+        delen.push(`<span class="beloning">${eigenWiebelHtml(p, 'resultaat', { schaal: 0.8 })} Je Wiebel is gegroeid: ${naam}!</span>`);
       }
       return delen.join('');
     }
@@ -42,6 +44,9 @@ export const resultaat = {
         <button class="knop" data-focus data-actie="levels">Naar de levels</button>
       </div>
     `);
+
+    const wiebel = el.querySelector('.beloning .wiebel');
+    if (wiebel) setTimeout(() => blij(wiebel), 400);
 
     opKlik(el, {
       volgende: () => toon('ronde', { levelId: volgende.id }, { vervang: true }),

@@ -4,8 +4,7 @@ import { maakEl, opKlik } from '../dom.js';
 import { SOORTEN, WINKEL, item, koop, wissel } from '../cosmetica.js';
 import { speel } from '../geluid.js';
 import { bewaar, staat } from '../opslag.js';
-import { thema } from '../themas/index.js';
-import { avatarHtml, huisdierHtml } from '../weergave.js';
+import { avatarHtml, eigenWiebelHtml } from '../weergave.js';
 
 export const winkel = {
   maak({ terug, zetFocus }) {
@@ -34,7 +33,7 @@ export const winkel = {
         <div class="winkel-indeling">
           <div class="winkel-voorbeeld">
             ${avatarHtml(p, 'avatar-groot')}
-            ${huisdierHtml(p, thema(p.thema))}
+            ${eigenWiebelHtml(p, 'winkel')}
           </div>
           <div class="winkel-schappen">
             ${Object.entries(SOORTEN).map(([soort, titel]) => `

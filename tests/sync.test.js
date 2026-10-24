@@ -51,6 +51,7 @@ test('export en import: alles komt terug, ook de instellingen', () => {
   assert.deepEqual(leesImport(tekst, doel), { ok: true, aantal: 1 });
   assert.equal(doel.alleProfielen()[0].naam, 'Speler 1');
   assert.equal(doel.instellingen().pin, '4321');
+  assert.deepEqual(doel.profielenPerId().a.wiebel, { kleur: 'paars' }, 'na het samenvoegen aangevuld');
 });
 
 test('import weigert vreemde bestanden', () => {

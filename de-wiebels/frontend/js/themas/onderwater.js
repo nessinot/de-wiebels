@@ -39,10 +39,4 @@ export default {
     { naam: 'Schildpadje', emoji: '🐢' },
     { naam: 'Garnaal', emoji: '🦐' },
   ],
-  huisdier: [
-    { naam: 'Druppeltje', emoji: '💧' },
-    { naam: 'Visje', emoji: '🐟' },
-    { naam: 'Tropenvis', emoji: '🐠' },
-    { naam: 'Dolfijn', emoji: '🐬' },
-  ],
 };

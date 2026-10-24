@@ -2,6 +2,7 @@
 // Bij een verschil wint de versie die het laatst is bijgewerkt.
 
 import { opslag as standaardOpslag, STANDAARD_INSTELLINGEN } from './opslag.js';
+import { vulAan } from './profiel.js';
 
 const API = 'api/profielen';
 const WACHT_NA_WIJZIGING = 2000;
@@ -48,6 +49,7 @@ export async function synchroniseer(opslag = standaardOpslag) {
     const server = await vraag(API);
     if (!Array.isArray(server)) throw new Error('onverwacht antwoord');
     const { lokaal, upload, verwijder } = samenvoegen(opslag.profielenPerId(), server, opslag.verwijderd());
+    Object.values(lokaal).forEach(vulAan);
     opslag.zetProfielenPerId(lokaal);
     for (const p of upload) await vraag(`${API}/${p.id}`, { method: 'PUT', body: JSON.stringify(p) });
     for (const id of verwijder) await vraag(`${API}/${id}`, { method: 'DELETE' });
@@ -88,6 +90,7 @@ export function leesImport(tekst, opslag = standaardOpslag) {
   if (data?.app !== 'de-wiebels' || !Array.isArray(data.profielen)) return { ok: false, reden: 'Dit is geen exportbestand van De Wiebels.' };
   const geldig = data.profielen.filter((p) => p && typeof p.id === 'string' && typeof p.bijgewerkt === 'string');
   const { lokaal } = samenvoegen(opslag.profielenPerId(), geldig, []);
+  Object.values(lokaal).forEach(vulAan);
   opslag.zetProfielenPerId(lokaal);
   opslag.zetVerwijderd(opslag.verwijderd().filter((id) => !geldig.some((p) => p.id === id)));
   if (data.instellingen) opslag.bewaarInstellingen({ ...STANDAARD_INSTELLINGEN, ...data.instellingen });

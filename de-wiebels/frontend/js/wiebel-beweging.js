@@ -115,6 +115,37 @@ export function bijna(w) {
   ], { duration: 1600 });
 }
 
+// Nat: omhoog kijken en zich dan uitschudden, met wegspattende druppels.
+export function schud(w) {
+  if (rustig()) return;
+  w.querySelector('.w-blik').animate([
+    { transform: 'translate(0, 0)' }, { transform: 'translate(0, -7px)', offset: 0.15 }, { transform: 'translate(0, -7px)', offset: 0.5 },
+    { transform: 'translate(0, 0)', offset: 0.56 }, { transform: 'translate(0, 0)' },
+  ], { duration: 2400 });
+  w.querySelector('.w-kantel').animate([
+    { transform: 'rotate(0deg)' }, { transform: 'rotate(0deg)', offset: 0.55 },
+    { transform: 'rotate(-7deg)', offset: 0.62 }, { transform: 'rotate(7deg)', offset: 0.69 }, { transform: 'rotate(-6deg)', offset: 0.76 },
+    { transform: 'rotate(6deg)', offset: 0.83 }, { transform: 'rotate(-3deg)', offset: 0.9 }, { transform: 'rotate(0deg)' },
+  ], { duration: 2400 });
+  setTimeout(() => deeltjes(w, ['💧', '💧', '💧', '💧'], { x: 40, y: 76, b: 160, h: 80 }), 1350);
+}
+
+// Koud: rillen.
+export function ril(w) {
+  if (rustig()) return;
+  w.querySelector('.w-sprong').animate([
+    { transform: 'translateX(0)' }, { transform: 'translateX(-3px)' }, { transform: 'translateX(3px)' }, { transform: 'translateX(-3px)' },
+    { transform: 'translateX(3px)' }, { transform: 'translateX(-2px)' }, { transform: 'translateX(2px)' }, { transform: 'translateX(0)' },
+  ], { duration: 700, iterations: 2 });
+}
+
+// Tevreden: even blije ogen, zonder het praten te onderbreken.
+export function tevreden(w) {
+  if (w.dataset.mond === 'open') return;
+  w.dataset.ogen = 'blij';
+  later(w, 1500, () => { w.dataset.ogen = ''; });
+}
+
 // Praten: de tekst verschijnt letter voor letter in de .bubbel van het venster, en de mond van elke
 // Wiebel in het venster gaat open op klinkers, half op medeklinkers en dicht op spaties.
 // Geeft praat(tekst) terug; praat.stop() breekt af. blijftStaan: de ballon blijft na afloop zichtbaar.

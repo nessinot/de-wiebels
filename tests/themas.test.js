@@ -15,7 +15,6 @@ for (const [id, t] of Object.entries(THEMAS)) {
       assert.ok(t.eindbazen[v]?.naam && t.eindbazen[v]?.emoji, `eindbaas ${v}`);
     }
     assert.ok(t.wiebels.length >= 10);
-    assert.equal(t.huisdier.length, 4);
     assert.ok(t.decor.length >= 4);
   });
 }

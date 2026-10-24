@@ -39,10 +39,4 @@ export default {
     { naam: 'Takje', emoji: '🌳' },
     { naam: 'Nootje', emoji: '🐿️' },
   ],
-  huisdier: [
-    { naam: 'Drakenei', emoji: '🥚' },
-    { naam: 'Draakje', emoji: '🦎' },
-    { naam: 'Draak', emoji: '🐉' },
-    { naam: 'Oerdraak', emoji: '🐲' },
-  ],
 };

@@ -1,5 +1,7 @@
 // Opslag van profielen en instellingen in de browser (localStorage).
 
+import { vulAan } from './profiel.js';
+
 const PROFIELEN = 'wiebels:profielen';
 const INSTELLINGEN = 'wiebels:instellingen';
 const VERWIJDERD = 'wiebels:verwijderd';
@@ -20,7 +22,7 @@ export function maakOpslag(geefOpslag = () => localStorage) {
     // Wordt aangeroepen na elke wijziging (de synchronisatie haakt hierop in).
     opWijziging: () => {},
     alleProfielen() {
-      return Object.values(lees(PROFIELEN, {})).sort((a, b) => a.aangemaakt.localeCompare(b.aangemaakt));
+      return Object.values(lees(PROFIELEN, {})).map(vulAan).sort((a, b) => a.aangemaakt.localeCompare(b.aangemaakt));
     },
     bewaarProfiel(profiel) {
       profiel.bijgewerkt = new Date().toISOString();
