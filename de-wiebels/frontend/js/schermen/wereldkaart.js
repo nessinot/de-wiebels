@@ -1,7 +1,7 @@
 // Wereldkaart: elke vaardigheid is een wereld.
 
 import { maakEl, opKlik } from '../dom.js';
-import { VAARDIGHEDEN, LEVELS, levelOpen } from '../levels.js';
+import { VAARDIGHEDEN, LEVELS, ONDERTITELS, levelOpen } from '../levels.js';
 import { staat } from '../opslag.js';
 import { thema } from '../themas/index.js';
 import { topbalk } from '../weergave.js';
@@ -23,6 +23,7 @@ export const wereldkaart = {
               <button class="knop wereldknop wereld-${i}" data-focus data-actie="wereld" data-waarde="${v}" ${open ? '' : 'disabled'}>
                 <span class="wereld-emoji">${open ? t.werelden[v].emoji : '🔒'}</span>
                 <span>${t.werelden[v].naam}</span>
+                <span class="wereld-ondertitel">${ONDERTITELS[v]}</span>
               </button>`;
           }).join('')}
         </div>

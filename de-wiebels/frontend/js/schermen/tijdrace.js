@@ -5,7 +5,7 @@ import { maakEl, opKlik } from '../dom.js';
 import { speel } from '../geluid.js';
 import { maakVragen } from '../generators/index.js';
 import { registreer } from '../leitner.js';
-import { VAARDIGHEDEN } from '../levels.js';
+import { ONDERTITELS, VAARDIGHEDEN } from '../levels.js';
 import { bewaar, staat } from '../opslag.js';
 import { RACE_LENGTE, raceLevel, registreerTijd, tijdTekst } from '../records.js';
 import { beantwoord, huidigeVraag, nieuweRonde } from '../ronde.js';
@@ -35,6 +35,7 @@ export const tijdraceKeuze = {
             return `
               <button class="knop keuzeknop" data-focus data-actie="race" data-waarde="${v}" ${level ? '' : 'disabled'}>
                 <strong>${t.werelden[v].emoji} ${t.werelden[v].naam}</strong>
+                <span>${ONDERTITELS[v]}</span>
                 <span>${level ? level.label : 'Nog op slot'}</span>
                 <span>Record: ${record === undefined ? '—' : tijdTekst(record)}</span>
               </button>`;

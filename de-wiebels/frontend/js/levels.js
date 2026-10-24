@@ -2,6 +2,15 @@
 
 export const VAARDIGHEDEN = ['plus', 'min', 'keer', 'delen', 'klok'];
 
+// Wat je in een wereld oefent; staat in elk thema bij de wereldnaam.
+export const ONDERTITELS = {
+  plus: 'Plussommen',
+  min: 'Minsommen',
+  keer: 'Keersommen',
+  delen: 'Deelsommen',
+  klok: 'Klokkijken',
+};
+
 const TAFELVOLGORDE = [1, 2, 10, 5, 3, 4, 6, 7, 8, 9];
 
 function tafels(vaardigheid, label) {
