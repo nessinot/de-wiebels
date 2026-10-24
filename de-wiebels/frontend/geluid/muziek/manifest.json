@@ -1,0 +1,27 @@
+{
+ "dierenopvang": {
+  "beschrijving": "Quiet, calm background music for a children's learning game, instrumental only, no vocals, no drums, slow tempo, gentle and friendly, seamless loop that ends the way it begins. Cosy animal shelter theme: soft acoustic guitar, glockenspiel and pizzicato strings.",
+  "bestand": "dierenopvang.mp3",
+  "lengte_ms": 40000
+ },
+ "dino-eiland": {
+  "beschrijving": "Quiet, calm background music for a children's learning game, instrumental only, no vocals, no drums, slow tempo, gentle and friendly, seamless loop that ends the way it begins. Playful tropical island theme: soft marimba, light ukulele and shakers.",
+  "bestand": "dino-eiland.mp3",
+  "lengte_ms": 40000
+ },
+ "magisch-bos": {
+  "beschrijving": "Quiet, calm background music for a children's learning game, instrumental only, no vocals, no drums, slow tempo, gentle and friendly, seamless loop that ends the way it begins. Magical forest theme: soft harp, gentle flute and a little celesta.",
+  "bestand": "magisch-bos.mp3",
+  "lengte_ms": 40000
+ },
+ "onderwater": {
+  "beschrijving": "Quiet, calm background music for a children's learning game, instrumental only, no vocals, no drums, slow tempo, gentle and friendly, seamless loop that ends the way it begins. Underwater theme: mellow vibraphone, bubbly soft synth and warm pads.",
+  "bestand": "onderwater.mp3",
+  "lengte_ms": 40000
+ },
+ "ruimte": {
+  "beschrijving": "Quiet, calm background music for a children's learning game, instrumental only, no vocals, no drums, slow tempo, gentle and friendly, seamless loop that ends the way it begins. Space theme: soft dreamy synth pads, twinkling bells and a light music box melody.",
+  "bestand": "ruimte.mp3",
+  "lengte_ms": 40000
+ }
+}

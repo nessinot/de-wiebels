@@ -1,4 +1,5 @@
 // Geluiden met de Web Audio API, zonder audiobestanden. Vrolijk bij goed, zacht en neutraal bij fout.
+// (Alleen de stem en de muziek zijn bestanden: zie stem.js en muziek.js.)
 
 import { opslag } from './opslag.js';
 
@@ -14,8 +15,12 @@ function ontgrendel() {
   if (ctx.state === 'suspended') ctx.resume();
 }
 
-window.addEventListener('keydown', ontgrendel);
-window.addEventListener('pointerdown', ontgrendel);
+// (Onder Node, in de tests, is er geen window.)
+globalThis.addEventListener?.('keydown', ontgrendel);
+globalThis.addEventListener?.('pointerdown', ontgrendel);
+
+// Dezelfde AudioContext voor de stem en de muziek (stem.js, muziek.js); null tot de eerste toets.
+export const geefContext = () => ctx;
 
 function noot(frequentie, start, duur, { type = 'sine', volume = 0.18 } = {}) {
   const osc = ctx.createOscillator();

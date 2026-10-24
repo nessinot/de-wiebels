@@ -27,7 +27,7 @@ In het ouderscherm kun je:
 - per kind de niveaus per vaardigheid en de tijdsdruk bij eindbazen instellen;
 - de zwakke plekken per kind bekijken;
 - profielen verwijderen;
-- het geluid aan- of uitzetten;
+- het geluid, de stem van de Wiebel en de muziek elk apart aan- of uitzetten (dit geldt per tv);
 - alle data exporteren en importeren als JSON-bestand (handig als back-up, vooral op een computer);
 - de bedieningstest openen.
 

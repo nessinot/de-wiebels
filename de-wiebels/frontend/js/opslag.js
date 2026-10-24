@@ -6,7 +6,7 @@ const PROFIELEN = 'wiebels:profielen';
 const INSTELLINGEN = 'wiebels:instellingen';
 const VERWIJDERD = 'wiebels:verwijderd';
 
-export const STANDAARD_INSTELLINGEN = { geluid: true, pin: '1234' };
+export const STANDAARD_INSTELLINGEN = { geluid: true, stem: true, muziek: true, pin: '1234' };
 
 export function maakOpslag(geefOpslag = () => localStorage) {
   const lees = (sleutel, standaard) => {

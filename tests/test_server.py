@@ -43,6 +43,13 @@ class ServerTest(unittest.TestCase):
         _, _, headers = self.vraag_ruw("/js/main.js")
         self.assertIn("text/javascript", headers["Content-Type"])
 
+    def test_stem_en_muziek_als_mp3(self):
+        status, _, headers = self.vraag_ruw("/geluid/stem/goed-1.mp3")
+        self.assertEqual(status, 200)
+        self.assertEqual(headers["Content-Type"], "audio/mpeg")
+        _, _, headers = self.vraag_ruw("/geluid/muziek/ruimte.mp3")
+        self.assertEqual(headers["Content-Type"], "audio/mpeg")
+
     def vraag_ruw(self, pad):
         with urlopen(self.basis + pad) as antwoord:
             antwoord.read()

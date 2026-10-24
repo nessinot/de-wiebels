@@ -1,5 +1,5 @@
-// Ouderscherm: profielen beheren, niveaus en tijdsdruk per kind, zwakke plekken, geluid, pincode,
-// export en import.
+// Ouderscherm: profielen beheren, niveaus en tijdsdruk per kind, zwakke plekken, geluid, stem,
+// muziek, pincode, export en import.
 
 import { esc, maakEl, opKlik } from '../dom.js';
 import { zwakkePlekken } from '../leitner.js';
@@ -59,6 +59,8 @@ export const ouderscherm = {
         <h2>Algemeen</h2>
         <div class="ouder-knoppen">
           <button class="knop" data-focus data-actie="geluid">Geluid: ${inst.geluid ? 'aan' : 'uit'}</button>
+          <button class="knop" data-focus data-actie="stem">Stem: ${inst.stem ? 'aan' : 'uit'}</button>
+          <button class="knop" data-focus data-actie="muziek">Muziek: ${inst.muziek ? 'aan' : 'uit'}</button>
           <button class="knop" data-focus data-actie="pin">${pinTekst}</button>
           <button class="knop" data-focus data-actie="exporteer">Alle data exporteren</button>
           <button class="knop" data-focus data-actie="importeer">Data importeren</button>
@@ -92,6 +94,13 @@ export const ouderscherm = {
       // Een niveauknop die aan het eind uitgeschakeld raakt: focus naar de knop de andere kant op.
       if (doel?.disabled) doel = el.querySelector(`[data-waarde="${focusActie.replace(/:(-?)1$/, (_, min) => (min ? ':1' : ':-1'))}"]`);
       zetFocus(doel);
+    }
+
+    // Geluid, stem of muziek aan of uit (lokaal, per tv).
+    function wissel(sleutel) {
+      const inst = opslag.instellingen();
+      opslag.bewaarInstellingen({ ...inst, [sleutel]: !inst[sleutel] });
+      teken(sleutel);
     }
 
     function wijzigProfiel(aanpassing, focus) {
@@ -128,11 +137,9 @@ export const ouderscherm = {
         bevestigVerwijderen = null;
         teken('algemeen');
       },
-      geluid() {
-        const inst = opslag.instellingen();
-        opslag.bewaarInstellingen({ ...inst, geluid: !inst.geluid });
-        teken('geluid');
-      },
+      geluid: () => wissel('geluid'),
+      stem: () => wissel('stem'),
+      muziek: () => wissel('muziek'),
       pin() {
         nieuwePin = '';
         melding = '';

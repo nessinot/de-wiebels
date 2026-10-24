@@ -1,0 +1,314 @@
+{
+ "model": "eleven_multilingual_v2",
+ "stem": "7qdUFMklKPaaAVMsBTBt",
+ "zinnen": {
+  "aangetrokken-1": {
+   "bestand": "aangetrokken-1.mp3",
+   "tekst": "Kijk eens!"
+  },
+  "aangetrokken-2": {
+   "bestand": "aangetrokken-2.mp3",
+   "tekst": "Hoe sta ik?"
+  },
+  "aangetrokken-3": {
+   "bestand": "aangetrokken-3.mp3",
+   "tekst": "Mooi, hè?"
+  },
+  "aangewezen-1": {
+   "bestand": "aangewezen-1.mp3",
+   "tekst": "Hihi, dat kietelt!"
+  },
+  "aangewezen-2": {
+   "bestand": "aangewezen-2.mp3",
+   "tekst": "Hoi! Daar ben ik!"
+  },
+  "aangewezen-3": {
+   "bestand": "aangewezen-3.mp3",
+   "tekst": "Wil je me iets anders aantrekken?"
+  },
+  "aanpassen-welkom-1": {
+   "bestand": "aanpassen-welkom-1.mp3",
+   "tekst": "Wat zal ik eens aandoen?"
+  },
+  "aanpassen-welkom-2": {
+   "bestand": "aanpassen-welkom-2.mp3",
+   "tekst": "Maak me maar mooi!"
+  },
+  "achtergrond-1": {
+   "bestand": "achtergrond-1.mp3",
+   "tekst": "Wat een mooie plek!"
+  },
+  "achtergrond-2": {
+   "bestand": "achtergrond-2.mp3",
+   "tekst": "Hier vind ik het fijn!"
+  },
+  "al-gekocht-1": {
+   "bestand": "al-gekocht-1.mp3",
+   "tekst": "Die heb je al!"
+  },
+  "al-gekocht-2": {
+   "bestand": "al-gekocht-2.mp3",
+   "tekst": "Die is al van ons!"
+  },
+  "baas-gewonnen-1": {
+   "bestand": "baas-gewonnen-1.mp3",
+   "tekst": "We hebben gewonnen!"
+  },
+  "baas-gewonnen-2": {
+   "bestand": "baas-gewonnen-2.mp3",
+   "tekst": "Hoera, verslagen!"
+  },
+  "baas-raak-1": {
+   "bestand": "baas-raak-1.mp3",
+   "tekst": "Raak!"
+  },
+  "baas-raak-2": {
+   "bestand": "baas-raak-2.mp3",
+   "tekst": "Pats! Hebbes!"
+  },
+  "baas-raak-3": {
+   "bestand": "baas-raak-3.mp3",
+   "tekst": "Nog eentje!"
+  },
+  "baas-raak-4": {
+   "bestand": "baas-raak-4.mp3",
+   "tekst": "Die zit!"
+  },
+  "bijna-1": {
+   "bestand": "bijna-1.mp3",
+   "tekst": "Bijna! Kijk, zo zit het."
+  },
+  "bijna-2": {
+   "bestand": "bijna-2.mp3",
+   "tekst": "Net niet. Kijk maar even mee."
+  },
+  "bijna-3": {
+   "bestand": "bijna-3.mp3",
+   "tekst": "Geeft niks! Zo is het."
+  },
+  "bijna-4": {
+   "bestand": "bijna-4.mp3",
+   "tekst": "Oei, bijna! Kijk eens."
+  },
+  "combo-drie-1": {
+   "bestand": "combo-drie-1.mp3",
+   "tekst": "Drie op een rij!"
+  },
+  "combo-drie-2": {
+   "bestand": "combo-drie-2.mp3",
+   "tekst": "Lekker bezig!"
+  },
+  "combo-tien-1": {
+   "bestand": "combo-tien-1.mp3",
+   "tekst": "Tien op een rij! Kampioen!"
+  },
+  "combo-tien-2": {
+   "bestand": "combo-tien-2.mp3",
+   "tekst": "Alles goed! Ongelofelijk!"
+  },
+  "combo-vijf-1": {
+   "bestand": "combo-vijf-1.mp3",
+   "tekst": "Vijf op een rij, wauw!"
+  },
+  "combo-vijf-2": {
+   "bestand": "combo-vijf-2.mp3",
+   "tekst": "Wat gaat dat goed!"
+  },
+  "droog-1": {
+   "bestand": "droog-1.mp3",
+   "tekst": "Lekker droog!"
+  },
+  "droog-2": {
+   "bestand": "droog-2.mp3",
+   "tekst": "Zo word ik niet nat!"
+  },
+  "gegroeid-1": {
+   "bestand": "gegroeid-1.mp3",
+   "tekst": "Kijk, ik ben gegroeid!"
+  },
+  "gegroeid-2": {
+   "bestand": "gegroeid-2.mp3",
+   "tekst": "Ik word steeds groter!"
+  },
+  "gekocht-1": {
+   "bestand": "gekocht-1.mp3",
+   "tekst": "Gekocht! Ik doe het meteen aan."
+  },
+  "gekocht-2": {
+   "bestand": "gekocht-2.mp3",
+   "tekst": "Joepie, dank je wel!"
+  },
+  "goed-1": {
+   "bestand": "goed-1.mp3",
+   "tekst": "Goed zo!"
+  },
+  "goed-2": {
+   "bestand": "goed-2.mp3",
+   "tekst": "Knap gedaan!"
+  },
+  "goed-3": {
+   "bestand": "goed-3.mp3",
+   "tekst": "Ja, helemaal goed!"
+  },
+  "goed-4": {
+   "bestand": "goed-4.mp3",
+   "tekst": "Super!"
+  },
+  "goed-5": {
+   "bestand": "goed-5.mp3",
+   "tekst": "Jij kunt dit!"
+  },
+  "goed-6": {
+   "bestand": "goed-6.mp3",
+   "tekst": "Joepie, goed!"
+  },
+  "kleur-1": {
+   "bestand": "kleur-1.mp3",
+   "tekst": "Hoi! Ik ben jouw Wiebel!"
+  },
+  "kleur-2": {
+   "bestand": "kleur-2.mp3",
+   "tekst": "Joepie, wat een mooie kleur!"
+  },
+  "kleur-3": {
+   "bestand": "kleur-3.mp3",
+   "tekst": "Wij worden vast goede vrienden!"
+  },
+  "kleur-gewisseld-1": {
+   "bestand": "kleur-gewisseld-1.mp3",
+   "tekst": "Mooie kleur!"
+  },
+  "kleur-gewisseld-2": {
+   "bestand": "kleur-gewisseld-2.mp3",
+   "tekst": "Zo zie ik er heel anders uit!"
+  },
+  "koud-1": {
+   "bestand": "koud-1.mp3",
+   "tekst": "Brrr, wat koud!"
+  },
+  "koud-2": {
+   "bestand": "koud-2.mp3",
+   "tekst": "Ik heb het koud!"
+  },
+  "menu-welkom-1": {
+   "bestand": "menu-welkom-1.mp3",
+   "tekst": "Waar gaan we heen?"
+  },
+  "menu-welkom-2": {
+   "bestand": "menu-welkom-2.mp3",
+   "tekst": "Zullen we gaan oefenen?"
+  },
+  "menu-welkom-3": {
+   "bestand": "menu-welkom-3.mp3",
+   "tekst": "Kies maar een wereld!"
+  },
+  "nat-1": {
+   "bestand": "nat-1.mp3",
+   "tekst": "Brr, ik word nat!"
+  },
+  "nat-2": {
+   "bestand": "nat-2.mp3",
+   "tekst": "Oei, wat een regen!"
+  },
+  "nieuwe-wiebel-1": {
+   "bestand": "nieuwe-wiebel-1.mp3",
+   "tekst": "Kijk, een nieuw vriendje!"
+  },
+  "nieuwe-wiebel-2": {
+   "bestand": "nieuwe-wiebel-2.mp3",
+   "tekst": "Hoi! Kom je bij ons?"
+  },
+  "passen-1": {
+   "bestand": "passen-1.mp3",
+   "tekst": "Past goed!"
+  },
+  "passen-2": {
+   "bestand": "passen-2.mp3",
+   "tekst": "Staat me mooi, hè?"
+  },
+  "passen-4": {
+   "bestand": "passen-4.mp3",
+   "tekst": "Ooh, wat mooi!"
+  },
+  "resultaat-drie-1": {
+   "bestand": "resultaat-drie-1.mp3",
+   "tekst": "Drie sterren! Fantastisch!"
+  },
+  "resultaat-drie-2": {
+   "bestand": "resultaat-drie-2.mp3",
+   "tekst": "Alles in een keer goed!"
+  },
+  "resultaat-een-1": {
+   "bestand": "resultaat-een-1.mp3",
+   "tekst": "Een ster! Mooi zo!"
+  },
+  "resultaat-een-2": {
+   "bestand": "resultaat-een-2.mp3",
+   "tekst": "Goed bezig!"
+  },
+  "resultaat-nul-1": {
+   "bestand": "resultaat-nul-1.mp3",
+   "tekst": "Goed geoefend! Zullen we het nog eens doen?"
+  },
+  "resultaat-nul-2": {
+   "bestand": "resultaat-nul-2.mp3",
+   "tekst": "Oefenen maakt je sterker!"
+  },
+  "resultaat-twee-1": {
+   "bestand": "resultaat-twee-1.mp3",
+   "tekst": "Twee sterren! Heel goed!"
+  },
+  "resultaat-twee-2": {
+   "bestand": "resultaat-twee-2.mp3",
+   "tekst": "Wat knap van jou!"
+  },
+  "schaduw-1": {
+   "bestand": "schaduw-1.mp3",
+   "tekst": "Lekker in de schaduw!"
+  },
+  "schaduw-2": {
+   "bestand": "schaduw-2.mp3",
+   "tekst": "Heerlijk koel hier!"
+  },
+  "sparen-1": {
+   "bestand": "sparen-1.mp3",
+   "tekst": "Mooi! Daar moeten we nog even voor sparen."
+  },
+  "sparen-2": {
+   "bestand": "sparen-2.mp3",
+   "tekst": "Nog even oefenen, dan kunnen we het kopen!"
+  },
+  "uitgetrokken-1": {
+   "bestand": "uitgetrokken-1.mp3",
+   "tekst": "Zo, weer zonder."
+  },
+  "uitgetrokken-2": {
+   "bestand": "uitgetrokken-2.mp3",
+   "tekst": "Even zonder!"
+  },
+  "warm-1": {
+   "bestand": "warm-1.mp3",
+   "tekst": "Lekker warm!"
+  },
+  "warm-2": {
+   "bestand": "warm-2.mp3",
+   "tekst": "Zo is de sneeuw fijn!"
+  },
+  "wereld-1": {
+   "bestand": "wereld-1.mp3",
+   "tekst": "Hup, daar gaan we!"
+  },
+  "wereld-2": {
+   "bestand": "wereld-2.mp3",
+   "tekst": "Joepie, op reis!"
+  },
+  "winkel-welkom-1": {
+   "bestand": "winkel-welkom-1.mp3",
+   "tekst": "Kies iets om te passen!"
+  },
+  "winkel-welkom-2": {
+   "bestand": "winkel-welkom-2.mp3",
+   "tekst": "Wat zullen we eens passen?"
+  }
+ }
+}

@@ -56,7 +56,7 @@ export const ZINNEN = {
   passen: [
     { id: 'passen-1', tekst: 'Past goed!' },
     { id: 'passen-2', tekst: 'Staat me mooi, hè?' },
-    { id: 'passen-3', tekst: 'Ooh, die wil ik wel!' },
+    { id: 'passen-4', tekst: 'Ooh, wat mooi!' },
   ],
   sparen: [
     { id: 'sparen-1', tekst: 'Mooi! Daar moeten we nog even voor sparen.' },

@@ -1,4 +1,6 @@
 import { kiesVolgende } from './focus.js';
+import { muziekVoor } from './muziek.js';
+import { staat } from './opslag.js';
 import { actieVoorToets } from './toetsen.js';
 import { schermen } from './schermen/index.js';
 import { startSync } from './sync.js';
@@ -11,6 +13,11 @@ const stapel = [];
 
 function actief() {
   return stapel[stapel.length - 1];
+}
+
+// Na elke schermwissel: muziek bij het hoofdmenu, het winkeltje en Aanpassen, elders stil.
+function kiesMuziek() {
+  muziekVoor(actief().naam, staat.profiel?.thema);
 }
 
 function schaalPodium() {
@@ -77,6 +84,7 @@ export function toon(naam, gegevens = {}, { vervang = false, overgang = true } =
   stapel.push({ naam, inst, el: inst.el, focus: null });
   herstelFocus();
   if (overgang) schuifIn(inst.el, 1);
+  kiesMuziek();
 }
 
 function toonVorige() {
@@ -85,6 +93,7 @@ function toonVorige() {
   laag.inst.bijTerugkomst?.();
   herstelFocus();
   schuifIn(laag.el, -1);
+  kiesMuziek();
 }
 
 export function terug(bron = 'toets') {
