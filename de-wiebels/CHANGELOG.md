@@ -1,5 +1,9 @@
 # Wijzigingen
 
+## 0.4.2
+
+Onder elke wereld staat nu wat je er oefent, zoals "Plussommen" of "Klokkijken", ook in de levelkeuze en bij de tijdrace. In het Ruimte-thema hebben de werelden nieuwe namen: Ringplaneet, Maan, Komeet, Zon en Aarde.
+
 ## 0.4.1
 
 In het ouderscherm staat naast de bedieningstest nu een animatieproef. Daar zie je de nieuwe bewegende Wiebel, met wisselende achtergronden en tot acht Wiebels tegelijk. Rechtsboven staat hoe vloeiend het beeld loopt (beelden per seconde). Zo kunnen we controleren of de tv het aankan.
