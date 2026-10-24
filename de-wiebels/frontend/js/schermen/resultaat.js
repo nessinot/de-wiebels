@@ -1,35 +1,36 @@
-// Resultaat na een ronde: sterren en wat je verder kunt doen.
+// Resultaat na een ronde: sterren en wat je verder kunt doen. De Wiebel viert linksonder mee; een
+// nieuw verzamelde Wiebel springt erbij en bij groei laat hij zijn nieuwe stadium zien.
 
 import { huisdierStadium, wiebelVoor } from '../beloningen.js';
 import { maakEl, opKlik } from '../dom.js';
+import { maakGids } from '../gids.js';
 import { LEVELS, levelOpen, levelVan } from '../levels.js';
 import { staat } from '../opslag.js';
 import { thema } from '../themas/index.js';
-import { eigenWiebelHtml, sterrenHtml } from '../weergave.js';
+import { sterrenHtml } from '../weergave.js';
 import { STADIUM_NAMEN } from '../wiebel.js';
-import { blij } from '../wiebel-beweging.js';
+import { RESULTAAT_ZINNEN } from '../zinnen.js';
 
 const TEKSTEN = ['Goed geoefend!', 'Mooi zo!', 'Heel goed!', 'Fantastisch!'];
+// Na elkaar: eerst meevieren, dan de nieuwe Wiebel, dan het groeien.
+const STAP = 2200;
 
 export const resultaat = {
   maak({ toon, terug, gegevens }) {
     const p = staat.profiel;
+    const t = thema(p.thema);
     const level = levelVan(gegevens.levelId);
     const lijst = LEVELS[level.vaardigheid];
     const volgende = lijst[lijst.indexOf(level) + 1];
     const volgendeOpen = volgende && levelOpen(p, volgende);
+    const stadium = huisdierStadium(p.huisdier.xp);
+    const nieuw = gegevens.nieuweWiebel ? wiebelVoor(level.id, t) : null;
+    const nieuwEmoji = nieuw && `<span style="filter: ${nieuw.filter}">${nieuw.emoji}</span>`;
 
     function beloningen() {
-      const t = thema(p.thema);
       const delen = [];
-      if (gegevens.nieuweWiebel) {
-        const w = wiebelVoor(level.id, t);
-        delen.push(`<span class="beloning"><span class="wiebeltje"><span style="filter: ${w.filter}">${w.emoji}</span></span> Nieuwe Wiebel: ${w.naam}!</span>`);
-      }
-      if (gegevens.gegroeid) {
-        const naam = STADIUM_NAMEN[huisdierStadium(p.huisdier.xp)];
-        delen.push(`<span class="beloning">${eigenWiebelHtml(p, 'resultaat', { schaal: 0.8 })} Je Wiebel is gegroeid: ${naam}!</span>`);
-      }
+      if (nieuw) delen.push(`<span class="beloning"><span class="wiebeltje">${nieuwEmoji}</span> Nieuwe Wiebel: ${nieuw.naam}!</span>`);
+      if (gegevens.gegroeid) delen.push(`<span class="beloning">Je Wiebel is gegroeid: ${STADIUM_NAMEN[stadium]}!</span>`);
       return delen.join('');
     }
 
@@ -44,9 +45,18 @@ export const resultaat = {
         <button class="knop" data-focus data-actie="levels">Naar de levels</button>
       </div>
     `);
+    el.classList.add('resultaat');
 
-    const wiebel = el.querySelector('.beloning .wiebel');
-    if (wiebel) setTimeout(() => blij(wiebel), 400);
+    // Bij groei begint de Wiebel in zijn vorige stadium.
+    const gids = maakGids(p, 'gids-resultaat', { stadium: gegevens.gegroeid ? stadium - 1 : stadium });
+    el.append(gids.el);
+    const stappen = [() => {
+      if (gegevens.sterren) gids.blij();
+      gids.zeg(RESULTAAT_ZINNEN[gegevens.sterren]);
+    }];
+    if (nieuw) stappen.push(() => gids.vriend(nieuwEmoji));
+    if (gegevens.gegroeid) stappen.push(() => gids.groei(stadium));
+    stappen.forEach((stap, i) => setTimeout(() => el.isConnected && stap(), 400 + i * STAP));
 
     opKlik(el, {
       volgende: () => toon('ronde', { levelId: volgende.id }, { vervang: true }),

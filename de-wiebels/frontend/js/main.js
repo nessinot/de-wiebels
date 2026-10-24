@@ -2,6 +2,7 @@ import { kiesVolgende } from './focus.js';
 import { actieVoorToets } from './toetsen.js';
 import { schermen } from './schermen/index.js';
 import { startSync } from './sync.js';
+import { rustig } from './wiebel-beweging.js';
 
 const podium = document.getElementById('podium');
 
@@ -54,7 +55,19 @@ function verplaatsFocus(richting) {
 
 const ctx = { toon, terug, terugTot, zetFocus, herstelFocus };
 
-export function toon(naam, gegevens = {}, { vervang = false } = {}) {
+// Korte schuif- en vervaagovergang voor het scherm dat verschijnt: vooruit van rechts, terug van
+// links. Het vorige scherm is meteen weg en de focus staat al goed, dus de toetsen werken meteen.
+const OVERGANG = 250;
+function schuifIn(el, richting) {
+  if (rustig()) return;
+  el.animate([
+    { opacity: 0, transform: `translateX(${richting * 60}px)` },
+    { opacity: 1, transform: 'translateX(0)' },
+  ], { duration: OVERGANG, easing: 'ease-out' });
+}
+
+// overgang: false als het scherm zelf al een overgang heeft gehad (zoals het inzoomen op een wereld).
+export function toon(naam, gegevens = {}, { vervang = false, overgang = true } = {}) {
   if (!schermen[naam]) return;
   if (vervang && stapel.length) stapel.pop().el.remove();
   else actief()?.el.setAttribute('hidden', '');
@@ -63,6 +76,7 @@ export function toon(naam, gegevens = {}, { vervang = false } = {}) {
   podium.append(inst.el);
   stapel.push({ naam, inst, el: inst.el, focus: null });
   herstelFocus();
+  if (overgang) schuifIn(inst.el, 1);
 }
 
 function toonVorige() {
@@ -70,6 +84,7 @@ function toonVorige() {
   laag.el.removeAttribute('hidden');
   laag.inst.bijTerugkomst?.();
   herstelFocus();
+  schuifIn(laag.el, -1);
 }
 
 export function terug(bron = 'toets') {

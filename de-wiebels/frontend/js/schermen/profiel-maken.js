@@ -7,8 +7,8 @@ import { AVATARS, MAX_NAAM, nieuwProfiel } from '../profiel.js';
 import { pasThemaToe, STANDAARD_THEMA } from '../themas/index.js';
 import { themaKnoppen } from '../weergave.js';
 import { KLEUREN, wiebelSvg } from '../wiebel.js';
-import { blij, maakSpreker } from '../wiebel-beweging.js';
-import { willekeurigeZin } from '../zinnen.js';
+import { BALLON_HTML, maakBallon } from '../spreekballon.js';
+import { blij } from '../wiebel-beweging.js';
 
 const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const STAPPEN = ['naam', 'avatar', 'wiebel', 'thema', 'niveau'];
@@ -50,7 +50,7 @@ export const profielMaken = {
         <div class="wiebelkaarten">
           ${Object.entries(KLEUREN).map(([id, k]) => `
             <button class="knop wiebelkaart" data-focus data-actie="kleur" data-waarde="${id}">
-              <span class="bubbel" hidden></span>
+              ${BALLON_HTML}
               ${wiebelSvg({ kleur: id, stadium: 0 }, `kies-${id}`, { schaal: 1.6 })}
               <span>${k.naam}</span>
             </button>`).join('')}
@@ -109,7 +109,7 @@ export const profielMaken = {
         if (wachtOpVolgende) return;
         keuze.kleur = id;
         blij(kaart.querySelector('.wiebel'));
-        maakSpreker(kaart, true)(willekeurigeZin('kleurGekozen').tekst);
+        maakBallon(kaart, { blijftStaan: true }).zeg('kleurGekozen');
         wachtOpVolgende = setTimeout(() => {
           wachtOpVolgende = null;
           stap = 3;

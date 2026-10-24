@@ -145,8 +145,24 @@
 .wiebelkaart:last-child .bubbel { left: auto; right: 0; transform: none; }
 .wiebelkaart:last-child .bubbel::after { left: auto; right: calc(150px - .45em); }
 
-/* De eigen Wiebel in de verzameling en bij het resultaat */
-.huisdier-paneel .wiebel, .beloning .wiebel { display: block; }
+/* De eigen Wiebel in de verzameling */
+.huisdier-paneel .wiebel { display: block; }
+
+/* De eigen Wiebel als gids in de sommen en bij het resultaat (js/gids.js): linksonder, 300 px hoog,
+   met de figuur tegen de rand van de safe area. De som schuift opzij, zodat de Wiebel en zijn ballon
+   een eigen strook hebben en nooit achter de som of de knoppen staan. */
+.gids { position: absolute; left: 57px; bottom: 54px; width: 277px; height: 300px; z-index: 1; pointer-events: none; }
+.gids .wiebel { display: block; transform-origin: 50% 91.5%; }
+.gids .bubbel { top: auto; left: 39px; bottom: var(--kop, 290px); width: max-content; max-width: 320px; box-sizing: border-box; padding: .4em .6em; }
+.gids .bubbel::after { right: auto; left: 84px; }
+.gids-vriend { position: absolute; left: 250px; bottom: 16px; font-size: 110px; line-height: 1; }
+.met-gids > .vraagpaneel { margin-left: 280px; }
+.met-gids > .vraagpaneel .vraag-digitaal ~ .opties-klok { grid-template-columns: repeat(4, 320px); column-gap: 20px; }
+.met-gids .overwinning { box-sizing: border-box; padding-left: 280px; }
+.scherm.resultaat { padding-left: 376px; }
+
+/* Wat vliegt (js/vliegen.js): munten naar de teller, een ster naar de eindbaas */
+.vlieger-teken { position: absolute; z-index: 5; display: grid; place-items: center; line-height: 1; pointer-events: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .w-lijf, .w-ogen, .w-pupillen, .w-spriet, .w-arm, .w-ster, .twinkel, .drijf, .druppel, .vlok,

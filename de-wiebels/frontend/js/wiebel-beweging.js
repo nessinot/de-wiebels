@@ -146,43 +146,52 @@ export function tevreden(w) {
   later(w, 1500, () => { w.dataset.ogen = ''; });
 }
 
-// Praten: de tekst verschijnt letter voor letter in de .bubbel van het venster, en de mond van elke
-// Wiebel in het venster gaat open op klinkers, half op medeklinkers en dicht op spaties.
-// Geeft praat(tekst) terug; praat.stop() breekt af. blijftStaan: de ballon blijft na afloop zichtbaar.
-export function maakSpreker(venster, blijftStaan = false) {
-  let beurt = 0;
-  function praat(tekst) {
-    const mijn = ++beurt;
-    const wiebels = [...venster.querySelectorAll('.wiebel')];
-    const monden = wiebels.map((w) => w.querySelector('.w-mond-open'));
-    const bubbel = venster.querySelector('.bubbel');
-    const zetMond = (open) => monden.forEach((m) => { m.style.transform = `scaleY(${open})`; });
-    const klaar = () => {
-      wiebels.forEach((w) => { w.dataset.mond = 'rust'; });
-      if (!blijftStaan) setTimeout(() => { if (mijn === beurt) bubbel.hidden = true; }, 1800);
-    };
-    bubbel.hidden = false;
-    if (rustig()) {
-      bubbel.textContent = tekst;
-      klaar();
-      return;
-    }
-    bubbel.textContent = '';
-    wiebels.forEach((w) => { w.dataset.mond = 'open'; });
-    let i = 0;
-    (function stap() {
-      if (mijn !== beurt) return;
-      if (i < tekst.length) {
-        const c = tekst[i].toLowerCase();
-        zetMond('aeiouyë'.includes(c) ? 0.85 + Math.random() * 0.15 : /[a-z]/.test(c) ? 0.35 + Math.random() * 0.25 : 0.08);
-        bubbel.textContent = tekst.slice(0, ++i);
-        setTimeout(stap, 58);
-        return;
-      }
-      zetMond(0.1);
-      klaar();
-    })();
-  }
-  praat.stop = () => { beurt++; };
-  return praat;
+// Goed antwoord: één sprongetje met blije ogen.
+export function sprongetje(w) {
+  blijGezicht(w, 900);
+  if (!rustig()) hop(w);
+}
+
+// Wijzen: de rechterarm gaat omhoog naar de goede oplossing (rechtsboven) en blijft even wijzen.
+export function wijs(w) {
+  if (rustig()) return;
+  w.querySelector('.w-arm-basis.r').animate([
+    { transform: 'rotate(0deg)', easing: VEER },
+    { transform: 'rotate(-118deg)', offset: 0.25 },
+    { transform: 'rotate(-110deg)', offset: 0.45 },
+    { transform: 'rotate(-118deg)', offset: 0.65, easing: 'ease-in' },
+    { transform: 'rotate(0deg)' },
+  ], { duration: 1800 });
+}
+
+// Dansen bij een combo: heen en weer kantelen op drie sprongetjes, armen om de beurt omhoog.
+export function dans(w) {
+  blijGezicht(w, 1900);
+  if (rustig()) return;
+  hop(w, 3);
+  w.querySelector('.w-kantel').animate([
+    { transform: 'rotate(0deg)' }, { transform: 'rotate(-10deg)', offset: 0.17 }, { transform: 'rotate(10deg)', offset: 0.5 },
+    { transform: 'rotate(-10deg)', offset: 0.83 }, { transform: 'rotate(0deg)' },
+  ], { duration: 1860, easing: 'ease-in-out' });
+  const zwaaiArm = (kant, graden, vertraging) => w.querySelector(`.w-arm-basis.${kant}`).animate([
+    { transform: 'rotate(0deg)' }, { transform: `rotate(${graden}deg)`, offset: 0.3 }, { transform: 'rotate(0deg)', offset: 0.6 }, { transform: 'rotate(0deg)' },
+  ], { duration: 1240, delay: vertraging, easing: 'ease-in-out' });
+  zwaaiArm('l', 110, 0);
+  zwaaiArm('r', -110, 620);
+  deeltjes(w, ['🎉', '✨', '⭐', '✨'], { x: 30, y: 26, b: 180, h: 90 });
+}
+
+// Gooien (eindbaas): de rechterarm zwaait naar achteren en dan omhoog naar voren. LOSLATEN is het
+// moment (ms) waarop de arm vooraan is en het gegooide kan wegvliegen.
+export const LOSLATEN = 220;
+export function gooi(w) {
+  blijGezicht(w, 900);
+  if (rustig()) return;
+  w.querySelector('.w-arm-basis.r').animate([
+    { transform: 'rotate(0deg)' }, { transform: 'rotate(40deg)', offset: 0.3 },
+    { transform: 'rotate(-140deg)', offset: 0.5 }, { transform: 'rotate(-120deg)', offset: 0.7 }, { transform: 'rotate(0deg)' },
+  ], { duration: LOSLATEN * 2.4, easing: 'ease-out' });
+  w.querySelector('.w-kantel').animate([
+    { transform: 'rotate(0deg)' }, { transform: 'rotate(-5deg)', offset: 0.3 }, { transform: 'rotate(6deg)', offset: 0.55 }, { transform: 'rotate(0deg)' },
+  ], { duration: LOSLATEN * 2.4, easing: 'ease-out' });
 }

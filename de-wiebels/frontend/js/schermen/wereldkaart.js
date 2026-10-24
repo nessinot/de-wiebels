@@ -56,7 +56,8 @@ export const wereldkaart = {
     // zoomt het beeld in en volgt de levelkeuze.
     function vlieg(v) {
       if (onderweg) return;
-      const naarLevels = () => toon('levelkeuze', { vaardigheid: v });
+      // Na het inzoomen geen tweede overgang.
+      const naarLevels = () => toon('levelkeuze', { vaardigheid: v }, { overgang: false });
       if (rustig()) return naarLevels();
       onderweg = true;
       const t = thema(staat.profiel.thema);

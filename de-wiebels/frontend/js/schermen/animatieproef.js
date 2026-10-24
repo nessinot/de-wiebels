@@ -4,7 +4,8 @@
 import { maakEl, opKlik } from '../dom.js';
 import { achtergrond } from '../scene.js';
 import { KLEUREN, wiebelSvg } from '../wiebel.js';
-import { bijna, blij, maakSpreker, rustig, zwaai } from '../wiebel-beweging.js';
+import { BALLON_HTML, maakSpreker } from '../spreekballon.js';
+import { bijna, blij, rustig, zwaai } from '../wiebel-beweging.js';
 
 const REACTIES = [['blij', 'Blij sprongetje'], ['zwaai', 'Zwaaien'], ['bijna', 'Bijna'], ['praat', 'Praten']];
 const ACHTERGRONDEN = [['sterren', 'Sterren'], ['regen', 'Regen'], ['sneeuw', 'Sneeuw'], ['geen', 'Geen']];
@@ -35,7 +36,7 @@ export const animatieproef = {
       <div class="proef-indeling">
         <div class="proef-venster">
           <svg class="scene" viewBox="-20 -60 440 360" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
-          <span class="bubbel" hidden></span>
+          ${BALLON_HTML}
         </div>
         <div class="proef-paneel">
           <h2>Reacties</h2>

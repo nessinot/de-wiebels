@@ -241,6 +241,9 @@
   font-size: 56px;
 }
 
+/* Een klok als goed antwoord: even groot als in de knoppen, anders vult hij het scherm. */
+.terugkoppeling .klok { width: 150px; height: 150px; vertical-align: middle; }
+
 /* Resultaat */
 .resultaat-sterren {
   font-size: 220px;

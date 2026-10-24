@@ -4,6 +4,7 @@ import { voegXpToe } from '../beloningen.js';
 import { maakEl, opKlik } from '../dom.js';
 import { speel } from '../geluid.js';
 import { maakVragen } from '../generators/index.js';
+import { maakGids } from '../gids.js';
 import { registreer } from '../leitner.js';
 import { ONDERTITELS, VAARDIGHEDEN } from '../levels.js';
 import { bewaar, staat } from '../opslag.js';
@@ -63,17 +64,19 @@ export const tijdrace = {
     const r = nieuweRonde(maakVragen(level, RACE_LENGTE, p.moeilijkheid[level.id] ?? 1));
     const start = performance.now();
     let klaar = false;
-    const achtergrond = themaAchtergrond(p.thema, v, 'ab-race');
 
     const el = maakEl(`
-      ${achtergrond}
+      ${themaAchtergrond(p.thema, v, 'ab-race')}
       <div class="rondekop">
         <span>⏱️ <strong class="racetijd">0,0 s</strong></span>
         <span class="race-teller"></span>
       </div>
     `);
+    el.classList.add('met-gids');
     const paneel = maakVraagpaneel({ zetFocus, opAntwoord: antwoord });
-    el.append(paneel.el);
+    // In de race reageert de Wiebel kort en zonder ballon, zodat het tempo blijft.
+    const gids = maakGids(p, 'gids-race', { kort: true });
+    el.append(paneel.el, gids.el);
 
     const klok = setInterval(() => {
       if (!el.isConnected || klaar) return clearInterval(klok);
@@ -92,19 +95,22 @@ export const tijdrace = {
       const record = registreerTijd(p, v, seconden);
       voegXpToe(p, r.goed);
       bewaar();
-      if (record) {
-        speel('gewonnen');
-        vuurwerk(el);
-      }
-      el.innerHTML = `
-        ${achtergrond}
+      // De race maakt plaats voor de uitslag; de achtergrond en de Wiebel blijven.
+      el.querySelector('.rondekop').remove();
+      paneel.el.remove();
+      el.insertAdjacentHTML('beforeend', `
         <div class="overwinning">
           <h1 class="titel-groot">${record ? 'Nieuw record!' : 'Finish!'}</h1>
           <p class="race-uitslag">${tijdTekst(seconden)}</p>
           <p class="ondertitel">Jouw record: ${tijdTekst(p.records[v])}</p>
           <button class="knop knop-hoofd" data-focus data-actie="klaar">Terug</button>
         </div>
-      `;
+      `);
+      gids.blij();
+      if (record) {
+        speel('gewonnen');
+        vuurwerk(el, 1100, 400);
+      }
       zetFocus(el.querySelector('[data-actie="klaar"]'));
     }
 
@@ -119,10 +125,12 @@ export const tijdrace = {
       if (uitslag.goed) {
         speel('goed');
         paneel.toonGoed('Goed!');
+        gids.goed();
         setTimeout(volgende, PAUZE_GOED);
       } else {
         speel('fout');
         paneel.toonFout(sleutel, knop, volgende);
+        gids.fout();
       }
     }
 

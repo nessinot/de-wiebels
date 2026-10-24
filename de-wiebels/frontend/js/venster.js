@@ -4,8 +4,8 @@
 import { achtergrond } from './scene.js';
 import { PLEKKEN, combinatie, spul } from './spullen.js';
 import { GROEI, KLEUREN, wiebelSvg } from './wiebel.js';
-import { bezig, maakSpreker, ril, rustig, schud, tevreden } from './wiebel-beweging.js';
-import { willekeurigeZin } from './zinnen.js';
+import { BALLON_HTML, maakBallon } from './spreekballon.js';
+import { bezig, ril, rustig, schud, tevreden } from './wiebel-beweging.js';
 
 // Uitsneden van de scène, met ruimte boven de Wiebel zodat de spreekballon niet over een paraplu
 // of pet valt. menu: venster van 720×560; groot: 760×800, met onderin plek voor de koopknop.
@@ -31,12 +31,13 @@ export function sceneSvg(staat, prefix, { uitsnede = UITSNEDE.menu, stil = false
 // Hoe de Wiebel reageert op een combinatie (zie combinatie() in spullen.js).
 export const REACTIE = { nat: schud, koud: ril, droog: tevreden, warm: tevreden, schaduw: tevreden };
 
-export const VENSTER_HTML = '<div class="venster-binnen"><div class="scene-houder"></div><span class="bubbel" hidden></span></div>';
+export const VENSTER_HTML = `<div class="venster-binnen"><div class="scene-houder"></div>${BALLON_HTML}</div>`;
 
 // binnen: het element .venster-binnen (zie VENSTER_HTML).
 export function maakVenster(binnen, prefix, { uitsnede = UITSNEDE.menu, blijftStaan = false } = {}) {
   const houder = binnen.querySelector('.scene-houder');
-  const praat = maakSpreker(binnen, blijftStaan);
+  const ballon = maakBallon(binnen, { blijftStaan });
+  const { praat } = ballon;
   let getoond = {};
 
   function teken(staat) {
@@ -60,7 +61,7 @@ export function maakVenster(binnen, prefix, { uitsnede = UITSNEDE.menu, blijftSt
     else reageer();
   }, 5000);
 
-  return { teken, wiebel, praat, reageer, zeg: (gebeurtenis) => praat(willekeurigeZin(gebeurtenis).tekst) };
+  return { teken, wiebel, praat, reageer, zeg: ballon.zeg };
 }
 
 // Tabs per plek (Aanpassen en winkeltje); de actieve tab is geel.

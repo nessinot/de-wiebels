@@ -92,9 +92,84 @@ export const ZINNEN = {
     { id: 'schaduw-1', tekst: 'Lekker in de schaduw!' },
     { id: 'schaduw-2', tekst: 'Heerlijk koel hier!' },
   ],
+
+  // In de sommen (ronde en eindbaas; in de tijdrace zegt hij niets, zodat het tempo blijft)
+  goed: [
+    { id: 'goed-1', tekst: 'Goed zo!' },
+    { id: 'goed-2', tekst: 'Knap gedaan!' },
+    { id: 'goed-3', tekst: 'Ja, helemaal goed!' },
+    { id: 'goed-4', tekst: 'Super!' },
+    { id: 'goed-5', tekst: 'Jij kunt dit!' },
+    { id: 'goed-6', tekst: 'Joepie, goed!' },
+  ],
+  // Geen straf: rustig laten zien hoe het zit.
+  bijna: [
+    { id: 'bijna-1', tekst: 'Bijna! Kijk, zo zit het.' },
+    { id: 'bijna-2', tekst: 'Net niet. Kijk maar even mee.' },
+    { id: 'bijna-3', tekst: 'Geeft niks! Zo is het.' },
+    { id: 'bijna-4', tekst: 'Oei, bijna! Kijk eens.' },
+  ],
+  comboDrie: [
+    { id: 'combo-drie-1', tekst: 'Drie op een rij!' },
+    { id: 'combo-drie-2', tekst: 'Lekker bezig!' },
+  ],
+  comboVijf: [
+    { id: 'combo-vijf-1', tekst: 'Vijf op een rij, wauw!' },
+    { id: 'combo-vijf-2', tekst: 'Wat gaat dat goed!' },
+  ],
+  comboTien: [
+    { id: 'combo-tien-1', tekst: 'Tien op een rij! Kampioen!' },
+    { id: 'combo-tien-2', tekst: 'Alles goed! Ongelofelijk!' },
+  ],
+  baasRaak: [
+    { id: 'baas-raak-1', tekst: 'Raak!' },
+    { id: 'baas-raak-2', tekst: 'Pats! Hebbes!' },
+    { id: 'baas-raak-3', tekst: 'Nog eentje!' },
+    { id: 'baas-raak-4', tekst: 'Die zit!' },
+  ],
+  baasGewonnen: [
+    { id: 'baas-gewonnen-1', tekst: 'We hebben gewonnen!' },
+    { id: 'baas-gewonnen-2', tekst: 'Hoera, verslagen!' },
+  ],
+
+  // Resultaat na een ronde, per aantal sterren
+  resultaatNul: [
+    { id: 'resultaat-nul-1', tekst: 'Goed geoefend! Zullen we het nog eens doen?' },
+    { id: 'resultaat-nul-2', tekst: 'Oefenen maakt je sterker!' },
+  ],
+  resultaatEen: [
+    { id: 'resultaat-een-1', tekst: 'Een ster! Mooi zo!' },
+    { id: 'resultaat-een-2', tekst: 'Goed bezig!' },
+  ],
+  resultaatTwee: [
+    { id: 'resultaat-twee-1', tekst: 'Twee sterren! Heel goed!' },
+    { id: 'resultaat-twee-2', tekst: 'Wat knap van jou!' },
+  ],
+  resultaatDrie: [
+    { id: 'resultaat-drie-1', tekst: 'Drie sterren! Fantastisch!' },
+    { id: 'resultaat-drie-2', tekst: 'Alles in een keer goed!' },
+  ],
+  nieuweWiebel: [
+    { id: 'nieuwe-wiebel-1', tekst: 'Kijk, een nieuw vriendje!' },
+    { id: 'nieuwe-wiebel-2', tekst: 'Hoi! Kom je bij ons?' },
+  ],
+  gegroeid: [
+    { id: 'gegroeid-1', tekst: 'Kijk, ik ben gegroeid!' },
+    { id: 'gegroeid-2', tekst: 'Ik word steeds groter!' },
+  ],
 };
 
-export function willekeurigeZin(gebeurtenis) {
+// Gebeurtenis bij een combo van 3, 5 of 10 goed op rij (COMBO_BONUS in ronde.js).
+export const COMBO_ZINNEN = { 3: 'comboDrie', 5: 'comboVijf', 10: 'comboTien' };
+// Gebeurtenis bij het resultaat, per aantal sterren (0–3).
+export const RESULTAAT_ZINNEN = ['resultaatNul', 'resultaatEen', 'resultaatTwee', 'resultaatDrie'];
+
+// Kiest een zin voor de gebeurtenis, maar nooit dezelfde als de vorige keer bij die gebeurtenis.
+const vorige = new Map();
+export function kiesZin(gebeurtenis, rnd = Math.random) {
   const lijst = ZINNEN[gebeurtenis];
-  return lijst[Math.floor(Math.random() * lijst.length)];
+  const keuze = lijst.length > 1 ? lijst.filter((z) => z.id !== vorige.get(gebeurtenis)) : lijst;
+  const zin = keuze[Math.floor(rnd() * keuze.length)];
+  vorige.set(gebeurtenis, zin.id);
+  return zin;
 }

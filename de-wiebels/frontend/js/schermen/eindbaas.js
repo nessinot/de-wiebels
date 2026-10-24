@@ -4,6 +4,7 @@ import { geefBeloning, voegXpToe } from '../beloningen.js';
 import { maakEl, opKlik } from '../dom.js';
 import { BAAS_BELONING, BAAS_LEVENS, TIJD_PER_VRAAG, baasVraag, nieuwGevecht, verwerk } from '../baas.js';
 import { speel } from '../geluid.js';
+import { maakGids } from '../gids.js';
 import { registreer } from '../leitner.js';
 import { bewaar, staat } from '../opslag.js';
 import { thema } from '../themas/index.js';
@@ -21,10 +22,9 @@ export const eindbaas = {
     const gevecht = nieuwGevecht();
     let huidig = null;
     let timer = null;
-    const achtergrond = themaAchtergrond(p.thema, v, 'ab-baas');
 
     const el = maakEl(`
-      ${achtergrond}
+      ${themaAchtergrond(p.thema, v, 'ab-baas')}
       <div class="baasscherm">
         <div class="baas">
           <span class="baas-emoji">${baas.emoji}</span>
@@ -37,6 +37,9 @@ export const eindbaas = {
     `);
     const paneel = maakVraagpaneel({ zetFocus, opAntwoord: antwoord });
     el.querySelector('.baas-vragen').append(paneel.el);
+    const gids = maakGids(p, 'gids-baas');
+    el.classList.add('met-gids');
+    el.append(gids.el);
 
     function startTijd() {
       const balk = el.querySelector('.tijdbalk div');
@@ -61,17 +64,20 @@ export const eindbaas = {
       voegXpToe(p, BAAS_LEVENS); // elke treffer was een goed antwoord
       bewaar();
       speel('gewonnen');
-      vuurwerk(el, 600, 350);
-      vuurwerk(el, 1300, 450);
-      el.innerHTML = `
-        ${achtergrond}
+      // Alleen het gevecht maakt plaats voor de overwinning; de achtergrond en de Wiebel blijven.
+      el.querySelector('.baasscherm').remove();
+      el.insertAdjacentHTML('beforeend', `
         <div class="overwinning">
           <span class="baas-emoji verslagen">${baas.emoji}</span>
           <h1 class="titel-groot">Je hebt ${baas.naam} verslagen!</h1>
           <p class="ondertitel">+${BAAS_BELONING} 🪙 en een nieuwe Wiebel voor je verzameling</p>
           <button class="knop knop-hoofd" data-focus data-actie="klaar">Naar de levels</button>
         </div>
-      `;
+      `);
+      vuurwerk(el, 760, 350);
+      vuurwerk(el, 1400, 450);
+      gids.blij();
+      gids.zeg('baasGewonnen');
       zetFocus(el.querySelector('[data-actie="klaar"]'));
     }
 
@@ -84,13 +90,17 @@ export const eindbaas = {
       if (!goed) {
         speel('fout');
         paneel.toonFout(sleutel, knop, volgende);
+        gids.fout();
         return;
       }
-      speel('raak');
+      // De Wiebel gooit een ster; bij aankomst schudt de baas.
       const emoji = el.querySelector('.baas-emoji');
-      emoji.classList.remove('geraakt');
-      emoji.getBoundingClientRect();
-      emoji.classList.add('geraakt');
+      gids.gooiSter(emoji, () => {
+        speel('raak');
+        emoji.classList.remove('geraakt');
+        emoji.getBoundingClientRect();
+        emoji.classList.add('geraakt');
+      });
       paneel.toonGoed('Raak!');
       setTimeout(verslagen ? gewonnen : volgende, PAUZE_GOED);
     }
