@@ -63,6 +63,7 @@ export const ouderscherm = {
           <button class="knop" data-focus data-actie="exporteer">Alle data exporteren</button>
           <button class="knop" data-focus data-actie="importeer">Data importeren</button>
           <button class="knop" data-focus data-actie="test">Bedieningstest</button>
+          <button class="knop" data-focus data-actie="proef">Animatieproef</button>
         </div>
         ${nieuwePin === null ? '' : '<p class="ondertitel">Typ vier cijfers met de afstandsbediening.</p>'}
       `;
@@ -144,6 +145,7 @@ export const ouderscherm = {
       },
       importeer: () => bestand.click(),
       test: () => toon('bedieningstest'),
+      proef: () => toon('animatieproef'),
     });
 
     teken();

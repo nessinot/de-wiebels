@@ -1,4 +1,5 @@
 import { bedieningstest } from './bedieningstest.js';
+import { animatieproef } from './animatieproef.js';
 import { tweedeScherm } from './tweede-scherm.js';
 import { profielkeuze } from './profielkeuze.js';
 import { profielMaken } from './profiel-maken.js';
@@ -14,4 +15,4 @@ import { themakeuze } from './themakeuze.js';
 import { pincode } from './pincode.js';
 import { ouderscherm } from './ouderscherm.js';
 
-export const schermen = { bedieningstest, tweedeScherm, profielkeuze, profielMaken, wereldkaart, levelkeuze, ronde, resultaat, eindbaas, collectie, winkel, tijdrace, tijdraceKeuze, themakeuze, pincode, ouderscherm };
+export const schermen = { bedieningstest, animatieproef, tweedeScherm, profielkeuze, profielMaken, wereldkaart, levelkeuze, ronde, resultaat, eindbaas, collectie, winkel, tijdrace, tijdraceKeuze, themakeuze, pincode, ouderscherm };

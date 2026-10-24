@@ -1,0 +1,105 @@
+/* De Wiebel (js/wiebel.js) en de bewegende scènes (js/scene.js). Alleen transform en opacity bewegen.
+   Draaipunten staan in de eigen coördinaten van de Wiebel (240×260) dankzij transform-box: view-box. */
+
+.w-romp { fill: var(--lijf); stroke: var(--donker); stroke-width: 3; }
+.w-buik { fill: var(--buik); opacity: .75; }
+.w-voet { fill: var(--donker); }
+.w-spriet-steel { fill: none; stroke: var(--donker); stroke-width: 5; stroke-linecap: round; }
+.w-spriet-bol { fill: var(--spriet); stroke: var(--donker); stroke-width: 2.5; }
+.w-arm-rand { fill: none; stroke: var(--donker); stroke-width: 18; stroke-linecap: round; }
+.w-arm-vul { fill: none; stroke: var(--mouw, var(--lijf)); stroke-width: 12; stroke-linecap: round; }
+.w-schaduw { fill: #000; opacity: .3; }
+
+.wiebel g, .w-schaduw { transform-box: view-box; }
+.w-sprong, .w-kantel { transform-origin: 120px 234px; }
+.w-schaduw { transform-origin: 120px 238px; }
+
+/* Rustbewegingen */
+.w-lijf { transform-origin: 120px 234px; animation: w-wiebel 3.2s ease-in-out infinite; }
+.w-ogen { transform-origin: 120px 128px; animation: w-knipper 4.6s infinite; }
+.w-pupillen { animation: w-kijk 9s ease-in-out infinite; }
+.w-spriet, .w-spriet-basis { transition: transform .4s; }
+.w-spriet { animation: w-zwaai 1.9s ease-in-out infinite alternate; }
+.w-spriet.l, .w-spriet-basis.l { transform-origin: 106px 76px; }
+.w-spriet.r, .w-spriet-basis.r { transform-origin: 134px 76px; }
+.w-spriet.r { animation-delay: -.8s; }
+.w-arm { animation: w-arm 2.6s ease-in-out infinite alternate; }
+.w-arm.l, .w-arm-basis.l { transform-origin: 62px 160px; }
+.w-arm.r, .w-arm-basis.r { transform-origin: 178px 160px; }
+.w-arm.r { animation-delay: -1.3s; }
+
+/* Gezicht: mond en ogen wisselen via data-mond en data-ogen op de Wiebel. */
+.w-mond-open { transform-origin: 120px 150px; transition: transform 60ms; }
+.w-mond-open, .w-mond-blij, .w-blije-ogen { display: none; }
+.wiebel[data-mond="open"] .w-mond-rust, .wiebel[data-mond="blij"] .w-mond-rust { display: none; }
+.wiebel[data-mond="open"] .w-mond-open, .wiebel[data-mond="blij"] .w-mond-blij { display: inline; }
+.wiebel[data-ogen="blij"] .w-ogen { display: none; }
+.wiebel[data-ogen="blij"] .w-blije-ogen { display: inline; }
+
+@keyframes w-wiebel {
+  0%, 100% { transform: rotate(0deg) scale(1, 1); }
+  25% { transform: rotate(-2.5deg) scale(1.03, .97); }
+  50% { transform: rotate(0deg) scale(.98, 1.025); }
+  75% { transform: rotate(2.5deg) scale(1.03, .97); }
+}
+@keyframes w-knipper { 0%, 90%, 100% { transform: scaleY(1); } 94% { transform: scaleY(.08); } }
+@keyframes w-kijk {
+  0%, 45%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-3px, 1px); }
+  65% { transform: translate(3px, -1px); }
+  85% { transform: translate(1px, 2px); }
+}
+@keyframes w-zwaai { from { transform: rotate(-9deg); } to { transform: rotate(9deg); } }
+@keyframes w-arm { from { transform: rotate(-5deg); } to { transform: rotate(5deg); } }
+
+/* Scènes */
+.twinkel { animation: twinkel 3s ease-in-out infinite alternate; }
+.drijf { animation: drijf 14s ease-in-out infinite alternate; }
+.druppel, .druppel-lijn { stroke: #d6e4ff; stroke-width: 2; stroke-linecap: round; opacity: .85; }
+.druppel { transform: translateY(-20px); animation: val linear infinite; }
+.vlok, .vlok-stil { fill: #fff; opacity: .9; }
+.vlok { animation: vlok linear infinite; }
+
+@keyframes twinkel { from { opacity: .25; } to { opacity: 1; } }
+@keyframes drijf { from { transform: translateX(-18px); } to { transform: translateX(18px); } }
+@keyframes val { from { transform: translateY(-20px); } to { transform: translateY(var(--eind)); } }
+@keyframes vlok { 0% { transform: translate(0, -10px); } 50% { transform: translate(9px, 265px); } 100% { transform: translate(-5px, 540px); } }
+
+/* Spreekballon boven de Wiebel */
+.bubbel {
+  position: absolute; top: 26px; left: 26px; max-width: 520px; z-index: 2;
+  background: var(--tekst); color: var(--achtergrond); font-weight: 700; font-size: 40px; line-height: 1.2;
+  border-radius: 1.1em; padding: .45em .8em; box-shadow: 0 6px 0 rgba(0, 0, 0, .25);
+}
+.bubbel::after {
+  content: ""; position: absolute; bottom: -.65em; right: 1.6em;
+  border: .45em solid transparent; border-top: .7em solid var(--tekst); border-bottom: 0;
+}
+.bubbel[hidden] { display: none; }
+
+/* Animatieproef */
+.fps-meter {
+  min-width: 300px; padding: 8px 32px; border-radius: 24px; background: var(--vlak);
+  font-size: 80px; font-weight: 800; text-align: center; font-variant-numeric: tabular-nums;
+}
+.fps-meter[data-niveau="goed"] { color: var(--goed); }
+.fps-meter[data-niveau="matig"] { color: var(--geel); }
+.fps-meter[data-niveau="slecht"] { color: var(--rood); }
+.proef-indeling { display: flex; gap: 48px; }
+.proef-venster {
+  position: relative; flex: none; width: 900px; height: 736px; overflow: hidden;
+  background: var(--vlak); border: 6px solid var(--vlak-licht); border-radius: 44px;
+}
+.proef-venster .scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.proef-paneel { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+.proef-paneel h2 { margin: 12px 0 0; font-size: 44px; }
+.proef-knoppen { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.proef-knoppen.drie { grid-template-columns: repeat(3, 1fr); }
+.proef-knop { font-size: 40px; padding: 16px 12px; white-space: nowrap; }
+
+/* Stilstaande Wiebels en scènes, zoals in kaartjes. */
+.stil, .stil * { animation: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .w-lijf, .w-ogen, .w-pupillen, .w-spriet, .w-arm, .twinkel, .drijf, .druppel, .vlok { animation: none; }
+}
