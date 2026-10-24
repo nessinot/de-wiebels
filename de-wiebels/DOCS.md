@@ -18,18 +18,20 @@ Gebruik het IP-adres van Home Assistant, niet een `.local`-adres. Tip: zet de pa
 - **Cijfertoetsen**: antwoord intypen.
 - **Magic Remote**: aanwijzen en klikken werkt ook.
 
-## Ouderscherm
+## Ouderpagina in Home Assistant
 
-Druk op het profielscherm drie keer snel op de **blauwe** knop en voer de pincode in. De standaardpincode is **1234**; wijzig die in het ouderscherm.
+Open **De Wiebels** in de zijbalk van Home Assistant. Daar beheer je alles, ook vanaf je telefoon:
 
-In het ouderscherm kun je:
-
-- per kind de niveaus per vaardigheid en de tijdsdruk bij eindbazen instellen;
+- profielen aanmaken: naam, avatar en startniveau;
+- per kind de naam en avatar wijzigen, de niveaus per vaardigheid en de tijdsdruk bij eindbazen instellen;
 - de zwakke plekken per kind bekijken;
 - profielen verwijderen;
-- het geluid, de stem van de Wiebel en de muziek elk apart aan- of uitzetten (dit geldt per tv);
-- alle data exporteren en importeren als JSON-bestand (handig als back-up, vooral op een computer);
-- de bedieningstest openen.
+- het geluid, de stem van de Wiebel en de muziek elk apart aan- of uitzetten (dit geldt voor elk scherm);
+- alle data exporteren en importeren als JSON-bestand (handig als back-up).
+
+Op de tv kiest een kind alleen zijn profiel. De eerste keer kiest het daarna zijn Wiebel en zijn wereld, en volgt een kort verhaal. Een nieuw profiel verschijnt binnen een paar seconden op de tv; andere wijzigingen neemt de tv binnen een minuut over. Zijn er nog geen profielen, dan vraagt het spel om er een aan te maken in Home Assistant.
+
+Een pincode of geheime knop op de tv is er niet meer: de ouderpagina is beschermd door de login van Home Assistant. Staat de app niet in de zijbalk, zet dan op de infopagina van de app de optie voor de zijbalk aan.
 
 ## Opslag
 

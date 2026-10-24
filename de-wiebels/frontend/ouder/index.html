@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>De Wiebels – ouderpagina</title>
+  <!-- Alleen relatieve paden: achter de ingress van Home Assistant staat er een voorvoegsel voor. -->
+  <link rel="stylesheet" href="ouder/ouder.css">
+  <script type="module" src="ouder/ouder.js"></script>
+</head>
+<body>
+  <main>
+    <h1>De Wiebels</h1>
+    <p class="uitleg">Profielen en instellingen voor elk scherm. Op de tv kiest elk kind alleen nog zijn profiel.</p>
+
+    <section>
+      <h2>Profielen</h2>
+      <div id="profielen"><p class="uitleg">Profielen laden…</p></div>
+    </section>
+
+    <section>
+      <h2>Nieuw profiel</h2>
+      <form id="nieuw" class="kaart" autocomplete="off">
+        <label class="veld">Naam <input name="naam" required></label>
+        <fieldset>
+          <legend>Avatar</legend>
+          <div class="avatars" data-avatars="nieuw-avatar"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Startniveau</legend>
+          <div id="startniveaus"></div>
+        </fieldset>
+        <button class="knop knop-hoofd">Profiel aanmaken</button>
+        <p class="uitleg">Bij de eerste start op de tv kiest het kind zelf zijn Wiebel en zijn wereld.</p>
+      </form>
+    </section>
+
+    <section>
+      <h2>Algemeen</h2>
+      <div class="kaart">
+        <label class="schakel"><input type="checkbox" data-instelling="geluid"> Geluid</label>
+        <label class="schakel"><input type="checkbox" data-instelling="stem"> Stem van de Wiebel</label>
+        <label class="schakel"><input type="checkbox" data-instelling="muziek"> Muziek</label>
+        <p class="uitleg">Geldt voor elk scherm; de tv neemt het binnen een minuut over.</p>
+        <div class="knoppen">
+          <a class="knop" href="api/export" download>Alle data exporteren</a>
+          <label class="knop">Data importeren <input type="file" id="importeer" accept="application/json,.json" hidden></label>
+        </div>
+      </div>
+    </section>
+  </main>
+  <p id="melding" class="melding" role="status" hidden></p>
+</body>
+</html>

@@ -19,6 +19,7 @@ test('nieuw profiel volgt het datamodel en het gekozen startniveau', () => {
   assert.deepEqual(p.wiebel, { kleur: 'paars' });
   assert.deepEqual(p.huisdier, { xp: 0 });
   assert.equal(p.introGezien, false);
+  assert.equal(p.wiebelGekozen, false);
 });
 
 test('nieuw profiel krijgt de gekozen Wiebel-kleur', () => {
@@ -51,6 +52,15 @@ test('vulAan: een bestaand profiel krijgt geen intro, een nieuw profiel wel', ()
   assert.equal(vulAan(nieuw).introGezien, true);
 });
 
+test('vulAan: een bestaand profiel heeft zijn Wiebel al, een nieuw profiel kiest hem nog', () => {
+  const oud = nieuwProfiel({ naam: 'Speler 1', avatar: '🐱' });
+  delete oud.wiebelGekozen;
+  assert.equal(vulAan(oud).wiebelGekozen, true);
+  const nieuw = nieuwProfiel({ naam: 'Speler 2', avatar: '🐶' });
+  assert.equal(vulAan(nieuw).wiebelGekozen, false);
+  assert.equal(vulAan(nieuw).wiebelGekozen, false, 'dubbel aanroepen verandert niets');
+});
+
 test('profielen worden bij het laden aangevuld', () => {
   const opslag = nepOpslag();
   const oud = nieuwProfiel({ naam: 'Speler 1', avatar: '🐱' });
@@ -64,7 +74,7 @@ test('naam wordt ingekort tot de maximale lengte', () => {
   assert.equal(p.naam.length, MAX_NAAM);
 });
 
-test('profielen bewaren, teruglezen en verwijderen', () => {
+test('profielen bewaren en teruglezen', () => {
   const opslag = nepOpslag();
   const o = maakOpslag(() => opslag);
   const a = nieuwProfiel({ naam: 'Speler 1', avatar: '🐱' }, new Date('2026-01-01'));
@@ -75,8 +85,6 @@ test('profielen bewaren, teruglezen en verwijderen', () => {
   a.munten = 7;
   o.bewaarProfiel(a);
   assert.equal(o.alleProfielen()[0].munten, 7);
-  o.verwijderProfiel(a.id);
-  assert.deepEqual(o.alleProfielen().map((p) => p.naam), ['Speler 2']);
 });
 
 test('instellingen hebben standaardwaarden en kapotte data breekt niets', () => {
@@ -85,7 +93,7 @@ test('instellingen hebben standaardwaarden en kapotte data breekt niets', () => 
   assert.deepEqual(o.instellingen(), STANDAARD_INSTELLINGEN);
   o.bewaarInstellingen({ geluid: false });
   assert.equal(o.instellingen().geluid, false);
-  assert.equal(o.instellingen().pin, '1234');
+  assert.equal(o.instellingen().stem, true);
   opslag.setItem('wiebels:profielen', '{kapot');
   assert.deepEqual(o.alleProfielen(), []);
 });

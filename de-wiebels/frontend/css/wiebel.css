@@ -108,26 +108,6 @@
 }
 .bubbel[hidden] { display: none; }
 
-/* Animatieproef */
-.fps-meter {
-  min-width: 300px; padding: 8px 32px; border-radius: 24px; background: var(--vlak);
-  font-size: 80px; font-weight: 800; text-align: center; font-variant-numeric: tabular-nums;
-}
-.fps-meter[data-niveau="goed"] { color: var(--goed); }
-.fps-meter[data-niveau="matig"] { color: var(--geel); }
-.fps-meter[data-niveau="slecht"] { color: var(--rood); }
-.proef-indeling { display: flex; gap: 48px; }
-.proef-venster {
-  position: relative; flex: none; width: 900px; height: 736px; overflow: hidden;
-  background: var(--vlak); border: 6px solid var(--vlak-licht); border-radius: 44px;
-}
-.proef-venster .scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-.proef-paneel { flex: 1; display: flex; flex-direction: column; gap: 20px; }
-.proef-paneel h2 { margin: 12px 0 0; font-size: 44px; }
-.proef-knoppen { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.proef-knoppen.drie { grid-template-columns: repeat(3, 1fr); }
-.proef-knop { font-size: 40px; padding: 16px 12px; white-space: nowrap; }
-
 /* Stilstaande Wiebels en scènes, zoals in kaartjes. */
 .stil, .stil * { animation: none !important; }
 

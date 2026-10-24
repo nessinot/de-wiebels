@@ -1,12 +1,12 @@
-// Opslag van profielen en instellingen in de browser (localStorage).
+// Opslag van profielen en instellingen in de browser (localStorage). De bron is de server (sync.js):
+// profielen aanmaken, verwijderen en de instellingen wijzigen gebeurt op de ouderpagina.
 
 import { vulAan } from './profiel.js';
 
 const PROFIELEN = 'wiebels:profielen';
 const INSTELLINGEN = 'wiebels:instellingen';
-const VERWIJDERD = 'wiebels:verwijderd';
 
-export const STANDAARD_INSTELLINGEN = { geluid: true, stem: true, muziek: true, pin: '1234' };
+export const STANDAARD_INSTELLINGEN = { geluid: true, stem: true, muziek: true };
 
 export function maakOpslag(geefOpslag = () => localStorage) {
   const lees = (sleutel, standaard) => {
@@ -31,18 +31,10 @@ export function maakOpslag(geefOpslag = () => localStorage) {
       schrijf(PROFIELEN, alle);
       opslag.opWijziging();
     },
-    verwijderProfiel(id) {
-      const alle = lees(PROFIELEN, {});
-      delete alle[id];
-      schrijf(PROFIELEN, alle);
-      schrijf(VERWIJDERD, [...new Set([...lees(VERWIJDERD, []), id])]);
-      opslag.opWijziging();
-    },
     // Ruwe toegang voor de synchronisatie: alle profielen als { id: profiel }.
     profielenPerId: () => lees(PROFIELEN, {}),
     zetProfielenPerId: (alle) => schrijf(PROFIELEN, alle),
-    verwijderd: () => lees(VERWIJDERD, []),
-    zetVerwijderd: (ids) => schrijf(VERWIJDERD, ids),
+    // Geluid, stem en muziek: de laatst bekende stand van de server.
     instellingen() {
       return { ...STANDAARD_INSTELLINGEN, ...lees(INSTELLINGEN, {}) };
     },

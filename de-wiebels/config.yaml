@@ -11,3 +11,7 @@ ports:
   8765/tcp: 8765
 ports_description:
   8765/tcp: "Webpagina van het spel"
+ingress: true
+ingress_port: 8099
+panel_icon: "mdi:account-child"
+panel_title: "De Wiebels"
