@@ -16,7 +16,8 @@ const MELDING_TIJD = 3000;
 const lijst = document.getElementById('profielen');
 const nieuw = document.getElementById('nieuw');
 const meldingEl = document.getElementById('melding');
-const open = new Set(); // profielen die uitgeklapt staan
+const terugKnop = document.getElementById('terug');
+let huidig = null; // het profiel dat open staat; dan is alleen dat profiel te zien
 let bevestig = null; // id van het profiel waarvan verwijderen nog bevestigd moet worden
 
 async function api(pad, opties = {}) {
@@ -50,7 +51,7 @@ function avatarKeuze(naam, gekozen) {
 function profielKaart(p) {
   const zwak = zwakkePlekken(p.items, 8);
   return `
-    <details class="kaart" data-id="${esc(p.id)}" ${open.has(p.id) ? 'open' : ''}>
+    <details class="kaart" data-id="${esc(p.id)}" ${huidig === p.id ? 'open' : ''}>
       <summary><span class="avatar-groot">${esc(p.avatar)}</span> ${esc(p.naam)}</summary>
       <form data-actie="naam">
         <label class="veld">Naam <input name="naam" value="${esc(p.naam)}" maxlength="${MAX_NAAM}" required></label>
@@ -90,12 +91,31 @@ async function wijzig(id, aanpassing, tekst) {
   await laadProfielen();
 }
 
+// Een geopend profiel staat alleen, als eigen pagina met bovenin de terugknop.
+function toonProfiel(id) {
+  if (huidig === id) return;
+  huidig = id;
+  lijst.querySelectorAll('details[open]').forEach((d) => { if (d.dataset.id !== id) d.open = false; });
+  document.body.classList.add('profiel-open');
+  terugKnop.hidden = false;
+  window.scrollTo(0, 0);
+}
+
+function toonOverzicht() {
+  huidig = null;
+  lijst.querySelectorAll('details[open]').forEach((d) => { d.open = false; });
+  document.body.classList.remove('profiel-open');
+  terugKnop.hidden = true;
+}
+
 lijst.addEventListener('toggle', (e) => {
   const id = e.target.dataset.id;
   if (!id) return;
-  if (e.target.open) open.add(id);
-  else open.delete(id);
+  if (e.target.open) toonProfiel(id);
+  else if (id === huidig) toonOverzicht();
 }, true);
+
+terugKnop.addEventListener('click', toonOverzicht);
 
 lijst.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -137,7 +157,7 @@ lijst.addEventListener('click', (e) => {
   bevestig = null;
   poging(async () => {
     await api(`api/profielen/${id}`, { method: 'DELETE' });
-    open.delete(id);
+    toonOverzicht();
     meld('Profiel verwijderd.');
     await laadProfielen();
   });
@@ -163,6 +183,17 @@ document.querySelectorAll('[data-instelling]').forEach((vak) => {
     meld('Opgeslagen.');
   }));
 });
+
+// Downloaden zonder naar een andere pagina te gaan: in de app op de telefoon kom je daar niet meer vandaan.
+document.getElementById('exporteer').addEventListener('click', () => poging(async () => {
+  const data = await api('api/export');
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));
+  link.download = `de-wiebels-${new Date().toISOString().slice(0, 10)}.json`;
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+  meld('Het exportbestand wordt gedownload.');
+}));
 
 document.getElementById('importeer').addEventListener('change', (e) => {
   const bestand = e.target.files[0];

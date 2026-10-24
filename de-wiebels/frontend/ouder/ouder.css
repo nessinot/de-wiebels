@@ -63,6 +63,14 @@ summary {
 }
 
 details[open] summary { margin-bottom: 12px; }
+
+/* Een geopend profiel staat alleen, als eigen pagina met bovenin de terugknop. */
+.profiel-open main > .uitleg,
+.profiel-open main > section > h2,
+.profiel-open main > section:not(:first-of-type),
+.profiel-open #profielen > details:not([open]),
+.knop[hidden] { display: none; }
+
 .avatar-groot { font-size: 36px; line-height: 1; }
 
 fieldset {
