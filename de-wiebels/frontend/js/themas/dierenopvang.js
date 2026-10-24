@@ -40,4 +40,11 @@ export default {
     { naam: 'Kwebbel', kleur: 'paars', spul: 'koptelefoon' },
     { naam: 'Wolletje', kleur: 'roze', spul: 'muts' },
   ],
+  baaswiebels: {
+    plus: { naam: 'Pootje', kleur: 'oranje', spul: 'kroon' },
+    min: { naam: 'Snorretje', kleur: 'paars', spul: 'cape' },
+    keer: { naam: 'Wipneusje', kleur: 'roze', spul: 'toverstaf' },
+    delen: { naam: 'Manenzwaai', kleur: 'blauw', spul: 'cowboyhoed' },
+    klok: { naam: 'Kukeleku', kleur: 'groen', spul: 'medaille' },
+  },
 };

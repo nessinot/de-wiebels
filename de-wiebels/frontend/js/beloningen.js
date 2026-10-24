@@ -7,9 +7,11 @@ import { KLEUREN } from './wiebel.js';
 export const HUISDIER_GRENZEN = [0, 50, 200, 500];
 const KLEURVOLGORDE = Object.keys(KLEUREN);
 
-// De Wiebel die bij een beloning hoort: { naam, kleur, spul } uit het thema. Er zijn meer beloningen
-// dan themawiebels; bij elke volgende ronde door de lijst krijgt dezelfde Wiebel een andere kleur.
+// De Wiebel die bij een beloning hoort: { naam, kleur, spul } uit het thema. Elke eindbaas heeft een
+// eigen Wiebel. Er zijn meer levels dan themawiebels; bij elke volgende ronde door de lijst krijgt
+// dezelfde Wiebel een andere kleur.
 export function wiebelVoor(beloningId, thema) {
+  if (beloningId.startsWith('baas:')) return { ...thema.baaswiebels[beloningId.slice(5)] };
   const i = BELONINGEN.indexOf(beloningId);
   const n = thema.wiebels.length;
   const basis = thema.wiebels[i % n];

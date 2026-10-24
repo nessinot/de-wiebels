@@ -40,4 +40,11 @@ export default {
     { naam: 'Schildpadje', kleur: 'groen', spul: 'zwembroek' },
     { naam: 'Garnaal', kleur: 'roze', spul: 'rokje' },
   ],
+  baaswiebels: {
+    plus: { naam: 'Koraaltje', kleur: 'roze', spul: 'kroon' },
+    min: { naam: 'Golfrijder', kleur: 'blauw', spul: 'cape' },
+    keer: { naam: 'Inktje', kleur: 'paars', spul: 'toverstaf' },
+    delen: { naam: 'Kapiteintje', kleur: 'oranje', spul: 'helm' },
+    klok: { naam: 'Ankertje', kleur: 'groen', spul: 'medaille' },
+  },
 };

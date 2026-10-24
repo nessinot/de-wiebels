@@ -40,4 +40,11 @@ export default {
     { naam: 'Satelliet', kleur: 'blauw', spul: 'medaille' },
     { naam: 'Vallertje', kleur: 'paars', spul: 'toverstaf' },
   ],
+  baaswiebels: {
+    plus: { naam: 'Kroonster', kleur: 'paars', spul: 'kroon' },
+    min: { naam: 'Maanwachter', kleur: 'blauw', spul: 'helm' },
+    keer: { naam: 'Kometenstaart', kleur: 'oranje', spul: 'cape' },
+    delen: { naam: 'Zonnestraal', kleur: 'roze', spul: 'toverstaf' },
+    klok: { naam: 'Tijdreiziger', kleur: 'groen', spul: 'afstudeerhoed' },
+  },
 };

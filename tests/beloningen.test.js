@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { geefBeloning, huisdierStadium, totVolgendStadium, voegXpToe, wiebelVoor } from '../de-wiebels/frontend/js/beloningen.js';
-import { BELONINGEN } from '../de-wiebels/frontend/js/levels.js';
+import { BELONINGEN, VAARDIGHEDEN } from '../de-wiebels/frontend/js/levels.js';
 import { nieuwProfiel } from '../de-wiebels/frontend/js/profiel.js';
 import { DRAAGBAAR, spul } from '../de-wiebels/frontend/js/spullen.js';
 import { THEMAS } from '../de-wiebels/frontend/js/themas/index.js';
@@ -65,5 +65,19 @@ test('herhalingen van een themawiebel hebben een andere kleur', () => {
     assert.equal(herhaling.naam, eerste.naam);
     assert.equal(herhaling.spul, eerste.spul);
     assert.notEqual(herhaling.kleur, eerste.kleur);
+  }
+});
+
+test('elke eindbaas houdt een eigen Wiebel met een draagbaar spul vast', () => {
+  for (const t of Object.values(THEMAS)) {
+    const namen = new Set(t.wiebels.map((w) => w.naam));
+    for (const v of VAARDIGHEDEN) {
+      const w = wiebelVoor(`baas:${v}`, t);
+      assert.ok(KLEUREN[w.kleur], `${t.id} baas ${v}: kleur ${w.kleur}`);
+      const s = spul(w.spul);
+      assert.ok(s && DRAAGBAAR.includes(s.plek) && s.teken, `${t.id} baas ${v}: spul ${w.spul}`);
+      assert.ok(!namen.has(w.naam), `${t.id}: ${w.naam} komt twee keer voor`);
+      namen.add(w.naam);
+    }
   }
 });

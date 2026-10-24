@@ -13,11 +13,11 @@ export default {
   decor: ['🌿', '🦴', '🌴', '☁️'],
   scene: 'eiland',
   werelden: {
-    plus: { naam: 'Plusvulkaan', emoji: '🌋', accent: 'vulkaan' },
-    min: { naam: 'Minmoeras', emoji: '🐊', accent: 'moeras' },
-    keer: { naam: 'Keerkrater', emoji: '🦴', accent: 'krater' },
-    delen: { naam: 'Deelstrand', emoji: '🌴', accent: 'strand' },
-    klok: { naam: 'Tijdtempel', emoji: '⏳', accent: 'tempel' },
+    plus: { naam: 'Vulkaan', emoji: '🌋', accent: 'vulkaan' },
+    min: { naam: 'Moeras', emoji: '🐊', accent: 'moeras' },
+    keer: { naam: 'Krater', emoji: '🦴', accent: 'krater' },
+    delen: { naam: 'Strand', emoji: '🌴', accent: 'strand' },
+    klok: { naam: 'Tempel', emoji: '⏳', accent: 'tempel' },
   },
   eindbazen: {
     plus: { naam: 'Brul-Rex', emoji: '🦖' },
@@ -40,4 +40,11 @@ export default {
     { naam: 'Slakkie', kleur: 'groen', spul: 'regenjas' },
     { naam: 'Schorpie', kleur: 'paars', spul: 'medaille' },
   ],
+  baaswiebels: {
+    plus: { naam: 'Lavaatje', kleur: 'oranje', spul: 'kroon' },
+    min: { naam: 'Moerasje', kleur: 'groen', spul: 'cape' },
+    keer: { naam: 'Fossieltje', kleur: 'paars', spul: 'afstudeerhoed' },
+    delen: { naam: 'Palmpje', kleur: 'blauw', spul: 'toverstaf' },
+    klok: { naam: 'Tempelwachter', kleur: 'roze', spul: 'helm' },
+  },
 };
