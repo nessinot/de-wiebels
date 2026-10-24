@@ -215,10 +215,10 @@ export default {
       zin: { id: 'wiebel-magisch-bos-delen-2', tekst: 'Ik ben Druppel, en ik deel alles precies eerlijk!' },
     },
     {
-      id: 'delen:10', naam: 'Borrel', kleur: 'groen', spul: 'flippers',
-      lievelingskleur: 'Bubbeldrankjesgroen', eetHetLiefst: 'Soep die borrelt en bubbelt',
-      kanHeelGoed: 'Drankjes laten borrelen', geheimpje: 'Zijn drankjes ruiken naar aardbeien',
-      zin: { id: 'wiebel-magisch-bos-delen-10', tekst: 'Weet je wat? Ik ben Borrel, en mijn drankjes ruiken naar aardbei!' },
+      id: 'delen:10', naam: 'Bruisje', kleur: 'groen', spul: 'flippers',
+      lievelingskleur: 'Bubbeldrankjesgroen', eetHetLiefst: 'Soep die bruist en bubbelt',
+      kanHeelGoed: 'Drankjes laten bruisen', geheimpje: 'Zijn drankjes ruiken naar aardbeien',
+      zin: { id: 'wiebel-magisch-bos-delen-10', tekst: 'Weet je wat? Ik ben Bruisje, en mijn drankjes ruiken naar aardbei!' },
     },
     {
       id: 'delen:5', naam: 'Kruidje', kleur: 'groen', spul: 'zonnehoed',

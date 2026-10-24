@@ -104,10 +104,10 @@ export default {
       zin: { id: 'wiebel-dino-eiland-min-tientallen', tekst: 'Weet je wat? Ik ben Mistje, en niemand vindt mij!' },
     },
     {
-      id: 'min:100', naam: 'Borrel', kleur: 'roze', spul: 'ballon-stip',
+      id: 'min:100', naam: 'Bubbel', kleur: 'roze', spul: 'ballon-stip',
       lievelingskleur: 'Bubbelroze', eetHetLiefst: 'Limonade met heel veel bubbels',
       kanHeelGoed: 'Bubbels blazen in het water', geheimpje: 'Van prik moet hij altijd boeren',
-      zin: { id: 'wiebel-dino-eiland-min-100', tekst: 'Weet je wat? Ik ben Borrel, en ik blaas de grootste bubbels!' },
+      zin: { id: 'wiebel-dino-eiland-min-100', tekst: 'Weet je wat? Ik ben Bubbel, en ik blaas de grootste bubbels!' },
     },
     {
       id: 'min:1000', naam: 'Rietje', kleur: 'oranje', spul: 'zonnehoed',
