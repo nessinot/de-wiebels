@@ -1,5 +1,9 @@
 # Wijzigingen
 
+## 0.4.1
+
+In het ouderscherm staat naast de bedieningstest nu een animatieproef. Daar zie je de nieuwe bewegende Wiebel, met wisselende achtergronden en tot acht Wiebels tegelijk. Rechtsboven staat hoe vloeiend het beeld loopt (beelden per seconde). Zo kunnen we controleren of de tv het aankan.
+
 ## 0.4.0
 
 De voortgang staat nu veilig op de Home Assistant-server, en er is een ouderscherm.
