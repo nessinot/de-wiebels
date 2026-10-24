@@ -1,5 +1,9 @@
 # Wijzigingen
 
+## 0.9.1
+
+Op de ouderpagina staat bovenin een geopend profiel nu een knop "← Terug" naar het overzicht. "Alle data exporteren" downloadt het bestand meteen, zonder de pagina te verlaten.
+
 ## 0.9.0
 
 Het ouderscherm zit nu in Home Assistant: open "De Wiebels" in de zijbalk. Daar maak je profielen aan, wijzig je naam en avatar, stel je niveaus, tijdsdruk, geluid, stem en muziek in, bekijk je de zwakke plekken en exporteer of importeer je de data. Deze instellingen gelden voor elk scherm. Kinderen kiezen op de tv alleen nog hun profiel; de eerste keer kiezen ze hun Wiebel en hun wereld. Zijn er nog geen profielen, dan vraagt het spel om er een aan te maken in Home Assistant. De geheime blauwe knop, de pincode, de bedieningstest en de animatieproef zijn verdwenen.
