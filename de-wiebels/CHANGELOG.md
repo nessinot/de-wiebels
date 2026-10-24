@@ -1,5 +1,9 @@
 # Wijzigingen
 
+## 0.10.0
+
+Elke Wiebel heeft nu een eigen naam en een eigen kaartje. Kies een bevrijde Wiebel en hij vertelt wie hij is, waar hij woont en wat hij lekker vindt. Kies een gevangen Wiebel en je ziet waar hij vastzit; is dat level al open, dan ga je er meteen heen. Nieuw bevrijde Wiebels krijgen een sterretje, en de knop Wiebels in het hoofdmenu laat zien als er nieuwe zijn. Achter de Wiebels staat de wereld van je thema, en met de feestknop dansen ze allemaal.
+
 ## 0.9.1
 
 Op de ouderpagina staat bovenin een geopend profiel nu een knop "← Terug" naar het overzicht. "Alle data exporteren" downloadt het bestand meteen, zonder de pagina te verlaten.
