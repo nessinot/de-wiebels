@@ -1,5 +1,13 @@
 # Wijzigingen
 
+## 0.7.0
+
+De Wiebel praat!
+
+- Hij heeft een vriendelijke stem, en zijn mond beweegt mee. Wat hij zegt, staat ook in de spreekballon.
+- Elk thema heeft een zacht muziekje in het hoofdmenu, het winkeltje en bij Aanpassen. Tijdens de sommen is het stil.
+- In het ouderscherm zet je de stem en de muziek apart aan of uit.
+
 ## 0.6.0
 
 De Wiebel speelt mee.
