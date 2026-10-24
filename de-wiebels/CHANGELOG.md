@@ -1,5 +1,9 @@
 # Wijzigingen
 
+## 0.8.2
+
+Alle plaatjes in het spel zijn nu in kleur, ook de avatars en de werelden. Tijdens de sommen speelt zachtjes het muziekje van je thema; als de Wiebel praat, wordt de muziek even zachter. De Wiebel heeft een nieuwe, enthousiastere stem.
+
 ## 0.8.1
 
 Elke eindbaas houdt nu een eigen, bijzondere Wiebel gevangen. In het thema Dino-eiland hebben de werelden nieuwe namen: Vulkaan, Moeras, Krater, Strand en Tempel.
