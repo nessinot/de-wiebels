@@ -12,11 +12,11 @@ export default {
   },
   decor: ['⭐', '✨', '🌟', '🌙'],
   werelden: {
-    plus: { naam: 'Plusplaneet', emoji: '🪐' },
-    min: { naam: 'Minmaan', emoji: '🌙' },
-    keer: { naam: 'Keerkomeet', emoji: '☄️' },
-    delen: { naam: 'Deelster', emoji: '⭐' },
-    klok: { naam: 'Klokplaneet', emoji: '🌍' },
+    plus: { naam: 'Ringplaneet', emoji: '🪐' },
+    min: { naam: 'Maan', emoji: '🌙' },
+    keer: { naam: 'Komeet', emoji: '☄️' },
+    delen: { naam: 'Zon', emoji: '☀️' },
+    klok: { naam: 'Aarde', emoji: '🌍' },
   },
   eindbazen: {
     plus: { naam: 'Brokkelsteen', emoji: '🌑' },

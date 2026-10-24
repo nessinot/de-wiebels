@@ -155,7 +155,7 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  width: 340px;
+  min-width: 340px; /* lange namen maken de knop breder */
   padding: 24px;
   border-radius: 50%;
   background: transparent;
@@ -164,6 +164,7 @@
 .wereldknop.heeft-focus { background: var(--vlak); }
 .wereldknop.heeft-focus::after { border-radius: 50%; }
 .wereld-emoji { font-size: 170px; line-height: 1.1; }
+.wereld-ondertitel { font-size: 40px; color: var(--tekst-zacht); }
 .wereld-0 { left: 40px; top: 40px; }
 .wereld-1 { left: 420px; top: 300px; }
 .wereld-2 { left: 780px; top: 20px; }
@@ -212,6 +213,8 @@
 .levelknop .sterren { font-size: 52px; }
 .baasknop { background: var(--vlak-licht); }
 .klein { font-size: 32px; color: var(--tekst-zacht); }
+/* Naast de wereldnaam: eronder past de derde rij levels niet meer binnen de safe area. */
+.kop-ondertitel { margin-left: 32px; font-size: 40px; font-weight: normal; color: var(--tekst-zacht); }
 
 /* Ronde */
 .rondekop {
@@ -572,12 +575,12 @@
 }
 
 .race-keuzes .keuzeknop {
-  width: 500px;
-  padding: 28px 36px;
-  gap: 8px;
+  width: 550px;
+  padding: 18px 24px; /* krap, zodat naam en ondertitel binnen de safe area passen */
+  gap: 4px;
 }
 
-.race-keuzes .keuzeknop strong { font-size: 52px; }
+.race-keuzes .keuzeknop strong { font-size: 48px; }
 
 .race-uitslag {
   margin: 0;

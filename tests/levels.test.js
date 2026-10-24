@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { LEVELS, NIVEAUS, STARTNIVEAUS, VAARDIGHEDEN, BELONINGEN, levelOpen, baasOpen, levelVan } from '../de-wiebels/frontend/js/levels.js';
+import { LEVELS, NIVEAUS, ONDERTITELS, STARTNIVEAUS, VAARDIGHEDEN, BELONINGEN, levelOpen, baasOpen, levelVan } from '../de-wiebels/frontend/js/levels.js';
 import { nieuwProfiel } from '../de-wiebels/frontend/js/profiel.js';
 
 const open = (p, v) => LEVELS[v].filter((l) => levelOpen(p, l)).map((l) => l.id);
@@ -11,6 +11,11 @@ test('elke vaardigheid heeft levels en geldige startniveaus', () => {
     for (const n of NIVEAUS[v]) assert.ok(n.open <= LEVELS[v].length);
     for (const s of Object.values(STARTNIVEAUS)) assert.ok(NIVEAUS[v][s.niveaus[v]]);
   }
+});
+
+test('elke vaardigheid heeft een ondertitel, en alleen die', () => {
+  assert.deepEqual(Object.keys(ONDERTITELS), VAARDIGHEDEN);
+  for (const v of VAARDIGHEDEN) assert.ok(ONDERTITELS[v].trim(), v);
 });
 
 test('starter begint met tafels van 1, 2, 5 en 10 en zonder delen', () => {
