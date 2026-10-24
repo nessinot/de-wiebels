@@ -3,6 +3,7 @@ import { animatieproef } from './animatieproef.js';
 import { tweedeScherm } from './tweede-scherm.js';
 import { profielkeuze } from './profielkeuze.js';
 import { profielMaken } from './profiel-maken.js';
+import { intro } from './intro.js';
 import { wereldkaart } from './wereldkaart.js';
 import { levelkeuze } from './levelkeuze.js';
 import { ronde } from './ronde.js';
@@ -16,4 +17,4 @@ import { themakeuze } from './themakeuze.js';
 import { pincode } from './pincode.js';
 import { ouderscherm } from './ouderscherm.js';
 
-export const schermen = { bedieningstest, animatieproef, tweedeScherm, profielkeuze, profielMaken, wereldkaart, levelkeuze, ronde, resultaat, eindbaas, collectie, winkel, aanpassen, tijdrace, tijdraceKeuze, themakeuze, pincode, ouderscherm };
+export const schermen = { bedieningstest, animatieproef, tweedeScherm, profielkeuze, profielMaken, intro, wereldkaart, levelkeuze, ronde, resultaat, eindbaas, collectie, winkel, aanpassen, tijdrace, tijdraceKeuze, themakeuze, pincode, ouderscherm };

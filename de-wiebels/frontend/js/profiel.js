@@ -25,6 +25,7 @@ export function nieuwProfiel({ naam, avatar, kleur = STANDAARD_KLEUR, thema = 'r
     huisdier: { xp: 0 },
     cosmetica: { gekocht: [], aan: {} },
     records: {},
+    introGezien: false,
     aangemaakt: nu.toISOString(),
     bijgewerkt: nu.toISOString(),
   };
@@ -34,6 +35,8 @@ export function nieuwProfiel({ naam, avatar, kleur = STANDAARD_KLEUR, thema = 'r
 // aangeroepen; wat er al staat, blijft staan. Geeft hetzelfde profiel terug.
 export function vulAan(profiel) {
   profiel.wiebel = { kleur: STANDAARD_KLEUR, ...profiel.wiebel };
+  // Het verhaal bij de eerste start is voor nieuwe profielen; wie al speelde, slaat het over.
+  profiel.introGezien ??= true;
   // Het oude winkeltje (actief: hoed, kleur, deco) wordt omgezet naar spullen per plek (aan);
   // munten voor wat niet meer bestaat, gaan terug. Na het omzetten is er 'aan', dus gebeurt dit één keer.
   if (!profiel.cosmetica) profiel.cosmetica = { gekocht: [], aan: {} };

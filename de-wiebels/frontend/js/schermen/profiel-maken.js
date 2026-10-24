@@ -126,7 +126,7 @@ export const profielMaken = {
         opslag.bewaarProfiel(profiel);
         staat.profiel = profiel;
         pasThemaToe(profiel.thema);
-        toon('wereldkaart', {}, { vervang: true });
+        toon('intro', {}, { vervang: true });
       },
     });
 

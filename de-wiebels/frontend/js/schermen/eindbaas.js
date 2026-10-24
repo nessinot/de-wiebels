@@ -1,6 +1,9 @@
 // Eindbaas van een wereld: een snelle ronde met een levensbalk en milde, instelbare tijdsdruk.
+// Naast de baas zit de Wiebel die hij gevangen houdt in een bel (als die nog niet bevrijd is); bij
+// winst knapt de bel en is hij vrij.
 
-import { geefBeloning, voegXpToe } from '../beloningen.js';
+import { belHtml, laatVrij } from '../bel.js';
+import { geefBeloning, voegXpToe, wiebelVoor } from '../beloningen.js';
 import { maakEl, opKlik } from '../dom.js';
 import { BAAS_BELONING, BAAS_LEVENS, TIJD_PER_VRAAG, baasVraag, nieuwGevecht, verwerk } from '../baas.js';
 import { speel } from '../geluid.js';
@@ -13,12 +16,16 @@ import { maakVraagpaneel } from '../vraagpaneel.js';
 import { vuurwerk } from '../vuurwerk.js';
 
 const PAUZE_GOED = 700;
+const NA_WINST = 1600; // ms: eerst juichen, dan knapt de bel
 
 export const eindbaas = {
   maak({ terug, zetFocus, gegevens }) {
     const p = staat.profiel;
     const v = gegevens.vaardigheid;
     const baas = thema(p.thema).eindbazen[v];
+    const beloning = `baas:${v}`;
+    const gevangen = p.verzameling.includes(beloning) ? null : wiebelVoor(beloning, thema(p.thema));
+    const bel = (prefix) => (gevangen ? `<div class="baas-bel">${belHtml(gevangen, prefix)}</div>` : '');
     const gevecht = nieuwGevecht();
     let huidig = null;
     let timer = null;
@@ -27,7 +34,7 @@ export const eindbaas = {
       ${themaAchtergrond(p.thema, v, 'ab-baas')}
       <div class="baasscherm">
         <div class="baas">
-          <span class="baas-emoji">${baas.emoji}</span>
+          <div class="baas-kop"><span class="baas-emoji">${baas.emoji}</span>${bel('baasbel')}</div>
           <span class="baas-naam">${baas.naam}</span>
           <div class="levensbalk"><div class="levens"></div></div>
           ${p.instellingen.tijdsdruk ? '<div class="tijdbalk"><div></div></div>' : ''}
@@ -60,7 +67,7 @@ export const eindbaas = {
 
     function gewonnen() {
       p.munten += BAAS_BELONING;
-      geefBeloning(p, `baas:${v}`);
+      geefBeloning(p, beloning);
       voegXpToe(p, BAAS_LEVENS); // elke treffer was een goed antwoord
       bewaar();
       speel('gewonnen');
@@ -68,9 +75,9 @@ export const eindbaas = {
       el.querySelector('.baasscherm').remove();
       el.insertAdjacentHTML('beforeend', `
         <div class="overwinning">
-          <span class="baas-emoji verslagen">${baas.emoji}</span>
+          <div class="baas-kop"><span class="baas-emoji verslagen">${baas.emoji}</span>${bel('baasbel-vrij')}</div>
           <h1 class="titel-groot">Je hebt ${baas.naam} verslagen!</h1>
-          <p class="ondertitel">+${BAAS_BELONING} 🪙 en een nieuwe Wiebel voor je verzameling</p>
+          <p class="ondertitel">+${BAAS_BELONING} 🪙${gevangen ? ` en je hebt ${gevangen.naam} bevrijd!` : ''}</p>
           <button class="knop knop-hoofd" data-focus data-actie="klaar">Naar de levels</button>
         </div>
       `);
@@ -78,6 +85,13 @@ export const eindbaas = {
       vuurwerk(el, 1400, 450);
       gids.blij();
       gids.zeg('baasGewonnen');
+      if (gevangen) {
+        setTimeout(() => {
+          if (!el.isConnected) return;
+          laatVrij(el.querySelector('.overwinning .vangbel'));
+          gids.zeg('bevrijd');
+        }, NA_WINST);
+      }
       zetFocus(el.querySelector('[data-actie="klaar"]'));
     }
 

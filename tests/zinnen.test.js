@@ -41,10 +41,14 @@ test('kiesZin geeft nooit twee keer achter elkaar dezelfde zin', () => {
 });
 
 test('de Wiebel heeft zinnen voor de sommen, de eindbaas en het resultaat', () => {
-  for (const gebeurtenis of ['goed', 'bijna', 'baasRaak', 'baasGewonnen', 'nieuweWiebel', 'gegroeid']) {
+  for (const gebeurtenis of ['goed', 'bijna', 'baasRaak', 'baasGewonnen', 'bevrijd', 'gegroeid']) {
     assert.ok(ZINNEN[gebeurtenis]?.length > 1, gebeurtenis);
   }
   for (const combo of Object.keys(COMBO_BONUS)) assert.ok(ZINNEN[COMBO_ZINNEN[combo]], `combo ${combo}`);
   assert.equal(RESULTAAT_ZINNEN.length, 4);
   for (const gebeurtenis of RESULTAAT_ZINNEN) assert.ok(ZINNEN[gebeurtenis], gebeurtenis);
+});
+
+test('het verhaal aan het begin heeft één zin per schermpje', () => {
+  assert.equal(ZINNEN.intro.length, 4);
 });

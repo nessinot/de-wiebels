@@ -3,7 +3,9 @@ import assert from 'node:assert/strict';
 import { geefBeloning, huisdierStadium, totVolgendStadium, voegXpToe, wiebelVoor } from '../de-wiebels/frontend/js/beloningen.js';
 import { BELONINGEN } from '../de-wiebels/frontend/js/levels.js';
 import { nieuwProfiel } from '../de-wiebels/frontend/js/profiel.js';
+import { DRAAGBAAR, spul } from '../de-wiebels/frontend/js/spullen.js';
 import { THEMAS } from '../de-wiebels/frontend/js/themas/index.js';
+import { KLEUREN } from '../de-wiebels/frontend/js/wiebel.js';
 
 test('een beloning wordt maar één keer gegeven', () => {
   const p = nieuwProfiel({ naam: 'Speler 1', avatar: '🐱' });
@@ -33,7 +35,35 @@ test('elke beloning heeft in elk thema een Wiebel', () => {
   for (const t of Object.values(THEMAS)) {
     for (const id of BELONINGEN) {
       const w = wiebelVoor(id, t);
-      assert.ok(w.emoji && w.naam, `${t.id} ${id}`);
+      assert.ok(w.naam && KLEUREN[w.kleur], `${t.id} ${id}`);
     }
+  }
+});
+
+test('elke themawiebel heeft een geldige kleur en een spul dat hij kan dragen', () => {
+  for (const t of Object.values(THEMAS)) {
+    for (const w of t.wiebels) {
+      assert.ok(KLEUREN[w.kleur], `${t.id} ${w.naam}: kleur ${w.kleur}`);
+      const s = spul(w.spul);
+      assert.ok(s, `${t.id} ${w.naam}: spul ${w.spul} bestaat niet`);
+      assert.ok(DRAAGBAAR.includes(s.plek) && s.teken, `${t.id} ${w.naam}: ${w.spul} is niet draagbaar`);
+    }
+  }
+});
+
+test('herhalingen van een themawiebel hebben een andere kleur', () => {
+  for (const t of Object.values(THEMAS)) {
+    const gezien = new Set();
+    for (const id of BELONINGEN) {
+      const w = wiebelVoor(id, t);
+      const sleutel = `${w.naam}/${w.kleur}`;
+      assert.ok(!gezien.has(sleutel), `${t.id}: ${sleutel} komt twee keer voor`);
+      gezien.add(sleutel);
+    }
+    const eerste = wiebelVoor(BELONINGEN[0], t);
+    const herhaling = wiebelVoor(BELONINGEN[t.wiebels.length], t);
+    assert.equal(herhaling.naam, eerste.naam);
+    assert.equal(herhaling.spul, eerste.spul);
+    assert.notEqual(herhaling.kleur, eerste.kleur);
   }
 });

@@ -18,6 +18,7 @@ test('nieuw profiel volgt het datamodel en het gekozen startniveau', () => {
   assert.match(p.id, /^p-[a-z0-9]+$/);
   assert.deepEqual(p.wiebel, { kleur: 'paars' });
   assert.deepEqual(p.huisdier, { xp: 0 });
+  assert.equal(p.introGezien, false);
 });
 
 test('nieuw profiel krijgt de gekozen Wiebel-kleur', () => {
@@ -36,6 +37,18 @@ test('vulAan geeft een oud profiel een paarse Wiebel en laat de rest staan', () 
   assert.deepEqual(oud, { ...kopie, wiebel: { kleur: 'paars' } }, 'dubbel aanroepen verandert niets');
   const groen = vulAan(nieuwProfiel({ naam: 'Speler 2', avatar: '🐶', kleur: 'groen' }));
   assert.deepEqual(groen.wiebel, { kleur: 'groen' }, 'een gekozen kleur blijft');
+});
+
+test('vulAan: een bestaand profiel krijgt geen intro, een nieuw profiel wel', () => {
+  const oud = nieuwProfiel({ naam: 'Speler 1', avatar: '🐱' });
+  delete oud.introGezien;
+  assert.equal(vulAan(oud).introGezien, true);
+  assert.equal(vulAan(oud).introGezien, true, 'dubbel aanroepen verandert niets');
+  const nieuw = nieuwProfiel({ naam: 'Speler 2', avatar: '🐶' });
+  assert.equal(vulAan(nieuw).introGezien, false);
+  assert.equal(vulAan(nieuw).introGezien, false, 'dubbel aanroepen verandert niets');
+  nieuw.introGezien = true;
+  assert.equal(vulAan(nieuw).introGezien, true);
 });
 
 test('profielen worden bij het laden aangevuld', () => {

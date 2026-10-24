@@ -428,8 +428,8 @@
 
 .wiebels {
   display: grid;
-  grid-template-columns: repeat(10, 112px);
-  gap: 16px;
+  grid-template-columns: repeat(12, 92px);
+  gap: 12px;
   align-content: start;
 }
 
@@ -443,8 +443,6 @@
   background: var(--vlak);
   font-size: 72px;
 }
-
-.wiebeltje.onbekend { color: var(--tekst-zacht); opacity: 0.4; font-size: 56px; }
 
 .beloningen { min-height: 120px; }
 

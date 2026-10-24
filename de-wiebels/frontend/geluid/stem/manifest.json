@@ -74,6 +74,18 @@
    "bestand": "baas-raak-4.mp3",
    "tekst": "Die zit!"
   },
+  "bevrijd-1": {
+   "bestand": "bevrijd-1.mp3",
+   "tekst": "Hoera, weer een Wiebel bevrijd!"
+  },
+  "bevrijd-2": {
+   "bestand": "bevrijd-2.mp3",
+   "tekst": "Kijk, hij is vrij!"
+  },
+  "bevrijd-3": {
+   "bestand": "bevrijd-3.mp3",
+   "tekst": "Joepie, kom maar bij ons!"
+  },
   "bijna-1": {
    "bestand": "bijna-1.mp3",
    "tekst": "Bijna! Kijk, zo zit het."
@@ -162,6 +174,22 @@
    "bestand": "goed-6.mp3",
    "tekst": "Joepie, goed!"
   },
+  "intro-baas-1": {
+   "bestand": "intro-baas-1.mp3",
+   "tekst": "En elke eindbaas houdt er nog eentje vast."
+  },
+  "intro-gevangen-1": {
+   "bestand": "intro-gevangen-1.mp3",
+   "tekst": "Oh nee! De eindbazen hebben alle Wiebels gevangen!"
+  },
+  "intro-level-1": {
+   "bestand": "intro-level-1.mp3",
+   "tekst": "Voor elk level dat je haalt, komt er een Wiebel vrij."
+  },
+  "intro-samen-1": {
+   "bestand": "intro-samen-1.mp3",
+   "tekst": "Samen gaan we ze allemaal bevrijden! Kom op!"
+  },
   "kleur-1": {
    "bestand": "kleur-1.mp3",
    "tekst": "Hoi! Ik ben jouw Wiebel!"
@@ -209,14 +237,6 @@
   "nat-2": {
    "bestand": "nat-2.mp3",
    "tekst": "Oei, wat een regen!"
-  },
-  "nieuwe-wiebel-1": {
-   "bestand": "nieuwe-wiebel-1.mp3",
-   "tekst": "Kijk, een nieuw vriendje!"
-  },
-  "nieuwe-wiebel-2": {
-   "bestand": "nieuwe-wiebel-2.mp3",
-   "tekst": "Hoi! Kom je bij ons?"
   },
   "passen-1": {
    "bestand": "passen-1.mp3",

@@ -1,5 +1,5 @@
 // Resultaat na een ronde: sterren en wat je verder kunt doen. De Wiebel viert linksonder mee; een
-// nieuw verzamelde Wiebel springt erbij en bij groei laat hij zijn nieuwe stadium zien.
+// net bevrijde Wiebel springt erbij en bij groei laat hij zijn nieuwe stadium zien.
 
 import { huisdierStadium, wiebelVoor } from '../beloningen.js';
 import { maakEl, opKlik } from '../dom.js';
@@ -7,12 +7,12 @@ import { maakGids } from '../gids.js';
 import { LEVELS, levelOpen, levelVan } from '../levels.js';
 import { staat } from '../opslag.js';
 import { thema } from '../themas/index.js';
-import { sterrenHtml } from '../weergave.js';
+import { sterrenHtml, vriendjeHtml } from '../weergave.js';
 import { STADIUM_NAMEN } from '../wiebel.js';
 import { RESULTAAT_ZINNEN } from '../zinnen.js';
 
 const TEKSTEN = ['Goed geoefend!', 'Mooi zo!', 'Heel goed!', 'Fantastisch!'];
-// Na elkaar: eerst meevieren, dan de nieuwe Wiebel, dan het groeien.
+// Na elkaar: eerst meevieren, dan de bevrijde Wiebel, dan het groeien.
 const STAP = 2200;
 
 export const resultaat = {
@@ -25,11 +25,10 @@ export const resultaat = {
     const volgendeOpen = volgende && levelOpen(p, volgende);
     const stadium = huisdierStadium(p.huisdier.xp);
     const nieuw = gegevens.nieuweWiebel ? wiebelVoor(level.id, t) : null;
-    const nieuwEmoji = nieuw && `<span style="filter: ${nieuw.filter}">${nieuw.emoji}</span>`;
 
     function beloningen() {
       const delen = [];
-      if (nieuw) delen.push(`<span class="beloning"><span class="wiebeltje">${nieuwEmoji}</span> Nieuwe Wiebel: ${nieuw.naam}!</span>`);
+      if (nieuw) delen.push(`<span class="beloning"><span class="wiebeltje">${vriendjeHtml(nieuw, 'res-vriend', 'stil')}</span> Je hebt ${nieuw.naam} bevrijd!</span>`);
       if (gegevens.gegroeid) delen.push(`<span class="beloning">Je Wiebel is gegroeid: ${STADIUM_NAMEN[stadium]}!</span>`);
       return delen.join('');
     }
@@ -54,7 +53,7 @@ export const resultaat = {
       if (gegevens.sterren) gids.blij();
       gids.zeg(RESULTAAT_ZINNEN[gegevens.sterren]);
     }];
-    if (nieuw) stappen.push(() => gids.vriend(nieuwEmoji));
+    if (nieuw) stappen.push(() => gids.vriend(vriendjeHtml(nieuw, 'res-vriend-gids')));
     if (gegevens.gegroeid) stappen.push(() => gids.groei(stadium));
     stappen.forEach((stap, i) => setTimeout(() => el.isConnected && stap(), 400 + i * STAP));
 

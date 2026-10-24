@@ -164,7 +164,66 @@
 /* Wat vliegt (js/vliegen.js): munten naar de teller, een ster naar de eindbaas */
 .vlieger-teken { position: absolute; z-index: 5; display: grid; place-items: center; line-height: 1; pointer-events: none; }
 
+/* Bevrijde Wiebels (vriendjeHtml in js/weergave.js). Wie nog gevangen zit, is een donker silhouet:
+   alles in één kleur en het geheel doorzichtig (geen filter). */
+.vriendje { display: block; width: 100%; height: 100%; }
+.silhouet { opacity: .55; }
+.silhouet .wiebel * { fill: #000; stroke: #000; }
+.gids-vriend .vriendje { width: 150px; height: 150px; }
+
+/* Een gevangen Wiebel in een bel (js/bel.js): de bel zweeft zacht; bij het bevrijden knapt hij. */
+.vangbel { display: block; overflow: visible; }
+.vangbel-zweef { animation: vangbel-zweef 3s ease-in-out infinite alternate; }
+.vangbel.vrij .vangbel-zweef { animation: none; }
+.vangbel-glas { transform-box: fill-box; transform-origin: center; }
+.vangbel-glas circle { fill: #bfe8ff; fill-opacity: .18; stroke: #e6f6ff; stroke-width: 7; stroke-opacity: .8; }
+.vangbel-glans { fill: none; stroke: #fff; stroke-width: 12; stroke-linecap: round; opacity: .7; }
+@keyframes vangbel-zweef { from { transform: translateY(-8px); } to { transform: translateY(8px); } }
+
+/* Eindbaas: de bel naast de baas, ook na de overwinning. */
+.baas-kop { position: relative; }
+.baas-bel { position: absolute; left: 58%; top: 60px; width: 200px; height: 200px; }
+.baas-bel .vangbel { width: 100%; height: 100%; }
+
+/* Verzameling: bovenin de wei met rondlopende Wiebels, daaronder alle Wiebels stil. */
+.collectie-rechts { display: flex; flex-direction: column; gap: 24px; }
+.wei { position: relative; width: 1236px; height: 290px; border-radius: 32px; background: var(--vlak); overflow: hidden; }
+.wei-leeg { position: absolute; inset: 0; margin: 0; display: grid; place-items: center; color: var(--tekst-zacht); font-size: 44px; }
+.loper { position: absolute; left: 0; bottom: 10px; width: 170px; height: 170px; animation: loper-loop ease-in-out infinite alternate; }
+.loper:nth-child(even) { bottom: 90px; }
+.loper .w-sprong { animation: loper-stap .45s ease-in-out infinite alternate; }
+@keyframes loper-loop { from { transform: translateX(var(--van)); } to { transform: translateX(var(--naar)); } }
+@keyframes loper-stap { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+.wiebels .wiebeltje { width: 92px; height: 92px; border-radius: 20px; }
+
+/* Het verhaal bij de eerste start (schermen/intro.js): links de verteller, rechts wat hij vertelt. */
+.intro-verteller { position: absolute; left: 96px; bottom: 120px; width: 384px; height: 416px; }
+.intro-verteller .wiebel { display: block; }
+.intro-verteller .bubbel { top: auto; left: 0; bottom: var(--kop, 300px); width: max-content; max-width: 580px; box-sizing: border-box; }
+.intro-verteller .bubbel::after { right: auto; left: 170px; }
+.intro-podium { position: absolute; left: 700px; right: 96px; top: 70px; bottom: 200px; display: grid; place-items: center; }
+.intro-onder { position: absolute; left: 700px; right: 96px; bottom: 54px; display: flex; align-items: center; gap: 40px; }
+.intro-stippen { display: flex; gap: 20px; margin-right: auto; }
+.intro-stippen span { width: 32px; height: 32px; border-radius: 50%; background: var(--vlak-licht); }
+.intro-stippen span.aan { background: var(--accent); }
+.intro-hint { color: var(--tekst-zacht); }
+.intro-bazen { display: flex; gap: 20px; align-items: flex-end; }
+.intro-baas { display: flex; flex-direction: column; align-items: center; width: 200px; }
+.intro-baas-emoji { font-size: 130px; line-height: 1; }
+.intro-baas .vangbel { width: 190px; height: 190px; }
+.intro-level { display: flex; align-items: center; gap: 56px; }
+.intro-levelkaart { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 40px 56px; border-radius: 32px; background: var(--vlak); font-size: 48px; }
+.intro-levelkaart .sterren { font-size: 80px; }
+.intro-pijl { font-size: 120px; color: var(--accent); }
+.intro-level .vangbel { width: 380px; height: 380px; }
+.intro-een-baas { display: flex; align-items: center; gap: 40px; }
+.intro-baas-emoji.groot { font-size: 300px; }
+.intro-een-baas .vangbel { width: 340px; height: 340px; }
+.intro-vrienden { display: flex; gap: 40px; align-items: flex-end; }
+.intro-vrienden .vriendje { width: 250px; height: 250px; }
+
 @media (prefers-reduced-motion: reduce) {
   .w-lijf, .w-ogen, .w-pupillen, .w-spriet, .w-arm, .w-ster, .twinkel, .drijf, .druppel, .vlok,
-  .w-ballon, .spat, .blad, .snipper, .bel, .vuurvlieg, .wier, .dobber, .kruip { animation: none; }
+  .w-ballon, .spat, .blad, .snipper, .bel, .vuurvlieg, .wier, .dobber, .kruip,
+  .vangbel-zweef, .loper, .loper .w-sprong { animation: none; }
 }

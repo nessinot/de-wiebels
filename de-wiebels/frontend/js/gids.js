@@ -77,13 +77,13 @@ export function maakGids(profiel, prefix, { kort = false, stadium } = {}) {
       blij(w);
       zeg('gegroeid');
     },
-    // Een nieuw verzamelde Wiebel springt erbij en blijft naast de gids staan.
+    // Een net bevrijde Wiebel springt erbij en blijft naast de gids staan.
     vriend(html) {
       const vriend = document.createElement('span');
       vriend.className = 'gids-vriend';
       vriend.innerHTML = html;
       el.append(vriend);
-      zeg('nieuweWiebel');
+      zeg('bevrijd');
       if (rustig()) return;
       vriend.animate([
         { transform: 'translate(320px, 0)', opacity: 0 },

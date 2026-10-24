@@ -38,7 +38,8 @@ export const profielkeuze = {
       kies(id) {
         staat.profiel = profielen.find((p) => p.id === id);
         pasThemaToe(staat.profiel.thema);
-        toon('wereldkaart');
+        // Wie het verhaal nog niet heeft gezien (net gemaakt, intro niet afgemaakt), krijgt het eerst.
+        toon(staat.profiel.introGezien ? 'wereldkaart' : 'intro');
       },
       nieuw: () => toon('profielMaken'),
     });

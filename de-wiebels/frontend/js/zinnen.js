@@ -9,6 +9,15 @@ export const ZINNEN = {
     { id: 'kleur-3', tekst: 'Wij worden vast goede vrienden!' },
   ],
 
+  // Het verhaal bij de eerste start van een profiel: één zin per schermpje, in deze volgorde
+  // (schermen/intro.js kiest ze zelf, niet via kiesZin).
+  intro: [
+    { id: 'intro-gevangen-1', tekst: 'Oh nee! De eindbazen hebben alle Wiebels gevangen!' },
+    { id: 'intro-level-1', tekst: 'Voor elk level dat je haalt, komt er een Wiebel vrij.' },
+    { id: 'intro-baas-1', tekst: 'En elke eindbaas houdt er nog eentje vast.' },
+    { id: 'intro-samen-1', tekst: 'Samen gaan we ze allemaal bevrijden! Kom op!' },
+  ],
+
   // Hoofdmenu
   menuWelkom: [
     { id: 'menu-welkom-1', tekst: 'Waar gaan we heen?' },
@@ -149,9 +158,11 @@ export const ZINNEN = {
     { id: 'resultaat-drie-1', tekst: 'Drie sterren! Fantastisch!' },
     { id: 'resultaat-drie-2', tekst: 'Alles in een keer goed!' },
   ],
-  nieuweWiebel: [
-    { id: 'nieuwe-wiebel-1', tekst: 'Kijk, een nieuw vriendje!' },
-    { id: 'nieuwe-wiebel-2', tekst: 'Hoi! Kom je bij ons?' },
+  // Een Wiebel komt vrij (resultaat na een level, eindbaas verslagen)
+  bevrijd: [
+    { id: 'bevrijd-1', tekst: 'Hoera, weer een Wiebel bevrijd!' },
+    { id: 'bevrijd-2', tekst: 'Kijk, hij is vrij!' },
+    { id: 'bevrijd-3', tekst: 'Joepie, kom maar bij ons!' },
   ],
   gegroeid: [
     { id: 'gegroeid-1', tekst: 'Kijk, ik ben gegroeid!' },

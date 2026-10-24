@@ -2,6 +2,7 @@
 
 import { huisdierStadium } from './beloningen.js';
 import { esc } from './dom.js';
+import { spul } from './spullen.js';
 import { THEMAS } from './themas/index.js';
 import { wiebelSvg } from './wiebel.js';
 
@@ -22,6 +23,19 @@ export function eigenWiebelStaat(profiel) {
 
 export function eigenWiebelHtml(profiel, prefix, opties) {
   return wiebelSvg(eigenWiebelStaat(profiel), prefix, opties);
+}
+
+// Een bevrijde Wiebel (wiebelVoor in beloningen.js): zijn kleur en zijn spul, als Grote Wiebel.
+export function vriendjeStaat(w) {
+  return { kleur: w.kleur, stadium: 2, aan: { [spul(w.spul).plek]: w.spul } };
+}
+
+// Het vak van een vriendje, met ruimte voor wat hij op zijn hoofd of in zijn hand heeft.
+export const VRIENDJE_VAK = '-30 -46 300 306';
+
+// Een bevrijde Wiebel als eigen plaatje (vierkant vak). klasse: bijvoorbeeld 'stil' of 'silhouet'.
+export function vriendjeHtml(w, prefix, klasse = '') {
+  return `<svg class="vriendje ${klasse}" viewBox="${VRIENDJE_VAK}" aria-hidden="true">${wiebelSvg(vriendjeStaat(w), prefix)}</svg>`;
 }
 
 export function themaKnoppen(huidig) {

@@ -1,16 +1,20 @@
-// Wiebels verzamelen en het huisdier laten groeien. De verzameling is thema-onafhankelijk;
+// Wiebels bevrijden en het huisdier laten groeien. De verzameling is thema-onafhankelijk;
 // het thema bepaalt alleen hoe elke Wiebel eruitziet.
 
 import { BELONINGEN } from './levels.js';
+import { KLEUREN } from './wiebel.js';
 
 export const HUISDIER_GRENZEN = [0, 50, 200, 500];
-const KLEURVARIANT = 70; // graden kleurverschuiving per extra ronde door de lijst
+const KLEURVOLGORDE = Object.keys(KLEUREN);
 
+// De Wiebel die bij een beloning hoort: { naam, kleur, spul } uit het thema. Er zijn meer beloningen
+// dan themawiebels; bij elke volgende ronde door de lijst krijgt dezelfde Wiebel een andere kleur.
 export function wiebelVoor(beloningId, thema) {
   const i = BELONINGEN.indexOf(beloningId);
   const n = thema.wiebels.length;
+  const basis = thema.wiebels[i % n];
   const variant = Math.floor(i / n);
-  return { ...thema.wiebels[i % n], filter: variant ? `hue-rotate(${variant * KLEURVARIANT}deg)` : '' };
+  return { ...basis, kleur: KLEURVOLGORDE[(KLEURVOLGORDE.indexOf(basis.kleur) + variant) % KLEURVOLGORDE.length] };
 }
 
 // Geeft true als de beloning nieuw is.
