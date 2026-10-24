@@ -1,5 +1,15 @@
 # Wijzigingen
 
+## 0.5.0
+
+Elk kind heeft nu een eigen Wiebel.
+
+- De Wiebel is een vrolijk wezentje dat wiebelt, knippert en reageert. Je kiest zijn kleur bij het maken van een profiel en kunt die later gratis wisselen.
+- De Wiebel groeit mee met het aantal goede antwoorden en vervangt het huisdier.
+- Het hoofdmenu toont je Wiebel naast de werelden.
+- Het winkeltje verkoopt spullen voor de Wiebel: petten, brillen, kleding, ballonnen, vriendjes en achtergronden. Je past eerst en koopt daarna. Bij Aanpassen kies je wat hij draagt.
+- Wat je al had gekocht is omgezet. Voor kleuren en versieringen die niet meer bestaan, krijg je je munten terug.
+
 ## 0.4.2
 
 Onder elke wereld staat nu wat je er oefent, zoals "Plussommen" of "Klokkijken", ook in de levelkeuze en bij de tijdrace. In het Ruimte-thema hebben de werelden nieuwe namen: Ringplaneet, Maan, Komeet, Zon en Aarde.
