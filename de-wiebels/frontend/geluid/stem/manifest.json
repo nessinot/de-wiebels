@@ -103,6 +103,18 @@
    "bestand": "bijna-4.mp3",
    "tekst": "Oei, bijna! Kijk eens."
   },
+  "collectie-alles-1": {
+   "bestand": "collectie-alles-1.mp3",
+   "tekst": "Ze zijn allemaal vrij! Hoera!"
+  },
+  "collectie-nieuw-1": {
+   "bestand": "collectie-nieuw-1.mp3",
+   "tekst": "Kijk, er zijn nieuwe bij!"
+  },
+  "collectie-start-1": {
+   "bestand": "collectie-start-1.mp3",
+   "tekst": "Bevrijd alle Wiebels!"
+  },
   "combo-drie-1": {
    "bestand": "combo-drie-1.mp3",
    "tekst": "Drie op een rij!"
@@ -150,6 +162,18 @@
   "gekocht-2": {
    "bestand": "gekocht-2.mp3",
    "tekst": "Joepie, dank je wel!"
+  },
+  "gevangen-baas-1": {
+   "bestand": "gevangen-baas-1.mp3",
+   "tekst": "Die houdt de eindbaas vast! Versla de eindbaas om hem te bevrijden."
+  },
+  "gevangen-dicht-1": {
+   "bestand": "gevangen-dicht-1.mp3",
+   "tekst": "Die zit nog achter slot en grendel. Speel eerst de levels ervoor!"
+  },
+  "gevangen-open-1": {
+   "bestand": "gevangen-open-1.mp3",
+   "tekst": "Die zit nog gevangen! Haal dat level om hem te bevrijden."
   },
   "goed-1": {
    "bestand": "goed-1.mp3",
@@ -218,6 +242,10 @@
   "koud-2": {
    "bestand": "koud-2.mp3",
    "tekst": "Ik heb het koud!"
+  },
+  "menu-nieuw-1": {
+   "bestand": "menu-nieuw-1.mp3",
+   "tekst": "Er is een Wiebel bevrijd! Kijk maar bij Wiebels."
   },
   "menu-welkom-1": {
    "bestand": "menu-welkom-1.mp3",
@@ -322,6 +350,946 @@
   "wereld-2": {
    "bestand": "wereld-2.mp3",
    "tekst": "Joepie, op reis!"
+  },
+  "wiebel-dierenopvang-baas-delen": {
+   "bestand": "wiebel-dierenopvang-baas-delen.mp3",
+   "tekst": "Weet je wat? Ik ben Zwiepje, en ik slaap met mijn hoed op!"
+  },
+  "wiebel-dierenopvang-baas-keer": {
+   "bestand": "wiebel-dierenopvang-baas-keer.mp3",
+   "tekst": "Psst, ik ben Wipneusje! Stinkie ruikt nu naar bloemetjes."
+  },
+  "wiebel-dierenopvang-baas-klok": {
+   "bestand": "wiebel-dierenopvang-baas-klok.mp3",
+   "tekst": "Weet je wat? Ik ben Wekkertje, en Bokkie is nu mijn maatje!"
+  },
+  "wiebel-dierenopvang-baas-min": {
+   "bestand": "wiebel-dierenopvang-baas-min.mp3",
+   "tekst": "Ik ben Snorretje, en Vos speelt nu verstoppertje met mij!"
+  },
+  "wiebel-dierenopvang-baas-plus": {
+   "bestand": "wiebel-dierenopvang-baas-plus.mp3",
+   "tekst": "Weet je wat? Ik ben Pootje, en Rommel is nu mijn vriend!"
+  },
+  "wiebel-dierenopvang-delen-1": {
+   "bestand": "wiebel-dierenopvang-delen-1.mp3",
+   "tekst": "Hoi, ik ben Galop! Ik ren elke ochtend mee met de paarden."
+  },
+  "wiebel-dierenopvang-delen-10": {
+   "bestand": "wiebel-dierenopvang-delen-10.mp3",
+   "tekst": "Hallo, ik heet Borstel! Ik borstel de paarden tot ze glimmen."
+  },
+  "wiebel-dierenopvang-delen-2": {
+   "bestand": "wiebel-dierenopvang-delen-2.mp3",
+   "tekst": "Weet je wat? Ik ben Strootje, en ik slaap in het stro!"
+  },
+  "wiebel-dierenopvang-delen-3": {
+   "bestand": "wiebel-dierenopvang-delen-3.mp3",
+   "tekst": "Ik ben Zadeltje, en ik won een medaille met springen!"
+  },
+  "wiebel-dierenopvang-delen-4": {
+   "bestand": "wiebel-dierenopvang-delen-4.mp3",
+   "tekst": "Hoi, ik ben Vlechtje! Ik vlecht strikjes in paardenstaarten."
+  },
+  "wiebel-dierenopvang-delen-5": {
+   "bestand": "wiebel-dierenopvang-delen-5.mp3",
+   "tekst": "Psst, ik ben Hobbel! Mijn laarzen zijn veel te groot."
+  },
+  "wiebel-dierenopvang-delen-6": {
+   "bestand": "wiebel-dierenopvang-delen-6.mp3",
+   "tekst": "Weet je wat? Ik ben Hooitje, en ik heb hooi op mijn hoofd!"
+  },
+  "wiebel-dierenopvang-delen-7": {
+   "bestand": "wiebel-dierenopvang-delen-7.mp3",
+   "tekst": "Hallo, ik heet Draver! Ik doe wedstrijdjes met de pony."
+  },
+  "wiebel-dierenopvang-delen-8": {
+   "bestand": "wiebel-dierenopvang-delen-8.mp3",
+   "tekst": "Psst, ik ben Klompje! Ik tik de maat mee met de paarden."
+  },
+  "wiebel-dierenopvang-delen-9": {
+   "bestand": "wiebel-dierenopvang-delen-9.mp3",
+   "tekst": "Ik ben Rijmpje, en de paarden dansen op mijn liedjes!"
+  },
+  "wiebel-dierenopvang-delen-mix": {
+   "bestand": "wiebel-dierenopvang-delen-mix.mp3",
+   "tekst": "Hallo, ik heet Allerlei! Ik deel mijn parasol met de paarden."
+  },
+  "wiebel-dierenopvang-keer-1": {
+   "bestand": "wiebel-dierenopvang-keer-1.mp3",
+   "tekst": "Hoi, ik ben Hopje! Ik dans ballet met de konijnen."
+  },
+  "wiebel-dierenopvang-keer-10": {
+   "bestand": "wiebel-dierenopvang-keer-10.mp3",
+   "tekst": "Hallo, ik heet Tientje! Ik heb wel tien konijnenvriendjes!"
+  },
+  "wiebel-dierenopvang-keer-2": {
+   "bestand": "wiebel-dierenopvang-keer-2.mp3",
+   "tekst": "Weet je wat? Ik ben Dubbeltje, en ik heb alles dubbel!"
+  },
+  "wiebel-dierenopvang-keer-3": {
+   "bestand": "wiebel-dierenopvang-keer-3.mp3",
+   "tekst": "Ik ben Holletje, en mijn tunnel gaat naar de keuken!"
+  },
+  "wiebel-dierenopvang-keer-4": {
+   "bestand": "wiebel-dierenopvang-keer-4.mp3",
+   "tekst": "Ik ben Sprongetje, en ik spring zelfs in mijn slaap!"
+  },
+  "wiebel-dierenopvang-keer-5": {
+   "bestand": "wiebel-dierenopvang-keer-5.mp3",
+   "tekst": "Psst, ik ben Klavertje! Ik vind altijd klavertjes vier."
+  },
+  "wiebel-dierenopvang-keer-6": {
+   "bestand": "wiebel-dierenopvang-keer-6.mp3",
+   "tekst": "Hallo, ik heet Snoetje! Mijn snor is nep, hihi!"
+  },
+  "wiebel-dierenopvang-keer-7": {
+   "bestand": "wiebel-dierenopvang-keer-7.mp3",
+   "tekst": "Weet je wat? Ik ben Duikeltje, en ik rol door het hooi!"
+  },
+  "wiebel-dierenopvang-keer-8": {
+   "bestand": "wiebel-dierenopvang-keer-8.mp3",
+   "tekst": "Psst, ik ben Pompom! Ik blaas ballonnen voor de konijnen."
+  },
+  "wiebel-dierenopvang-keer-9": {
+   "bestand": "wiebel-dierenopvang-keer-9.mp3",
+   "tekst": "Ik ben Knabbel, en mijn toverstaf is een wortel!"
+  },
+  "wiebel-dierenopvang-keer-mix": {
+   "bestand": "wiebel-dierenopvang-keer-mix.mp3",
+   "tekst": "Hallo, ik heet Mengelmoes! Mijn sokken passen nooit bij elkaar."
+  },
+  "wiebel-dierenopvang-klok-24": {
+   "bestand": "wiebel-dierenopvang-klok-24.mp3",
+   "tekst": "Hallo, ik heet Lampje! Ik lees de kippen een verhaaltje voor."
+  },
+  "wiebel-dierenopvang-klok-half": {
+   "bestand": "wiebel-dierenopvang-klok-half.mp3",
+   "tekst": "Weet je wat? Ik ben Halfje, en ik deel altijd de helft!"
+  },
+  "wiebel-dierenopvang-klok-kwart": {
+   "bestand": "wiebel-dierenopvang-klok-kwart.mp3",
+   "tekst": "Psst, ik ben Piepje! Ik leer de kuikentjes fluiten."
+  },
+  "wiebel-dierenopvang-klok-minuut": {
+   "bestand": "wiebel-dierenopvang-klok-minuut.mp3",
+   "tekst": "Ik ben Tiktak, en ik tel tot zestig in één adem!"
+  },
+  "wiebel-dierenopvang-klok-uren": {
+   "bestand": "wiebel-dierenopvang-klok-uren.mp3",
+   "tekst": "Hoi, ik ben Tikje! Elk uur roep ik heel hard bong!"
+  },
+  "wiebel-dierenopvang-klok-vijf": {
+   "bestand": "wiebel-dierenopvang-klok-vijf.mp3",
+   "tekst": "Hallo, ik heet Eierdop! Ik zet de wekker voor de haan."
+  },
+  "wiebel-dierenopvang-min-10": {
+   "bestand": "wiebel-dierenopvang-min-10.mp3",
+   "tekst": "Hallo, ik heet Spinner! Ik neurie de poezen in slaap."
+  },
+  "wiebel-dierenopvang-min-100": {
+   "bestand": "wiebel-dierenopvang-min-100.mp3",
+   "tekst": "Weet je wat? Ik ben Pluisje, en ik nies van mijn pluis!"
+  },
+  "wiebel-dierenopvang-min-1000": {
+   "bestand": "wiebel-dierenopvang-min-1000.mp3",
+   "tekst": "Psst, ik ben Fluweeltje! Niemand hoort mij aankomen."
+  },
+  "wiebel-dierenopvang-min-1000-lenen": {
+   "bestand": "wiebel-dierenopvang-min-1000-lenen.mp3",
+   "tekst": "Hallo, ik heet Krabbeltje! Ik leen mijn kussen aan de katten."
+  },
+  "wiebel-dierenopvang-min-20": {
+   "bestand": "wiebel-dierenopvang-min-20.mp3",
+   "tekst": "Psst, ik ben Wolletje! Ik brei mutsjes voor de poesjes."
+  },
+  "wiebel-dierenopvang-min-tiental": {
+   "bestand": "wiebel-dierenopvang-min-tiental.mp3",
+   "tekst": "Ik ben Kussentje, en ik pas precies in de kattenmand!"
+  },
+  "wiebel-dierenopvang-min-tientallen": {
+   "bestand": "wiebel-dierenopvang-min-tientallen.mp3",
+   "tekst": "Hoi, ik ben Klimmer! Ik help poesjes uit de boom."
+  },
+  "wiebel-dierenopvang-plus-10": {
+   "bestand": "wiebel-dierenopvang-plus-10.mp3",
+   "tekst": "Hoi, ik ben Kwispel! Ik slaap stiekem in de hondenmand."
+  },
+  "wiebel-dierenopvang-plus-100": {
+   "bestand": "wiebel-dierenopvang-plus-100.mp3",
+   "tekst": "Ik ben Tikkertje, en ik win altijd met tikkertje!"
+  },
+  "wiebel-dierenopvang-plus-1000": {
+   "bestand": "wiebel-dierenopvang-plus-1000.mp3",
+   "tekst": "Hallo, ik heet Dribbel! Ik hou een bal hoog op mijn neus."
+  },
+  "wiebel-dierenopvang-plus-1000-onthouden": {
+   "bestand": "wiebel-dierenopvang-plus-1000-onthouden.mp3",
+   "tekst": "Psst, ik ben Knoopje! Ik leg een knoop in mijn spriet."
+  },
+  "wiebel-dierenopvang-plus-20": {
+   "bestand": "wiebel-dierenopvang-plus-20.mp3",
+   "tekst": "Weet je wat? Ik ben Snuffel, en ik vind elke bal terug!"
+  },
+  "wiebel-dierenopvang-plus-tiental": {
+   "bestand": "wiebel-dierenopvang-plus-tiental.mp3",
+   "tekst": "Hallo, ik heet Hupsje! Ik spring zo over het hek, hup!"
+  },
+  "wiebel-dierenopvang-plus-tientallen": {
+   "bestand": "wiebel-dierenopvang-plus-tientallen.mp3",
+   "tekst": "Psst, ik ben Krul! Mijn sprieten krullen als het regent."
+  },
+  "wiebel-dino-eiland-baas-delen": {
+   "bestand": "wiebel-dino-eiland-baas-delen.mp3",
+   "tekst": "Psst, ik ben Palmpje! Mijn toverstaf is een palmblaadje!"
+  },
+  "wiebel-dino-eiland-baas-keer": {
+   "bestand": "wiebel-dino-eiland-baas-keer.mp3",
+   "tekst": "Psst, ik ben Fossieltje! Ik ben honderd miljoen jaar oud!"
+  },
+  "wiebel-dino-eiland-baas-klok": {
+   "bestand": "wiebel-dino-eiland-baas-klok.mp3",
+   "tekst": "Hallo, ik heet Tempelwachter! Ik heb een geheime sleutel!"
+  },
+  "wiebel-dino-eiland-baas-min": {
+   "bestand": "wiebel-dino-eiland-baas-min.mp3",
+   "tekst": "Hoi, ik ben Moerasje! Mijn cape zit vol kroosjes!"
+  },
+  "wiebel-dino-eiland-baas-plus": {
+   "bestand": "wiebel-dino-eiland-baas-plus.mp3",
+   "tekst": "Hoi, ik ben Lavaatje! Ik dans op warme stenen!"
+  },
+  "wiebel-dino-eiland-delen-1": {
+   "bestand": "wiebel-dino-eiland-delen-1.mp3",
+   "tekst": "Hallo, ik heet Schelpje! Ik hoor de zee in elke schelp."
+  },
+  "wiebel-dino-eiland-delen-10": {
+   "bestand": "wiebel-dino-eiland-delen-10.mp3",
+   "tekst": "Hoi, ik ben Golfje! De golven kietelen mijn tenen!"
+  },
+  "wiebel-dino-eiland-delen-2": {
+   "bestand": "wiebel-dino-eiland-delen-2.mp3",
+   "tekst": "Ik ben Kokosje, en een kokosnoot is mijn kussen!"
+  },
+  "wiebel-dino-eiland-delen-3": {
+   "bestand": "wiebel-dino-eiland-delen-3.mp3",
+   "tekst": "Hallo, ik heet Tuut! Ik zwaai naar elke boot die langskomt."
+  },
+  "wiebel-dino-eiland-delen-4": {
+   "bestand": "wiebel-dino-eiland-delen-4.mp3",
+   "tekst": "Psst, ik ben Snorkel! Ik draag mijn duikbril ook in bad!"
+  },
+  "wiebel-dino-eiland-delen-5": {
+   "bestand": "wiebel-dino-eiland-delen-5.mp3",
+   "tekst": "Ik ben Zandkorrel, en er zit zand in mijn oren!"
+  },
+  "wiebel-dino-eiland-delen-6": {
+   "bestand": "wiebel-dino-eiland-delen-6.mp3",
+   "tekst": "Ik ben Vliegertje, en ik vlieg bijna mee met mijn vlieger!"
+  },
+  "wiebel-dino-eiland-delen-7": {
+   "bestand": "wiebel-dino-eiland-delen-7.mp3",
+   "tekst": "Kijk eens! Ik ben Strandbal, en ik stuiter als ik blij ben!"
+  },
+  "wiebel-dino-eiland-delen-8": {
+   "bestand": "wiebel-dino-eiland-delen-8.mp3",
+   "tekst": "Weet je wat? Ik ben Ebbe, en ik schrijf in het zand!"
+  },
+  "wiebel-dino-eiland-delen-9": {
+   "bestand": "wiebel-dino-eiland-delen-9.mp3",
+   "tekst": "Hallo, ik heet Pareltje! Ik vond een parel in een schelp!"
+  },
+  "wiebel-dino-eiland-delen-mix": {
+   "bestand": "wiebel-dino-eiland-delen-mix.mp3",
+   "tekst": "Ik ben Wirwar, en ik zoek altijd mijn tweede slipper!"
+  },
+  "wiebel-dino-eiland-keer-1": {
+   "bestand": "wiebel-dino-eiland-keer-1.mp3",
+   "tekst": "Psst, ik ben Botje! Ik heb een botje als knuffel."
+  },
+  "wiebel-dino-eiland-keer-10": {
+   "bestand": "wiebel-dino-eiland-keer-10.mp3",
+   "tekst": "Ik ben Kiezel, en ik heb tien zakken vol steentjes!"
+  },
+  "wiebel-dino-eiland-keer-2": {
+   "bestand": "wiebel-dino-eiland-keer-2.mp3",
+   "tekst": "Hallo, ik heet Dubbel! Ik eet altijd twee ijsjes!"
+  },
+  "wiebel-dino-eiland-keer-3": {
+   "bestand": "wiebel-dino-eiland-keer-3.mp3",
+   "tekst": "Psst, ik ben Stofje! Er zit altijd stof op mijn neus."
+  },
+  "wiebel-dino-eiland-keer-4": {
+   "bestand": "wiebel-dino-eiland-keer-4.mp3",
+   "tekst": "Hallo, ik heet Kuiltje! Ik krijg een kuiltje als ik lach."
+  },
+  "wiebel-dino-eiland-keer-5": {
+   "bestand": "wiebel-dino-eiland-keer-5.mp3",
+   "tekst": "Ik ben Schepje, en ik graaf de diepste kuilen!"
+  },
+  "wiebel-dino-eiland-keer-6": {
+   "bestand": "wiebel-dino-eiland-keer-6.mp3",
+   "tekst": "Ik ben Steentje, en ik praat soms tegen stenen!"
+  },
+  "wiebel-dino-eiland-keer-7": {
+   "bestand": "wiebel-dino-eiland-keer-7.mp3",
+   "tekst": "Psst, ik ben Echootje! De krater roept altijd terug!"
+  },
+  "wiebel-dino-eiland-keer-8": {
+   "bestand": "wiebel-dino-eiland-keer-8.mp3",
+   "tekst": "Hoi, ik ben Knikker! Soms rol ik per ongeluk weg!"
+  },
+  "wiebel-dino-eiland-keer-9": {
+   "bestand": "wiebel-dino-eiland-keer-9.mp3",
+   "tekst": "Weet je wat? Ik ben Rotsje, en mijn snor is van mos!"
+  },
+  "wiebel-dino-eiland-keer-mix": {
+   "bestand": "wiebel-dino-eiland-keer-mix.mp3",
+   "tekst": "Ik ben Mengel, en ik draag twee verschillende sokken!"
+  },
+  "wiebel-dino-eiland-klok-24": {
+   "bestand": "wiebel-dino-eiland-klok-24.mp3",
+   "tekst": "Joehoe, ik ben Lampje! Ik blijf op tot heel laat!"
+  },
+  "wiebel-dino-eiland-klok-half": {
+   "bestand": "wiebel-dino-eiland-klok-half.mp3",
+   "tekst": "Hallo, ik heet Halfje! Ik draag altijd maar één schoen."
+  },
+  "wiebel-dino-eiland-klok-kwart": {
+   "bestand": "wiebel-dino-eiland-klok-kwart.mp3",
+   "tekst": "Ik ben Kwartje, en ik dans elk kwartier een dansje!"
+  },
+  "wiebel-dino-eiland-klok-minuut": {
+   "bestand": "wiebel-dino-eiland-klok-minuut.mp3",
+   "tekst": "Weet je wat? Ik ben Tikje, en ik ben nooit te laat!"
+  },
+  "wiebel-dino-eiland-klok-uren": {
+   "bestand": "wiebel-dino-eiland-klok-uren.mp3",
+   "tekst": "Hoi, ik ben Tiktak! Ik eet elk uur een koekje!"
+  },
+  "wiebel-dino-eiland-klok-vijf": {
+   "bestand": "wiebel-dino-eiland-klok-vijf.mp3",
+   "tekst": "Psst, ik ben Zandloper! Ik val in slaap als het zand stroomt."
+  },
+  "wiebel-dino-eiland-min-10": {
+   "bestand": "wiebel-dino-eiland-min-10.mp3",
+   "tekst": "Hallo, ik heet Blubber! Ik spring in de grootste plassen!"
+  },
+  "wiebel-dino-eiland-min-100": {
+   "bestand": "wiebel-dino-eiland-min-100.mp3",
+   "tekst": "Weet je wat? Ik ben Borrel, en ik blaas de grootste bubbels!"
+  },
+  "wiebel-dino-eiland-min-1000": {
+   "bestand": "wiebel-dino-eiland-min-1000.mp3",
+   "tekst": "Hallo, ik heet Rietje! Ik kan fluiten op een rietstengel!"
+  },
+  "wiebel-dino-eiland-min-1000-lenen": {
+   "bestand": "wiebel-dino-eiland-min-1000-lenen.mp3",
+   "tekst": "Ik ben Leentje, en ik leen je graag mijn paraplu!"
+  },
+  "wiebel-dino-eiland-min-20": {
+   "bestand": "wiebel-dino-eiland-min-20.mp3",
+   "tekst": "Ik ben Plonsje, en ik word nooit nat!"
+  },
+  "wiebel-dino-eiland-min-tiental": {
+   "bestand": "wiebel-dino-eiland-min-tiental.mp3",
+   "tekst": "Psst, ik ben Blaadje! Ik slaap onder een blad als dekentje."
+  },
+  "wiebel-dino-eiland-min-tientallen": {
+   "bestand": "wiebel-dino-eiland-min-tientallen.mp3",
+   "tekst": "Weet je wat? Ik ben Mistje, en niemand vindt mij!"
+  },
+  "wiebel-dino-eiland-plus-10": {
+   "bestand": "wiebel-dino-eiland-plus-10.mp3",
+   "tekst": "Hallo, ik heet Rookpluim! Als ik nies, komt er een wolkje uit."
+  },
+  "wiebel-dino-eiland-plus-100": {
+   "bestand": "wiebel-dino-eiland-plus-100.mp3",
+   "tekst": "Hoi, ik ben Vonk! Later word ik vulkaanwachter!"
+  },
+  "wiebel-dino-eiland-plus-1000": {
+   "bestand": "wiebel-dino-eiland-plus-1000.mp3",
+   "tekst": "Hallo, ik heet Bergje! Ik klim tot boven op de top!"
+  },
+  "wiebel-dino-eiland-plus-1000-onthouden": {
+   "bestand": "wiebel-dino-eiland-plus-1000-onthouden.mp3",
+   "tekst": "Psst, ik ben Sintel! Ik onthoud alles, echt alles!"
+  },
+  "wiebel-dino-eiland-plus-20": {
+   "bestand": "wiebel-dino-eiland-plus-20.mp3",
+   "tekst": "Psst, ik ben Gloei! Ik ben mijn eigen nachtlampje!"
+  },
+  "wiebel-dino-eiland-plus-tiental": {
+   "bestand": "wiebel-dino-eiland-plus-tiental.mp3",
+   "tekst": "Ik ben Eitje, en ik rol supersnel de heuvel af!"
+  },
+  "wiebel-dino-eiland-plus-tientallen": {
+   "bestand": "wiebel-dino-eiland-plus-tientallen.mp3",
+   "tekst": "Ik ben Knetter, en ik tel in sprongen van tien!"
+  },
+  "wiebel-magisch-bos-baas-delen": {
+   "bestand": "wiebel-magisch-bos-baas-delen.mp3",
+   "tekst": "Weet je wat? Ik ben Drankjesmaker! Mijn drankje laat je giechelen."
+  },
+  "wiebel-magisch-bos-baas-keer": {
+   "bestand": "wiebel-magisch-bos-baas-keer.mp3",
+   "tekst": "Psst, ik ben Kristalletje! Elke avond doe ik een wens."
+  },
+  "wiebel-magisch-bos-baas-klok": {
+   "bestand": "wiebel-magisch-bos-baas-klok.mp3",
+   "tekst": "Ik ben Wijsuiltje, en ik val altijd als eerste in slaap!"
+  },
+  "wiebel-magisch-bos-baas-min": {
+   "bestand": "wiebel-magisch-bos-baas-min.mp3",
+   "tekst": "Psst, ik ben Nachtvlinder! Ik vind nachtlampjes heel gezellig."
+  },
+  "wiebel-magisch-bos-baas-plus": {
+   "bestand": "wiebel-magisch-bos-baas-plus.mp3",
+   "tekst": "Hallo, ik heet Bosprinsje! Mijn kroon is van blaadjes."
+  },
+  "wiebel-magisch-bos-delen-1": {
+   "bestand": "wiebel-magisch-bos-delen-1.mp3",
+   "tekst": "Hoi, ik ben Roertje! Ik lik stiekem de lepel af."
+  },
+  "wiebel-magisch-bos-delen-10": {
+   "bestand": "wiebel-magisch-bos-delen-10.mp3",
+   "tekst": "Weet je wat? Ik ben Borrel, en mijn drankjes ruiken naar aardbei!"
+  },
+  "wiebel-magisch-bos-delen-2": {
+   "bestand": "wiebel-magisch-bos-delen-2.mp3",
+   "tekst": "Ik ben Druppel, en ik deel alles precies eerlijk!"
+  },
+  "wiebel-magisch-bos-delen-3": {
+   "bestand": "wiebel-magisch-bos-delen-3.mp3",
+   "tekst": "Psst, ik ben Flesje! Ik bewaar een zonnestraal in een flesje."
+  },
+  "wiebel-magisch-bos-delen-4": {
+   "bestand": "wiebel-magisch-bos-delen-4.mp3",
+   "tekst": "Ik ben Ketel, en als ik blij ben, fluit ik!"
+  },
+  "wiebel-magisch-bos-delen-5": {
+   "bestand": "wiebel-magisch-bos-delen-5.mp3",
+   "tekst": "Hallo, ik heet Kruidje! Ik ruik alle kruiden met mijn ogen dicht."
+  },
+  "wiebel-magisch-bos-delen-6": {
+   "bestand": "wiebel-magisch-bos-delen-6.mp3",
+   "tekst": "Psst, ik ben Siroop! Mijn vingers zijn altijd plakkerig."
+  },
+  "wiebel-magisch-bos-delen-7": {
+   "bestand": "wiebel-magisch-bos-delen-7.mp3",
+   "tekst": "Ik ben Snufje! Ik doe suiker in mijn soep. Hihi!"
+  },
+  "wiebel-magisch-bos-delen-8": {
+   "bestand": "wiebel-magisch-bos-delen-8.mp3",
+   "tekst": "Hallo, ik heet Pruttel! Ik zing liedjes voor mijn soep."
+  },
+  "wiebel-magisch-bos-delen-9": {
+   "bestand": "wiebel-magisch-bos-delen-9.mp3",
+   "tekst": "Psst, ik ben Slokje! Mijn drankje maakt je heel even klein."
+  },
+  "wiebel-magisch-bos-delen-mix": {
+   "bestand": "wiebel-magisch-bos-delen-mix.mp3",
+   "tekst": "Ik ben Mengel, en ik maakte per ongeluk paarse soep!"
+  },
+  "wiebel-magisch-bos-keer-1": {
+   "bestand": "wiebel-magisch-bos-keer-1.mp3",
+   "tekst": "Hallo, ik heet Flonker! Mijn toverstaf maakt soms bubbels."
+  },
+  "wiebel-magisch-bos-keer-10": {
+   "bestand": "wiebel-magisch-bos-keer-10.mp3",
+   "tekst": "Weet je wat? Ik ben Prisma, en ik maak regenbogen!"
+  },
+  "wiebel-magisch-bos-keer-2": {
+   "bestand": "wiebel-magisch-bos-keer-2.mp3",
+   "tekst": "Kijk eens, ik ben Twinkel! Ik teken met twee handen tegelijk."
+  },
+  "wiebel-magisch-bos-keer-3": {
+   "bestand": "wiebel-magisch-bos-keer-3.mp3",
+   "tekst": "Hallo, ik heet Spiegeltje! Ik lach om mijn spiegelbeeld."
+  },
+  "wiebel-magisch-bos-keer-4": {
+   "bestand": "wiebel-magisch-bos-keer-4.mp3",
+   "tekst": "Psst, ik ben Klavertje! Ik heb vier klavertjes vier."
+  },
+  "wiebel-magisch-bos-keer-5": {
+   "bestand": "wiebel-magisch-bos-keer-5.mp3",
+   "tekst": "Ik ben Bubbel, en soms zweef ik mee in een bel!"
+  },
+  "wiebel-magisch-bos-keer-6": {
+   "bestand": "wiebel-magisch-bos-keer-6.mp3",
+   "tekst": "Hoi, ik ben Glimmer! Ik glim in het donker!"
+  },
+  "wiebel-magisch-bos-keer-7": {
+   "bestand": "wiebel-magisch-bos-keer-7.mp3",
+   "tekst": "Psst, ik ben Hokus! Als ik nies, komen er glittertjes uit."
+  },
+  "wiebel-magisch-bos-keer-8": {
+   "bestand": "wiebel-magisch-bos-keer-8.mp3",
+   "tekst": "Ik ben Pocus, en Hokus is mijn allerbeste vriend!"
+  },
+  "wiebel-magisch-bos-keer-9": {
+   "bestand": "wiebel-magisch-bos-keer-9.mp3",
+   "tekst": "Weet je wat? Ik ben Sprankel, en ik word nooit duizelig!"
+  },
+  "wiebel-magisch-bos-keer-mix": {
+   "bestand": "wiebel-magisch-bos-keer-mix.mp3",
+   "tekst": "Hallo, ik heet Wervel! Mijn spreuken lopen door elkaar."
+  },
+  "wiebel-magisch-bos-klok-24": {
+   "bestand": "wiebel-magisch-bos-klok-24.mp3",
+   "tekst": "Hallo, ik heet Maanlicht! Ik tel de sterren tot de ochtend."
+  },
+  "wiebel-magisch-bos-klok-half": {
+   "bestand": "wiebel-magisch-bos-klok-half.mp3",
+   "tekst": "Hallo, ik heet Oehoe! De uilen leerden mij roepen."
+  },
+  "wiebel-magisch-bos-klok-kwart": {
+   "bestand": "wiebel-magisch-bos-klok-kwart.mp3",
+   "tekst": "Psst, ik ben Belletje! Ik rinkel als ik loop."
+  },
+  "wiebel-magisch-bos-klok-minuut": {
+   "bestand": "wiebel-magisch-bos-klok-minuut.mp3",
+   "tekst": "Weet je wat? Ik ben Tikje, en ik kom nooit te laat!"
+  },
+  "wiebel-magisch-bos-klok-uren": {
+   "bestand": "wiebel-magisch-bos-klok-uren.mp3",
+   "tekst": "Hoi, ik ben Tiktak! Op elk heel uur eet ik een koekje."
+  },
+  "wiebel-magisch-bos-klok-vijf": {
+   "bestand": "wiebel-magisch-bos-klok-vijf.mp3",
+   "tekst": "Ik ben Wijzer, en ik wijs vaak de verkeerde kant op!"
+  },
+  "wiebel-magisch-bos-min-10": {
+   "bestand": "wiebel-magisch-bos-min-10.mp3",
+   "tekst": "Psst, ik ben Takje! Vogels denken dat ik een boom ben."
+  },
+  "wiebel-magisch-bos-min-100": {
+   "bestand": "wiebel-magisch-bos-min-100.mp3",
+   "tekst": "Weet je wat? Ik ben Naaldje, en ik kriebel graag!"
+  },
+  "wiebel-magisch-bos-min-1000": {
+   "bestand": "wiebel-magisch-bos-min-1000.mp3",
+   "tekst": "Ik ben Sneeuwvlok, en ik glij het liefst over het ijs!"
+  },
+  "wiebel-magisch-bos-min-1000-lenen": {
+   "bestand": "wiebel-magisch-bos-min-1000-lenen.mp3",
+   "tekst": "Ik ben Echo, en ik zeg alles twee keer. Twee keer!"
+  },
+  "wiebel-magisch-bos-min-20": {
+   "bestand": "wiebel-magisch-bos-min-20.mp3",
+   "tekst": "Hoi, ik ben Nootje! Twee noten ben ik kwijt. Hihi!"
+  },
+  "wiebel-magisch-bos-min-tiental": {
+   "bestand": "wiebel-magisch-bos-min-tiental.mp3",
+   "tekst": "Ik ben Fladder, en ik dans met de vlinders!"
+  },
+  "wiebel-magisch-bos-min-tientallen": {
+   "bestand": "wiebel-magisch-bos-min-tientallen.mp3",
+   "tekst": "Hallo, ik heet Kegeltje! Ik heb al honderd dennenappels."
+  },
+  "wiebel-magisch-bos-plus-10": {
+   "bestand": "wiebel-magisch-bos-plus-10.mp3",
+   "tekst": "Hoi, ik ben Glinster! Ik slaap onder een paddenstoel."
+  },
+  "wiebel-magisch-bos-plus-100": {
+   "bestand": "wiebel-magisch-bos-plus-100.mp3",
+   "tekst": "Ik ben Kwaak, en ik zing elke avond met de kikkers!"
+  },
+  "wiebel-magisch-bos-plus-1000": {
+   "bestand": "wiebel-magisch-bos-plus-1000.mp3",
+   "tekst": "Hoi, ik ben Bloesem! Ik ruik altijd een beetje naar rozen."
+  },
+  "wiebel-magisch-bos-plus-1000-onthouden": {
+   "bestand": "wiebel-magisch-bos-plus-1000-onthouden.mp3",
+   "tekst": "Weet je wat? Ik ben Mosje, en ik onthoud alles!"
+  },
+  "wiebel-magisch-bos-plus-20": {
+   "bestand": "wiebel-magisch-bos-plus-20.mp3",
+   "tekst": "Ik ben Vonkje, en mijn cape glimt in het donker!"
+  },
+  "wiebel-magisch-bos-plus-tiental": {
+   "bestand": "wiebel-magisch-bos-plus-tiental.mp3",
+   "tekst": "Hallo, ik heet Stippel! Ik wil zelf ook graag stippen."
+  },
+  "wiebel-magisch-bos-plus-tientallen": {
+   "bestand": "wiebel-magisch-bos-plus-tientallen.mp3",
+   "tekst": "Psst, ik ben Hoedje! Mijn hoedje gaat nooit af."
+  },
+  "wiebel-onderwater-baas-delen": {
+   "bestand": "wiebel-onderwater-baas-delen.mp3",
+   "tekst": "Ik ben Kapiteintje, en ik word een beetje zeeziek!"
+  },
+  "wiebel-onderwater-baas-keer": {
+   "bestand": "wiebel-onderwater-baas-keer.mp3",
+   "tekst": "Psst, ik ben Inktje! Ik tover per ongeluk alles paars!"
+  },
+  "wiebel-onderwater-baas-klok": {
+   "bestand": "wiebel-onderwater-baas-klok.mp3",
+   "tekst": "Weet je wat? Ik ben Ankertje, en ik drijf nooit weg!"
+  },
+  "wiebel-onderwater-baas-min": {
+   "bestand": "wiebel-onderwater-baas-min.mp3",
+   "tekst": "Psst, ik ben Golfrijder! Mijn cape is altijd een beetje nat!"
+  },
+  "wiebel-onderwater-baas-plus": {
+   "bestand": "wiebel-onderwater-baas-plus.mp3",
+   "tekst": "Hoi, ik ben Koraaltje! Mijn kroon is van schelpjes gemaakt."
+  },
+  "wiebel-onderwater-delen-1": {
+   "bestand": "wiebel-onderwater-delen-1.mp3",
+   "tekst": "Hoi, ik ben Zijstap! Ik woon in een zandkasteel!"
+  },
+  "wiebel-onderwater-delen-10": {
+   "bestand": "wiebel-onderwater-delen-10.mp3",
+   "tekst": "Ik ben Strandje, en ik heb tien zonnebrillen!"
+  },
+  "wiebel-onderwater-delen-2": {
+   "bestand": "wiebel-onderwater-delen-2.mp3",
+   "tekst": "Hallo, ik heet Knijper! Ik knijp zachtjes als ik blij ben."
+  },
+  "wiebel-onderwater-delen-3": {
+   "bestand": "wiebel-onderwater-delen-3.mp3",
+   "tekst": "Psst, ik ben Korreltje! Er zit zand in mijn schoenen."
+  },
+  "wiebel-onderwater-delen-4": {
+   "bestand": "wiebel-onderwater-delen-4.mp3",
+   "tekst": "Hallo, ik heet Krabbel! Ik dans altijd opzij, net als de krabben!"
+  },
+  "wiebel-onderwater-delen-5": {
+   "bestand": "wiebel-onderwater-delen-5.mp3",
+   "tekst": "Weet je wat? Ik ben Flipper, en ik won een zandkastelenwedstrijd!"
+  },
+  "wiebel-onderwater-delen-6": {
+   "bestand": "wiebel-onderwater-delen-6.mp3",
+   "tekst": "Ik ben Duintje, en ik dans ballet op het strand!"
+  },
+  "wiebel-onderwater-delen-7": {
+   "bestand": "wiebel-onderwater-delen-7.mp3",
+   "tekst": "Ik ben Schepje, en ik heb voor elke dag een schepje!"
+  },
+  "wiebel-onderwater-delen-8": {
+   "bestand": "wiebel-onderwater-delen-8.mp3",
+   "tekst": "Weet je wat? Ik ben Vliegertje, en ik eet acht bolletjes ijs!"
+  },
+  "wiebel-onderwater-delen-9": {
+   "bestand": "wiebel-onderwater-delen-9.mp3",
+   "tekst": "Hallo, ik heet Ebbe! Ik rijd op een stokpaard langs zee."
+  },
+  "wiebel-onderwater-delen-mix": {
+   "bestand": "wiebel-onderwater-delen-mix.mp3",
+   "tekst": "Psst, ik ben Rommeltje! Mijn zakken zitten vol zand."
+  },
+  "wiebel-onderwater-keer-1": {
+   "bestand": "wiebel-onderwater-keer-1.mp3",
+   "tekst": "Hoi, ik ben Kriebel! Ik ben superkietelig, hihi!"
+  },
+  "wiebel-onderwater-keer-10": {
+   "bestand": "wiebel-onderwater-keer-10.mp3",
+   "tekst": "Hallo, ik heet Dieppie! Ik duik wel tien meter diep!"
+  },
+  "wiebel-onderwater-keer-2": {
+   "bestand": "wiebel-onderwater-keer-2.mp3",
+   "tekst": "Weet je wat? Ik ben Lampje, en mijn neus gloeit!"
+  },
+  "wiebel-onderwater-keer-3": {
+   "bestand": "wiebel-onderwater-keer-3.mp3",
+   "tekst": "Ik ben Kronkel, en soms zit ik in de knoop!"
+  },
+  "wiebel-onderwater-keer-4": {
+   "bestand": "wiebel-onderwater-keer-4.mp3",
+   "tekst": "Hallo, ik heet Blobje! Ik teken hartjes op de rotsen."
+  },
+  "wiebel-onderwater-keer-5": {
+   "bestand": "wiebel-onderwater-keer-5.mp3",
+   "tekst": "Psst, ik ben Spatje! Ik heb inkt op mijn neus!"
+  },
+  "wiebel-onderwater-keer-6": {
+   "bestand": "wiebel-onderwater-keer-6.mp3",
+   "tekst": "Psst, ik ben Glimmer! Ik dans graag in de diepzeedisco!"
+  },
+  "wiebel-onderwater-keer-7": {
+   "bestand": "wiebel-onderwater-keer-7.mp3",
+   "tekst": "Hoi, ik ben Draaitje! Ik draai zeven rondjes zonder te vallen!"
+  },
+  "wiebel-onderwater-keer-8": {
+   "bestand": "wiebel-onderwater-keer-8.mp3",
+   "tekst": "Ik ben Achtarm, maar ik heb maar twee armen!"
+  },
+  "wiebel-onderwater-keer-9": {
+   "bestand": "wiebel-onderwater-keer-9.mp3",
+   "tekst": "Hallo, ik heet Wervel! Ik loop op mijn handen!"
+  },
+  "wiebel-onderwater-keer-mix": {
+   "bestand": "wiebel-onderwater-keer-mix.mp3",
+   "tekst": "Weet je wat? Ik ben Mixje, en mijn sokken zijn verschillend!"
+  },
+  "wiebel-onderwater-klok-24": {
+   "bestand": "wiebel-onderwater-klok-24.mp3",
+   "tekst": "Hallo, ik heet Lantaarntje! Ik tel sterren tot ik slaap."
+  },
+  "wiebel-onderwater-klok-half": {
+   "bestand": "wiebel-onderwater-klok-half.mp3",
+   "tekst": "Hallo, ik heet Halfje! Ik eet altijd twee halve appels."
+  },
+  "wiebel-onderwater-klok-kwart": {
+   "bestand": "wiebel-onderwater-klok-kwart.mp3",
+   "tekst": "Weet je wat? Ik ben Belletje, en ik schrik van mijn bel!"
+  },
+  "wiebel-onderwater-klok-minuut": {
+   "bestand": "wiebel-onderwater-klok-minuut.mp3",
+   "tekst": "Ik ben Wijzertje, en ik sta een minuut op één been!"
+  },
+  "wiebel-onderwater-klok-uren": {
+   "bestand": "wiebel-onderwater-klok-uren.mp3",
+   "tekst": "Hoi, ik ben Tikje! Ik zing elk uur een liedje."
+  },
+  "wiebel-onderwater-klok-vijf": {
+   "bestand": "wiebel-onderwater-klok-vijf.mp3",
+   "tekst": "Psst, ik ben Touwtje! Ik knoop mijn veters aan elkaar."
+  },
+  "wiebel-onderwater-min-10": {
+   "bestand": "wiebel-onderwater-min-10.mp3",
+   "tekst": "Hallo, ik heet Echo! Ik klets met mijn eigen echo!"
+  },
+  "wiebel-onderwater-min-100": {
+   "bestand": "wiebel-onderwater-min-100.mp3",
+   "tekst": "Weet je wat? Ik ben Kiezel, en ik stuiter steentjes!"
+  },
+  "wiebel-onderwater-min-1000": {
+   "bestand": "wiebel-onderwater-min-1000.mp3",
+   "tekst": "Hallo, ik heet Schuimpje! Mijn muts zit vol schuim!"
+  },
+  "wiebel-onderwater-min-1000-lenen": {
+   "bestand": "wiebel-onderwater-min-1000-lenen.mp3",
+   "tekst": "Ik ben Leentje, en ik leen mijn spullen aan iedereen!"
+  },
+  "wiebel-onderwater-min-20": {
+   "bestand": "wiebel-onderwater-min-20.mp3",
+   "tekst": "Psst, ik ben Spuitje! Ik word altijd nat, ook met paraplu."
+  },
+  "wiebel-onderwater-min-tiental": {
+   "bestand": "wiebel-onderwater-min-tiental.mp3",
+   "tekst": "Ik ben Druppel, en ik draag mijn regenjas onder water!"
+  },
+  "wiebel-onderwater-min-tientallen": {
+   "bestand": "wiebel-onderwater-min-tientallen.mp3",
+   "tekst": "Psst, ik ben Golfje! In de grot draag ik een sjaal."
+  },
+  "wiebel-onderwater-plus-10": {
+   "bestand": "wiebel-onderwater-plus-10.mp3",
+   "tekst": "Hoi, ik ben Vinnie! Ik slaap in een grote schelp."
+  },
+  "wiebel-onderwater-plus-100": {
+   "bestand": "wiebel-onderwater-plus-100.mp3",
+   "tekst": "Psst, ik ben Snorkel! Mijn snor kriebelt bij elke bubbel."
+  },
+  "wiebel-onderwater-plus-1000": {
+   "bestand": "wiebel-onderwater-plus-1000.mp3",
+   "tekst": "Hallo, ik heet Rifje! Ik heb duizend schelpjes gespaard!"
+  },
+  "wiebel-onderwater-plus-1000-onthouden": {
+   "bestand": "wiebel-onderwater-plus-1000-onthouden.mp3",
+   "tekst": "Weet je wat? Ik ben Stipje, en ik onthoud alles!"
+  },
+  "wiebel-onderwater-plus-20": {
+   "bestand": "wiebel-onderwater-plus-20.mp3",
+   "tekst": "Hallo, ik heet Spartel! Mijn flippers zijn veel te groot!"
+  },
+  "wiebel-onderwater-plus-tiental": {
+   "bestand": "wiebel-onderwater-plus-tiental.mp3",
+   "tekst": "Weet je wat? Ik ben Bolletje, en ik zweef als ik lach!"
+  },
+  "wiebel-onderwater-plus-tientallen": {
+   "bestand": "wiebel-onderwater-plus-tientallen.mp3",
+   "tekst": "Ik ben Parel, en ik poets mijn ketting elke dag!"
+  },
+  "wiebel-ruimte-baas-delen": {
+   "bestand": "wiebel-ruimte-baas-delen.mp3",
+   "tekst": "Hoi, ik ben Zonnestraal! Ik maak de zon elke ochtend wakker."
+  },
+  "wiebel-ruimte-baas-keer": {
+   "bestand": "wiebel-ruimte-baas-keer.mp3",
+   "tekst": "Hallo, ik ben Kometenstaart! Ik laat mijn staart elke week knippen."
+  },
+  "wiebel-ruimte-baas-klok": {
+   "bestand": "wiebel-ruimte-baas-klok.mp3",
+   "tekst": "Ik ben Tijdreiziger, en ik eet de taart van morgen alvast!"
+  },
+  "wiebel-ruimte-baas-min": {
+   "bestand": "wiebel-ruimte-baas-min.mp3",
+   "tekst": "Goedenavond, ik ben Maanwachter. Ik zing de maan elke avond toe."
+  },
+  "wiebel-ruimte-baas-plus": {
+   "bestand": "wiebel-ruimte-baas-plus.mp3",
+   "tekst": "Hoi, ik ben Kroonster! Mijn kroon zakt soms over mijn ogen."
+  },
+  "wiebel-ruimte-delen-1": {
+   "bestand": "wiebel-ruimte-delen-1.mp3",
+   "tekst": "Hoi, ik ben Zonnetje! Ik draag een hoed tegen mezelf."
+  },
+  "wiebel-ruimte-delen-10": {
+   "bestand": "wiebel-ruimte-delen-10.mp3",
+   "tekst": "Hè hè, ik ben Warmpje. Ik zoek een plekje in de schaduw."
+  },
+  "wiebel-ruimte-delen-2": {
+   "bestand": "wiebel-ruimte-delen-2.mp3",
+   "tekst": "Ik ben Straaltje, en ik geef het grootste stuk weg!"
+  },
+  "wiebel-ruimte-delen-3": {
+   "bestand": "wiebel-ruimte-delen-3.mp3",
+   "tekst": "Kijk, daar ben ik: Flonker! Ik laat lichtjes dansen op het water."
+  },
+  "wiebel-ruimte-delen-4": {
+   "bestand": "wiebel-ruimte-delen-4.mp3",
+   "tekst": "Weet je wat? Ik ben Vlammetje, en ik dans als niemand kijkt."
+  },
+  "wiebel-ruimte-delen-5": {
+   "bestand": "wiebel-ruimte-delen-5.mp3",
+   "tekst": "Hallo, ik heet Gloei! Ik rooster brood met één blik."
+  },
+  "wiebel-ruimte-delen-6": {
+   "bestand": "wiebel-ruimte-delen-6.mp3",
+   "tekst": "Kijk eens, ik ben Sproetje! Ik krijg een sproet van elke zonnestraal."
+  },
+  "wiebel-ruimte-delen-7": {
+   "bestand": "wiebel-ruimte-delen-7.mp3",
+   "tekst": "Ik ben Zomertje, en ik spuug pitjes wel tot de maan!"
+  },
+  "wiebel-ruimte-delen-8": {
+   "bestand": "wiebel-ruimte-delen-8.mp3",
+   "tekst": "Ta-da! Ik ben Goudje, en mijn snor is een zonnestraal."
+  },
+  "wiebel-ruimte-delen-9": {
+   "bestand": "wiebel-ruimte-delen-9.mp3",
+   "tekst": "Alle bloemen kijken naar mij, want ik ben Lampion!"
+  },
+  "wiebel-ruimte-delen-mix": {
+   "bestand": "wiebel-ruimte-delen-mix.mp3",
+   "tekst": "Ik ben Hussel, en ik deel zelfs mijn dromen!"
+  },
+  "wiebel-ruimte-keer-1": {
+   "bestand": "wiebel-ruimte-keer-1.mp3",
+   "tekst": "Zoef! Ik ben Komeetje, en ik rem altijd net te laat!"
+  },
+  "wiebel-ruimte-keer-10": {
+   "bestand": "wiebel-ruimte-keer-10.mp3",
+   "tekst": "Psst, ik ben Staartje. Ik draai rondjes achter mijn staart aan!"
+  },
+  "wiebel-ruimte-keer-2": {
+   "bestand": "wiebel-ruimte-keer-2.mp3",
+   "tekst": "Hallo hallo, ik ben Dubbeltje! Ik zeg alles twee keer!"
+  },
+  "wiebel-ruimte-keer-3": {
+   "bestand": "wiebel-ruimte-keer-3.mp3",
+   "tekst": "Brrr, ik ben Frisje! Ik heb altijd koude voetjes."
+  },
+  "wiebel-ruimte-keer-4": {
+   "bestand": "wiebel-ruimte-keer-4.mp3",
+   "tekst": "Weet je wat? Ik ben Spetter, en ik spat het bad leeg!"
+  },
+  "wiebel-ruimte-keer-5": {
+   "bestand": "wiebel-ruimte-keer-5.mp3",
+   "tekst": "Hoi, ik ben Zoeffie! Ik heb nog nooit stilgestaan."
+  },
+  "wiebel-ruimte-keer-6": {
+   "bestand": "wiebel-ruimte-keer-6.mp3",
+   "tekst": "Hallo, ik heet Kiezel! Mijn knuffel is een steentje."
+  },
+  "wiebel-ruimte-keer-7": {
+   "bestand": "wiebel-ruimte-keer-7.mp3",
+   "tekst": "Psst, ik ben Sliertje. Ik laat overal glitters achter!"
+  },
+  "wiebel-ruimte-keer-8": {
+   "bestand": "wiebel-ruimte-keer-8.mp3",
+   "tekst": "Boem! Daar is Plof. Ik kop een ijsbal door de ruimte!"
+  },
+  "wiebel-ruimte-keer-9": {
+   "bestand": "wiebel-ruimte-keer-9.mp3",
+   "tekst": "Zie je mij? Ik ben Flitser, ik zwaai supersnel!"
+  },
+  "wiebel-ruimte-keer-mix": {
+   "bestand": "wiebel-ruimte-keer-mix.mp3",
+   "tekst": "Weet je wat? Ik ben Wervel, en mijn sokken zijn nooit hetzelfde."
+  },
+  "wiebel-ruimte-klok-24": {
+   "bestand": "wiebel-ruimte-klok-24.mp3",
+   "tekst": "Ring ring! Ik ben Wekkertje, ik weet altijd hoe laat het is."
+  },
+  "wiebel-ruimte-klok-half": {
+   "bestand": "wiebel-ruimte-klok-half.mp3",
+   "tekst": "Ik ben Raketje, en ik ben altijd op tijd voor het eten!"
+  },
+  "wiebel-ruimte-klok-kwart": {
+   "bestand": "wiebel-ruimte-klok-kwart.mp3",
+   "tekst": "Psst, ik ben Wolkje. Als ik lach, gaat het regenen!"
+  },
+  "wiebel-ruimte-klok-minuut": {
+   "bestand": "wiebel-ruimte-klok-minuut.mp3",
+   "tekst": "Psst, ik ben Schotel. Ik land stiekem in tuinen om te zwaaien!"
+  },
+  "wiebel-ruimte-klok-uren": {
+   "bestand": "wiebel-ruimte-klok-uren.mp3",
+   "tekst": "Bim bam! Ik ben Tik, ik ben altijd precies op tijd."
+  },
+  "wiebel-ruimte-klok-vijf": {
+   "bestand": "wiebel-ruimte-klok-vijf.mp3",
+   "tekst": "Ik heet Sterretje, en ik dans ballet op de wolken!"
+  },
+  "wiebel-ruimte-min-10": {
+   "bestand": "wiebel-ruimte-min-10.mp3",
+   "tekst": "Hoi, ik ben Maantje! Ik eet kaas van de maan."
+  },
+  "wiebel-ruimte-min-100": {
+   "bestand": "wiebel-ruimte-min-100.mp3",
+   "tekst": "Ik ben Vallertje, en ik val zo zacht als een veertje."
+  },
+  "wiebel-ruimte-min-1000": {
+   "bestand": "wiebel-ruimte-min-1000.mp3",
+   "tekst": "Kijk eens, ik ben Stoffel! Mijn voetstappen blijven op de maan."
+  },
+  "wiebel-ruimte-min-1000-lenen": {
+   "bestand": "wiebel-ruimte-min-1000-lenen.mp3",
+   "tekst": "Weet je wat? Ik ben Leentje, en ik breng alles netjes terug."
+  },
+  "wiebel-ruimte-min-20": {
+   "bestand": "wiebel-ruimte-min-20.mp3",
+   "tekst": "Weet je wat? Ik ben Hupsje, en ik land altijd op mijn billen!"
+  },
+  "wiebel-ruimte-min-tiental": {
+   "bestand": "wiebel-ruimte-min-tiental.mp3",
+   "tekst": "Psst, ik ben Kruimel. Ik verstop me graag in kraters!"
+  },
+  "wiebel-ruimte-min-tientallen": {
+   "bestand": "wiebel-ruimte-min-tientallen.mp3",
+   "tekst": "Hallo, ik heet Lichtje! Ik maak het donker een beetje lichter."
+  },
+  "wiebel-ruimte-plus-10": {
+   "bestand": "wiebel-ruimte-plus-10.mp3",
+   "tekst": "Hallo, ik heet Ringo! Ik hoepel met de ringen van mijn planeet."
+  },
+  "wiebel-ruimte-plus-100": {
+   "bestand": "wiebel-ruimte-plus-100.mp3",
+   "tekst": "Psst, ik ben Satelliet. Ik word duizelig van mijn rondjes!"
+  },
+  "wiebel-ruimte-plus-1000": {
+   "bestand": "wiebel-ruimte-plus-1000.mp3",
+   "tekst": "Hallo, ik ben Glimmer! Ik val in slaap bij ster honderd."
+  },
+  "wiebel-ruimte-plus-1000-onthouden": {
+   "bestand": "wiebel-ruimte-plus-1000-onthouden.mp3",
+   "tekst": "Ik ben Knoopje, en mijn sjaal zit vol knopen!"
+  },
+  "wiebel-ruimte-plus-20": {
+   "bestand": "wiebel-ruimte-plus-20.mp3",
+   "tekst": "Hoi, ik ben Pixel! Ik eet het allerliefst sterrensoep."
+  },
+  "wiebel-ruimte-plus-tiental": {
+   "bestand": "wiebel-ruimte-plus-tiental.mp3",
+   "tekst": "Weet je wat? Ik ben Zweefje en ik kan nooit landen!"
+  },
+  "wiebel-ruimte-plus-tientallen": {
+   "bestand": "wiebel-ruimte-plus-tientallen.mp3",
+   "tekst": "Ik ben Bliep, en als ik lach, gaat mijn lampje aan!"
   },
   "winkel-welkom-1": {
    "bestand": "winkel-welkom-1.mp3",

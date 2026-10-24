@@ -33,6 +33,22 @@
 .wereld-4 { left: 490px; top: 350px; }
 .aanpassen-knop { position: absolute; left: 96px; top: 772px; width: 720px; height: 100px; padding: 0; }
 .hoofdmenu .onderbalk { bottom: 60px; gap: 24px; }
+/* Nieuwe Wiebels: een geel bolletje met het aantal, en af en toe een klein wiebeltje (alleen transform). */
+.bolletje {
+  position: absolute; top: -22px; right: -22px; min-width: 64px; height: 64px; padding: 0 14px; box-sizing: border-box;
+  display: grid; place-items: center; border-radius: 32px; background: var(--geel); color: #14102b;
+  font-size: 40px; font-weight: bold; line-height: 1;
+}
+.heeft-nieuw { animation: knop-wiebel 6s ease-in-out infinite; }
+@keyframes knop-wiebel {
+  0%, 86%, 100% { transform: rotate(0deg); }
+  89% { transform: rotate(-6deg) scale(1.05); }
+  92% { transform: rotate(5deg) scale(1.05); }
+  95% { transform: rotate(-3deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .heeft-nieuw { animation: none; }
+}
 /* Versiering op vrije plekken, niet achter het venster of de knoppen */
 .hoofdmenu .decor-0 { left: 1000px; top: 70px; }
 .hoofdmenu .decor-3 { left: 1720px; top: 890px; }

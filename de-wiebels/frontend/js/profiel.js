@@ -22,6 +22,8 @@ export function nieuwProfiel({ naam, avatar, kleur = STANDAARD_KLEUR, thema = 'r
     items: {},
     moeilijkheid: {},
     verzameling: [],
+    // Bevrijde Wiebels die het kind al bij Wiebels heeft bekeken; de rest heet daar "Nieuw!".
+    wiebelsGezien: [],
     huisdier: { xp: 0 },
     cosmetica: { gekocht: [], aan: {} },
     records: {},
@@ -40,6 +42,8 @@ export function vulAan(profiel) {
   // De eerste start (Wiebel en wereld kiezen, het verhaal) is voor nieuwe profielen; wie al speelde, slaat die over.
   profiel.introGezien ??= true;
   profiel.wiebelGekozen ??= true;
+  // Wie al Wiebels had, heeft die al gezien; alleen wat daarna vrijkomt, is nieuw.
+  profiel.wiebelsGezien ??= [...(profiel.verzameling ?? [])];
   // Het oude winkeltje (actief: hoed, kleur, deco) wordt omgezet naar spullen per plek (aan);
   // munten voor wat niet meer bestaat, gaan terug. Na het omzetten is er 'aan', dus gebeurt dit één keer.
   if (!profiel.cosmetica) profiel.cosmetica = { gekocht: [], aan: {} };

@@ -174,7 +174,41 @@
 .loper .w-sprong { animation: loper-stap .45s ease-in-out infinite alternate; }
 @keyframes loper-loop { from { transform: translateX(var(--van)); } to { transform: translateX(var(--naar)); } }
 @keyframes loper-stap { from { transform: translateY(0); } to { transform: translateY(-10px); } }
-.wiebels .wiebeltje { width: 92px; height: 92px; border-radius: 20px; }
+.wiebels .wiebeltje { width: 92px; height: 92px; padding: 0; border-radius: 20px; }
+.wiebels .wiebeltje.heeft-focus { z-index: 2; }
+.wiebels .wiebeltje.heeft-focus::after { inset: -10px; border-width: 6px; border-radius: 28px; }
+/* Nieuw bevrijd: een sterretje op het tegeltje en "Nieuw!" boven de loper. */
+.nieuw-ster { position: absolute; top: -16px; right: -16px; z-index: 1; font-size: 44px; line-height: 1; pointer-events: none; }
+.nieuw-label { position: absolute; left: 50%; top: -20px; transform: translateX(-50%); white-space: nowrap; font-size: 40px; font-weight: bold; color: var(--accent); }
+
+/* De wereld van het thema gedimd erachter; de wei laat hem een beetje doorschijnen. */
+.collectie .thema-achtergrond { opacity: .5; }
+.collectie .wei { background: color-mix(in srgb, var(--vlak) 55%, transparent); }
+.collectie .huisdier-paneel { position: relative; }
+/* De eigen Wiebel praat naar rechts, boven de wei of bovenin het kaartje. */
+.huisdier-paneel .bubbel { z-index: 4; top: 40px; left: calc(100% + 88px); width: max-content; max-width: 1100px; box-sizing: border-box; }
+.huisdier-paneel .bubbel::after { bottom: auto; right: auto; top: .55em; left: -.65em; border-width: .45em .7em .45em 0; border-color: transparent var(--tekst) transparent transparent; }
+
+/* Het kaartje van een Wiebel, over de wei en de tegeltjes heen. */
+.collectie-rechts { position: relative; }
+.kaartje {
+  position: absolute; inset: 0; z-index: 3; box-sizing: border-box; padding: 28px 40px;
+  border-radius: 32px; background: var(--vlak); box-shadow: 0 0 0 6px var(--vlak-licht);
+  display: grid; grid-template-columns: 300px 1fr; grid-template-rows: 120px 1fr;
+  grid-template-areas: "ballon ballon" "figuur info"; column-gap: 48px;
+}
+.kaartje[hidden] { display: none; }
+.kaartje .bubbel { position: relative; top: auto; left: auto; grid-area: ballon; align-self: end; justify-self: start; max-width: 100%; margin-bottom: 20px; }
+.kaartje .bubbel::after { right: auto; left: 110px; }
+.wkaart-figuur { grid-area: figuur; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.wkaart-figuur .vriendje { width: 300px; height: 300px; }
+.wkaart-naam { font-size: 56px; line-height: 1.1; text-align: center; }
+.wkaart-info { grid-area: info; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+.wkaart-rij { margin: 0; font-size: 40px; line-height: 1.2; font-weight: bold; }
+.wkaart-rij span { font-weight: normal; color: var(--tekst-zacht); }
+.wkaart-knoppen { display: flex; gap: 40px; margin-top: 24px; }
+.kaartje .knop:not(.knop-hoofd) { background: var(--vlak-licht); }
+.huisdier-paneel .bubbel, .kaartje .bubbel { text-align: left; }
 
 /* Het verhaal bij de eerste start (schermen/intro.js): links de verteller, rechts wat hij vertelt. */
 .intro-verteller { position: absolute; left: 96px; bottom: 120px; width: 384px; height: 416px; }

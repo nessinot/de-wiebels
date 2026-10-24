@@ -12,6 +12,7 @@ Het spel draait als app op Home Assistant en wordt geopend in de browser van de 
 - Adaptieve herhaling: lastige sommen komen vaker terug, de moeilijkheid past zich aan.
 - Een eigen Wiebel die meespeelt, praat en meegroeit, met een winkeltje vol spullen om hem aan te kleden.
 - Munten, combo's, Wiebels bevrijden van de eindbazen en een tijdrace tegen je eigen record.
+- 47 Wiebels per thema, elk met een eigen naam en kaartje: waar hij woont, wat hij lekker vindt en een geheimpje, ingesproken door de stem. Nieuw bevrijde Wiebels krijgen een sterretje en je kunt ze een feestje geven.
 - Rustige thema-achtergronden tijdens de sommen en een zacht muziekje per thema.
 - Vijf thema's: Ruimte, Magisch bos, Dino-eiland, Onderwater en Dierenopvang.
 - Ouderpagina in de zijbalk van Home Assistant: profielen, niveaus, tijdsdruk, zwakke plekken, geluid, stem, muziek en export/import.

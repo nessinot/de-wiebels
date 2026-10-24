@@ -29,7 +29,8 @@ test('kiesZin kiest een zin van de gebeurtenis', () => {
 });
 
 test('kiesZin geeft nooit twee keer achter elkaar dezelfde zin', () => {
-  for (const gebeurtenis of Object.keys(ZINNEN)) {
+  // Gebeurtenissen met één vaste zin (zoals bij de Wiebels) slaan we over.
+  for (const gebeurtenis of Object.keys(ZINNEN).filter((g) => ZINNEN[g].length > 1)) {
     let vorige = kiesZin(gebeurtenis);
     for (let i = 0; i < 30; i++) {
       // Ook als het toeval steeds dezelfde plek in de lijst kiest.

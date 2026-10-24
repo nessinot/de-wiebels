@@ -29,6 +29,10 @@ export const ZINNEN = {
     { id: 'aangewezen-2', tekst: 'Hoi! Daar ben ik!' },
     { id: 'aangewezen-3', tekst: 'Wil je me iets anders aantrekken?' },
   ],
+  // In plaats van het welkom, als er een Wiebel is bevrijd die het kind nog niet heeft bekeken.
+  menuNieuw: [
+    { id: 'menu-nieuw-1', tekst: 'Er is een Wiebel bevrijd! Kijk maar bij Wiebels.' },
+  ],
   wereldGekozen: [
     { id: 'wereld-1', tekst: 'Hup, daar gaan we!' },
     { id: 'wereld-2', tekst: 'Joepie, op reis!' },
@@ -167,6 +171,27 @@ export const ZINNEN = {
   gegroeid: [
     { id: 'gegroeid-1', tekst: 'Kijk, ik ben gegroeid!' },
     { id: 'gegroeid-2', tekst: 'Ik word steeds groter!' },
+  ],
+
+  // Bevrijde Wiebels: bij het openen (openingsZin in beloningen.js) en bij een gevangen Wiebel.
+  // Wat een bevrijde Wiebel zelf zegt, staat bij die Wiebel in het thema (themas/*.js).
+  collectieNieuw: [
+    { id: 'collectie-nieuw-1', tekst: 'Kijk, er zijn nieuwe bij!' },
+  ],
+  collectieStart: [
+    { id: 'collectie-start-1', tekst: 'Bevrijd alle Wiebels!' },
+  ],
+  collectieAlles: [
+    { id: 'collectie-alles-1', tekst: 'Ze zijn allemaal vrij! Hoera!' },
+  ],
+  gevangenOpen: [
+    { id: 'gevangen-open-1', tekst: 'Die zit nog gevangen! Haal dat level om hem te bevrijden.' },
+  ],
+  gevangenBaas: [
+    { id: 'gevangen-baas-1', tekst: 'Die houdt de eindbaas vast! Versla de eindbaas om hem te bevrijden.' },
+  ],
+  gevangenDicht: [
+    { id: 'gevangen-dicht-1', tekst: 'Die zit nog achter slot en grendel. Speel eerst de levels ervoor!' },
   ],
 };
 

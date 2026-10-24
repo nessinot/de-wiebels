@@ -3,7 +3,8 @@
 Gebruik (vanuit de root van de repo):
     ELEVENLABS_API_KEY=... python tools/maak-stemmen.py
 
-- Stem: leest alle zinnen uit de-wiebels/frontend/js/zinnen.js en maakt per zin een mp3 in
+- Stem: leest alle zinnen uit de-wiebels/frontend/js/zinnen.js en de zin van elke Wiebel uit de
+  themabestanden (de-wiebels/frontend/js/themas/*.js), en maakt per zin een mp3 in
   de-wiebels/frontend/geluid/stem/. Voor elke zin binnen een tekst komt de tag [excited], alleen
   bij het versturen (zinnen.js en het manifest blijven zonder tag). Alleen ontbrekende of gewijzigde
   zinnen worden opnieuw gemaakt; een andere stem, model of tag maakt alles opnieuw. Zinnen die niet
@@ -49,6 +50,7 @@ MUZIEK = {
 ROOT = Path(__file__).resolve().parent.parent
 FRONTEND = ROOT / "de-wiebels" / "frontend"
 ZINNEN_JS = FRONTEND / "js" / "zinnen.js"
+THEMAS_MAP = FRONTEND / "js" / "themas"
 STEM_MAP = FRONTEND / "geluid" / "stem"
 MUZIEK_MAP = FRONTEND / "geluid" / "muziek"
 API = "https://api.elevenlabs.io"
@@ -75,6 +77,12 @@ def met_tag(tekst):
 
 def andere_stem(manifest):
     return (manifest.get("stem"), manifest.get("model"), manifest.get("tag")) != (STEM_ID, MODEL, TAG)
+
+
+def lees_alle_zinnen():
+    """De zinnen uit zinnen.js en uit de themabestanden samen; een id mag maar één keer voorkomen."""
+    bronnen = [ZINNEN_JS, *sorted(THEMAS_MAP.glob("*.js"))]
+    return lees_zinnen("\n".join(pad.read_text("utf-8") for pad in bronnen))
 
 
 def te_maken(zinnen, manifest, bestaat):
@@ -117,7 +125,7 @@ def schrijf_json(pad, inhoud):
 
 
 def maak_stemmen(sleutel):
-    zinnen = lees_zinnen(ZINNEN_JS.read_text("utf-8"))
+    zinnen = lees_alle_zinnen()
     STEM_MAP.mkdir(parents=True, exist_ok=True)
     pad_manifest = STEM_MAP / "manifest.json"
     manifest = lees_json(pad_manifest, {})
@@ -126,7 +134,7 @@ def maak_stemmen(sleutel):
         manifest = {"stem": STEM_ID, "model": MODEL, "tag": TAG, "zinnen": {}}
     oud = manifest.setdefault("zinnen", {})
 
-    # Zinnen die niet meer in zinnen.js staan, gaan weg.
+    # Zinnen die nergens meer staan, gaan weg.
     for zin_id in [z for z in oud if z not in zinnen]:
         (STEM_MAP / oud.pop(zin_id)["bestand"]).unlink(missing_ok=True)
     schrijf_json(pad_manifest, manifest)

@@ -26,6 +26,23 @@ class ZinnenLezenTest(unittest.TestCase):
             "dubbel-1": "Wat 'n plek!",
         })
 
+    def test_leest_de_zin_van_een_wiebel(self):
+        bron = """
+          {
+            id: 'plus:20', naam: 'Pixel', kleur: 'blauw', spul: 'zonnebril',
+            zin: { id: 'wiebel-ruimte-plus-20', tekst: 'Hoi, ik ben Pixel!' },
+          },
+        """
+        self.assertEqual(ms.lees_zinnen(bron), {"wiebel-ruimte-plus-20": "Hoi, ik ben Pixel!"})
+
+    def test_alle_zinnen_ook_van_de_wiebels(self):
+        zinnen = ms.lees_alle_zinnen()
+        wiebels = [z for z in zinnen if z.startswith("wiebel-")]
+        self.assertEqual(len(wiebels), 5 * 47)
+        self.assertIn("wiebel-ruimte-plus-20", zinnen)
+        self.assertIn("wiebel-dierenopvang-baas-klok", zinnen)
+        self.assertEqual(len(zinnen) - len(wiebels), len(ms.lees_zinnen(ms.ZINNEN_JS.read_text("utf-8"))))
+
     def test_dubbele_id_is_een_fout(self):
         with self.assertRaises(ValueError):
             ms.lees_zinnen("{ id: 'a-1', tekst: 'x' }, { id: 'a-1', tekst: 'y' }")
@@ -68,7 +85,7 @@ class TeMakenTest(unittest.TestCase):
 
 class VolledigTest(unittest.TestCase):
     def test_elke_zin_heeft_een_stem(self):
-        zinnen = ms.lees_zinnen(ms.ZINNEN_JS.read_text("utf-8"))
+        zinnen = ms.lees_alle_zinnen()
         manifest = json.loads((ms.STEM_MAP / "manifest.json").read_text("utf-8"))
         self.assertEqual((manifest["stem"], manifest["model"], manifest["tag"]), (ms.STEM_ID, ms.MODEL, ms.TAG))
         self.assertGreater(len(zinnen), 60)

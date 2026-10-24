@@ -2,6 +2,7 @@
 // wereld), onderin het winkeltje, de verzameling, de tijdrace en het thema. Kies je een wereld, dan
 // vliegt de Wiebel erheen en zoomt het beeld in op de levelkeuze.
 
+import { nieuweWiebels } from '../beloningen.js';
 import { maakEl, opKlik } from '../dom.js';
 import { VAARDIGHEDEN, LEVELS, ONDERTITELS, levelOpen } from '../levels.js';
 import { staat } from '../opslag.js';
@@ -9,6 +10,10 @@ import { thema } from '../themas/index.js';
 import { UITSNEDE, VENSTER_HTML, maakVenster } from '../venster.js';
 import { eigenWiebelStaat, topbalk } from '../weergave.js';
 import { blij, rustig, zwaai } from '../wiebel-beweging.js';
+
+// Per profiel hoeveel nieuwe Wiebels de eigen Wiebel al heeft gemeld: hij meldt het alleen als er
+// sinds de vorige keer een bij is gekomen, anders zegt hij het gewone welkom.
+const gemeld = new Map();
 
 export const wereldkaart = {
   maak({ toon, zetFocus }) {
@@ -21,6 +26,7 @@ export const wereldkaart = {
       const p = staat.profiel;
       const t = thema(p.thema);
       onderweg = false;
+      const nieuw = nieuweWiebels(p).length;
       // De werelden staan vooraan, zodat de focus bij binnenkomst op een wereld begint.
       el.innerHTML = `
         <div class="decor">${t.decor.map((d, i) => `<span class="decor-${i}">${d}</span>`).join('')}</div>
@@ -40,7 +46,7 @@ export const wereldkaart = {
         <button class="knop aanpassen-knop" data-focus data-actie="scherm" data-waarde="aanpassen">✏️ Aanpassen</button>
         <div class="knoppenrij onderbalk">
           <button class="knop" data-focus data-actie="scherm" data-waarde="winkel">🛒 Winkeltje</button>
-          <button class="knop" data-focus data-actie="scherm" data-waarde="collectie">🎒 Wiebels</button>
+          <button class="knop${nieuw ? ' heeft-nieuw' : ''}" data-focus data-actie="scherm" data-waarde="collectie">🎒 Wiebels${nieuw ? `<span class="bolletje">${nieuw}</span>` : ''}</button>
           <button class="knop" data-focus data-actie="scherm" data-waarde="tijdraceKeuze">⏱️ Tijdrace</button>
           <button class="knop" data-focus data-actie="scherm" data-waarde="themakeuze">🎨 Thema</button>
         </div>
@@ -48,7 +54,8 @@ export const wereldkaart = {
       `;
       venster = maakVenster(el.querySelector('.venster-binnen'), 'menu', { uitsnede: UITSNEDE.menu, blijftStaan: true });
       venster.teken(eigenWiebelStaat(p));
-      venster.zeg('menuWelkom');
+      venster.zeg(nieuw > (gemeld.get(p.id) ?? 0) ? 'menuNieuw' : 'menuWelkom');
+      gemeld.set(p.id, nieuw);
     }
 
     // De Wiebel vliegt naar de wereld: een kopie op precies de plek van de Wiebel (via
