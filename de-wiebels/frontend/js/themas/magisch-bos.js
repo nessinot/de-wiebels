@@ -11,12 +11,13 @@ export default {
     accent: '#ffe066',
   },
   decor: ['✨', '🍄', '🌙', '⭐'],
+  scene: 'bos',
   werelden: {
-    plus: { naam: 'Paddenstoelenpad', emoji: '🍄' },
-    min: { naam: 'Dennenwoud', emoji: '🌲' },
-    keer: { naam: 'Toverkristal', emoji: '🔮' },
-    delen: { naam: 'Drankjeskeuken', emoji: '🧪' },
-    klok: { naam: 'Uilentoren', emoji: '🦉' },
+    plus: { naam: 'Paddenstoelenpad', emoji: '🍄', accent: 'paddenstoelenpad' },
+    min: { naam: 'Dennenwoud', emoji: '🌲', accent: 'dennenwoud' },
+    keer: { naam: 'Toverkristal', emoji: '🔮', accent: 'toverkristal' },
+    delen: { naam: 'Drankjeskeuken', emoji: '🧪', accent: 'drankjeskeuken' },
+    klok: { naam: 'Uilentoren', emoji: '🦉', accent: 'uilentoren' },
   },
   eindbazen: {
     plus: { naam: 'Mopperdraak', emoji: '🐲' },

@@ -10,6 +10,7 @@ import { bewaar, staat } from '../opslag.js';
 import { RACE_LENGTE, raceLevel, registreerTijd, tijdTekst } from '../records.js';
 import { beantwoord, huidigeVraag, nieuweRonde } from '../ronde.js';
 import { thema } from '../themas/index.js';
+import { themaAchtergrond } from '../thema-achtergrond.js';
 import { maakVraagpaneel } from '../vraagpaneel.js';
 import { vuurwerk } from '../vuurwerk.js';
 
@@ -62,8 +63,10 @@ export const tijdrace = {
     const r = nieuweRonde(maakVragen(level, RACE_LENGTE, p.moeilijkheid[level.id] ?? 1));
     const start = performance.now();
     let klaar = false;
+    const achtergrond = themaAchtergrond(p.thema, v, 'ab-race');
 
     const el = maakEl(`
+      ${achtergrond}
       <div class="rondekop">
         <span>⏱️ <strong class="racetijd">0,0 s</strong></span>
         <span class="race-teller"></span>
@@ -94,6 +97,7 @@ export const tijdrace = {
         vuurwerk(el);
       }
       el.innerHTML = `
+        ${achtergrond}
         <div class="overwinning">
           <h1 class="titel-groot">${record ? 'Nieuw record!' : 'Finish!'}</h1>
           <p class="race-uitslag">${tijdTekst(seconden)}</p>

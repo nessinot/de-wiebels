@@ -11,12 +11,13 @@ export default {
     accent: '#ffd23f',
   },
   decor: ['⭐', '✨', '🌟', '🌙'],
+  scene: 'sterrenhemel',
   werelden: {
-    plus: { naam: 'Ringplaneet', emoji: '🪐' },
-    min: { naam: 'Maan', emoji: '🌙' },
-    keer: { naam: 'Komeet', emoji: '☄️' },
-    delen: { naam: 'Zon', emoji: '☀️' },
-    klok: { naam: 'Aarde', emoji: '🌍' },
+    plus: { naam: 'Ringplaneet', emoji: '🪐', accent: 'ringplaneet' },
+    min: { naam: 'Maan', emoji: '🌙', accent: 'maan' },
+    keer: { naam: 'Komeet', emoji: '☄️', accent: 'komeet' },
+    delen: { naam: 'Zon', emoji: '☀️', accent: 'zon' },
+    klok: { naam: 'Aarde', emoji: '🌍', accent: 'aarde' },
   },
   eindbazen: {
     plus: { naam: 'Brokkelsteen', emoji: '🌑' },

@@ -11,12 +11,13 @@ export default {
     accent: '#7cf06b',
   },
   decor: ['🌿', '🦴', '🌴', '☁️'],
+  scene: 'eiland',
   werelden: {
-    plus: { naam: 'Plusvulkaan', emoji: '🌋' },
-    min: { naam: 'Minmoeras', emoji: '🐊' },
-    keer: { naam: 'Keerkrater', emoji: '🦴' },
-    delen: { naam: 'Deelstrand', emoji: '🌴' },
-    klok: { naam: 'Tijdtempel', emoji: '⏳' },
+    plus: { naam: 'Plusvulkaan', emoji: '🌋', accent: 'vulkaan' },
+    min: { naam: 'Minmoeras', emoji: '🐊', accent: 'moeras' },
+    keer: { naam: 'Keerkrater', emoji: '🦴', accent: 'krater' },
+    delen: { naam: 'Deelstrand', emoji: '🌴', accent: 'strand' },
+    klok: { naam: 'Tijdtempel', emoji: '⏳', accent: 'tempel' },
   },
   eindbazen: {
     plus: { naam: 'Brul-Rex', emoji: '🦖' },

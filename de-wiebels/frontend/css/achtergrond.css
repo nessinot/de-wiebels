@@ -1,0 +1,56 @@
+/* Thema-achtergrond in de sommen en de levelkeuze (js/thema-achtergrond.js).
+   De achtergrond ligt onder de inhoud van het scherm; elk deeltje beweegt alleen met transform of
+   opacity, langzaam (20–60 s, de duur staat per deeltje in de stijl). */
+
+.scherm { isolation: isolate; }
+
+.thema-achtergrond {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ab-vast { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.ab-deeltje { position: absolute; overflow: visible; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+
+.ab-twinkel { opacity: .3; animation-name: ab-twinkel; animation-direction: alternate; }
+.ab-zweef { animation-name: ab-zweef; animation-direction: alternate; }
+.ab-drijf { animation-name: ab-drijf; animation-direction: alternate; }
+.ab-vuurvlieg { animation-name: ab-vuurvlieg; }
+.ab-stijg { animation-name: ab-stijg; animation-timing-function: linear; }
+.ab-dwarrel { animation-name: ab-dwarrel; animation-timing-function: linear; }
+
+@keyframes ab-twinkel { from { opacity: .15; } to { opacity: .85; } }
+@keyframes ab-zweef { from { transform: translateY(-40px); } to { transform: translateY(40px); } }
+@keyframes ab-drijf { from { transform: translateX(-80px); } to { transform: translateX(80px); } }
+@keyframes ab-vuurvlieg {
+  0%, 100% { transform: translate(0, 0); opacity: .2; }
+  50% { transform: translate(40px, -60px); opacity: .9; }
+}
+@keyframes ab-stijg { from { transform: translateY(0); } to { transform: translateY(-1200px); } }
+@keyframes ab-dwarrel {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(50px, 600px) rotate(180deg); }
+  100% { transform: translate(-20px, 1200px) rotate(360deg); }
+}
+
+/* Het vraagvlak houdt een effen, dekkende ondergrond; de antwoordknoppen hebben die al (.knop). */
+.thema-achtergrond ~ * .vraag {
+  align-self: center;
+  padding: 0 72px;
+  border-radius: 48px;
+  background: var(--achtergrond);
+}
+
+.thema-achtergrond ~ * .terugkoppeling:not(:empty) {
+  align-self: center;
+  padding: 0 40px;
+  border-radius: 32px;
+  background: var(--achtergrond);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ab-deeltje { animation: none; }
+}

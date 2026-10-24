@@ -8,6 +8,7 @@ import { registreer, teHerhalen, volgendeStap } from '../leitner.js';
 import { levelVan } from '../levels.js';
 import { bewaar, staat } from '../opslag.js';
 import { RONDE_LENGTE, beantwoord, huidigeVraag, nieuweRonde, sterrenVoor } from '../ronde.js';
+import { themaAchtergrond } from '../thema-achtergrond.js';
 import { maakVraagpaneel } from '../vraagpaneel.js';
 import { vuurwerk } from '../vuurwerk.js';
 
@@ -36,6 +37,7 @@ export const ronde = {
     const rondeIds = new Set(r.wachtrij.map((v) => v.id)); // alle vragen van deze ronde, ook al gestelde
 
     const el = maakEl(`
+      ${themaAchtergrond(p.thema, level.vaardigheid, 'ab-ronde')}
       <div class="rondekop">
         <span>${level.label}</span>
         <span class="voortgang"></span>

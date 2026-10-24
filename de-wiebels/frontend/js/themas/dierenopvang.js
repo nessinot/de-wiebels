@@ -11,12 +11,13 @@ export default {
     accent: '#ffd23f',
   },
   decor: ['🐾', '🦴', '❤️', '🌼'],
+  scene: 'opvang',
   werelden: {
-    plus: { naam: 'Hondenhok', emoji: '🐶' },
-    min: { naam: 'Kattenmand', emoji: '🐱' },
-    keer: { naam: 'Konijnenren', emoji: '🐰' },
-    delen: { naam: 'Paardenstal', emoji: '🐴' },
-    klok: { naam: 'Kippenklok', emoji: '🐔' },
+    plus: { naam: 'Hondenhok', emoji: '🐶', accent: 'hondenhok' },
+    min: { naam: 'Kattenmand', emoji: '🐱', accent: 'kattenmand' },
+    keer: { naam: 'Konijnenren', emoji: '🐰', accent: 'konijnenren' },
+    delen: { naam: 'Paardenstal', emoji: '🐴', accent: 'paardenstal' },
+    klok: { naam: 'Kippenklok', emoji: '🐔', accent: 'kippenhok' },
   },
   eindbazen: {
     plus: { naam: 'Rommel de wasbeer', emoji: '🦝' },

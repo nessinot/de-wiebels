@@ -4,6 +4,7 @@ import { maakEl, opKlik } from '../dom.js';
 import { LEVELS, ONDERTITELS, levelOpen, baasOpen } from '../levels.js';
 import { staat } from '../opslag.js';
 import { thema } from '../themas/index.js';
+import { themaAchtergrond } from '../thema-achtergrond.js';
 import { sterrenHtml, topbalk } from '../weergave.js';
 
 export const levelkeuze = {
@@ -17,6 +18,7 @@ export const levelkeuze = {
       const baas = t.eindbazen[v];
       const baasIsOpen = baasOpen(p, v);
       el.innerHTML = `
+        ${themaAchtergrond(p.thema, v, 'ab-level')}
         ${topbalk(p)}
         <h1>${t.werelden[v].emoji} ${t.werelden[v].naam}<span class="kop-ondertitel">${ONDERTITELS[v]}</span></h1>
         <div class="levels">
