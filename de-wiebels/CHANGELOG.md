@@ -4,8 +4,6 @@
 
 Het ouderscherm zit nu in Home Assistant: open "De Wiebels" in de zijbalk. Daar maak je profielen aan, wijzig je naam en avatar, stel je niveaus, tijdsdruk, geluid, stem en muziek in, bekijk je de zwakke plekken en exporteer of importeer je de data. Deze instellingen gelden voor elk scherm. Kinderen kiezen op de tv alleen nog hun profiel; de eerste keer kiezen ze hun Wiebel en hun wereld. Zijn er nog geen profielen, dan vraagt het spel om er een aan te maken in Home Assistant. De geheime blauwe knop, de pincode, de bedieningstest en de animatieproef zijn verdwenen.
 
-Let op: wijzig je een profiel terwijl dat kind aan het spelen is, dan kan de tv je wijziging overschrijven. Pas profielen daarom aan als er niet gespeeld wordt.
-
 ## 0.8.2
 
 Alle plaatjes in het spel zijn nu in kleur, ook de avatars en de werelden. Tijdens de sommen speelt zachtjes het muziekje van je thema; als de Wiebel praat, wordt de muziek even zachter. De Wiebel heeft een nieuwe, enthousiastere stem.
