@@ -1,5 +1,14 @@
 # Wijzigingen
 
+## 0.8.0
+
+De Wiebels hebben een verhaal.
+
+- De eindbazen hebben de Wiebels gevangen, en elk level dat je haalt bevrijdt er één.
+- Een nieuw profiel begint met een kort verhaaltje van je eigen Wiebel. Druk op OK om verder te gaan, of op Terug om het over te slaan.
+- Bij de eindbaas zie je een gevangen Wiebel in een bel. Als je wint, komt hij vrij.
+- Bij Wiebels lopen de bevrijde Wiebels rond. Wie nog gevangen zit, zie je als schaduw.
+
 ## 0.7.0
 
 De Wiebel praat!
