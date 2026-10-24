@@ -11,12 +11,13 @@ export default {
     accent: '#ffd23f',
   },
   decor: ['💧', '🐚', '🌊', '⭐'],
+  scene: 'zee',
   werelden: {
-    plus: { naam: 'Schelpenrif', emoji: '🐚' },
-    min: { naam: 'Golfgrot', emoji: '🌊' },
-    keer: { naam: 'Inktvisdiep', emoji: '🐙' },
-    delen: { naam: 'Krabbenkust', emoji: '🦀' },
-    klok: { naam: 'Ankerklok', emoji: '⚓' },
+    plus: { naam: 'Schelpenrif', emoji: '🐚', accent: 'rif' },
+    min: { naam: 'Golfgrot', emoji: '🌊', accent: 'grot' },
+    keer: { naam: 'Inktvisdiep', emoji: '🐙', accent: 'inktvis' },
+    delen: { naam: 'Krabbenkust', emoji: '🦀', accent: 'krabben' },
+    klok: { naam: 'Ankerklok', emoji: '⚓', accent: 'anker' },
   },
   eindbazen: {
     plus: { naam: 'Knabbelhaai', emoji: '🦈' },

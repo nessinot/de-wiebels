@@ -7,6 +7,7 @@ import { speel } from '../geluid.js';
 import { registreer } from '../leitner.js';
 import { bewaar, staat } from '../opslag.js';
 import { thema } from '../themas/index.js';
+import { themaAchtergrond } from '../thema-achtergrond.js';
 import { maakVraagpaneel } from '../vraagpaneel.js';
 import { vuurwerk } from '../vuurwerk.js';
 
@@ -20,8 +21,10 @@ export const eindbaas = {
     const gevecht = nieuwGevecht();
     let huidig = null;
     let timer = null;
+    const achtergrond = themaAchtergrond(p.thema, v, 'ab-baas');
 
     const el = maakEl(`
+      ${achtergrond}
       <div class="baasscherm">
         <div class="baas">
           <span class="baas-emoji">${baas.emoji}</span>
@@ -61,6 +64,7 @@ export const eindbaas = {
       vuurwerk(el, 600, 350);
       vuurwerk(el, 1300, 450);
       el.innerHTML = `
+        ${achtergrond}
         <div class="overwinning">
           <span class="baas-emoji verslagen">${baas.emoji}</span>
           <h1 class="titel-groot">Je hebt ${baas.naam} verslagen!</h1>
