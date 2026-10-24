@@ -1,5 +1,15 @@
 # Wijzigingen
 
+## 0.6.0
+
+De Wiebel speelt mee.
+
+- Hij kijkt mee bij de sommen, springt bij een goed antwoord en helpt rustig bij een fout.
+- Bij de eindbaas gooit hij bij elk goed antwoord een ster naar de baas.
+- Munten vliegen naar je teller.
+- Na een ronde viert hij mee, en als hij groeit, zie je dat meteen.
+- Tijdens de sommen zie je nu de wereld waarin je speelt, met een rustige achtergrond die niet afleidt.
+
 ## 0.5.0
 
 Elk kind heeft nu een eigen Wiebel.
