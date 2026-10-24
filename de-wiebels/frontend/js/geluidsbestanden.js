@@ -1,5 +1,5 @@
-// Pure keuzes voor de stem en de muziek: welk bestand bij een zin of thema hoort, wanneer er muziek
-// speelt en hoe ver de mond opengaat. De bestanden maakt tools/maak-stemmen.py.
+// Pure keuzes voor de stem en de muziek: welk bestand bij een zin of thema hoort, hoe hard de muziek
+// per scherm speelt en hoe ver de mond opengaat. De bestanden maakt tools/maak-stemmen.py.
 
 export const STEM_MAP = 'geluid/stem/';
 export const MUZIEK_MAP = 'geluid/muziek/';
@@ -11,13 +11,33 @@ export function stemBestand(manifest, id, tekst) {
   return zin && zin.tekst === tekst ? STEM_MAP + zin.bestand : null;
 }
 
-// Muziek in het hoofdmenu, het winkeltje en bij Aanpassen; elders (zoals in de sommen) is het stil.
-export const MUZIEK_SCHERMEN = new Set(['wereldkaart', 'winkel', 'aanpassen']);
+// Volume van de muziek per scherm: normaal in de menu's, zacht in de sommen en het intro. Op andere
+// schermen (profielkeuze, profiel maken) is het stil.
+export const MUZIEK_NORMAAL = 0.12;
+export const MUZIEK_ZACHT = 0.05;
+export const MUZIEK_VOLUME = {
+  wereldkaart: MUZIEK_NORMAAL,
+  levelkeuze: MUZIEK_NORMAAL,
+  collectie: MUZIEK_NORMAAL,
+  winkel: MUZIEK_NORMAAL,
+  aanpassen: MUZIEK_NORMAAL,
+  themakeuze: MUZIEK_NORMAAL,
+  tijdraceKeuze: MUZIEK_NORMAAL,
+  ronde: MUZIEK_ZACHT,
+  eindbaas: MUZIEK_ZACHT,
+  tijdrace: MUZIEK_ZACHT,
+  resultaat: MUZIEK_ZACHT,
+  intro: MUZIEK_ZACHT,
+};
 
-// Het muziekbestand voor dit scherm en thema, of null als het stil moet zijn.
-export function muziekBestand(manifest, scherm, thema, aan) {
-  const stuk = aan && MUZIEK_SCHERMEN.has(scherm) ? manifest?.[thema] : null;
-  return stuk ? MUZIEK_MAP + stuk.bestand : null;
+// Terwijl de Wiebel praat, klinkt de muziek op dit deel van het volume.
+export const MUZIEK_BIJ_SPRAAK = 0.4;
+
+// Het muziekstuk voor dit scherm en thema als { pad, volume }, of null als het stil moet zijn.
+export function muziekKeuze(manifest, scherm, thema, aan) {
+  const volume = MUZIEK_VOLUME[scherm];
+  const stuk = aan && volume ? manifest?.[thema] : null;
+  return stuk ? { pad: MUZIEK_MAP + stuk.bestand, volume } : null;
 }
 
 // Hoe ver de mond opengaat (0,08–1) bij een stukje geluid (getFloatTimeDomainData, -1 tot 1).

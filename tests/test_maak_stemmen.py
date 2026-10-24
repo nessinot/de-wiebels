@@ -31,9 +31,19 @@ class ZinnenLezenTest(unittest.TestCase):
             ms.lees_zinnen("{ id: 'a-1', tekst: 'x' }, { id: 'a-1', tekst: 'y' }")
 
 
+class TagTest(unittest.TestCase):
+    def test_tag_voor_elke_zin(self):
+        self.assertEqual(ms.TAG, "[excited]")
+        self.assertEqual(ms.met_tag("Bijna! Kijk, zo zit het."), "[excited] Bijna! [excited] Kijk, zo zit het.")
+        self.assertEqual(ms.met_tag("Goed zo!"), "[excited] Goed zo!")
+        self.assertEqual(ms.met_tag("Hmm… Wat is dit? Een ster."), "[excited] Hmm… [excited] Wat is dit? [excited] Een ster.")
+        # Geen nieuwe zin zonder spatie erna, zoals in een getal.
+        self.assertEqual(ms.met_tag("Dat is 2.5 keer zo veel."), "[excited] Dat is 2.5 keer zo veel.")
+
+
 class TeMakenTest(unittest.TestCase):
     def manifest(self, **anders):
-        m = {"stem": ms.STEM_ID, "model": ms.MODEL, "zinnen": {
+        m = {"stem": ms.STEM_ID, "model": ms.MODEL, "tag": ms.TAG, "zinnen": {
             "a-1": {"tekst": "Hoi!", "bestand": "a-1.mp3"},
             "b-1": {"tekst": "Dag!", "bestand": "b-1.mp3"},
         }}
@@ -48,10 +58,11 @@ class TeMakenTest(unittest.TestCase):
         zinnen = {"a-1": "Hoi!", "b-1": "Dag!"}
         self.assertEqual(ms.te_maken(zinnen, self.manifest(), lambda b: b != "a-1.mp3"), ["a-1"])
 
-    def test_andere_stem_of_model_alles_opnieuw(self):
+    def test_andere_stem_model_of_tag_alles_opnieuw(self):
         zinnen = {"a-1": "Hoi!", "b-1": "Dag!"}
         self.assertEqual(ms.te_maken(zinnen, self.manifest(stem="iemand-anders"), lambda b: True), ["a-1", "b-1"])
         self.assertEqual(ms.te_maken(zinnen, self.manifest(model="ander-model"), lambda b: True), ["a-1", "b-1"])
+        self.assertEqual(ms.te_maken(zinnen, self.manifest(tag="[calm]"), lambda b: True), ["a-1", "b-1"])
         self.assertEqual(ms.te_maken(zinnen, {}, lambda b: True), ["a-1", "b-1"])
 
 
@@ -59,7 +70,7 @@ class VolledigTest(unittest.TestCase):
     def test_elke_zin_heeft_een_stem(self):
         zinnen = ms.lees_zinnen(ms.ZINNEN_JS.read_text("utf-8"))
         manifest = json.loads((ms.STEM_MAP / "manifest.json").read_text("utf-8"))
-        self.assertEqual(manifest["stem"], ms.STEM_ID)
+        self.assertEqual((manifest["stem"], manifest["model"], manifest["tag"]), (ms.STEM_ID, ms.MODEL, ms.TAG))
         self.assertGreater(len(zinnen), 60)
         # Faalt dit na het toevoegen of wijzigen van een zin: draai tools/maak-stemmen.py.
         self.assertEqual(ms.te_maken(zinnen, manifest, lambda b: (ms.STEM_MAP / b).exists()), [])

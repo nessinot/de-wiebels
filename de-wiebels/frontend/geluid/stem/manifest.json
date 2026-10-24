@@ -1,6 +1,7 @@
 {
- "model": "eleven_multilingual_v2",
+ "model": "eleven_v4",
  "stem": "7qdUFMklKPaaAVMsBTBt",
+ "tag": "[excited]",
  "zinnen": {
   "aangetrokken-1": {
    "bestand": "aangetrokken-1.mp3",

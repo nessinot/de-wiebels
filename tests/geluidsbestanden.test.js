@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { MUZIEK_SCHERMEN, mondOpening, muziekBestand, stemBestand } from '../de-wiebels/frontend/js/geluidsbestanden.js';
+import { MUZIEK_NORMAAL, MUZIEK_VOLUME, MUZIEK_ZACHT, mondOpening, muziekKeuze, stemBestand } from '../de-wiebels/frontend/js/geluidsbestanden.js';
 import { THEMAS } from '../de-wiebels/frontend/js/themas/index.js';
 import { schermen } from '../de-wiebels/frontend/js/schermen/index.js';
 
@@ -18,25 +18,34 @@ test('stemBestand geeft null zonder opname of als de tekst is veranderd', () => 
   assert.equal(stemBestand(null, 'goed-1', 'Goed zo!'), null);
 });
 
-test('muziek alleen in hoofdmenu, winkeltje en Aanpassen, en alleen als hij aan staat', () => {
-  for (const scherm of ['wereldkaart', 'winkel', 'aanpassen']) {
-    assert.equal(muziekBestand(MUZIEK, scherm, 'ruimte', true), 'geluid/muziek/ruimte.mp3');
+test('muziek normaal in de menu\'s, zacht in de sommen en het intro', () => {
+  const pad = 'geluid/muziek/ruimte.mp3';
+  for (const scherm of ['wereldkaart', 'levelkeuze', 'collectie', 'winkel', 'aanpassen', 'themakeuze', 'tijdraceKeuze']) {
+    assert.deepEqual(muziekKeuze(MUZIEK, scherm, 'ruimte', true), { pad, volume: MUZIEK_NORMAAL }, scherm);
   }
-  for (const scherm of ['ronde', 'eindbaas', 'tijdrace', 'levelkeuze', 'ouderscherm']) {
-    assert.equal(muziekBestand(MUZIEK, scherm, 'ruimte', true), null, scherm);
+  for (const scherm of ['ronde', 'eindbaas', 'tijdrace', 'resultaat', 'intro']) {
+    assert.deepEqual(muziekKeuze(MUZIEK, scherm, 'ruimte', true), { pad, volume: MUZIEK_ZACHT }, scherm);
   }
-  assert.equal(muziekBestand(MUZIEK, 'wereldkaart', 'ruimte', false), null);
-  assert.equal(muziekBestand(MUZIEK, 'wereldkaart', 'onderwater', true), null);
-  assert.equal(muziekBestand(null, 'wereldkaart', 'ruimte', true), null);
+  assert.ok(MUZIEK_ZACHT < MUZIEK_NORMAAL);
+});
+
+test('stil op de profielkeuze en bij profiel maken, als de muziek uit staat of zonder stuk', () => {
+  for (const scherm of ['profielkeuze', 'profielMaken']) {
+    assert.equal(muziekKeuze(MUZIEK, scherm, 'ruimte', true), null, scherm);
+  }
+  assert.equal(muziekKeuze(MUZIEK, 'wereldkaart', 'ruimte', false), null);
+  assert.equal(muziekKeuze(MUZIEK, 'ronde', 'onderwater', true), null);
+  assert.equal(muziekKeuze(null, 'wereldkaart', 'ruimte', true), null);
+  assert.equal(muziekKeuze(MUZIEK, 'wereldkaart', undefined, true), null);
 });
 
 test('de muziekschermen bestaan', () => {
-  for (const scherm of MUZIEK_SCHERMEN) assert.ok(schermen[scherm], scherm);
+  for (const scherm of Object.keys(MUZIEK_VOLUME)) assert.ok(schermen[scherm], scherm);
 });
 
 test('elk thema heeft muziek', () => {
   const manifest = JSON.parse(readFileSync(new URL('../de-wiebels/frontend/geluid/muziek/manifest.json', import.meta.url), 'utf8'));
-  for (const thema of Object.keys(THEMAS)) assert.ok(muziekBestand(manifest, 'wereldkaart', thema, true), thema);
+  for (const thema of Object.keys(THEMAS)) assert.ok(muziekKeuze(manifest, 'wereldkaart', thema, true), thema);
 });
 
 test('mondOpening: dicht bij stilte, verder open bij harder geluid, nooit meer dan 1', () => {

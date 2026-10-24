@@ -15,7 +15,7 @@ function actief() {
   return stapel[stapel.length - 1];
 }
 
-// Na elke schermwissel: muziek bij het hoofdmenu, het winkeltje en Aanpassen, elders stil.
+// Na elke schermwissel: de muziek en het volume voor dit scherm (geluidsbestanden.js).
 function kiesMuziek() {
   muziekVoor(actief().naam, staat.profiel?.thema);
 }

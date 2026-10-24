@@ -4,8 +4,10 @@ Gebruik (vanuit de root van de repo):
     ELEVENLABS_API_KEY=... python tools/maak-stemmen.py
 
 - Stem: leest alle zinnen uit de-wiebels/frontend/js/zinnen.js en maakt per zin een mp3 in
-  de-wiebels/frontend/geluid/stem/. Alleen ontbrekende of gewijzigde zinnen worden opnieuw gemaakt;
-  een andere stem of een ander model maakt alles opnieuw. Zinnen die niet meer bestaan, gaan weg.
+  de-wiebels/frontend/geluid/stem/. Voor elke zin binnen een tekst komt de tag [excited], alleen
+  bij het versturen (zinnen.js en het manifest blijven zonder tag). Alleen ontbrekende of gewijzigde
+  zinnen worden opnieuw gemaakt; een andere stem, model of tag maakt alles opnieuw. Zinnen die niet
+  meer bestaan, gaan weg.
 - Muziek: per thema één zacht muziekje in de-wiebels/frontend/geluid/muziek/, alleen als het
   ontbreekt of als de beschrijving is veranderd.
 
@@ -23,8 +25,10 @@ from pathlib import Path
 
 # De stem: "Roos" uit de stemmenbibliotheek van ElevenLabs (Nederlands, jong, vrolijk en warm).
 STEM_ID = "7qdUFMklKPaaAVMsBTBt"
-# Meertalig model dat Nederlands goed uitspreekt.
-MODEL = "eleven_multilingual_v2"
+# Model dat Nederlands goed uitspreekt en tags voor de toon begrijpt.
+MODEL = "eleven_v4"
+# Toon van de stem, voor elke zin.
+TAG = "[excited]"
 
 STEM_FORMAAT = "mp3_22050_32"  # mono, 32 kbps: klein en goed genoeg voor spraak
 MUZIEK_FORMAAT = "mp3_44100_64"
@@ -64,13 +68,22 @@ def lees_zinnen(bron):
     return zinnen
 
 
+def met_tag(tekst):
+    """De tekst met TAG voor elke zin (een zin eindigt op . ! ? of … gevolgd door een spatie)."""
+    return " ".join(f"{TAG} {zin}" for zin in re.split(r"(?<=[.!?…]) +", tekst.strip()))
+
+
+def andere_stem(manifest):
+    return (manifest.get("stem"), manifest.get("model"), manifest.get("tag")) != (STEM_ID, MODEL, TAG)
+
+
 def te_maken(zinnen, manifest, bestaat):
     """De id's die (opnieuw) gemaakt moeten worden. bestaat(bestand) zegt of het bestand er is."""
-    andere_stem = manifest.get("stem") != STEM_ID or manifest.get("model") != MODEL
+    alles = andere_stem(manifest)
     oud = manifest.get("zinnen", {})
     return [
         zin_id for zin_id, tekst in zinnen.items()
-        if andere_stem or oud.get(zin_id, {}).get("tekst") != tekst or not bestaat(oud[zin_id]["bestand"])
+        if alles or oud.get(zin_id, {}).get("tekst") != tekst or not bestaat(oud[zin_id]["bestand"])
     ]
 
 
@@ -109,8 +122,8 @@ def maak_stemmen(sleutel):
     pad_manifest = STEM_MAP / "manifest.json"
     manifest = lees_json(pad_manifest, {})
     lijst = te_maken(zinnen, manifest, lambda bestand: (STEM_MAP / bestand).exists())
-    if manifest.get("stem") != STEM_ID or manifest.get("model") != MODEL:
-        manifest = {"stem": STEM_ID, "model": MODEL, "zinnen": {}}
+    if andere_stem(manifest):
+        manifest = {"stem": STEM_ID, "model": MODEL, "tag": TAG, "zinnen": {}}
     oud = manifest.setdefault("zinnen", {})
 
     # Zinnen die niet meer in zinnen.js staan, gaan weg.
@@ -123,7 +136,7 @@ def maak_stemmen(sleutel):
     for i, zin_id in enumerate(lijst, 1):
         try:
             data = vraag(sleutel, f"/v1/text-to-speech/{STEM_ID}?output_format={STEM_FORMAAT}",
-                         {"text": zinnen[zin_id], "model_id": MODEL})
+                         {"text": met_tag(zinnen[zin_id]), "model_id": MODEL})
         except ApiFout as fout:
             # Eén zin die niet lukt, houdt de rest niet tegen; in het spel krijgt die de letters.
             print(f"  {i}/{len(lijst)} {zin_id}: NIET GELUKT ({fout})")

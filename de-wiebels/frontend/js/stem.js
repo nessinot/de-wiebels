@@ -1,8 +1,10 @@
 // De stem van de Wiebel: vooraf ingesproken zinnen (geluid/stem/), afgespeeld via de AudioContext
-// van geluid.js. Een AnalyserNode meet het volume, zodat de mond meebeweegt. Er praat er steeds één.
+// van geluid.js. Een AnalyserNode meet het volume, zodat de mond meebeweegt. Er praat er steeds één;
+// zolang die praat, klinkt de muziek zachter.
 
 import { geefContext } from './geluid.js';
 import { stemBestand, mondOpening, STEM_MAP } from './geluidsbestanden.js';
+import { muziekBijSpraak } from './muziek.js';
 import { opslag } from './opslag.js';
 
 let manifest = null;
@@ -56,6 +58,7 @@ export function speelZin(buffer, { bijVolume, klaar }) {
     try { bron.stop(); } catch { /* al gestopt */ }
     cancelAnimationFrame(beeld);
     if (huidige === stop) huidige = null;
+    muziekBijSpraak(false);
     klaar();
   }
   (function meet() {
@@ -65,6 +68,7 @@ export function speelZin(buffer, { bijVolume, klaar }) {
   })();
   bron.onended = stop;
   bron.start();
+  muziekBijSpraak(true);
   huidige = stop;
   return stop;
 }

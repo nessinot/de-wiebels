@@ -24,6 +24,7 @@ class Handler(SimpleHTTPRequestHandler):
         ".json": "application/json",
         ".svg": "image/svg+xml",
         ".mp3": "audio/mpeg",
+        ".woff2": "font/woff2",
     }
 
     def end_headers(self):
