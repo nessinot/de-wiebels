@@ -1,5 +1,9 @@
 # Wijzigingen
 
+## 0.8.1
+
+Elke eindbaas houdt nu een eigen, bijzondere Wiebel gevangen. In het thema Dino-eiland hebben de werelden nieuwe namen: Vulkaan, Moeras, Krater, Strand en Tempel.
+
 ## 0.8.0
 
 De Wiebels hebben een verhaal.
