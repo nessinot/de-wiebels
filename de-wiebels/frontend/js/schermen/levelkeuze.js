@@ -8,7 +8,7 @@ import { themaAchtergrond } from '../thema-achtergrond.js';
 import { sterrenHtml, topbalk } from '../weergave.js';
 
 export const levelkeuze = {
-  maak({ toon, gegevens }) {
+  maak({ toon, terug, gegevens }) {
     const el = maakEl();
     const v = gegevens.vaardigheid;
 
@@ -20,7 +20,10 @@ export const levelkeuze = {
       el.innerHTML = `
         ${themaAchtergrond(p.thema, v, 'ab-level')}
         ${topbalk(p)}
-        <h1>${t.werelden[v].emoji} ${t.werelden[v].naam}<span class="kop-ondertitel">${ONDERTITELS[v]}</span></h1>
+        <div class="kopregel">
+          <button class="knop" data-focus data-actie="terug">← Terug</button>
+          <h1>${t.werelden[v].emoji} ${t.werelden[v].naam}<span class="kop-ondertitel">${ONDERTITELS[v]}</span></h1>
+        </div>
         <div class="levels">
           ${LEVELS[v].map((l) => {
             const open = levelOpen(p, l);
@@ -39,6 +42,7 @@ export const levelkeuze = {
     }
 
     opKlik(el, {
+      terug: () => terug(),
       level: (id) => toon('ronde', { levelId: id }),
       baas: () => toon('eindbaas', { vaardigheid: v }),
     });

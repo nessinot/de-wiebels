@@ -19,10 +19,32 @@ test('elk goed antwoord raakt de baas, fouten kosten niets', () => {
 test('baasvragen komen uit de levels van die wereld', () => {
   const p = nieuwProfiel({ naam: 'Speler 1', avatar: '🐱' });
   for (const v of VAARDIGHEDEN) {
+    const g = nieuwGevecht();
     for (let i = 0; i < 50; i++) {
-      const { vraag, level } = baasVraag(p, v);
+      const { vraag, level } = baasVraag(p, v, g);
       assert.equal(level.vaardigheid, v);
       assert.ok(vraag.goed);
     }
+  }
+});
+
+test('in één gevecht komt geen som twee keer', () => {
+  const p = nieuwProfiel({ naam: 'Speler 1', avatar: '🐱' });
+  for (const v of VAARDIGHEDEN) {
+    const g = nieuwGevecht();
+    const ids = Array.from({ length: 60 }, () => baasVraag(p, v, g).vraag.id);
+    assert.equal(new Set(ids).size, 60, v);
+  }
+});
+
+test('vangnet: als alles al gesteld is, nooit dezelfde som als de vorige', () => {
+  const p = nieuwProfiel({ naam: 'Speler 1', avatar: '🐱' });
+  const g = nieuwGevecht();
+  g.gesteld = { has: () => true, add() {} };
+  let vorige = null;
+  for (let i = 0; i < 50; i++) {
+    const id = baasVraag(p, 'keer', g).vraag.id;
+    assert.notEqual(id, vorige);
+    vorige = id;
   }
 });

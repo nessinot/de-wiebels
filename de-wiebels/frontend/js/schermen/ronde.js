@@ -1,14 +1,14 @@
 // Oefenronde: tien vragen met vier antwoorden. Een fout wordt rustig verbeterd en later opnieuw gevraagd.
 
 import { geefBeloning, voegXpToe } from '../beloningen.js';
-import { maakEl } from '../dom.js';
+import { maakEl, opKlik } from '../dom.js';
 import { speel } from '../geluid.js';
 import { maakVraag, maakVragen, vraagUitId } from '../generators/index.js';
 import { maakGids } from '../gids.js';
 import { registreer, teHerhalen, volgendeStap } from '../leitner.js';
 import { levelVan } from '../levels.js';
 import { bewaar, staat } from '../opslag.js';
-import { RONDE_LENGTE, beantwoord, huidigeVraag, nieuweRonde, sterrenVoor } from '../ronde.js';
+import { RONDE_LENGTE, beantwoord, gedaan, huidigeVraag, nieuweRonde, sterrenVoor } from '../ronde.js';
 import { themaAchtergrond } from '../thema-achtergrond.js';
 import { vliegNaar } from '../vliegen.js';
 import { maakVraagpaneel } from '../vraagpaneel.js';
@@ -19,7 +19,8 @@ const PAUZE_GOED = 900;
 const MAX_HERHALING = 4;
 const MAX_MUNTEN = 5; // zoveel munten vliegen er hooguit tegelijk naar de teller
 
-// Vragen voor een ronde: eerst wat aan de beurt is om te herhalen, de rest nieuw.
+// Vragen voor een ronde: eerst wat aan de beurt is om te herhalen, de rest nieuw. Alles na de
+// eerste tien is reserve voor tussenvragen.
 function stelRondeSamen(p, level, stap) {
   const herhaling = teHerhalen(p.items, level.id, MAX_HERHALING)
     .map((id) => vraagUitId(id))
@@ -27,18 +28,19 @@ function stelRondeSamen(p, level, stap) {
     .map((v) => ({ ...v, herhaling: true }));
   const ids = new Set(herhaling.map((v) => v.id));
   const nieuw = maakVragen(level, RONDE_LENGTE * 2, stap).filter((v) => !ids.has(v.id));
-  return [...herhaling, ...nieuw].slice(0, RONDE_LENGTE);
+  return [...herhaling, ...nieuw];
 }
 
 export const ronde = {
-  maak({ toon, zetFocus, gegevens }) {
+  maak({ toon, terug, zetFocus, gegevens }) {
     const p = staat.profiel;
     const level = levelVan(gegevens.levelId);
     let stap = p.moeilijkheid[level.id] ?? 1;
     let reeksGoed = 0;
     let reeksFout = 0;
-    const r = nieuweRonde(stelRondeSamen(p, level, stap));
-    const rondeIds = new Set(r.wachtrij.map((v) => v.id)); // alle vragen van deze ronde, ook al gestelde
+    const alle = stelRondeSamen(p, level, stap);
+    const r = nieuweRonde(alle.slice(0, RONDE_LENGTE), alle.slice(RONDE_LENGTE));
+    const rondeIds = new Set(alle.map((v) => v.id)); // alle vragen van deze ronde, ook al gestelde en de reserve
 
     const el = maakEl(`
       ${themaAchtergrond(p.thema, level.vaardigheid, 'ab-ronde')}
@@ -51,16 +53,20 @@ export const ronde = {
     el.classList.add('met-gids');
     const paneel = maakVraagpaneel({ zetFocus, opAntwoord: antwoord });
     const gids = maakGids(p, 'gids-ronde');
+    // Het pijltje staat na het vraagpaneel, zodat het eerste antwoord de focus krijgt.
     el.append(paneel.el, gids.el);
+    el.insertAdjacentHTML('beforeend', '<button class="knop terugpijl" data-focus data-actie="terug" aria-label="Terug">←</button>');
     const teller = el.querySelector('.munt-teller');
+    opKlik(el, { terug: () => terug() });
 
     function teken() {
-      const gedaan = r.aantal - new Set(r.wachtrij.map((v) => v.id)).size;
-      el.querySelector('.voortgang').innerHTML = Array.from({ length: r.aantal }, (_, i) => `<span class="${i < gedaan ? 'vol' : ''}"></span>`).join('');
+      const klaar = gedaan(r);
+      el.querySelector('.voortgang').innerHTML = Array.from({ length: r.aantal }, (_, i) => `<span class="${i < klaar ? 'vol' : ''}"></span>`).join('');
       paneel.toon(huidigeVraag(r));
     }
 
     function volgende() {
+      if (!el.isConnected) return; // het scherm is al verlaten
       if (r.wachtrij.length) return teken();
       const sterren = sterrenVoor(r.goedEerst, r.aantal);
       p.sterren[level.id] = Math.max(p.sterren[level.id] || 0, sterren);
@@ -83,7 +89,7 @@ export const ronde = {
       reeksGoed = 0;
       reeksFout = 0;
       r.wachtrij = r.wachtrij.map((v) => {
-        if (v.herhaling || r.fouten.has(v.id)) return v;
+        if (v.herhaling || v.extra || r.fouten.has(v.id)) return v;
         for (let i = 0; i < 50; i++) {
           const nieuw = maakVraag(level, stap);
           if (!rondeIds.has(nieuw.id)) {

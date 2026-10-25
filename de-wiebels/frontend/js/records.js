@@ -1,13 +1,30 @@
 // Tijdrace: zo snel mogelijk een vast aantal sommen goed. Alleen tegen je eigen record.
 
+import { maakVraag } from './generators/index.js';
+import { kies } from './generators/opties.js';
 import { LEVELS, levelOpen } from './levels.js';
 
 export const RACE_LENGTE = 20;
 
-// De race gebruikt het hoogste level dat open is in die wereld.
-export function raceLevel(profiel, vaardigheid) {
-  const open = LEVELS[vaardigheid].filter((l) => levelOpen(profiel, l));
-  return open[open.length - 1] || null;
+// De race gebruikt alle levels die open zijn in die wereld (leeg als alles op slot is).
+export function raceLevels(profiel, vaardigheid) {
+  return LEVELS[vaardigheid].filter((l) => levelOpen(profiel, l));
+}
+
+// Verschillende vragen uit de open levels door elkaar, elk op de moeilijkheid van zijn level.
+// Zijn er te weinig verschillende sommen, dan komen er minder vragen terug.
+export function raceVragen(profiel, vaardigheid, aantal, rnd = Math.random) {
+  const levels = raceLevels(profiel, vaardigheid);
+  const vragen = [];
+  const ids = new Set();
+  for (let poging = 0; levels.length && vragen.length < aantal && poging < 1000; poging++) {
+    const level = kies(levels, rnd);
+    const vraag = maakVraag(level, profiel.moeilijkheid[level.id] ?? 1, rnd);
+    if (ids.has(vraag.id)) continue;
+    ids.add(vraag.id);
+    vragen.push({ ...vraag, levelId: level.id });
+  }
+  return vragen;
 }
 
 export function afgerond(seconden) {

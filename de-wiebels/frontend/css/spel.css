@@ -149,7 +149,25 @@
   align-items: center;
   font-size: 44px;
   color: var(--tekst-zacht);
+  padding-left: 112px; /* ruimte voor het pijltje terug */
+  min-height: 80px;
 }
+
+/* Klein rond pijltje terug, linksboven in de safe area (ronde, eindbaas, tijdrace). */
+.terugpijl {
+  position: absolute;
+  top: 54px;
+  left: 96px;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 48px;
+  line-height: 1;
+  color: var(--tekst-zacht);
+}
+
+.terugpijl.heeft-focus::after { border-radius: 50%; }
 
 .voortgang { display: flex; gap: 14px; }
 
@@ -301,7 +319,7 @@
   align-items: center;
   gap: 20px;
   width: 380px;
-  padding-top: 40px;
+  padding-top: 110px; /* onder het pijltje terug */
 }
 
 .baas-emoji { font-size: 240px; line-height: 1; }

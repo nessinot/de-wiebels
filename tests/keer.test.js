@@ -4,6 +4,7 @@ import { keerVraag } from '../de-wiebels/frontend/js/generators/keer.js';
 import { getalOpties } from '../de-wiebels/frontend/js/generators/opties.js';
 import { maakVragen, vraagUitId } from '../de-wiebels/frontend/js/generators/index.js';
 import { LEVELS, levelVan } from '../de-wiebels/frontend/js/levels.js';
+import { RONDE_LENGTE } from '../de-wiebels/frontend/js/ronde.js';
 
 function controleerOpties(vraag) {
   assert.equal(vraag.opties.length, 4);
@@ -13,15 +14,16 @@ function controleerOpties(vraag) {
   for (const s of sleutels) assert.ok(Number(s) >= 0);
 }
 
-test('keersommen kloppen en hebben vier unieke opties', () => {
+test('keersommen kloppen, hebben de tafel achteraan en vier unieke opties', () => {
   for (const level of LEVELS.keer) {
     for (let stap = 0; stap <= 2; stap++) {
       for (let i = 0; i < 300; i++) {
         const v = keerVraag(level, stap);
         const [a, b] = v.tekst.replace(' = ?', '').split(' × ').map(Number);
         assert.equal(String(a * b), v.goed);
-        assert.ok(level.tafels.includes(a) || level.tafels.includes(b));
-        assert.ok(a <= 10 && b <= 10);
+        assert.ok(level.tafels.includes(b), `${v.tekst} in ${level.id}`);
+        assert.ok(a >= 1 && a <= 10);
+        assert.equal(v.id, `keer:${a}x${b}`);
         controleerOpties(v);
       }
     }
@@ -45,6 +47,18 @@ test('opties bij antwoord 0 of 1 blijven positief en uniek', () => {
 test('een ronde heeft tien verschillende vragen', () => {
   const vragen = maakVragen(levelVan('keer:1'), 10);
   assert.equal(new Set(vragen.map((v) => v.id)).size, 10);
+});
+
+test('maakVragen geeft per level en stap alleen verschillende vragen, minstens een ronde vol', () => {
+  for (const v of Object.keys(LEVELS)) {
+    for (const level of LEVELS[v]) {
+      for (let stap = 0; stap <= 2; stap++) {
+        const vragen = maakVragen(level, RONDE_LENGTE * 2, stap);
+        assert.equal(new Set(vragen.map((x) => x.id)).size, vragen.length, `${level.id} stap ${stap}`);
+        assert.ok(vragen.length >= RONDE_LENGTE, `${level.id} stap ${stap}: ${vragen.length}`);
+      }
+    }
+  }
 });
 
 test('een vraag is terug te bouwen uit het item-id', () => {

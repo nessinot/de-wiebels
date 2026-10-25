@@ -44,6 +44,9 @@ export const eindbaas = {
     `);
     const paneel = maakVraagpaneel({ zetFocus, opAntwoord: antwoord });
     el.querySelector('.baas-vragen').append(paneel.el);
+    // Het pijltje staat na het vraagpaneel (zodat het eerste antwoord de focus krijgt) en in het
+    // baasscherm, zodat het bij de overwinning verdwijnt.
+    el.querySelector('.baasscherm').insertAdjacentHTML('beforeend', '<button class="knop terugpijl" data-focus data-actie="terug" aria-label="Terug">←</button>');
     const gids = maakGids(p, 'gids-baas');
     el.classList.add('met-gids');
     el.append(gids.el);
@@ -56,11 +59,13 @@ export const eindbaas = {
       balk.getBoundingClientRect();
       balk.style.transition = `transform ${TIJD_PER_VRAAG}s linear`;
       balk.style.transform = 'scaleX(0)';
-      timer = setTimeout(() => antwoord(null, null), TIJD_PER_VRAAG * 1000);
+      timer = setTimeout(() => {
+        if (el.isConnected) antwoord(null, null); // niet meer als het scherm al verlaten is
+      }, TIJD_PER_VRAAG * 1000);
     }
 
     function volgende() {
-      huidig = baasVraag(p, v);
+      huidig = baasVraag(p, v, gevecht);
       paneel.toon(huidig.vraag);
       startTijd();
     }
@@ -116,10 +121,12 @@ export const eindbaas = {
         emoji.classList.add('geraakt');
       });
       paneel.toonGoed('Raak!');
-      setTimeout(verslagen ? gewonnen : volgende, PAUZE_GOED);
+      setTimeout(() => {
+        if (el.isConnected) (verslagen ? gewonnen : volgende)(); // niet meer als het scherm al verlaten is
+      }, PAUZE_GOED);
     }
 
-    opKlik(el, { klaar: () => terug() });
+    opKlik(el, { klaar: () => terug(), terug: () => terug() });
 
     volgende();
     return {

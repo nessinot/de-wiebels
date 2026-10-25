@@ -1,8 +1,104 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { nieuweRonde, beantwoord, huidigeVraag, sterrenVoor } from '../de-wiebels/frontend/js/ronde.js';
+import { nieuweRonde, beantwoord, huidigeVraag, gedaan, sterrenVoor } from '../de-wiebels/frontend/js/ronde.js';
 
 const vragen = Array.from({ length: 10 }, (_, i) => ({ id: `v${i}`, goed: 'g' }));
+const reserve = Array.from({ length: 3 }, (_, i) => ({ id: `r${i}`, goed: 'g' }));
+
+// Alles goed tot alleen de laatste vraag nog over is.
+function totLaatste(r) {
+  while (r.wachtrij.length > 1) beantwoord(r, 'g');
+}
+
+test('laatste vraag fout met reserve: eerst een reservevraag, dan de foute', () => {
+  const r = nieuweRonde(vragen, reserve);
+  totLaatste(r);
+  beantwoord(r, 'fout');
+  assert.deepEqual(r.wachtrij.map((v) => v.id), ['r0', 'v9']);
+  assert.equal(huidigeVraag(r).extra, true);
+});
+
+test('laatste vraag fout zonder reserve: eerst een eerder gestelde andere vraag', () => {
+  const r = nieuweRonde(vragen);
+  totLaatste(r);
+  beantwoord(r, 'fout');
+  assert.deepEqual(r.wachtrij.map((v) => v.id), ['v8', 'v9']);
+  assert.equal(huidigeVraag(r).extra, true);
+});
+
+test('ronde van één vraag fout: dezelfde vraag komt terug (vangnet)', () => {
+  const r = nieuweRonde([vragen[0]]);
+  beantwoord(r, 'fout');
+  assert.deepEqual(r.wachtrij.map((v) => v.id), ['v0']);
+  assert.ok(!huidigeVraag(r).extra);
+});
+
+test('een goede tussenvraag telt niet voor goedEerst en geeft geen basismunt', () => {
+  const r = nieuweRonde(vragen, reserve);
+  totLaatste(r);
+  beantwoord(r, 'fout');
+  const voor = r.goedEerst;
+  const tussen = beantwoord(r, 'g');
+  assert.equal(tussen.vraag.id, 'r0');
+  assert.equal(tussen.eersteKeer, false);
+  assert.equal(tussen.munten, 0);
+  assert.equal(r.goedEerst, voor);
+  assert.equal(r.combo, 1);
+});
+
+test('een foute tussenvraag komt niet terug', () => {
+  const r = nieuweRonde(vragen, reserve);
+  totLaatste(r);
+  beantwoord(r, 'fout');
+  beantwoord(r, 'fout');
+  assert.deepEqual(r.wachtrij.map((v) => v.id), ['v9']);
+  // Gaat de foute vraag weer mis, dan volgt opnieuw een tussenvraag.
+  beantwoord(r, 'fout');
+  assert.deepEqual(r.wachtrij.map((v) => v.id), ['r1', 'v9']);
+});
+
+test('gedaan() telt de tussenvraag niet mee', () => {
+  const r = nieuweRonde(vragen, reserve);
+  totLaatste(r);
+  assert.equal(gedaan(r), 9);
+  beantwoord(r, 'fout');
+  assert.equal(gedaan(r), 9);
+  beantwoord(r, 'g');
+  assert.equal(gedaan(r), 9);
+  beantwoord(r, 'g');
+  assert.equal(gedaan(r), 10);
+  assert.equal(r.wachtrij.length, 0);
+});
+
+test('een volle ronde met de laatste fout geeft goedEerst 9 en twee sterren', () => {
+  for (const res of [reserve, []]) {
+    const r = nieuweRonde(vragen, res);
+    totLaatste(r);
+    beantwoord(r, 'fout');
+    let uitslag;
+    while (r.wachtrij.length) uitslag = beantwoord(r, 'g');
+    assert.ok(uitslag.klaar);
+    assert.equal(r.goedEerst, 9);
+    assert.equal(r.aantal, 10);
+    assert.equal(sterrenVoor(r.goedEerst, r.aantal), 2);
+  }
+});
+
+test('met willekeurige fouten komt dezelfde vraag nooit twee keer direct na elkaar', () => {
+  for (const res of [reserve, []]) {
+    for (let n = 0; n < 500; n++) {
+      const r = nieuweRonde(vragen, res);
+      let vorige = null;
+      for (let stap = 0; r.wachtrij.length && stap < 1000; stap++) {
+        const vraag = huidigeVraag(r);
+        assert.notEqual(vraag.id, vorige);
+        vorige = vraag.id;
+        beantwoord(r, Math.random() < 0.4 ? 'fout' : 'g');
+      }
+      assert.equal(r.wachtrij.length, 0);
+    }
+  }
+});
 
 test('alles in één keer goed geeft drie sterren', () => {
   const r = nieuweRonde(vragen);

@@ -3,19 +3,19 @@
 import { voegXpToe } from '../beloningen.js';
 import { maakEl, opKlik } from '../dom.js';
 import { speel } from '../geluid.js';
-import { maakVragen } from '../generators/index.js';
 import { maakGids } from '../gids.js';
 import { registreer } from '../leitner.js';
 import { ONDERTITELS, VAARDIGHEDEN } from '../levels.js';
 import { bewaar, staat } from '../opslag.js';
-import { RACE_LENGTE, raceLevel, registreerTijd, tijdTekst } from '../records.js';
-import { beantwoord, huidigeVraag, nieuweRonde } from '../ronde.js';
+import { RACE_LENGTE, raceLevels, raceVragen, registreerTijd, tijdTekst } from '../records.js';
+import { beantwoord, gedaan, huidigeVraag, nieuweRonde } from '../ronde.js';
 import { thema } from '../themas/index.js';
 import { themaAchtergrond } from '../thema-achtergrond.js';
 import { maakVraagpaneel } from '../vraagpaneel.js';
 import { vuurwerk } from '../vuurwerk.js';
 
 const PAUZE_GOED = 400;
+const RESERVE = 3; // extra sommen voor tussenvragen na een fout
 
 export const tijdraceKeuze = {
   maak({ toon, terug }) {
@@ -32,13 +32,14 @@ export const tijdraceKeuze = {
         <p class="ondertitel">Beantwoord ${RACE_LENGTE} sommen zo snel mogelijk goed. Kun je je eigen record verbeteren?</p>
         <div class="keuzes race-keuzes">
           ${VAARDIGHEDEN.map((v) => {
-            const level = raceLevel(p, v);
+            const levels = raceLevels(p, v);
+            const label = levels.length > 1 ? `${levels.length} levels door elkaar` : levels[0]?.label;
             const record = p.records[v];
             return `
-              <button class="knop keuzeknop" data-focus data-actie="race" data-waarde="${v}" ${level ? '' : 'disabled'}>
+              <button class="knop keuzeknop" data-focus data-actie="race" data-waarde="${v}" ${levels.length ? '' : 'disabled'}>
                 <strong>${t.werelden[v].emoji} ${t.werelden[v].naam}</strong>
                 <span>${ONDERTITELS[v]}</span>
-                <span>${level ? level.label : 'Nog op slot'}</span>
+                <span>${label ?? 'Nog op slot'}</span>
                 <span>Record: ${record === undefined ? '—' : tijdTekst(record)}</span>
               </button>`;
           }).join('')}
@@ -60,8 +61,8 @@ export const tijdrace = {
   maak({ terug, zetFocus, gegevens }) {
     const p = staat.profiel;
     const v = gegevens.vaardigheid;
-    const level = raceLevel(p, v);
-    const r = nieuweRonde(maakVragen(level, RACE_LENGTE, p.moeilijkheid[level.id] ?? 1));
+    const alle = raceVragen(p, v, RACE_LENGTE + RESERVE);
+    const r = nieuweRonde(alle.slice(0, RACE_LENGTE), alle.slice(RACE_LENGTE));
     const start = performance.now();
     let klaar = false;
 
@@ -77,6 +78,8 @@ export const tijdrace = {
     // In de race reageert de Wiebel kort en zonder ballon, zodat het tempo blijft.
     const gids = maakGids(p, 'gids-race', { kort: true });
     el.append(paneel.el, gids.el);
+    // Het pijltje staat na het vraagpaneel, zodat het eerste antwoord de focus krijgt.
+    el.insertAdjacentHTML('beforeend', '<button class="knop terugpijl" data-focus data-actie="terug" aria-label="Terug">←</button>');
 
     const klok = setInterval(() => {
       if (!el.isConnected || klaar) return clearInterval(klok);
@@ -84,12 +87,12 @@ export const tijdrace = {
     }, 100);
 
     function teken() {
-      const gedaan = r.aantal - new Set(r.wachtrij.map((x) => x.id)).size;
-      el.querySelector('.race-teller').textContent = `${gedaan} / ${r.aantal}`;
+      el.querySelector('.race-teller').textContent = `${gedaan(r)} / ${r.aantal}`;
       paneel.toon(huidigeVraag(r));
     }
 
     function finish() {
+      if (!el.isConnected) return; // het scherm is al verlaten
       klaar = true;
       const seconden = (performance.now() - start) / 1000;
       const record = registreerTijd(p, v, seconden);
@@ -97,6 +100,7 @@ export const tijdrace = {
       bewaar();
       // De race maakt plaats voor de uitslag; de achtergrond en de Wiebel blijven.
       el.querySelector('.rondekop').remove();
+      el.querySelector('.terugpijl')?.remove();
       paneel.el.remove();
       el.insertAdjacentHTML('beforeend', `
         <div class="overwinning">
@@ -121,7 +125,7 @@ export const tijdrace = {
 
     function antwoord(sleutel, knop) {
       const uitslag = beantwoord(r, sleutel);
-      registreer(p.items, uitslag.vraag.id, uitslag.goed, level.id);
+      registreer(p.items, uitslag.vraag.id, uitslag.goed, uitslag.vraag.levelId);
       if (uitslag.goed) {
         speel('goed');
         paneel.toonGoed('Goed!');
@@ -134,7 +138,7 @@ export const tijdrace = {
       }
     }
 
-    opKlik(el, { klaar: () => terug() });
+    opKlik(el, { klaar: () => terug(), terug: () => terug() });
 
     teken();
     return { el, bijToets: (toets) => (klaar ? false : paneel.bijToets(toets)) };
