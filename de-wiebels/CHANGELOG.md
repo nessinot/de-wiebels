@@ -1,5 +1,13 @@
 # Wijzigingen
 
+## 0.10.1
+
+- Bij de keersommen staat de tafel nu altijd achteraan, bijvoorbeeld 4 × 3 bij de tafel van 3.
+- De tijdrace kiest sommen uit alle levels die al open zijn en stelt geen som twee keer. Zijn er te weinig verschillende sommen, dan is de race wat korter.
+- Ook bij de eindbaas komt dezelfde som niet nog een keer.
+- Een fout antwoord komt later in de ronde terug, maar nooit meteen: er komt altijd eerst een andere som. Die extra som telt niet mee voor de sterren.
+- Bij de levels staat nu een knop "← Terug". Tijdens een ronde, de eindbaas en de tijdrace zit linksboven een klein pijltje om terug te gaan.
+
 ## 0.10.0
 
 Elke Wiebel heeft nu een eigen naam en een eigen kaartje. Kies een bevrijde Wiebel en hij vertelt wie hij is, waar hij woont en wat hij lekker vindt. Kies een gevangen Wiebel en je ziet waar hij vastzit; is dat level al open, dan ga je er meteen heen. Nieuw bevrijde Wiebels krijgen een sterretje, en de knop Wiebels in het hoofdmenu laat zien als er nieuwe zijn. Achter de Wiebels staat de wereld van je thema, en met de feestknop dansen ze allemaal.
