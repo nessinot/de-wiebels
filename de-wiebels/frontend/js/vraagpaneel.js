@@ -9,6 +9,7 @@ import { kaartSvg, zoomVak } from './nederland/kaartbeeld.js';
 const KLOK_ANIMATIE = 400;
 const CIJFER_WACHT = 1500;
 const PIJLEN = { links: -1, rechts: 1, omlaag: -60, omhoog: 60 };
+const MIN_LETTER = 40; // zo klein wordt de letter van een lange naam hooguit (px)
 // Maat van de kaart bij een vraag over Nederland in px (css/nederland.css).
 export const VRAAGKAART_MAAT = [760, 800];
 
@@ -51,6 +52,23 @@ export function maakVraagpaneel({ zetFocus, opAntwoord }) {
       </div>`;
   }
 
+  // Een lange naam (Nederland) past op één regel: de letter van die knop wordt kleiner, maar niet
+  // kleiner dan MIN_LETTER. Meten kan pas als het paneel in de DOM staat.
+  function pasNamenIn() {
+    el.querySelectorAll('.opties-nl .optie').forEach((knop) => {
+      const stijl = getComputedStyle(knop);
+      const ruimte = knop.clientWidth - parseFloat(stijl.paddingLeft) - parseFloat(stijl.paddingRight);
+      const maat = parseFloat(stijl.fontSize);
+      knop.style.whiteSpace = 'nowrap';
+      const tekst = document.createRange();
+      tekst.selectNodeContents(knop);
+      // Het spel wordt als geheel geschaald (--schaal); de tekstbreedte terug naar px van de knop.
+      const breedte = tekst.getBoundingClientRect().width * knop.offsetWidth / knop.getBoundingClientRect().width;
+      knop.style.whiteSpace = '';
+      if (breedte > ruimte) knop.style.fontSize = `${Math.max(MIN_LETTER, Math.floor(maat * ruimte / breedte))}px`;
+    });
+  }
+
   function toon(nieuweVraag) {
     vraag = nieuweVraag;
     bezig = false;
@@ -65,6 +83,7 @@ export function maakVraagpaneel({ zetFocus, opAntwoord }) {
       <div class="terugkoppeling"></div>
     `;
     el.innerHTML = vraag.kaart ? kaartHtml(inhoud) : inhoud;
+    if (vraag.optieSoort === 'nl') requestAnimationFrame(pasNamenIn);
     klok()?.classList.toggle('zonder-animatie', vraag.interactief === 'zetten');
     // Wat oplicht, komt bovenop zijn buren te liggen.
     el.querySelectorAll('.nl-licht').forEach((d) => d.parentNode.append(d));

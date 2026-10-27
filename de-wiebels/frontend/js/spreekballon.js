@@ -12,13 +12,19 @@ export const BALLON_HTML = '<span class="bubbel" hidden></span>';
 // Anders verschijnt de tekst letter voor letter en gaat de mond open op klinkers, half op
 // medeklinkers en dicht op spaties.
 // Geeft praat(tekst, id) terug; praat.stop() breekt af. blijftStaan: de ballon blijft na afloop zichtbaar.
+// praat() geeft een belofte die vervult als de zin klaar is of wordt afgebroken.
 export function maakSpreker(houder, blijftStaan = false) {
   let beurt = 0;
   let stopStem = null;
+  let vervulVorige = null;
   function praat(tekst, id) {
     const mijn = ++beurt;
     stopStem?.();
     stopStem = null;
+    vervulVorige?.();
+    let vervul;
+    const belofte = new Promise((r) => { vervul = r; });
+    vervulVorige = vervul;
     const wiebels = [...houder.querySelectorAll('.wiebel')];
     const monden = wiebels.map((w) => w.querySelector('.w-mond-open'));
     const bubbel = houder.querySelector('.bubbel');
@@ -26,6 +32,7 @@ export function maakSpreker(houder, blijftStaan = false) {
     const klaar = () => {
       wiebels.forEach((w) => { w.dataset.mond = 'rust'; });
       if (!blijftStaan) setTimeout(() => { if (mijn === beurt) bubbel.hidden = true; }, 1800);
+      vervul();
     };
 
     function metStem(buffer) {
@@ -69,30 +76,31 @@ export function maakSpreker(houder, blijftStaan = false) {
       })();
     }
 
-    if (!id) return letters();
-    laadZin(id, tekst).then((buffer) => {
+    if (!id) letters();
+    else laadZin(id, tekst).then((buffer) => {
       if (mijn !== beurt) return;
       if (buffer) metStem(buffer);
       else letters();
     });
+    return belofte;
   }
   praat.stop = () => {
     beurt++;
     stopStem?.();
     stopStem = null;
+    vervulVorige?.();
   };
   return praat;
 }
 
-// Ballon met zinnen per gebeurtenis (zinnen.js). zeg() geeft de gekozen zin terug ({ id, tekst }).
+// Ballon met zinnen per gebeurtenis (zinnen.js). zeg() geeft de belofte van praat() terug.
 export function maakBallon(houder, { blijftStaan = false } = {}) {
   const praat = maakSpreker(houder, blijftStaan);
   return {
     praat,
     zeg(gebeurtenis) {
       const zin = kiesZin(gebeurtenis);
-      praat(zin.tekst, zin.id);
-      return zin;
+      return praat(zin.tekst, zin.id);
     },
     stop() {
       praat.stop();
