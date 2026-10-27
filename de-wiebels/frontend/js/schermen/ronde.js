@@ -19,6 +19,7 @@ import { vuurwerk } from '../vuurwerk.js';
 import { rustig } from '../wiebel-beweging.js';
 
 const PAUZE_GOED = 900;
+const MAX_LOF = 4000; // langer wacht een vraag over Nederland niet op de lof
 const MAX_HERHALING = 4;
 const MAX_MUNTEN = 5; // zoveel munten vliegen er hooguit tegelijk naar de teller
 const MAX_BOLLETJES = 20; // meer vragen passen niet als bolletjes in de kop
@@ -146,13 +147,19 @@ export const ronde = {
       if (uitslag.bonus) {
         speel('combo');
         vuurwerk(el);
-        gids.combo(uitslag.combo);
-        setTimeout(volgende, PAUZE_GOED * 1.6);
+        naLof(gids.combo(uitslag.combo), PAUZE_GOED * 1.6);
       } else {
         speel('goed');
-        gids.goed();
-        setTimeout(volgende, PAUZE_GOED);
+        naLof(gids.goed(), PAUZE_GOED);
       }
+    }
+
+    // Verder na de pauze. Bij Nederland spreekt de Wiebel de volgende vraag uit; die wacht ook tot
+    // de lof klaar is (hooguit MAX_LOF), zodat de vraag de lof niet afbreekt.
+    function naLof(lof, pauze) {
+      if (!nederland) return setTimeout(volgende, pauze);
+      const wacht = (ms) => new Promise((klaar) => { setTimeout(klaar, ms); });
+      Promise.all([wacht(pauze), Promise.race([lof, wacht(MAX_LOF)])]).then(volgende);
     }
 
     teken();

@@ -25,7 +25,8 @@ let bevestig = null; // id van het profiel waarvan verwijderen nog bevestigd moe
 // Nederland: per provincie wat je aan- en uitzet. Wat in meer provincies ligt (zoals water), staat
 // bij elk ervan. In het profiel staat alleen wat uitstaat (profiel.nederland.uit).
 const SOORTEN = { plaats: 'Plaatsen', streek: 'Streken', eiland: 'Eilanden', water: 'Water' };
-const PROVINCIES = ITEMS.filter((it) => it.soort === 'provincie');
+const PROVINCIES = ITEMS.filter((it) => it.soort === 'provincie')
+  .sort((a, b) => a.naam.localeCompare(b.naam, 'nl'));
 const HOOFDSTEDEN = new Set(PROVINCIES.map((pv) => pv.hoofdstad));
 const NL_ITEM = Object.fromEntries(ITEMS.map((it) => [it.id, it]));
 const PER_PROVINCIE = Object.fromEntries(PROVINCIES.map((pv) => [pv.id, ITEMS

@@ -45,12 +45,13 @@ export function maakGids(profiel, prefix, { kort = false, stadium } = {}) {
     },
     goed() {
       sprongetje(wiebel());
-      zeg('goed');
+      return zeg('goed');
     },
-    // Bij 3, 5 of 10 op rij dansen (het vuurwerk doet het scherm).
+    // Bij 3, 5 of 10 op rij dansen (het vuurwerk doet het scherm). goed() en combo() geven de belofte
+    // van de ballon terug, vervuld als de zin klaar is; zonder ballon niets.
     combo(aantal) {
       dans(wiebel());
-      zeg(COMBO_ZINNEN[aantal]);
+      return zeg(COMBO_ZINNEN[aantal]);
     },
     // Een vaste zin { id, tekst } zeggen, zoals een vraag over Nederland.
     spreek(zin) {
