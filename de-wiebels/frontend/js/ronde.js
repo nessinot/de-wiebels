@@ -6,8 +6,9 @@ export const RONDE_LENGTE = 10;
 export const COMBO_BONUS = { 3: 2, 5: 5, 10: 10 };
 
 // De reserve levert tussenvragen: als een foute vraag de laatste was, komt er eerst een andere.
-export function nieuweRonde(vragen, reserve = []) {
-  return { wachtrij: [...vragen], aantal: vragen.length, reserve: [...reserve], gesteld: [], fouten: new Set(), goedEerst: 0, goed: 0, combo: 0, munten: 0 };
+// herkansing: false voor een toets: een foute vraag komt niet terug.
+export function nieuweRonde(vragen, reserve = [], { herkansing = true } = {}) {
+  return { wachtrij: [...vragen], aantal: vragen.length, reserve: [...reserve], herkansing, gesteld: [], fouten: new Set(), goedEerst: 0, goed: 0, combo: 0, munten: 0 };
 }
 
 export function huidigeVraag(ronde) {
@@ -44,8 +45,8 @@ export function beantwoord(ronde, sleutel) {
   } else {
     ronde.combo = 0;
     // Een tussenvraag was alleen een buffer en komt niet terug.
-    if (!vraag.extra) {
-      ronde.fouten.add(vraag.id);
+    if (!vraag.extra) ronde.fouten.add(vraag.id);
+    if (!vraag.extra && ronde.herkansing) {
       // Later in de ronde opnieuw: na twee andere vragen, of aan het eind, maar nooit meteen.
       if (!ronde.wachtrij.length) {
         const tussen = tussenvraag(ronde, vraag.id);

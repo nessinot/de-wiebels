@@ -52,12 +52,18 @@ export function maakGids(profiel, prefix, { kort = false, stadium } = {}) {
       dans(wiebel());
       zeg(COMBO_ZINNEN[aantal]);
     },
-    // Rustig knikken en naar het goede antwoord wijzen. Geen straf.
-    fout() {
+    // Een vaste zin { id, tekst } zeggen, zoals een vraag over Nederland.
+    spreek(zin) {
+      ballon?.praat(zin.tekst, zin.id);
+    },
+    // Rustig knikken en naar het goede antwoord wijzen. Geen straf. Met een zin ("Dat is Middelburg.")
+    // zegt hij die in plaats van "bijna".
+    fout(zin) {
       bijna(wiebel());
       if (kort) return;
       wijs(wiebel());
-      zeg('bijna');
+      if (zin) ballon.praat(zin.tekst, zin.id);
+      else zeg('bijna');
     },
     // Eindbaas: een ster naar de baas gooien; opRaak volgt als hij aankomt.
     gooiSter(doel, opRaak) {

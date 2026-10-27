@@ -20,11 +20,12 @@ export const resultaat = {
     const p = staat.profiel;
     const t = thema(p.thema);
     const level = levelVan(gegevens.levelId);
-    const lijst = LEVELS[level.vaardigheid];
+    // Nederland heeft geen rij levels, dus ook geen volgend level.
+    const lijst = LEVELS[level.vaardigheid] ?? [];
     const volgende = lijst[lijst.indexOf(level) + 1];
     const volgendeOpen = volgende && levelOpen(p, volgende);
     const stadium = huisdierStadium(p.huisdier.xp);
-    const nieuw = gegevens.nieuweWiebel ? wiebelVoor(level.id, t) : null;
+    const nieuw = gegevens.nieuweWiebel ? wiebelVoor(gegevens.nieuweWiebel, t) : null;
 
     function beloningen() {
       const delen = [];
@@ -41,7 +42,7 @@ export const resultaat = {
       <div class="knoppenrij">
         ${volgendeOpen ? '<button class="knop knop-hoofd" data-focus data-actie="volgende">Volgend level →</button>' : ''}
         <button class="knop" data-focus data-actie="opnieuw">Nog een keer</button>
-        <button class="knop" data-focus data-actie="levels">Naar de levels</button>
+        <button class="knop" data-focus data-actie="levels">${level.vaardigheid === 'nederland' ? 'Naar de kaart' : 'Naar de levels'}</button>
       </div>
     `);
     el.classList.add('resultaat');

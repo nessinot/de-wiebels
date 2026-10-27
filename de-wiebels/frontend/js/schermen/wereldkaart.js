@@ -1,9 +1,10 @@
 // Hoofdmenu: links de eigen Wiebel in zijn venster, rechts de werelden (elke vaardigheid is een
-// wereld), onderin het winkeltje, de verzameling, de tijdrace en het thema. Kies je een wereld, dan
-// vliegt de Wiebel erheen en zoomt het beeld in op de levelkeuze.
+// wereld, plus Nederland), onderin het winkeltje, de verzameling, de tijdrace en het thema. Kies je
+// een wereld, dan vliegt de Wiebel erheen en zoomt het beeld in op de levelkeuze (of op Nederland).
 
 import { nieuweWiebels } from '../beloningen.js';
 import { maakEl, opKlik } from '../dom.js';
+import { NEDERLAND } from '../nederland/wereld.js';
 import { VAARDIGHEDEN, LEVELS, ONDERTITELS, levelOpen } from '../levels.js';
 import { staat } from '../opslag.js';
 import { thema } from '../themas/index.js';
@@ -14,6 +15,13 @@ import { blij, rustig, zwaai } from '../wiebel-beweging.js';
 // Per profiel hoeveel nieuwe Wiebels de eigen Wiebel al heeft gemeld: hij meldt het alleen als er
 // sinds de vorige keer een bij is gekomen, anders zegt hij het gewone welkom.
 const gemeld = new Map();
+
+const WERELDEN = [...VAARDIGHEDEN, 'nederland'];
+
+// Naam, emoji en ondertitel van een wereld; Nederland is in elk thema gelijk en altijd open.
+function wereldInfo(t, w) {
+  return w === 'nederland' ? NEDERLAND : { ...t.werelden[w], ondertitel: ONDERTITELS[w] };
+}
 
 export const wereldkaart = {
   maak({ toon, zetFocus }) {
@@ -32,13 +40,14 @@ export const wereldkaart = {
         <div class="decor">${t.decor.map((d, i) => `<span class="decor-${i}">${d}</span>`).join('')}</div>
         ${topbalk(p)}
         <div class="werelden">
-          ${VAARDIGHEDEN.map((v, i) => {
-            const open = LEVELS[v].some((l) => levelOpen(p, l));
+          ${WERELDEN.map((v, i) => {
+            const open = v === 'nederland' || LEVELS[v].some((l) => levelOpen(p, l));
+            const w = wereldInfo(t, v);
             return `
               <button class="knop wereldknop wereld-${i}" data-focus data-actie="wereld" data-waarde="${v}" ${open ? '' : 'disabled'}>
-                <span class="wereld-emoji">${open ? t.werelden[v].emoji : '🔒'}</span>
-                <span class="wereld-naam">${t.werelden[v].naam}</span>
-                <span class="wereld-ondertitel">${ONDERTITELS[v]}</span>
+                <span class="wereld-emoji">${open ? w.emoji : '🔒'}</span>
+                <span class="wereld-naam">${w.naam}</span>
+                <span class="wereld-ondertitel">${w.ondertitel}</span>
               </button>`;
           }).join('')}
         </div>
@@ -64,7 +73,9 @@ export const wereldkaart = {
     function vlieg(v) {
       if (onderweg) return;
       // Na het inzoomen geen tweede overgang.
-      const naarLevels = () => toon('levelkeuze', { vaardigheid: v }, { overgang: false });
+      const naarLevels = () => (v === 'nederland'
+        ? toon('nederland', {}, { overgang: false })
+        : toon('levelkeuze', { vaardigheid: v }, { overgang: false }));
       if (rustig()) return naarLevels();
       onderweg = true;
       const t = thema(staat.profiel.thema);
@@ -111,11 +122,12 @@ export const wereldkaart = {
         kloon.remove();
         knop.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.12)' }, { transform: 'scale(1)' }], { duration: 400 });
         const zoom = el.querySelector('.zoom');
+        const info = wereldInfo(t, v);
         zoom.innerHTML = `
           <span class="zoom-inhoud">
-            <span class="zoom-emoji">${t.werelden[v].emoji}</span>
-            <span class="zoom-naam">${t.werelden[v].naam}</span>
-            <span class="zoom-ondertitel">${ONDERTITELS[v]}</span>
+            <span class="zoom-emoji">${info.emoji}</span>
+            <span class="zoom-naam">${info.naam}</span>
+            <span class="zoom-ondertitel">${info.ondertitel}</span>
           </span>`;
         zoom.hidden = false;
         // Inzoomen vanaf de wereld: het beeld groeit vanuit het midden van de wereldknop.

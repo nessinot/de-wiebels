@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  geefBeloning, gevangenBij, huisdierStadium, markeerGezien, nieuweWiebels, openingsZin, totVolgendStadium, vaardigheidVan, voegXpToe, wiebelVoor,
+  ALLE_BELONINGEN, geefBeloning, gevangenBij, huisdierStadium, markeerGezien, nieuweWiebels, openingsZin, totVolgendStadium, vaardigheidVan, voegXpToe, wiebelVoor,
 } from '../de-wiebels/frontend/js/beloningen.js';
 import { BELONINGEN, LEVELS, VAARDIGHEDEN, levelVan } from '../de-wiebels/frontend/js/levels.js';
 import { nieuwProfiel, vulAan } from '../de-wiebels/frontend/js/profiel.js';
@@ -119,7 +119,7 @@ test('openingszin: nieuwe Wiebels, nog te bevrijden, of allemaal vrij', () => {
   geefBeloning(p, 'plus:10');
   assert.equal(openingsZin(p, 1), 'collectieNieuw');
   assert.equal(openingsZin(p, 0), 'collectieStart');
-  p.verzameling = [...BELONINGEN];
+  p.verzameling = [...ALLE_BELONINGEN];
   assert.equal(openingsZin(p, 0), 'collectieAlles');
   assert.equal(openingsZin(p, 3), 'collectieAlles');
   for (const g of ['collectieStart', 'collectieNieuw', 'collectieAlles', 'gevangenOpen', 'gevangenBaas', 'gevangenDicht', 'menuNieuw']) assert.ok(ZINNEN[g]?.length, g);

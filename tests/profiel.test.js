@@ -40,6 +40,17 @@ test('vulAan geeft een oud profiel een paarse Wiebel en laat de rest staan', () 
   assert.deepEqual(groen.wiebel, { kleur: 'groen' }, 'een gekozen kleur blijft');
 });
 
+test('vulAan: Nederland staat helemaal aan, en wat uitstaat blijft uit', () => {
+  assert.deepEqual(nieuwProfiel({ naam: 'Speler 1', avatar: '🐱' }).nederland, { uit: [] });
+  const oud = nieuwProfiel({ naam: 'Speler 1', avatar: '🐱' });
+  delete oud.nederland;
+  assert.deepEqual(vulAan(oud).nederland, { uit: [] });
+  oud.nederland.uit.push('pl-vlissingen');
+  const kopie = structuredClone(vulAan(oud));
+  assert.deepEqual(vulAan(oud), kopie, 'dubbel aanroepen verandert niets');
+  assert.deepEqual(oud.nederland.uit, ['pl-vlissingen']);
+});
+
 test('vulAan: een bestaand profiel krijgt geen intro, een nieuw profiel wel', () => {
   const oud = nieuwProfiel({ naam: 'Speler 1', avatar: '🐱' });
   delete oud.introGezien;

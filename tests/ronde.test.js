@@ -148,3 +148,22 @@ test('een fout breekt de combo en een herkansing geeft geen munt', () => {
   assert.equal(herkansing.vraag.id, 'v2');
   assert.equal(herkansing.munten, 2); // geen munt voor de vraag zelf, wel de bonus voor 3 op rij
 });
+
+test('toets zonder herkansing: een fout komt niet terug en telt niet als in één keer goed', () => {
+  const r = nieuweRonde(vragen, reserve, { herkansing: false });
+  const eerste = beantwoord(r, 'fout');
+  assert.equal(eerste.goed, false);
+  assert.ok(!r.wachtrij.some((v) => v.id === 'v0'));
+  while (r.wachtrij.length) beantwoord(r, 'g');
+  assert.equal(r.gesteld.length, 10);
+  assert.equal(r.goedEerst, 9);
+  assert.equal(gedaan(r), 10);
+  assert.equal(sterrenVoor(r.goedEerst, r.aantal), 2);
+});
+
+test('toets: de laatste vraag fout maakt de ronde klaar, zonder tussenvraag', () => {
+  const r = nieuweRonde(vragen, reserve, { herkansing: false });
+  totLaatste(r);
+  assert.equal(beantwoord(r, 'fout').klaar, true);
+  assert.equal(r.reserve.length, 3);
+});

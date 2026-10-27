@@ -37,11 +37,26 @@ class ZinnenLezenTest(unittest.TestCase):
 
     def test_alle_zinnen_ook_van_de_wiebels(self):
         zinnen = ms.lees_alle_zinnen()
-        wiebels = [z for z in zinnen if z.startswith("wiebel-")]
+        wiebels = [z for z in zinnen if z.startswith("wiebel-") and not z.startswith("wiebel-nl-")]
         self.assertEqual(len(wiebels), 5 * 47)
         self.assertIn("wiebel-ruimte-plus-20", zinnen)
         self.assertIn("wiebel-dierenopvang-baas-klok", zinnen)
-        self.assertEqual(len(zinnen) - len(wiebels), len(ms.lees_zinnen(ms.ZINNEN_JS.read_text("utf-8"))))
+        nederland = [z for z in zinnen if z.startswith(("nl-", "wiebel-nl-"))]
+        self.assertEqual(len(zinnen) - len(wiebels) - len(nederland),
+                         len(ms.lees_zinnen(ms.ZINNEN_JS.read_text("utf-8"))))
+
+    def test_alle_zinnen_ook_van_nederland(self):
+        zinnen = ms.lees_alle_zinnen()
+        # Uit nederland/items.js, nederland/vragen.js en nederland/wiebels.js.
+        self.assertEqual(zinnen["nl-waar-pv-zeeland"], "Waar ligt Zeeland?")
+        self.assertEqual(zinnen["nl-dat-pv-zeeland"], "Dat is Zeeland.")
+        self.assertEqual(zinnen["nl-herken-gebied"], "Welk gebied is dit?")
+        self.assertIn("nl-gevangen-toets", zinnen)
+        self.assertEqual(len([z for z in zinnen if z.startswith("wiebel-nl-")]), 13)
+        eigen = {}
+        for pad in sorted(ms.NEDERLAND_MAP.glob("*.js")):
+            eigen.update(ms.lees_zinnen(pad.read_text("utf-8")))
+        self.assertTrue(eigen.items() <= zinnen.items())
 
     def test_dubbele_id_is_een_fout(self):
         with self.assertRaises(ValueError):

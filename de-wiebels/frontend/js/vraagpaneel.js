@@ -1,12 +1,16 @@
-// Toont één vraag met meerkeuze-opties of wijzers zetten, en de terugkoppeling erop.
+// Toont één vraag met meerkeuze-opties, wijzers zetten of aanwijzen op de kaart, en de terugkoppeling erop.
 // Gedeeld door de oefenronde, de eindbaas en de tijdrace.
 
 import { maakEl, opKlik } from './dom.js';
 import { digitaal, zetKlok } from './klok.js';
+import { maakKaartbediening } from './nederland/bediening.js';
+import { kaartSvg, zoomVak } from './nederland/kaartbeeld.js';
 
 const KLOK_ANIMATIE = 400;
 const CIJFER_WACHT = 1500;
 const PIJLEN = { links: -1, rechts: 1, omlaag: -60, omhoog: 60 };
+// Maat van de kaart bij een vraag over Nederland in px (css/nederland.css).
+export const VRAAGKAART_MAAT = [760, 800];
 
 export function maakVraagpaneel({ zetFocus, opAntwoord }) {
   const el = maakEl('', 'div');
@@ -17,9 +21,11 @@ export function maakVraagpaneel({ zetFocus, opAntwoord }) {
   let cijfers = '';
   let cijferTimer;
   let opVerder = null;
+  let bediening = null; // bij aanwijzen op de kaart (nederland/bediening.js)
 
   const klok = () => el.querySelector('.vraag .klok');
   const melding = () => el.querySelector('.terugkoppeling');
+  const kaartvak = () => el.querySelector('.kaartvak');
 
   function zetKnoppen() {
     return `
@@ -32,11 +38,25 @@ export function maakVraagpaneel({ zetFocus, opAntwoord }) {
       </div>`;
   }
 
+  // Een vraag met een kaart (Nederland): links de kaart, rechts de vraag en de knoppen. Bij aanwijzen
+  // heeft de kaart de focus en lopen de pijltjes en OK via de kaartbediening.
+  function kaartHtml(vragen) {
+    const [breedte, hoogte] = VRAAGKAART_MAAT;
+    const { provincie = null, doelen = [], licht = [] } = vraag.kaart;
+    const svg = kaartSvg({ provincie, doelen, licht, breedte, hoogte, stip: provincie ? 16 : 12 });
+    return `
+      <div class="nl-vraag">
+        <div class="kaartvak nl-vraagkaart"${vraag.interactief === 'aanwijzen' ? ' data-focus' : ''}>${svg}</div>
+        <div class="nl-vraagkant">${vragen}</div>
+      </div>`;
+  }
+
   function toon(nieuweVraag) {
     vraag = nieuweVraag;
     bezig = false;
     zetTijd = 0;
-    el.innerHTML = `
+    bediening = null;
+    const inhoud = `
       <div class="vraag vraag-${vraag.soort || 'som'}">${vraag.tekst}</div>
       ${vraag.interactief === 'zetten' ? zetKnoppen() : `
       <div class="opties opties-${vraag.optieSoort || 'getal'}">
@@ -44,8 +64,17 @@ export function maakVraagpaneel({ zetFocus, opAntwoord }) {
       </div>`}
       <div class="terugkoppeling"></div>
     `;
+    el.innerHTML = vraag.kaart ? kaartHtml(inhoud) : inhoud;
     klok()?.classList.toggle('zonder-animatie', vraag.interactief === 'zetten');
-    zetFocus(el.querySelector('.optie, [data-actie="zetKlaar"]'));
+    // Wat oplicht, komt bovenop zijn buren te liggen.
+    el.querySelectorAll('.nl-licht').forEach((d) => d.parentNode.append(d));
+    if (vraag.interactief === 'aanwijzen') {
+      const { provincie = null, doelen, begin } = vraag.kaart;
+      bediening = maakKaartbediening(kaartvak(), {
+        doelen, begin, vak: zoomVak(provincie, ...VRAAGKAART_MAAT), opKies: (id) => kies(id),
+      });
+    }
+    zetFocus(el.querySelector('.optie, [data-actie="zetKlaar"], .kaartvak[data-focus]'));
   }
 
   // stappen: ±1 = één minutenstap, ±60 = een uur. De uurwijzer draait realistisch mee.
@@ -61,9 +90,20 @@ export function maakVraagpaneel({ zetFocus, opAntwoord }) {
     opAntwoord(sleutel, knop);
   }
 
-  function markeer() {
+  // Op de kaart: het goede antwoord groen en bovenop, een fout gekozen ding rood. De kaart doet
+  // daarna niet meer mee met de focus, zodat OK naar Verder gaat.
+  function markeer(sleutel) {
     el.querySelectorAll('.optie').forEach((o) => o.classList.add('gekozen-niet'));
     el.querySelector(`.optie[data-waarde="${vraag.goed}"]`)?.classList.replace('gekozen-niet', 'optie-goed');
+    if (!bediening) return;
+    bediening.actief(false);
+    kaartvak().removeAttribute('data-focus');
+    kaartvak().classList.remove('heeft-focus');
+    kaartvak().querySelector('.nl-kaart').classList.add('nl-beantwoord');
+    if (sleutel !== vraag.goed) kaartvak().querySelector(`[data-doel="${sleutel}"]`)?.classList.add('nl-fout');
+    const goed = kaartvak().querySelector(`[data-doel="${vraag.goed}"]`);
+    goed?.parentNode.append(goed);
+    goed?.classList.add('nl-goed');
   }
 
   // Bij een klokvraag draaien de wijzers naar de goede tijd.
@@ -87,18 +127,18 @@ export function maakVraagpaneel({ zetFocus, opAntwoord }) {
 
   function toonGoed(tekst) {
     bezig = true;
-    markeer();
+    markeer(vraag.goed);
     melding().textContent = tekst;
   }
 
   // Rustig het goede antwoord tonen; verder gaat met OK op de knop Verder.
   function toonFout(sleutel, knop, verder) {
     bezig = true;
-    markeer();
+    markeer(sleutel);
     knop?.classList.add('optie-fout');
     klokAnimatie(sleutel);
     const goedKnop = el.querySelector(`.optie[data-waarde="${vraag.goed}"]`);
-    const goedHtml = goedKnop ? goedKnop.innerHTML : digitaal(vraag.klok.uur, vraag.klok.minuut);
+    const goedHtml = goedKnop?.innerHTML ?? vraag.goedHtml ?? digitaal(vraag.klok.uur, vraag.klok.minuut);
     opVerder = verder;
     melding().innerHTML = `<span>Het goede antwoord is <strong>${goedHtml}</strong>.</span>
       <button class="knop knop-hoofd" data-focus data-actie="verder">Verder</button>`;
@@ -112,9 +152,12 @@ export function maakVraagpaneel({ zetFocus, opAntwoord }) {
     verder: () => opVerder?.(),
   });
 
-  // Pijltjes zetten de wijzers; cijfertoetsen kiezen de optie met dat getal.
+  // Pijltjes zetten de wijzers of gaan langs de kaart; cijfertoetsen kiezen de optie met dat getal.
   function bijToets({ actie, cijfer }) {
     if (!vraag || bezig) return false;
+    if (bediening && kaartvak().classList.contains('heeft-focus') && (PIJLEN[actie] || actie === 'ok')) {
+      return bediening.toets(actie);
+    }
     if (PIJLEN[actie] && vraag.interactief === 'zetten') {
       verzet(PIJLEN[actie]);
       return true;
@@ -132,5 +175,10 @@ export function maakVraagpaneel({ zetFocus, opAntwoord }) {
     return true;
   }
 
-  return { el, toon, toonGoed, toonFout, bijToets, isBezig: () => bezig };
+  // Het scherm geeft elke focuswissel door: de kaart laat dan zien wat aangewezen is.
+  function bijFocus(doel) {
+    bediening?.actief(!bezig && doel.classList.contains('kaartvak'));
+  }
+
+  return { el, toon, toonGoed, toonFout, bijToets, bijFocus, isBezig: () => bezig };
 }

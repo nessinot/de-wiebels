@@ -1,11 +1,13 @@
 // Ouderpagina (in de zijbalk van Home Assistant): profielen aanmaken, wijzigen en verwijderen,
-// niveaus, tijdsdruk, zwakke plekken, geluid, stem, muziek, export en import. Praat met de
-// beheer-API van de server; alle adressen zijn relatief vanwege het voorvoegsel van de ingress.
+// niveaus, tijdsdruk, Nederland aan/uit, zwakke plekken, geluid, stem, muziek, export en import.
+// Praat met de beheer-API van de server; alle adressen zijn relatief vanwege het voorvoegsel van
+// de ingress.
 // De pagina draait binnen Home Assistant: alles uit een profiel gaat door esc().
 
 import { esc } from '../js/dom.js';
 import { zwakkePlekken } from '../js/leitner.js';
 import { NIVEAUS, STARTNIVEAUS, VAARDIGHEDEN } from '../js/levels.js';
+import { ITEMS } from '../js/nederland/items.js';
 import { AVATARS, MAX_NAAM, nieuwProfiel, vulAan } from '../js/profiel.js';
 import { itemTekst } from '../js/weergave.js';
 
@@ -19,6 +21,17 @@ const meldingEl = document.getElementById('melding');
 const terugKnop = document.getElementById('terug');
 let huidig = null; // het profiel dat open staat; dan is alleen dat profiel te zien
 let bevestig = null; // id van het profiel waarvan verwijderen nog bevestigd moet worden
+
+// Nederland: per provincie wat je aan- en uitzet. Wat in meer provincies ligt (zoals water), staat
+// bij elk ervan. In het profiel staat alleen wat uitstaat (profiel.nederland.uit).
+const SOORTEN = { plaats: 'Plaatsen', streek: 'Streken', eiland: 'Eilanden', water: 'Water' };
+const PROVINCIES = ITEMS.filter((it) => it.soort === 'provincie');
+const HOOFDSTEDEN = new Set(PROVINCIES.map((pv) => pv.hoofdstad));
+const NL_ITEM = Object.fromEntries(ITEMS.map((it) => [it.id, it]));
+const PER_PROVINCIE = Object.fromEntries(PROVINCIES.map((pv) => [pv.id, ITEMS
+  .filter((it) => SOORTEN[it.soort] && it.provincies.includes(pv.id))
+  .sort((a, b) => a.naam.localeCompare(b.naam, 'nl'))]));
+const openGroepen = new Set(); // "profiel-id provincie-id": wat openblijft als de lijst opnieuw getekend wordt
 
 async function api(pad, opties = {}) {
   const antwoord = await fetch(pad, { ...opties, headers: { 'Content-Type': 'application/json' } });
@@ -48,8 +61,30 @@ function avatarKeuze(naam, gekozen) {
     <label class="avatar"><input type="radio" name="${naam}" value="${a}" ${a === gekozen ? 'checked' : ''} required><span>${a}</span></label>`).join('');
 }
 
+function nederlandGroep(p, pv, uit) {
+  const items = PER_PROVINCIE[pv.id];
+  const aan = items.filter((it) => !uit.has(it.id)).length;
+  const soorten = Object.entries(SOORTEN).map(([soort, kop]) => {
+    const deel = items.filter((it) => it.soort === soort);
+    return deel.length ? `
+      <fieldset><legend>${kop}</legend><div class="vinkjes">
+        ${deel.map((it) => `<label class="schakel"><input type="checkbox" data-nl-item="${it.id}" ${uit.has(it.id) ? '' : 'checked'}> ${esc(it.naam)}${HOOFDSTEDEN.has(it.id) ? ' <small>(hoofdstad)</small>' : ''}</label>`).join('')}
+      </div></fieldset>` : '';
+  }).join('');
+  return `
+    <details class="groep" data-groep="${pv.id}" ${openGroepen.has(`${p.id} ${pv.id}`) ? 'open' : ''}>
+      <summary>${esc(pv.naam)} <small>${aan} van ${items.length} aan</small></summary>
+      <div class="knoppen">
+        <button class="knop" type="button" data-nl-alles="aan">Alles aan</button>
+        <button class="knop" type="button" data-nl-alles="uit">Alles uit</button>
+      </div>
+      ${soorten}
+    </details>`;
+}
+
 function profielKaart(p) {
   const zwak = zwakkePlekken(p.items, 8);
+  const uit = new Set(p.nederland.uit);
   return `
     <details class="kaart" data-id="${esc(p.id)}" ${huidig === p.id ? 'open' : ''}>
       <summary><span class="avatar-groot">${esc(p.avatar)}</span> ${esc(p.naam)}</summary>
@@ -68,8 +103,11 @@ function profielKaart(p) {
           </label>`).join('')}
       </div>
       <label class="schakel"><input type="checkbox" data-tijdsdruk ${p.instellingen?.tijdsdruk ? 'checked' : ''}> Tijdsdruk bij eindbazen</label>
+      <h3>Nederland</h3>
+      <p class="uitleg">Kies welke plaatsen, streken, eilanden en wateren in het spel voorkomen. Provincies en hoofdsteden staan altijd aan bij Provincies en Hoofdsteden; een hoofdstad uitzetten geldt alleen voor Plaatsen.</p>
+      ${PROVINCIES.map((pv) => nederlandGroep(p, pv, uit)).join('')}
       <h3>Zwakke plekken</h3>
-      <p class="zwak">${zwak.length ? zwak.map((z) => `<span>${esc(itemTekst(z.id))} <small>${Number(z.fout)}× fout, ${Number(z.goed)}× goed</small></span>`).join('') : 'Nog geen lastige sommen gevonden.'}</p>
+      <p class="zwak">${zwak.length ? zwak.map((z) => `<span>${esc(itemTekst(z.id))} <small>${Number(z.fout)}× fout, ${Number(z.goed)}× goed</small></span>`).join('') : 'Nog geen lastige vragen gevonden.'}</p>
       <button class="knop knop-gevaar" data-verwijder>${bevestig === p.id ? 'Zeker weten? Klik nog een keer' : 'Profiel verwijderen'}</button>
     </details>`;
 }
@@ -82,13 +120,25 @@ async function laadProfielen() {
 }
 
 // Altijd de nieuwste versie van de server aanpassen, zodat voortgang van de tv niet verloren gaat.
-async function wijzig(id, aanpassing, tekst) {
-  const p = vulAan(await api(`api/profielen/${id}`));
-  aanpassing(p);
-  p.bijgewerkt = new Date().toISOString();
-  await api(`api/profielen/${id}`, { method: 'PUT', body: JSON.stringify(p) });
-  meld(tekst);
-  await laadProfielen();
+// Wijzigingen gaan na elkaar, zodat snel achter elkaar klikken (vinkjes) niets kwijtraakt.
+let wachtrij = Promise.resolve();
+function wijzig(id, aanpassing, tekst) {
+  const klaar = wachtrij.then(async () => {
+    const p = vulAan(await api(`api/profielen/${id}`));
+    aanpassing(p);
+    p.bijgewerkt = new Date().toISOString();
+    await api(`api/profielen/${id}`, { method: 'PUT', body: JSON.stringify(p) });
+    meld(tekst);
+    await laadProfielen();
+  });
+  wachtrij = klaar.catch(() => {});
+  return klaar;
+}
+
+function zetNederland(p, ids, aan) {
+  const uit = new Set(p.nederland.uit);
+  ids.forEach((id) => (aan ? uit.delete(id) : uit.add(id)));
+  p.nederland.uit = [...uit];
 }
 
 // Een geopend profiel staat alleen, als eigen pagina met bovenin de terugknop.
@@ -109,6 +159,13 @@ function toonOverzicht() {
 }
 
 lijst.addEventListener('toggle', (e) => {
+  const groep = e.target.dataset.groep;
+  if (groep) {
+    const sleutel = `${e.target.closest('[data-id]').dataset.id} ${groep}`;
+    if (e.target.open) openGroepen.add(sleutel);
+    else openGroepen.delete(sleutel);
+    return;
+  }
   const id = e.target.dataset.id;
   if (!id) return;
   if (e.target.open) toonProfiel(id);
@@ -137,10 +194,23 @@ lijst.addEventListener('change', (e) => {
     const aan = e.target.checked;
     poging(() => wijzig(id, (p) => { p.instellingen = { ...p.instellingen, tijdsdruk: aan }; }, `Tijdsdruk ${aan ? 'aan' : 'uit'}.`));
   }
+  const item = e.target.dataset.nlItem;
+  if (item) {
+    const aan = e.target.checked;
+    poging(() => wijzig(id, (p) => zetNederland(p, [item], aan), `${NL_ITEM[item].naam} ${aan ? 'aan' : 'uit'}.`));
+  }
 });
 
 let bevestigTimer;
 lijst.addEventListener('click', (e) => {
+  const alles = e.target.closest('[data-nl-alles]');
+  if (alles) {
+    const pv = alles.closest('[data-groep]').dataset.groep;
+    const aan = alles.dataset.nlAlles === 'aan';
+    const ids = PER_PROVINCIE[pv].map((it) => it.id);
+    poging(() => wijzig(alles.closest('[data-id]').dataset.id, (p) => zetNederland(p, ids, aan), `${NL_ITEM[pv].naam}: alles ${aan ? 'aan' : 'uit'}.`));
+    return;
+  }
   const knop = e.target.closest('[data-verwijder]');
   if (!knop) return;
   const id = knop.closest('[data-id]').dataset.id;

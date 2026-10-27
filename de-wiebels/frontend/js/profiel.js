@@ -27,6 +27,8 @@ export function nieuwProfiel({ naam, avatar, kleur = STANDAARD_KLEUR, thema = 'r
     huisdier: { xp: 0 },
     cosmetica: { gekocht: [], aan: {} },
     records: {},
+    // Wereld Nederland: de plaatsen, streken, eilanden en wateren die uitstaan (de rest staat aan).
+    nederland: { uit: [] },
     // Bij de eerste start op de tv kiest het kind zijn Wiebel en zijn wereld (schermen/eerste-start.js).
     wiebelGekozen: false,
     introGezien: false,
@@ -44,6 +46,8 @@ export function vulAan(profiel) {
   profiel.wiebelGekozen ??= true;
   // Wie al Wiebels had, heeft die al gezien; alleen wat daarna vrijkomt, is nieuw.
   profiel.wiebelsGezien ??= [...(profiel.verzameling ?? [])];
+  // Nederland kwam later: alles staat aan.
+  profiel.nederland = { uit: [], ...profiel.nederland };
   // Het oude winkeltje (actief: hoed, kleur, deco) wordt omgezet naar spullen per plek (aan);
   // munten voor wat niet meer bestaat, gaan terug. Na het omzetten is er 'aan', dus gebeurt dit één keer.
   if (!profiel.cosmetica) profiel.cosmetica = { gekocht: [], aan: {} };

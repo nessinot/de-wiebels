@@ -50,3 +50,12 @@ test('beloningen zijn uniek en levels zijn terug te vinden', () => {
   assert.equal(new Set(BELONINGEN).size, BELONINGEN.length);
   assert.equal(levelVan('keer:7').label, 'Tafel van 7');
 });
+
+test('levelVan: een id met nl: is een onderdeel van Nederland, geen vaardigheid', () => {
+  const level = levelVan('nl:plaatsen:pv-zeeland');
+  assert.equal(level.vaardigheid, 'nederland');
+  assert.equal(level.label, 'Zeeland · Oefenen');
+  assert.equal(levelVan('nl:provincies:alle:toets').toets, true);
+  assert.ok(!VAARDIGHEDEN.includes('nederland'));
+  assert.ok(!BELONINGEN.some((id) => id.startsWith('nl:')));
+});

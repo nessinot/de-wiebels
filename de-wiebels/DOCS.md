@@ -1,6 +1,6 @@
 # De Wiebels
 
-Een spel waarmee kinderen rekenen (plus, min, keer, delen) en klokkijken oefenen op de tv, volledig te bedienen met de afstandsbediening.
+Een spel waarmee kinderen rekenen (plus, min, keer, delen), klokkijken en topografie van Nederland oefenen op de tv, volledig te bedienen met de afstandsbediening.
 
 ## Openen op de tv
 
@@ -12,7 +12,7 @@ Gebruik het IP-adres van Home Assistant, niet een `.local`-adres. Tip: zet de pa
 
 ## Bediening
 
-- **Pijltjes**: van knop naar knop. Bij wijzers zetten draaien de pijltjes de klok.
+- **Pijltjes**: van knop naar knop. Bij wijzers zetten draaien de pijltjes de klok; op de kaart van Nederland ga je met de pijltjes naar een provincie, plaats of gebied.
 - **OK**: kiezen.
 - **Terug**: een scherm terug.
 - **Cijfertoetsen**: antwoord intypen.
@@ -24,6 +24,7 @@ Open **De Wiebels** in de zijbalk van Home Assistant. Daar beheer je alles, ook 
 
 - profielen aanmaken: naam, avatar en startniveau;
 - per kind de naam en avatar wijzigen, de niveaus per vaardigheid en de tijdsdruk bij eindbazen instellen;
+- per kind kiezen welke plaatsen, streken, eilanden en wateren in de wereld Nederland voorkomen (provincies en hoofdsteden staan altijd aan);
 - de zwakke plekken per kind bekijken;
 - profielen verwijderen;
 - het geluid, de stem van de Wiebel en de muziek elk apart aan- of uitzetten (dit geldt voor elk scherm);

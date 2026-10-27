@@ -2,6 +2,7 @@
 
 import { huisdierStadium } from './beloningen.js';
 import { esc } from './dom.js';
+import { ITEMS } from './nederland/items.js';
 import { spul } from './spullen.js';
 import { THEMAS } from './themas/index.js';
 import { wiebelSvg } from './wiebel.js';
@@ -49,9 +50,21 @@ export function themaKnoppen(huidig) {
     </div>`;
 }
 
+const NL_ITEM = Object.fromEntries(ITEMS.map((it) => [it.id, it]));
+
+// De vraagvormen van Nederland (nederland/vragen.js): nl:<vorm>:<id>.
+const NL_TEKST = {
+  herken: (it) => `${it.naam} herkennen`,
+  wijs: (it) => it.zinnen.waar.tekst,
+  hoofdstad: (it) => `Hoofdstad van ${it.naam}`,
+  'hoofdstad-wijs': (it) => `Hoofdstad van ${it.naam} aanwijzen`,
+  'hoofdstad-van': (it) => it.zinnen.hoofdstadVan?.tekst,
+};
+
 // Leesbare omschrijving van een item-id, voor het overzicht van zwakke plekken.
 export function itemTekst(id) {
   const [soort, a, b, c] = id.split(':');
+  if (soort === 'nl') return (NL_ITEM[b] && NL_TEKST[a]?.(NL_ITEM[b])) || id;
   if (soort === 'keer') return a.replace('x', ' × ');
   if (soort === 'delen') return `${a} : ${b}`;
   if (soort === 'plus') return a.replace('+', ' + ');

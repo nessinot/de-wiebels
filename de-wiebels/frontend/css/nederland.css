@@ -1,0 +1,67 @@
+/* De wereld Nederland: links het kaartvak, rechts de onderdelen. De maat van het kaartvak staat ook
+   in schermen/nederland.js (680×840) en schermen/nederland-provincie.js (1000×840). */
+
+.nl-indeling { flex: 1; min-height: 0; display: flex; gap: 48px; }
+.nl-kolom { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 28px; }
+.nl-kolom h1 { font-size: 56px; white-space: nowrap; }
+.nl-kolom .kopregel .knop { flex: none; white-space: nowrap; }
+
+.kaartvak {
+  position: relative; flex: none; width: 680px; height: 840px;
+  border-radius: 24px; background: color-mix(in srgb, var(--achtergrond) 70%, transparent);
+}
+.nl-provincie .kaartvak { width: 1000px; }
+.kaartvak.heeft-focus::after {
+  content: ""; position: absolute; inset: -10px; border: 6px solid var(--focus); border-radius: 30px;
+  pointer-events: none;
+}
+.nl-kaart { display: block; width: 100%; height: 100%; }
+
+/* Kaartkleuren: vast, zodat land en water in elk thema herkenbaar zijn. Randen blijven even dik
+   bij inzoomen. */
+.nl-kaart path, .nl-kaart circle { vector-effect: non-scaling-stroke; }
+.nl-water { fill: #4a90d9; }
+.nl-water.nl-doel { stroke: #2b5f99; stroke-width: 1px; }
+.nl-land { fill: #9ccf8f; stroke: #fff; stroke-width: 1.5px; stroke-linejoin: round; }
+.nl-buur { fill: #5d5d70; stroke: #8a8aa0; }
+/* Inkleurkaart: grijs zonder sterren, voller groen naarmate de toets meer sterren heeft. */
+.nl-kleur-0 { fill: #a3a3b5; }
+.nl-kleur-1 { fill: #c3e3b5; }
+.nl-kleur-2 { fill: #8fcf7f; }
+.nl-kleur-3 { fill: #4caf50; }
+.nl-gebied { fill: rgba(255, 255, 255, 0); stroke: #2f5f2f; stroke-width: 1.5px; stroke-linejoin: round; }
+.nl-stip { fill: #e8413c; stroke: #fff; stroke-width: 2px; }
+.nl-doel { cursor: pointer; }
+
+/* Wat aangewezen is: gele vulling met een dikke witte rand, in elk thema (de focuskleur van een
+   thema kan groen zijn, net als het land). */
+.nl-kaart .nl-focus { fill: #ffd23f; stroke: #fff; stroke-width: 5px; }
+.nl-stip.nl-focus { stroke-width: 4px; }
+
+.nl-naam { min-height: 96px; font-size: 80px; font-weight: bold; color: var(--accent); }
+.nl-onderdeel {
+  display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
+  padding: 20px 28px; border-radius: 24px; background: var(--vlak);
+}
+.nl-onderdeel-naam { font-size: 48px; font-weight: bold; margin-right: auto; }
+.nl-onderdeel .sterren { font-size: 48px; }
+.nl-plaatsen .klein { flex-basis: 100%; order: 3; }
+.nl-onderdeel .nl-start { min-width: 280px; margin-right: auto; }
+.nl-onderdeel .knop { padding: 16px 32px; background: var(--vlak-licht); }
+
+/* Een vraag over Nederland in de ronde (js/vraagpaneel.js): links de kaart (760×800, ook in
+   VRAAGKAART_MAAT), rechts de vraag, de knoppen en de terugkoppeling. */
+.nl-vraag { display: flex; gap: 48px; align-items: center; }
+.kaartvak.nl-vraagkaart { width: 760px; height: 800px; }
+.nl-vraagkant { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 40px; }
+.vraag.vraag-nl { font-size: 64px; line-height: 1.25; }
+.opties.opties-nl { grid-template-columns: 560px; gap: 28px; }
+.opties-nl .optie { height: 130px; font-size: 56px; }
+.nl-vraagkant .terugkoppeling { flex-wrap: wrap; gap: 24px; font-size: 52px; text-align: center; }
+
+/* Wat oplicht bij "Welke plaats is dit?", en na het antwoord: goed groen, fout gekozen rood met een
+   donkere rand; de rest van wat je kon aanwijzen wordt dan zachter. */
+.nl-kaart .nl-licht { fill: #ffd23f; stroke: #fff; stroke-width: 5px; }
+.nl-kaart .nl-goed { fill: #3fbf4f; stroke: #fff; stroke-width: 6px; }
+.nl-kaart .nl-fout { fill: #e8413c; stroke: #1a1a1a; stroke-width: 6px; }
+.nl-beantwoord .nl-doel:not(.nl-goed):not(.nl-fout) { opacity: .45; }

@@ -73,3 +73,16 @@ test('item-id\'s worden leesbaar voor het ouderscherm', async () => {
   assert.equal(itemTekst('min:91-38'), '91 − 38');
   assert.equal(itemTekst('klok:lezen:4:5'), '🕒 4:05');
 });
+
+test('zwakke plekken van Nederland tonen de naam van het ding', async () => {
+  const { itemTekst } = await import('../de-wiebels/frontend/js/weergave.js');
+  assert.equal(itemTekst('nl:wijs:pl-urk'), 'Waar ligt Urk?');
+  assert.equal(itemTekst('nl:wijs:wa-oosterschelde'), 'Waar ligt de Oosterschelde?');
+  assert.equal(itemTekst('nl:herken:pl-urk'), 'Urk herkennen');
+  assert.equal(itemTekst('nl:hoofdstad:pv-zeeland'), 'Hoofdstad van Zeeland');
+  assert.equal(itemTekst('nl:hoofdstad-wijs:pv-zeeland'), 'Hoofdstad van Zeeland aanwijzen');
+  assert.equal(itemTekst('nl:hoofdstad-van:pl-middelburg'), 'Van welke provincie is Middelburg de hoofdstad?');
+  assert.equal(itemTekst('nl:wijs:bestaat-niet'), 'nl:wijs:bestaat-niet');
+  const zwak = zwakkePlekken({ 'nl:herken:pl-urk': { bak: 1, goed: 0, fout: 2, laatst: new Date().toISOString(), level: 'nl:plaatsen' } });
+  assert.deepEqual(zwak.map((z) => itemTekst(z.id)), ['Urk herkennen']);
+});

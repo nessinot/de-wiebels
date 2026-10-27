@@ -1,5 +1,9 @@
 # Wijzigingen
 
+## 0.11.0
+
+Nieuwe wereld: Nederland! Leer de provincies, hun hoofdsteden en de grote plaatsen, streken, eilanden en wateren. Kies op de kaart een provincie of heel Nederland en oefen, of doe een toets. Soms licht iets op en kies je de naam, soms moet je het zelf aanwijzen met de pijltjes. Elke provincie die je kent, kleurt in op de kaart, en er zijn 13 nieuwe Wiebels te bevrijden. Op de ouderpagina zet je per plaats, streek, eiland of water aan of uit wat er in het spel voorkomt.
+
 ## 0.10.1
 
 - Bij de keersommen staat de tafel nu altijd achteraan, bijvoorbeeld 4 × 3 bij de tafel van 3.

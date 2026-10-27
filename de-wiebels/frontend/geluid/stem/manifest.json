@@ -267,6 +267,2154 @@
    "bestand": "nat-2.mp3",
    "tekst": "Oei, wat een regen!"
   },
+  "nl-dat-ei-ameland": {
+   "bestand": "nl-dat-ei-ameland.mp3",
+   "tekst": "Dat is Ameland."
+  },
+  "nl-dat-ei-dordrecht": {
+   "bestand": "nl-dat-ei-dordrecht.mp3",
+   "tekst": "Dat is het Eiland van Dordrecht."
+  },
+  "nl-dat-ei-flevopolder": {
+   "bestand": "nl-dat-ei-flevopolder.mp3",
+   "tekst": "Dat is de Flevopolder."
+  },
+  "nl-dat-ei-goeree-overflakkee": {
+   "bestand": "nl-dat-ei-goeree-overflakkee.mp3",
+   "tekst": "Dat is Goeree-Overflakkee."
+  },
+  "nl-dat-ei-hoeksche-waard": {
+   "bestand": "nl-dat-ei-hoeksche-waard.mp3",
+   "tekst": "Dat is de Hoeksche Waard."
+  },
+  "nl-dat-ei-noord-beveland": {
+   "bestand": "nl-dat-ei-noord-beveland.mp3",
+   "tekst": "Dat is Noord-Beveland."
+  },
+  "nl-dat-ei-schiermonnikoog": {
+   "bestand": "nl-dat-ei-schiermonnikoog.mp3",
+   "tekst": "Dat is Schiermonnikoog."
+  },
+  "nl-dat-ei-schouwen-duiveland": {
+   "bestand": "nl-dat-ei-schouwen-duiveland.mp3",
+   "tekst": "Dat is Schouwen-Duiveland."
+  },
+  "nl-dat-ei-terschelling": {
+   "bestand": "nl-dat-ei-terschelling.mp3",
+   "tekst": "Dat is Terschelling."
+  },
+  "nl-dat-ei-texel": {
+   "bestand": "nl-dat-ei-texel.mp3",
+   "tekst": "Dat is Texel."
+  },
+  "nl-dat-ei-tholen": {
+   "bestand": "nl-dat-ei-tholen.mp3",
+   "tekst": "Dat is Tholen."
+  },
+  "nl-dat-ei-vlieland": {
+   "bestand": "nl-dat-ei-vlieland.mp3",
+   "tekst": "Dat is Vlieland."
+  },
+  "nl-dat-ei-voorne-putten": {
+   "bestand": "nl-dat-ei-voorne-putten.mp3",
+   "tekst": "Dat is Voorne-Putten."
+  },
+  "nl-dat-ei-walcheren": {
+   "bestand": "nl-dat-ei-walcheren.mp3",
+   "tekst": "Dat is Walcheren."
+  },
+  "nl-dat-ei-zuid-beveland": {
+   "bestand": "nl-dat-ei-zuid-beveland.mp3",
+   "tekst": "Dat is Zuid-Beveland."
+  },
+  "nl-dat-pl-aalsmeer": {
+   "bestand": "nl-dat-pl-aalsmeer.mp3",
+   "tekst": "Dat is Aalsmeer."
+  },
+  "nl-dat-pl-alblasserdam": {
+   "bestand": "nl-dat-pl-alblasserdam.mp3",
+   "tekst": "Dat is Alblasserdam."
+  },
+  "nl-dat-pl-alkmaar": {
+   "bestand": "nl-dat-pl-alkmaar.mp3",
+   "tekst": "Dat is Alkmaar."
+  },
+  "nl-dat-pl-almelo": {
+   "bestand": "nl-dat-pl-almelo.mp3",
+   "tekst": "Dat is Almelo."
+  },
+  "nl-dat-pl-almere": {
+   "bestand": "nl-dat-pl-almere.mp3",
+   "tekst": "Dat is Almere."
+  },
+  "nl-dat-pl-alphen-aan-den-rijn": {
+   "bestand": "nl-dat-pl-alphen-aan-den-rijn.mp3",
+   "tekst": "Dat is Alphen aan den Rijn."
+  },
+  "nl-dat-pl-amersfoort": {
+   "bestand": "nl-dat-pl-amersfoort.mp3",
+   "tekst": "Dat is Amersfoort."
+  },
+  "nl-dat-pl-amstelveen": {
+   "bestand": "nl-dat-pl-amstelveen.mp3",
+   "tekst": "Dat is Amstelveen."
+  },
+  "nl-dat-pl-amsterdam": {
+   "bestand": "nl-dat-pl-amsterdam.mp3",
+   "tekst": "Dat is Amsterdam."
+  },
+  "nl-dat-pl-apeldoorn": {
+   "bestand": "nl-dat-pl-apeldoorn.mp3",
+   "tekst": "Dat is Apeldoorn."
+  },
+  "nl-dat-pl-arnhem": {
+   "bestand": "nl-dat-pl-arnhem.mp3",
+   "tekst": "Dat is Arnhem."
+  },
+  "nl-dat-pl-assen": {
+   "bestand": "nl-dat-pl-assen.mp3",
+   "tekst": "Dat is Assen."
+  },
+  "nl-dat-pl-assendelft": {
+   "bestand": "nl-dat-pl-assendelft.mp3",
+   "tekst": "Dat is Assendelft."
+  },
+  "nl-dat-pl-baarn": {
+   "bestand": "nl-dat-pl-baarn.mp3",
+   "tekst": "Dat is Baarn."
+  },
+  "nl-dat-pl-barendrecht": {
+   "bestand": "nl-dat-pl-barendrecht.mp3",
+   "tekst": "Dat is Barendrecht."
+  },
+  "nl-dat-pl-barneveld": {
+   "bestand": "nl-dat-pl-barneveld.mp3",
+   "tekst": "Dat is Barneveld."
+  },
+  "nl-dat-pl-bergen-op-zoom": {
+   "bestand": "nl-dat-pl-bergen-op-zoom.mp3",
+   "tekst": "Dat is Bergen op Zoom."
+  },
+  "nl-dat-pl-berkel-en-rodenrijs": {
+   "bestand": "nl-dat-pl-berkel-en-rodenrijs.mp3",
+   "tekst": "Dat is Berkel en Rodenrijs."
+  },
+  "nl-dat-pl-best": {
+   "bestand": "nl-dat-pl-best.mp3",
+   "tekst": "Dat is Best."
+  },
+  "nl-dat-pl-beverwijk": {
+   "bestand": "nl-dat-pl-beverwijk.mp3",
+   "tekst": "Dat is Beverwijk."
+  },
+  "nl-dat-pl-bilthoven": {
+   "bestand": "nl-dat-pl-bilthoven.mp3",
+   "tekst": "Dat is Bilthoven."
+  },
+  "nl-dat-pl-borne": {
+   "bestand": "nl-dat-pl-borne.mp3",
+   "tekst": "Dat is Borne."
+  },
+  "nl-dat-pl-boxtel": {
+   "bestand": "nl-dat-pl-boxtel.mp3",
+   "tekst": "Dat is Boxtel."
+  },
+  "nl-dat-pl-breda": {
+   "bestand": "nl-dat-pl-breda.mp3",
+   "tekst": "Dat is Breda."
+  },
+  "nl-dat-pl-brunssum": {
+   "bestand": "nl-dat-pl-brunssum.mp3",
+   "tekst": "Dat is Brunssum."
+  },
+  "nl-dat-pl-bussum": {
+   "bestand": "nl-dat-pl-bussum.mp3",
+   "tekst": "Dat is Bussum."
+  },
+  "nl-dat-pl-capelle-aan-den-ijssel": {
+   "bestand": "nl-dat-pl-capelle-aan-den-ijssel.mp3",
+   "tekst": "Dat is Capelle aan den IJssel."
+  },
+  "nl-dat-pl-castricum": {
+   "bestand": "nl-dat-pl-castricum.mp3",
+   "tekst": "Dat is Castricum."
+  },
+  "nl-dat-pl-culemborg": {
+   "bestand": "nl-dat-pl-culemborg.mp3",
+   "tekst": "Dat is Culemborg."
+  },
+  "nl-dat-pl-delft": {
+   "bestand": "nl-dat-pl-delft.mp3",
+   "tekst": "Dat is Delft."
+  },
+  "nl-dat-pl-den-haag": {
+   "bestand": "nl-dat-pl-den-haag.mp3",
+   "tekst": "Dat is Den Haag."
+  },
+  "nl-dat-pl-den-helder": {
+   "bestand": "nl-dat-pl-den-helder.mp3",
+   "tekst": "Dat is Den Helder."
+  },
+  "nl-dat-pl-deurne": {
+   "bestand": "nl-dat-pl-deurne.mp3",
+   "tekst": "Dat is Deurne."
+  },
+  "nl-dat-pl-deventer": {
+   "bestand": "nl-dat-pl-deventer.mp3",
+   "tekst": "Dat is Deventer."
+  },
+  "nl-dat-pl-diemen": {
+   "bestand": "nl-dat-pl-diemen.mp3",
+   "tekst": "Dat is Diemen."
+  },
+  "nl-dat-pl-doetinchem": {
+   "bestand": "nl-dat-pl-doetinchem.mp3",
+   "tekst": "Dat is Doetinchem."
+  },
+  "nl-dat-pl-dongen": {
+   "bestand": "nl-dat-pl-dongen.mp3",
+   "tekst": "Dat is Dongen."
+  },
+  "nl-dat-pl-dordrecht": {
+   "bestand": "nl-dat-pl-dordrecht.mp3",
+   "tekst": "Dat is Dordrecht."
+  },
+  "nl-dat-pl-drachten": {
+   "bestand": "nl-dat-pl-drachten.mp3",
+   "tekst": "Dat is Drachten."
+  },
+  "nl-dat-pl-dronten": {
+   "bestand": "nl-dat-pl-dronten.mp3",
+   "tekst": "Dat is Dronten."
+  },
+  "nl-dat-pl-duiven": {
+   "bestand": "nl-dat-pl-duiven.mp3",
+   "tekst": "Dat is Duiven."
+  },
+  "nl-dat-pl-ede": {
+   "bestand": "nl-dat-pl-ede.mp3",
+   "tekst": "Dat is Ede."
+  },
+  "nl-dat-pl-eindhoven": {
+   "bestand": "nl-dat-pl-eindhoven.mp3",
+   "tekst": "Dat is Eindhoven."
+  },
+  "nl-dat-pl-elst": {
+   "bestand": "nl-dat-pl-elst.mp3",
+   "tekst": "Dat is Elst."
+  },
+  "nl-dat-pl-emmeloord": {
+   "bestand": "nl-dat-pl-emmeloord.mp3",
+   "tekst": "Dat is Emmeloord."
+  },
+  "nl-dat-pl-emmen": {
+   "bestand": "nl-dat-pl-emmen.mp3",
+   "tekst": "Dat is Emmen."
+  },
+  "nl-dat-pl-enschede": {
+   "bestand": "nl-dat-pl-enschede.mp3",
+   "tekst": "Dat is Enschede."
+  },
+  "nl-dat-pl-ermelo": {
+   "bestand": "nl-dat-pl-ermelo.mp3",
+   "tekst": "Dat is Ermelo."
+  },
+  "nl-dat-pl-etten-leur": {
+   "bestand": "nl-dat-pl-etten-leur.mp3",
+   "tekst": "Dat is Etten-Leur."
+  },
+  "nl-dat-pl-geldrop": {
+   "bestand": "nl-dat-pl-geldrop.mp3",
+   "tekst": "Dat is Geldrop."
+  },
+  "nl-dat-pl-geleen": {
+   "bestand": "nl-dat-pl-geleen.mp3",
+   "tekst": "Dat is Geleen."
+  },
+  "nl-dat-pl-goes": {
+   "bestand": "nl-dat-pl-goes.mp3",
+   "tekst": "Dat is Goes."
+  },
+  "nl-dat-pl-goirle": {
+   "bestand": "nl-dat-pl-goirle.mp3",
+   "tekst": "Dat is Goirle."
+  },
+  "nl-dat-pl-gorinchem": {
+   "bestand": "nl-dat-pl-gorinchem.mp3",
+   "tekst": "Dat is Gorinchem."
+  },
+  "nl-dat-pl-gouda": {
+   "bestand": "nl-dat-pl-gouda.mp3",
+   "tekst": "Dat is Gouda."
+  },
+  "nl-dat-pl-groningen": {
+   "bestand": "nl-dat-pl-groningen.mp3",
+   "tekst": "Dat is Groningen."
+  },
+  "nl-dat-pl-haarlem": {
+   "bestand": "nl-dat-pl-haarlem.mp3",
+   "tekst": "Dat is Haarlem."
+  },
+  "nl-dat-pl-harderwijk": {
+   "bestand": "nl-dat-pl-harderwijk.mp3",
+   "tekst": "Dat is Harderwijk."
+  },
+  "nl-dat-pl-heemskerk": {
+   "bestand": "nl-dat-pl-heemskerk.mp3",
+   "tekst": "Dat is Heemskerk."
+  },
+  "nl-dat-pl-heemstede": {
+   "bestand": "nl-dat-pl-heemstede.mp3",
+   "tekst": "Dat is Heemstede."
+  },
+  "nl-dat-pl-heerenveen": {
+   "bestand": "nl-dat-pl-heerenveen.mp3",
+   "tekst": "Dat is Heerenveen."
+  },
+  "nl-dat-pl-heerhugowaard": {
+   "bestand": "nl-dat-pl-heerhugowaard.mp3",
+   "tekst": "Dat is Heerhugowaard."
+  },
+  "nl-dat-pl-heerlen": {
+   "bestand": "nl-dat-pl-heerlen.mp3",
+   "tekst": "Dat is Heerlen."
+  },
+  "nl-dat-pl-heiloo": {
+   "bestand": "nl-dat-pl-heiloo.mp3",
+   "tekst": "Dat is Heiloo."
+  },
+  "nl-dat-pl-hellevoetsluis": {
+   "bestand": "nl-dat-pl-hellevoetsluis.mp3",
+   "tekst": "Dat is Hellevoetsluis."
+  },
+  "nl-dat-pl-helmond": {
+   "bestand": "nl-dat-pl-helmond.mp3",
+   "tekst": "Dat is Helmond."
+  },
+  "nl-dat-pl-hendrik-ido-ambacht": {
+   "bestand": "nl-dat-pl-hendrik-ido-ambacht.mp3",
+   "tekst": "Dat is Hendrik-Ido-Ambacht."
+  },
+  "nl-dat-pl-hengelo": {
+   "bestand": "nl-dat-pl-hengelo.mp3",
+   "tekst": "Dat is Hengelo."
+  },
+  "nl-dat-pl-hillegom": {
+   "bestand": "nl-dat-pl-hillegom.mp3",
+   "tekst": "Dat is Hillegom."
+  },
+  "nl-dat-pl-hilversum": {
+   "bestand": "nl-dat-pl-hilversum.mp3",
+   "tekst": "Dat is Hilversum."
+  },
+  "nl-dat-pl-hoofddorp": {
+   "bestand": "nl-dat-pl-hoofddorp.mp3",
+   "tekst": "Dat is Hoofddorp."
+  },
+  "nl-dat-pl-hoogeveen": {
+   "bestand": "nl-dat-pl-hoogeveen.mp3",
+   "tekst": "Dat is Hoogeveen."
+  },
+  "nl-dat-pl-hoogezand": {
+   "bestand": "nl-dat-pl-hoogezand.mp3",
+   "tekst": "Dat is Hoogezand."
+  },
+  "nl-dat-pl-hoorn": {
+   "bestand": "nl-dat-pl-hoorn.mp3",
+   "tekst": "Dat is Hoorn."
+  },
+  "nl-dat-pl-houten": {
+   "bestand": "nl-dat-pl-houten.mp3",
+   "tekst": "Dat is Houten."
+  },
+  "nl-dat-pl-huizen": {
+   "bestand": "nl-dat-pl-huizen.mp3",
+   "tekst": "Dat is Huizen."
+  },
+  "nl-dat-pl-ijmuiden": {
+   "bestand": "nl-dat-pl-ijmuiden.mp3",
+   "tekst": "Dat is IJmuiden."
+  },
+  "nl-dat-pl-ijsselstein": {
+   "bestand": "nl-dat-pl-ijsselstein.mp3",
+   "tekst": "Dat is IJsselstein."
+  },
+  "nl-dat-pl-kampen": {
+   "bestand": "nl-dat-pl-kampen.mp3",
+   "tekst": "Dat is Kampen."
+  },
+  "nl-dat-pl-katwijk": {
+   "bestand": "nl-dat-pl-katwijk.mp3",
+   "tekst": "Dat is Katwijk."
+  },
+  "nl-dat-pl-kerkrade": {
+   "bestand": "nl-dat-pl-kerkrade.mp3",
+   "tekst": "Dat is Kerkrade."
+  },
+  "nl-dat-pl-krimpen-aan-den-ijssel": {
+   "bestand": "nl-dat-pl-krimpen-aan-den-ijssel.mp3",
+   "tekst": "Dat is Krimpen aan den IJssel."
+  },
+  "nl-dat-pl-landgraaf": {
+   "bestand": "nl-dat-pl-landgraaf.mp3",
+   "tekst": "Dat is Landgraaf."
+  },
+  "nl-dat-pl-leeuwarden": {
+   "bestand": "nl-dat-pl-leeuwarden.mp3",
+   "tekst": "Dat is Leeuwarden."
+  },
+  "nl-dat-pl-leiden": {
+   "bestand": "nl-dat-pl-leiden.mp3",
+   "tekst": "Dat is Leiden."
+  },
+  "nl-dat-pl-leiderdorp": {
+   "bestand": "nl-dat-pl-leiderdorp.mp3",
+   "tekst": "Dat is Leiderdorp."
+  },
+  "nl-dat-pl-leidschendam": {
+   "bestand": "nl-dat-pl-leidschendam.mp3",
+   "tekst": "Dat is Leidschendam."
+  },
+  "nl-dat-pl-lelystad": {
+   "bestand": "nl-dat-pl-lelystad.mp3",
+   "tekst": "Dat is Lelystad."
+  },
+  "nl-dat-pl-leusden": {
+   "bestand": "nl-dat-pl-leusden.mp3",
+   "tekst": "Dat is Leusden."
+  },
+  "nl-dat-pl-lisse": {
+   "bestand": "nl-dat-pl-lisse.mp3",
+   "tekst": "Dat is Lisse."
+  },
+  "nl-dat-pl-maarssen": {
+   "bestand": "nl-dat-pl-maarssen.mp3",
+   "tekst": "Dat is Maarssen."
+  },
+  "nl-dat-pl-maassluis": {
+   "bestand": "nl-dat-pl-maassluis.mp3",
+   "tekst": "Dat is Maassluis."
+  },
+  "nl-dat-pl-maastricht": {
+   "bestand": "nl-dat-pl-maastricht.mp3",
+   "tekst": "Dat is Maastricht."
+  },
+  "nl-dat-pl-meppel": {
+   "bestand": "nl-dat-pl-meppel.mp3",
+   "tekst": "Dat is Meppel."
+  },
+  "nl-dat-pl-middelburg": {
+   "bestand": "nl-dat-pl-middelburg.mp3",
+   "tekst": "Dat is Middelburg."
+  },
+  "nl-dat-pl-naaldwijk": {
+   "bestand": "nl-dat-pl-naaldwijk.mp3",
+   "tekst": "Dat is Naaldwijk."
+  },
+  "nl-dat-pl-nieuw-vennep": {
+   "bestand": "nl-dat-pl-nieuw-vennep.mp3",
+   "tekst": "Dat is Nieuw-Vennep."
+  },
+  "nl-dat-pl-nieuwegein": {
+   "bestand": "nl-dat-pl-nieuwegein.mp3",
+   "tekst": "Dat is Nieuwegein."
+  },
+  "nl-dat-pl-nieuwerkerk-aan-den-ijssel": {
+   "bestand": "nl-dat-pl-nieuwerkerk-aan-den-ijssel.mp3",
+   "tekst": "Dat is Nieuwerkerk aan den IJssel."
+  },
+  "nl-dat-pl-nijkerk": {
+   "bestand": "nl-dat-pl-nijkerk.mp3",
+   "tekst": "Dat is Nijkerk."
+  },
+  "nl-dat-pl-nijmegen": {
+   "bestand": "nl-dat-pl-nijmegen.mp3",
+   "tekst": "Dat is Nijmegen."
+  },
+  "nl-dat-pl-nijverdal": {
+   "bestand": "nl-dat-pl-nijverdal.mp3",
+   "tekst": "Dat is Nijverdal."
+  },
+  "nl-dat-pl-noordwijk": {
+   "bestand": "nl-dat-pl-noordwijk.mp3",
+   "tekst": "Dat is Noordwijk."
+  },
+  "nl-dat-pl-nuenen": {
+   "bestand": "nl-dat-pl-nuenen.mp3",
+   "tekst": "Dat is Nuenen."
+  },
+  "nl-dat-pl-oegstgeest": {
+   "bestand": "nl-dat-pl-oegstgeest.mp3",
+   "tekst": "Dat is Oegstgeest."
+  },
+  "nl-dat-pl-oldenzaal": {
+   "bestand": "nl-dat-pl-oldenzaal.mp3",
+   "tekst": "Dat is Oldenzaal."
+  },
+  "nl-dat-pl-oosterhout": {
+   "bestand": "nl-dat-pl-oosterhout.mp3",
+   "tekst": "Dat is Oosterhout."
+  },
+  "nl-dat-pl-oss": {
+   "bestand": "nl-dat-pl-oss.mp3",
+   "tekst": "Dat is Oss."
+  },
+  "nl-dat-pl-oud-beijerland": {
+   "bestand": "nl-dat-pl-oud-beijerland.mp3",
+   "tekst": "Dat is Oud-Beijerland."
+  },
+  "nl-dat-pl-papendrecht": {
+   "bestand": "nl-dat-pl-papendrecht.mp3",
+   "tekst": "Dat is Papendrecht."
+  },
+  "nl-dat-pl-pijnacker": {
+   "bestand": "nl-dat-pl-pijnacker.mp3",
+   "tekst": "Dat is Pijnacker."
+  },
+  "nl-dat-pl-purmerend": {
+   "bestand": "nl-dat-pl-purmerend.mp3",
+   "tekst": "Dat is Purmerend."
+  },
+  "nl-dat-pl-ridderkerk": {
+   "bestand": "nl-dat-pl-ridderkerk.mp3",
+   "tekst": "Dat is Ridderkerk."
+  },
+  "nl-dat-pl-rijssen": {
+   "bestand": "nl-dat-pl-rijssen.mp3",
+   "tekst": "Dat is Rijssen."
+  },
+  "nl-dat-pl-rijswijk": {
+   "bestand": "nl-dat-pl-rijswijk.mp3",
+   "tekst": "Dat is Rijswijk."
+  },
+  "nl-dat-pl-roermond": {
+   "bestand": "nl-dat-pl-roermond.mp3",
+   "tekst": "Dat is Roermond."
+  },
+  "nl-dat-pl-roosendaal": {
+   "bestand": "nl-dat-pl-roosendaal.mp3",
+   "tekst": "Dat is Roosendaal."
+  },
+  "nl-dat-pl-rosmalen": {
+   "bestand": "nl-dat-pl-rosmalen.mp3",
+   "tekst": "Dat is Rosmalen."
+  },
+  "nl-dat-pl-rotterdam": {
+   "bestand": "nl-dat-pl-rotterdam.mp3",
+   "tekst": "Dat is Rotterdam."
+  },
+  "nl-dat-pl-s-gravenzande": {
+   "bestand": "nl-dat-pl-s-gravenzande.mp3",
+   "tekst": "Dat is 's-Gravenzande."
+  },
+  "nl-dat-pl-s-hertogenbosch": {
+   "bestand": "nl-dat-pl-s-hertogenbosch.mp3",
+   "tekst": "Dat is 's-Hertogenbosch."
+  },
+  "nl-dat-pl-schiedam": {
+   "bestand": "nl-dat-pl-schiedam.mp3",
+   "tekst": "Dat is Schiedam."
+  },
+  "nl-dat-pl-schijndel": {
+   "bestand": "nl-dat-pl-schijndel.mp3",
+   "tekst": "Dat is Schijndel."
+  },
+  "nl-dat-pl-sittard": {
+   "bestand": "nl-dat-pl-sittard.mp3",
+   "tekst": "Dat is Sittard."
+  },
+  "nl-dat-pl-sliedrecht": {
+   "bestand": "nl-dat-pl-sliedrecht.mp3",
+   "tekst": "Dat is Sliedrecht."
+  },
+  "nl-dat-pl-sneek": {
+   "bestand": "nl-dat-pl-sneek.mp3",
+   "tekst": "Dat is Sneek."
+  },
+  "nl-dat-pl-soest": {
+   "bestand": "nl-dat-pl-soest.mp3",
+   "tekst": "Dat is Soest."
+  },
+  "nl-dat-pl-spijkenisse": {
+   "bestand": "nl-dat-pl-spijkenisse.mp3",
+   "tekst": "Dat is Spijkenisse."
+  },
+  "nl-dat-pl-terneuzen": {
+   "bestand": "nl-dat-pl-terneuzen.mp3",
+   "tekst": "Dat is Terneuzen."
+  },
+  "nl-dat-pl-tiel": {
+   "bestand": "nl-dat-pl-tiel.mp3",
+   "tekst": "Dat is Tiel."
+  },
+  "nl-dat-pl-tilburg": {
+   "bestand": "nl-dat-pl-tilburg.mp3",
+   "tekst": "Dat is Tilburg."
+  },
+  "nl-dat-pl-uden": {
+   "bestand": "nl-dat-pl-uden.mp3",
+   "tekst": "Dat is Uden."
+  },
+  "nl-dat-pl-uithoorn": {
+   "bestand": "nl-dat-pl-uithoorn.mp3",
+   "tekst": "Dat is Uithoorn."
+  },
+  "nl-dat-pl-urk": {
+   "bestand": "nl-dat-pl-urk.mp3",
+   "tekst": "Dat is Urk."
+  },
+  "nl-dat-pl-utrecht": {
+   "bestand": "nl-dat-pl-utrecht.mp3",
+   "tekst": "Dat is Utrecht."
+  },
+  "nl-dat-pl-valkenswaard": {
+   "bestand": "nl-dat-pl-valkenswaard.mp3",
+   "tekst": "Dat is Valkenswaard."
+  },
+  "nl-dat-pl-veendam": {
+   "bestand": "nl-dat-pl-veendam.mp3",
+   "tekst": "Dat is Veendam."
+  },
+  "nl-dat-pl-veenendaal": {
+   "bestand": "nl-dat-pl-veenendaal.mp3",
+   "tekst": "Dat is Veenendaal."
+  },
+  "nl-dat-pl-veghel": {
+   "bestand": "nl-dat-pl-veghel.mp3",
+   "tekst": "Dat is Veghel."
+  },
+  "nl-dat-pl-veldhoven": {
+   "bestand": "nl-dat-pl-veldhoven.mp3",
+   "tekst": "Dat is Veldhoven."
+  },
+  "nl-dat-pl-venlo": {
+   "bestand": "nl-dat-pl-venlo.mp3",
+   "tekst": "Dat is Venlo."
+  },
+  "nl-dat-pl-venray": {
+   "bestand": "nl-dat-pl-venray.mp3",
+   "tekst": "Dat is Venray."
+  },
+  "nl-dat-pl-vlaardingen": {
+   "bestand": "nl-dat-pl-vlaardingen.mp3",
+   "tekst": "Dat is Vlaardingen."
+  },
+  "nl-dat-pl-vlissingen": {
+   "bestand": "nl-dat-pl-vlissingen.mp3",
+   "tekst": "Dat is Vlissingen."
+  },
+  "nl-dat-pl-volendam": {
+   "bestand": "nl-dat-pl-volendam.mp3",
+   "tekst": "Dat is Volendam."
+  },
+  "nl-dat-pl-voorburg": {
+   "bestand": "nl-dat-pl-voorburg.mp3",
+   "tekst": "Dat is Voorburg."
+  },
+  "nl-dat-pl-voorschoten": {
+   "bestand": "nl-dat-pl-voorschoten.mp3",
+   "tekst": "Dat is Voorschoten."
+  },
+  "nl-dat-pl-vught": {
+   "bestand": "nl-dat-pl-vught.mp3",
+   "tekst": "Dat is Vught."
+  },
+  "nl-dat-pl-waalwijk": {
+   "bestand": "nl-dat-pl-waalwijk.mp3",
+   "tekst": "Dat is Waalwijk."
+  },
+  "nl-dat-pl-waddinxveen": {
+   "bestand": "nl-dat-pl-waddinxveen.mp3",
+   "tekst": "Dat is Waddinxveen."
+  },
+  "nl-dat-pl-wageningen": {
+   "bestand": "nl-dat-pl-wageningen.mp3",
+   "tekst": "Dat is Wageningen."
+  },
+  "nl-dat-pl-wassenaar": {
+   "bestand": "nl-dat-pl-wassenaar.mp3",
+   "tekst": "Dat is Wassenaar."
+  },
+  "nl-dat-pl-weert": {
+   "bestand": "nl-dat-pl-weert.mp3",
+   "tekst": "Dat is Weert."
+  },
+  "nl-dat-pl-weesp": {
+   "bestand": "nl-dat-pl-weesp.mp3",
+   "tekst": "Dat is Weesp."
+  },
+  "nl-dat-pl-wijchen": {
+   "bestand": "nl-dat-pl-wijchen.mp3",
+   "tekst": "Dat is Wijchen."
+  },
+  "nl-dat-pl-winterswijk": {
+   "bestand": "nl-dat-pl-winterswijk.mp3",
+   "tekst": "Dat is Winterswijk."
+  },
+  "nl-dat-pl-woerden": {
+   "bestand": "nl-dat-pl-woerden.mp3",
+   "tekst": "Dat is Woerden."
+  },
+  "nl-dat-pl-zaandam": {
+   "bestand": "nl-dat-pl-zaandam.mp3",
+   "tekst": "Dat is Zaandam."
+  },
+  "nl-dat-pl-zeewolde": {
+   "bestand": "nl-dat-pl-zeewolde.mp3",
+   "tekst": "Dat is Zeewolde."
+  },
+  "nl-dat-pl-zeist": {
+   "bestand": "nl-dat-pl-zeist.mp3",
+   "tekst": "Dat is Zeist."
+  },
+  "nl-dat-pl-zevenaar": {
+   "bestand": "nl-dat-pl-zevenaar.mp3",
+   "tekst": "Dat is Zevenaar."
+  },
+  "nl-dat-pl-zoetermeer": {
+   "bestand": "nl-dat-pl-zoetermeer.mp3",
+   "tekst": "Dat is Zoetermeer."
+  },
+  "nl-dat-pl-zutphen": {
+   "bestand": "nl-dat-pl-zutphen.mp3",
+   "tekst": "Dat is Zutphen."
+  },
+  "nl-dat-pl-zwijndrecht": {
+   "bestand": "nl-dat-pl-zwijndrecht.mp3",
+   "tekst": "Dat is Zwijndrecht."
+  },
+  "nl-dat-pl-zwolle": {
+   "bestand": "nl-dat-pl-zwolle.mp3",
+   "tekst": "Dat is Zwolle."
+  },
+  "nl-dat-pv-drenthe": {
+   "bestand": "nl-dat-pv-drenthe.mp3",
+   "tekst": "Dat is Drenthe."
+  },
+  "nl-dat-pv-flevoland": {
+   "bestand": "nl-dat-pv-flevoland.mp3",
+   "tekst": "Dat is Flevoland."
+  },
+  "nl-dat-pv-friesland": {
+   "bestand": "nl-dat-pv-friesland.mp3",
+   "tekst": "Dat is Friesland."
+  },
+  "nl-dat-pv-gelderland": {
+   "bestand": "nl-dat-pv-gelderland.mp3",
+   "tekst": "Dat is Gelderland."
+  },
+  "nl-dat-pv-groningen": {
+   "bestand": "nl-dat-pv-groningen.mp3",
+   "tekst": "Dat is Groningen."
+  },
+  "nl-dat-pv-limburg": {
+   "bestand": "nl-dat-pv-limburg.mp3",
+   "tekst": "Dat is Limburg."
+  },
+  "nl-dat-pv-noord-brabant": {
+   "bestand": "nl-dat-pv-noord-brabant.mp3",
+   "tekst": "Dat is Noord-Brabant."
+  },
+  "nl-dat-pv-noord-holland": {
+   "bestand": "nl-dat-pv-noord-holland.mp3",
+   "tekst": "Dat is Noord-Holland."
+  },
+  "nl-dat-pv-overijssel": {
+   "bestand": "nl-dat-pv-overijssel.mp3",
+   "tekst": "Dat is Overijssel."
+  },
+  "nl-dat-pv-utrecht": {
+   "bestand": "nl-dat-pv-utrecht.mp3",
+   "tekst": "Dat is Utrecht."
+  },
+  "nl-dat-pv-zeeland": {
+   "bestand": "nl-dat-pv-zeeland.mp3",
+   "tekst": "Dat is Zeeland."
+  },
+  "nl-dat-pv-zuid-holland": {
+   "bestand": "nl-dat-pv-zuid-holland.mp3",
+   "tekst": "Dat is Zuid-Holland."
+  },
+  "nl-dat-st-achterhoek": {
+   "bestand": "nl-dat-st-achterhoek.mp3",
+   "tekst": "Dat is de Achterhoek."
+  },
+  "nl-dat-st-alblasserwaard": {
+   "bestand": "nl-dat-st-alblasserwaard.mp3",
+   "tekst": "Dat is de Alblasserwaard."
+  },
+  "nl-dat-st-betuwe": {
+   "bestand": "nl-dat-st-betuwe.mp3",
+   "tekst": "Dat is de Betuwe."
+  },
+  "nl-dat-st-bollenstreek": {
+   "bestand": "nl-dat-st-bollenstreek.mp3",
+   "tekst": "Dat is de Bollenstreek."
+  },
+  "nl-dat-st-bommelerwaard": {
+   "bestand": "nl-dat-st-bommelerwaard.mp3",
+   "tekst": "Dat is de Bommelerwaard."
+  },
+  "nl-dat-st-gooi": {
+   "bestand": "nl-dat-st-gooi.mp3",
+   "tekst": "Dat is het Gooi."
+  },
+  "nl-dat-st-haarlemmermeer": {
+   "bestand": "nl-dat-st-haarlemmermeer.mp3",
+   "tekst": "Dat is de Haarlemmermeer."
+  },
+  "nl-dat-st-hogeland": {
+   "bestand": "nl-dat-st-hogeland.mp3",
+   "tekst": "Dat is het Hogeland."
+  },
+  "nl-dat-st-kempen": {
+   "bestand": "nl-dat-st-kempen.mp3",
+   "tekst": "Dat is de Kempen."
+  },
+  "nl-dat-st-kennemerland": {
+   "bestand": "nl-dat-st-kennemerland.mp3",
+   "tekst": "Dat is Kennemerland."
+  },
+  "nl-dat-st-kop-van-noord-holland": {
+   "bestand": "nl-dat-st-kop-van-noord-holland.mp3",
+   "tekst": "Dat is de Kop van Noord-Holland."
+  },
+  "nl-dat-st-krimpenerwaard": {
+   "bestand": "nl-dat-st-krimpenerwaard.mp3",
+   "tekst": "Dat is de Krimpenerwaard."
+  },
+  "nl-dat-st-land-van-cuijk": {
+   "bestand": "nl-dat-st-land-van-cuijk.mp3",
+   "tekst": "Dat is het Land van Cuijk."
+  },
+  "nl-dat-st-maas-en-waal": {
+   "bestand": "nl-dat-st-maas-en-waal.mp3",
+   "tekst": "Dat is het Land van Maas en Waal."
+  },
+  "nl-dat-st-noordoostpolder": {
+   "bestand": "nl-dat-st-noordoostpolder.mp3",
+   "tekst": "Dat is de Noordoostpolder."
+  },
+  "nl-dat-st-oldambt": {
+   "bestand": "nl-dat-st-oldambt.mp3",
+   "tekst": "Dat is het Oldambt."
+  },
+  "nl-dat-st-salland": {
+   "bestand": "nl-dat-st-salland.mp3",
+   "tekst": "Dat is Salland."
+  },
+  "nl-dat-st-twente": {
+   "bestand": "nl-dat-st-twente.mp3",
+   "tekst": "Dat is Twente."
+  },
+  "nl-dat-st-veluwe": {
+   "bestand": "nl-dat-st-veluwe.mp3",
+   "tekst": "Dat is de Veluwe."
+  },
+  "nl-dat-st-vijfheerenlanden": {
+   "bestand": "nl-dat-st-vijfheerenlanden.mp3",
+   "tekst": "Dat is de Vijfheerenlanden."
+  },
+  "nl-dat-st-west-friesland": {
+   "bestand": "nl-dat-st-west-friesland.mp3",
+   "tekst": "Dat is West-Friesland."
+  },
+  "nl-dat-st-westerkwartier": {
+   "bestand": "nl-dat-st-westerkwartier.mp3",
+   "tekst": "Dat is het Westerkwartier."
+  },
+  "nl-dat-st-westerwolde": {
+   "bestand": "nl-dat-st-westerwolde.mp3",
+   "tekst": "Dat is Westerwolde."
+  },
+  "nl-dat-st-westland": {
+   "bestand": "nl-dat-st-westland.mp3",
+   "tekst": "Dat is het Westland."
+  },
+  "nl-dat-st-zaanstreek": {
+   "bestand": "nl-dat-st-zaanstreek.mp3",
+   "tekst": "Dat is de Zaanstreek."
+  },
+  "nl-dat-st-zeeuws-vlaanderen": {
+   "bestand": "nl-dat-st-zeeuws-vlaanderen.mp3",
+   "tekst": "Dat is Zeeuws-Vlaanderen."
+  },
+  "nl-dat-st-zuid-limburg": {
+   "bestand": "nl-dat-st-zuid-limburg.mp3",
+   "tekst": "Dat is Zuid-Limburg."
+  },
+  "nl-dat-wa-alkmaardermeer": {
+   "bestand": "nl-dat-wa-alkmaardermeer.mp3",
+   "tekst": "Dat is het Alkmaardermeer."
+  },
+  "nl-dat-wa-brielse-meer": {
+   "bestand": "nl-dat-wa-brielse-meer.mp3",
+   "tekst": "Dat is het Brielse Meer."
+  },
+  "nl-dat-wa-eems-dollard": {
+   "bestand": "nl-dat-wa-eems-dollard.mp3",
+   "tekst": "Dat is de Eems-Dollard."
+  },
+  "nl-dat-wa-grevelingenmeer": {
+   "bestand": "nl-dat-wa-grevelingenmeer.mp3",
+   "tekst": "Dat is het Grevelingenmeer."
+  },
+  "nl-dat-wa-haringvliet": {
+   "bestand": "nl-dat-wa-haringvliet.mp3",
+   "tekst": "Dat is het Haringvliet."
+  },
+  "nl-dat-wa-ijsselmeer": {
+   "bestand": "nl-dat-wa-ijsselmeer.mp3",
+   "tekst": "Dat is het IJsselmeer."
+  },
+  "nl-dat-wa-kagerplassen": {
+   "bestand": "nl-dat-wa-kagerplassen.mp3",
+   "tekst": "Dat is de Kagerplassen."
+  },
+  "nl-dat-wa-ketelmeer": {
+   "bestand": "nl-dat-wa-ketelmeer.mp3",
+   "tekst": "Dat is het Ketelmeer."
+  },
+  "nl-dat-wa-lauwersmeer": {
+   "bestand": "nl-dat-wa-lauwersmeer.mp3",
+   "tekst": "Dat is het Lauwersmeer."
+  },
+  "nl-dat-wa-loosdrechtse-plassen": {
+   "bestand": "nl-dat-wa-loosdrechtse-plassen.mp3",
+   "tekst": "Dat is de Loosdrechtse Plassen."
+  },
+  "nl-dat-wa-markermeer": {
+   "bestand": "nl-dat-wa-markermeer.mp3",
+   "tekst": "Dat is het Markermeer."
+  },
+  "nl-dat-wa-nieuwkoopse-plassen": {
+   "bestand": "nl-dat-wa-nieuwkoopse-plassen.mp3",
+   "tekst": "Dat is de Nieuwkoopse Plassen."
+  },
+  "nl-dat-wa-noordzee": {
+   "bestand": "nl-dat-wa-noordzee.mp3",
+   "tekst": "Dat is de Noordzee."
+  },
+  "nl-dat-wa-oldambtmeer": {
+   "bestand": "nl-dat-wa-oldambtmeer.mp3",
+   "tekst": "Dat is het Oldambtmeer."
+  },
+  "nl-dat-wa-oosterschelde": {
+   "bestand": "nl-dat-wa-oosterschelde.mp3",
+   "tekst": "Dat is de Oosterschelde."
+  },
+  "nl-dat-wa-paterswoldsemeer": {
+   "bestand": "nl-dat-wa-paterswoldsemeer.mp3",
+   "tekst": "Dat is het Paterswoldsemeer."
+  },
+  "nl-dat-wa-randmeren": {
+   "bestand": "nl-dat-wa-randmeren.mp3",
+   "tekst": "Dat is de Randmeren."
+  },
+  "nl-dat-wa-reeuwijkse-plassen": {
+   "bestand": "nl-dat-wa-reeuwijkse-plassen.mp3",
+   "tekst": "Dat is de Reeuwijkse Plassen."
+  },
+  "nl-dat-wa-schildmeer": {
+   "bestand": "nl-dat-wa-schildmeer.mp3",
+   "tekst": "Dat is het Schildmeer."
+  },
+  "nl-dat-wa-veerse-meer": {
+   "bestand": "nl-dat-wa-veerse-meer.mp3",
+   "tekst": "Dat is het Veerse Meer."
+  },
+  "nl-dat-wa-vinkeveense-plassen": {
+   "bestand": "nl-dat-wa-vinkeveense-plassen.mp3",
+   "tekst": "Dat is de Vinkeveense Plassen."
+  },
+  "nl-dat-wa-volkerak": {
+   "bestand": "nl-dat-wa-volkerak.mp3",
+   "tekst": "Dat is het Volkerak."
+  },
+  "nl-dat-wa-waddenzee": {
+   "bestand": "nl-dat-wa-waddenzee.mp3",
+   "tekst": "Dat is de Waddenzee."
+  },
+  "nl-dat-wa-westeinderplassen": {
+   "bestand": "nl-dat-wa-westeinderplassen.mp3",
+   "tekst": "Dat is de Westeinderplassen."
+  },
+  "nl-dat-wa-westerschelde": {
+   "bestand": "nl-dat-wa-westerschelde.mp3",
+   "tekst": "Dat is de Westerschelde."
+  },
+  "nl-dat-wa-zoommeer": {
+   "bestand": "nl-dat-wa-zoommeer.mp3",
+   "tekst": "Dat is het Zoommeer."
+  },
+  "nl-dat-wa-zuidlaardermeer": {
+   "bestand": "nl-dat-wa-zuidlaardermeer.mp3",
+   "tekst": "Dat is het Zuidlaardermeer."
+  },
+  "nl-dat-wa-zwarte-meer": {
+   "bestand": "nl-dat-wa-zwarte-meer.mp3",
+   "tekst": "Dat is het Zwarte Meer."
+  },
+  "nl-gevangen-toets": {
+   "bestand": "nl-gevangen-toets.mp3",
+   "tekst": "Die zit nog gevangen! Haal een ster bij die toets om hem te bevrijden."
+  },
+  "nl-herken-eiland": {
+   "bestand": "nl-herken-eiland.mp3",
+   "tekst": "Welk eiland is dit?"
+  },
+  "nl-herken-gebied": {
+   "bestand": "nl-herken-gebied.mp3",
+   "tekst": "Welk gebied is dit?"
+  },
+  "nl-herken-plaats": {
+   "bestand": "nl-herken-plaats.mp3",
+   "tekst": "Welke plaats is dit?"
+  },
+  "nl-herken-provincie": {
+   "bestand": "nl-herken-provincie.mp3",
+   "tekst": "Welke provincie is dit?"
+  },
+  "nl-herken-streek": {
+   "bestand": "nl-herken-streek.mp3",
+   "tekst": "Welke streek is dit?"
+  },
+  "nl-herken-water": {
+   "bestand": "nl-herken-water.mp3",
+   "tekst": "Welk water is dit?"
+  },
+  "nl-hoofdstad-pv-drenthe": {
+   "bestand": "nl-hoofdstad-pv-drenthe.mp3",
+   "tekst": "Wat is de hoofdstad van Drenthe?"
+  },
+  "nl-hoofdstad-pv-flevoland": {
+   "bestand": "nl-hoofdstad-pv-flevoland.mp3",
+   "tekst": "Wat is de hoofdstad van Flevoland?"
+  },
+  "nl-hoofdstad-pv-friesland": {
+   "bestand": "nl-hoofdstad-pv-friesland.mp3",
+   "tekst": "Wat is de hoofdstad van Friesland?"
+  },
+  "nl-hoofdstad-pv-gelderland": {
+   "bestand": "nl-hoofdstad-pv-gelderland.mp3",
+   "tekst": "Wat is de hoofdstad van Gelderland?"
+  },
+  "nl-hoofdstad-pv-groningen": {
+   "bestand": "nl-hoofdstad-pv-groningen.mp3",
+   "tekst": "Wat is de hoofdstad van Groningen?"
+  },
+  "nl-hoofdstad-pv-limburg": {
+   "bestand": "nl-hoofdstad-pv-limburg.mp3",
+   "tekst": "Wat is de hoofdstad van Limburg?"
+  },
+  "nl-hoofdstad-pv-noord-brabant": {
+   "bestand": "nl-hoofdstad-pv-noord-brabant.mp3",
+   "tekst": "Wat is de hoofdstad van Noord-Brabant?"
+  },
+  "nl-hoofdstad-pv-noord-holland": {
+   "bestand": "nl-hoofdstad-pv-noord-holland.mp3",
+   "tekst": "Wat is de hoofdstad van Noord-Holland?"
+  },
+  "nl-hoofdstad-pv-overijssel": {
+   "bestand": "nl-hoofdstad-pv-overijssel.mp3",
+   "tekst": "Wat is de hoofdstad van Overijssel?"
+  },
+  "nl-hoofdstad-pv-utrecht": {
+   "bestand": "nl-hoofdstad-pv-utrecht.mp3",
+   "tekst": "Wat is de hoofdstad van Utrecht?"
+  },
+  "nl-hoofdstad-pv-zeeland": {
+   "bestand": "nl-hoofdstad-pv-zeeland.mp3",
+   "tekst": "Wat is de hoofdstad van Zeeland?"
+  },
+  "nl-hoofdstad-pv-zuid-holland": {
+   "bestand": "nl-hoofdstad-pv-zuid-holland.mp3",
+   "tekst": "Wat is de hoofdstad van Zuid-Holland?"
+  },
+  "nl-hoofdstad-van-pl-arnhem": {
+   "bestand": "nl-hoofdstad-van-pl-arnhem.mp3",
+   "tekst": "Van welke provincie is Arnhem de hoofdstad?"
+  },
+  "nl-hoofdstad-van-pl-assen": {
+   "bestand": "nl-hoofdstad-van-pl-assen.mp3",
+   "tekst": "Van welke provincie is Assen de hoofdstad?"
+  },
+  "nl-hoofdstad-van-pl-den-haag": {
+   "bestand": "nl-hoofdstad-van-pl-den-haag.mp3",
+   "tekst": "Van welke provincie is Den Haag de hoofdstad?"
+  },
+  "nl-hoofdstad-van-pl-groningen": {
+   "bestand": "nl-hoofdstad-van-pl-groningen.mp3",
+   "tekst": "Van welke provincie is Groningen de hoofdstad?"
+  },
+  "nl-hoofdstad-van-pl-haarlem": {
+   "bestand": "nl-hoofdstad-van-pl-haarlem.mp3",
+   "tekst": "Van welke provincie is Haarlem de hoofdstad?"
+  },
+  "nl-hoofdstad-van-pl-leeuwarden": {
+   "bestand": "nl-hoofdstad-van-pl-leeuwarden.mp3",
+   "tekst": "Van welke provincie is Leeuwarden de hoofdstad?"
+  },
+  "nl-hoofdstad-van-pl-lelystad": {
+   "bestand": "nl-hoofdstad-van-pl-lelystad.mp3",
+   "tekst": "Van welke provincie is Lelystad de hoofdstad?"
+  },
+  "nl-hoofdstad-van-pl-maastricht": {
+   "bestand": "nl-hoofdstad-van-pl-maastricht.mp3",
+   "tekst": "Van welke provincie is Maastricht de hoofdstad?"
+  },
+  "nl-hoofdstad-van-pl-middelburg": {
+   "bestand": "nl-hoofdstad-van-pl-middelburg.mp3",
+   "tekst": "Van welke provincie is Middelburg de hoofdstad?"
+  },
+  "nl-hoofdstad-van-pl-s-hertogenbosch": {
+   "bestand": "nl-hoofdstad-van-pl-s-hertogenbosch.mp3",
+   "tekst": "Van welke provincie is 's-Hertogenbosch de hoofdstad?"
+  },
+  "nl-hoofdstad-van-pl-utrecht": {
+   "bestand": "nl-hoofdstad-van-pl-utrecht.mp3",
+   "tekst": "Van welke provincie is Utrecht de hoofdstad?"
+  },
+  "nl-hoofdstad-van-pl-zwolle": {
+   "bestand": "nl-hoofdstad-van-pl-zwolle.mp3",
+   "tekst": "Van welke provincie is Zwolle de hoofdstad?"
+  },
+  "nl-hoofdstad-waar-pv-drenthe": {
+   "bestand": "nl-hoofdstad-waar-pv-drenthe.mp3",
+   "tekst": "Waar ligt de hoofdstad van Drenthe?"
+  },
+  "nl-hoofdstad-waar-pv-flevoland": {
+   "bestand": "nl-hoofdstad-waar-pv-flevoland.mp3",
+   "tekst": "Waar ligt de hoofdstad van Flevoland?"
+  },
+  "nl-hoofdstad-waar-pv-friesland": {
+   "bestand": "nl-hoofdstad-waar-pv-friesland.mp3",
+   "tekst": "Waar ligt de hoofdstad van Friesland?"
+  },
+  "nl-hoofdstad-waar-pv-gelderland": {
+   "bestand": "nl-hoofdstad-waar-pv-gelderland.mp3",
+   "tekst": "Waar ligt de hoofdstad van Gelderland?"
+  },
+  "nl-hoofdstad-waar-pv-groningen": {
+   "bestand": "nl-hoofdstad-waar-pv-groningen.mp3",
+   "tekst": "Waar ligt de hoofdstad van Groningen?"
+  },
+  "nl-hoofdstad-waar-pv-limburg": {
+   "bestand": "nl-hoofdstad-waar-pv-limburg.mp3",
+   "tekst": "Waar ligt de hoofdstad van Limburg?"
+  },
+  "nl-hoofdstad-waar-pv-noord-brabant": {
+   "bestand": "nl-hoofdstad-waar-pv-noord-brabant.mp3",
+   "tekst": "Waar ligt de hoofdstad van Noord-Brabant?"
+  },
+  "nl-hoofdstad-waar-pv-noord-holland": {
+   "bestand": "nl-hoofdstad-waar-pv-noord-holland.mp3",
+   "tekst": "Waar ligt de hoofdstad van Noord-Holland?"
+  },
+  "nl-hoofdstad-waar-pv-overijssel": {
+   "bestand": "nl-hoofdstad-waar-pv-overijssel.mp3",
+   "tekst": "Waar ligt de hoofdstad van Overijssel?"
+  },
+  "nl-hoofdstad-waar-pv-utrecht": {
+   "bestand": "nl-hoofdstad-waar-pv-utrecht.mp3",
+   "tekst": "Waar ligt de hoofdstad van Utrecht?"
+  },
+  "nl-hoofdstad-waar-pv-zeeland": {
+   "bestand": "nl-hoofdstad-waar-pv-zeeland.mp3",
+   "tekst": "Waar ligt de hoofdstad van Zeeland?"
+  },
+  "nl-hoofdstad-waar-pv-zuid-holland": {
+   "bestand": "nl-hoofdstad-waar-pv-zuid-holland.mp3",
+   "tekst": "Waar ligt de hoofdstad van Zuid-Holland?"
+  },
+  "nl-waar-ei-ameland": {
+   "bestand": "nl-waar-ei-ameland.mp3",
+   "tekst": "Waar ligt Ameland?"
+  },
+  "nl-waar-ei-dordrecht": {
+   "bestand": "nl-waar-ei-dordrecht.mp3",
+   "tekst": "Waar ligt het Eiland van Dordrecht?"
+  },
+  "nl-waar-ei-flevopolder": {
+   "bestand": "nl-waar-ei-flevopolder.mp3",
+   "tekst": "Waar ligt de Flevopolder?"
+  },
+  "nl-waar-ei-goeree-overflakkee": {
+   "bestand": "nl-waar-ei-goeree-overflakkee.mp3",
+   "tekst": "Waar ligt Goeree-Overflakkee?"
+  },
+  "nl-waar-ei-hoeksche-waard": {
+   "bestand": "nl-waar-ei-hoeksche-waard.mp3",
+   "tekst": "Waar ligt de Hoeksche Waard?"
+  },
+  "nl-waar-ei-noord-beveland": {
+   "bestand": "nl-waar-ei-noord-beveland.mp3",
+   "tekst": "Waar ligt Noord-Beveland?"
+  },
+  "nl-waar-ei-schiermonnikoog": {
+   "bestand": "nl-waar-ei-schiermonnikoog.mp3",
+   "tekst": "Waar ligt Schiermonnikoog?"
+  },
+  "nl-waar-ei-schouwen-duiveland": {
+   "bestand": "nl-waar-ei-schouwen-duiveland.mp3",
+   "tekst": "Waar ligt Schouwen-Duiveland?"
+  },
+  "nl-waar-ei-terschelling": {
+   "bestand": "nl-waar-ei-terschelling.mp3",
+   "tekst": "Waar ligt Terschelling?"
+  },
+  "nl-waar-ei-texel": {
+   "bestand": "nl-waar-ei-texel.mp3",
+   "tekst": "Waar ligt Texel?"
+  },
+  "nl-waar-ei-tholen": {
+   "bestand": "nl-waar-ei-tholen.mp3",
+   "tekst": "Waar ligt Tholen?"
+  },
+  "nl-waar-ei-vlieland": {
+   "bestand": "nl-waar-ei-vlieland.mp3",
+   "tekst": "Waar ligt Vlieland?"
+  },
+  "nl-waar-ei-voorne-putten": {
+   "bestand": "nl-waar-ei-voorne-putten.mp3",
+   "tekst": "Waar ligt Voorne-Putten?"
+  },
+  "nl-waar-ei-walcheren": {
+   "bestand": "nl-waar-ei-walcheren.mp3",
+   "tekst": "Waar ligt Walcheren?"
+  },
+  "nl-waar-ei-zuid-beveland": {
+   "bestand": "nl-waar-ei-zuid-beveland.mp3",
+   "tekst": "Waar ligt Zuid-Beveland?"
+  },
+  "nl-waar-pl-aalsmeer": {
+   "bestand": "nl-waar-pl-aalsmeer.mp3",
+   "tekst": "Waar ligt Aalsmeer?"
+  },
+  "nl-waar-pl-alblasserdam": {
+   "bestand": "nl-waar-pl-alblasserdam.mp3",
+   "tekst": "Waar ligt Alblasserdam?"
+  },
+  "nl-waar-pl-alkmaar": {
+   "bestand": "nl-waar-pl-alkmaar.mp3",
+   "tekst": "Waar ligt Alkmaar?"
+  },
+  "nl-waar-pl-almelo": {
+   "bestand": "nl-waar-pl-almelo.mp3",
+   "tekst": "Waar ligt Almelo?"
+  },
+  "nl-waar-pl-almere": {
+   "bestand": "nl-waar-pl-almere.mp3",
+   "tekst": "Waar ligt Almere?"
+  },
+  "nl-waar-pl-alphen-aan-den-rijn": {
+   "bestand": "nl-waar-pl-alphen-aan-den-rijn.mp3",
+   "tekst": "Waar ligt Alphen aan den Rijn?"
+  },
+  "nl-waar-pl-amersfoort": {
+   "bestand": "nl-waar-pl-amersfoort.mp3",
+   "tekst": "Waar ligt Amersfoort?"
+  },
+  "nl-waar-pl-amstelveen": {
+   "bestand": "nl-waar-pl-amstelveen.mp3",
+   "tekst": "Waar ligt Amstelveen?"
+  },
+  "nl-waar-pl-amsterdam": {
+   "bestand": "nl-waar-pl-amsterdam.mp3",
+   "tekst": "Waar ligt Amsterdam?"
+  },
+  "nl-waar-pl-apeldoorn": {
+   "bestand": "nl-waar-pl-apeldoorn.mp3",
+   "tekst": "Waar ligt Apeldoorn?"
+  },
+  "nl-waar-pl-arnhem": {
+   "bestand": "nl-waar-pl-arnhem.mp3",
+   "tekst": "Waar ligt Arnhem?"
+  },
+  "nl-waar-pl-assen": {
+   "bestand": "nl-waar-pl-assen.mp3",
+   "tekst": "Waar ligt Assen?"
+  },
+  "nl-waar-pl-assendelft": {
+   "bestand": "nl-waar-pl-assendelft.mp3",
+   "tekst": "Waar ligt Assendelft?"
+  },
+  "nl-waar-pl-baarn": {
+   "bestand": "nl-waar-pl-baarn.mp3",
+   "tekst": "Waar ligt Baarn?"
+  },
+  "nl-waar-pl-barendrecht": {
+   "bestand": "nl-waar-pl-barendrecht.mp3",
+   "tekst": "Waar ligt Barendrecht?"
+  },
+  "nl-waar-pl-barneveld": {
+   "bestand": "nl-waar-pl-barneveld.mp3",
+   "tekst": "Waar ligt Barneveld?"
+  },
+  "nl-waar-pl-bergen-op-zoom": {
+   "bestand": "nl-waar-pl-bergen-op-zoom.mp3",
+   "tekst": "Waar ligt Bergen op Zoom?"
+  },
+  "nl-waar-pl-berkel-en-rodenrijs": {
+   "bestand": "nl-waar-pl-berkel-en-rodenrijs.mp3",
+   "tekst": "Waar ligt Berkel en Rodenrijs?"
+  },
+  "nl-waar-pl-best": {
+   "bestand": "nl-waar-pl-best.mp3",
+   "tekst": "Waar ligt Best?"
+  },
+  "nl-waar-pl-beverwijk": {
+   "bestand": "nl-waar-pl-beverwijk.mp3",
+   "tekst": "Waar ligt Beverwijk?"
+  },
+  "nl-waar-pl-bilthoven": {
+   "bestand": "nl-waar-pl-bilthoven.mp3",
+   "tekst": "Waar ligt Bilthoven?"
+  },
+  "nl-waar-pl-borne": {
+   "bestand": "nl-waar-pl-borne.mp3",
+   "tekst": "Waar ligt Borne?"
+  },
+  "nl-waar-pl-boxtel": {
+   "bestand": "nl-waar-pl-boxtel.mp3",
+   "tekst": "Waar ligt Boxtel?"
+  },
+  "nl-waar-pl-breda": {
+   "bestand": "nl-waar-pl-breda.mp3",
+   "tekst": "Waar ligt Breda?"
+  },
+  "nl-waar-pl-brunssum": {
+   "bestand": "nl-waar-pl-brunssum.mp3",
+   "tekst": "Waar ligt Brunssum?"
+  },
+  "nl-waar-pl-bussum": {
+   "bestand": "nl-waar-pl-bussum.mp3",
+   "tekst": "Waar ligt Bussum?"
+  },
+  "nl-waar-pl-capelle-aan-den-ijssel": {
+   "bestand": "nl-waar-pl-capelle-aan-den-ijssel.mp3",
+   "tekst": "Waar ligt Capelle aan den IJssel?"
+  },
+  "nl-waar-pl-castricum": {
+   "bestand": "nl-waar-pl-castricum.mp3",
+   "tekst": "Waar ligt Castricum?"
+  },
+  "nl-waar-pl-culemborg": {
+   "bestand": "nl-waar-pl-culemborg.mp3",
+   "tekst": "Waar ligt Culemborg?"
+  },
+  "nl-waar-pl-delft": {
+   "bestand": "nl-waar-pl-delft.mp3",
+   "tekst": "Waar ligt Delft?"
+  },
+  "nl-waar-pl-den-haag": {
+   "bestand": "nl-waar-pl-den-haag.mp3",
+   "tekst": "Waar ligt Den Haag?"
+  },
+  "nl-waar-pl-den-helder": {
+   "bestand": "nl-waar-pl-den-helder.mp3",
+   "tekst": "Waar ligt Den Helder?"
+  },
+  "nl-waar-pl-deurne": {
+   "bestand": "nl-waar-pl-deurne.mp3",
+   "tekst": "Waar ligt Deurne?"
+  },
+  "nl-waar-pl-deventer": {
+   "bestand": "nl-waar-pl-deventer.mp3",
+   "tekst": "Waar ligt Deventer?"
+  },
+  "nl-waar-pl-diemen": {
+   "bestand": "nl-waar-pl-diemen.mp3",
+   "tekst": "Waar ligt Diemen?"
+  },
+  "nl-waar-pl-doetinchem": {
+   "bestand": "nl-waar-pl-doetinchem.mp3",
+   "tekst": "Waar ligt Doetinchem?"
+  },
+  "nl-waar-pl-dongen": {
+   "bestand": "nl-waar-pl-dongen.mp3",
+   "tekst": "Waar ligt Dongen?"
+  },
+  "nl-waar-pl-dordrecht": {
+   "bestand": "nl-waar-pl-dordrecht.mp3",
+   "tekst": "Waar ligt Dordrecht?"
+  },
+  "nl-waar-pl-drachten": {
+   "bestand": "nl-waar-pl-drachten.mp3",
+   "tekst": "Waar ligt Drachten?"
+  },
+  "nl-waar-pl-dronten": {
+   "bestand": "nl-waar-pl-dronten.mp3",
+   "tekst": "Waar ligt Dronten?"
+  },
+  "nl-waar-pl-duiven": {
+   "bestand": "nl-waar-pl-duiven.mp3",
+   "tekst": "Waar ligt Duiven?"
+  },
+  "nl-waar-pl-ede": {
+   "bestand": "nl-waar-pl-ede.mp3",
+   "tekst": "Waar ligt Ede?"
+  },
+  "nl-waar-pl-eindhoven": {
+   "bestand": "nl-waar-pl-eindhoven.mp3",
+   "tekst": "Waar ligt Eindhoven?"
+  },
+  "nl-waar-pl-elst": {
+   "bestand": "nl-waar-pl-elst.mp3",
+   "tekst": "Waar ligt Elst?"
+  },
+  "nl-waar-pl-emmeloord": {
+   "bestand": "nl-waar-pl-emmeloord.mp3",
+   "tekst": "Waar ligt Emmeloord?"
+  },
+  "nl-waar-pl-emmen": {
+   "bestand": "nl-waar-pl-emmen.mp3",
+   "tekst": "Waar ligt Emmen?"
+  },
+  "nl-waar-pl-enschede": {
+   "bestand": "nl-waar-pl-enschede.mp3",
+   "tekst": "Waar ligt Enschede?"
+  },
+  "nl-waar-pl-ermelo": {
+   "bestand": "nl-waar-pl-ermelo.mp3",
+   "tekst": "Waar ligt Ermelo?"
+  },
+  "nl-waar-pl-etten-leur": {
+   "bestand": "nl-waar-pl-etten-leur.mp3",
+   "tekst": "Waar ligt Etten-Leur?"
+  },
+  "nl-waar-pl-geldrop": {
+   "bestand": "nl-waar-pl-geldrop.mp3",
+   "tekst": "Waar ligt Geldrop?"
+  },
+  "nl-waar-pl-geleen": {
+   "bestand": "nl-waar-pl-geleen.mp3",
+   "tekst": "Waar ligt Geleen?"
+  },
+  "nl-waar-pl-goes": {
+   "bestand": "nl-waar-pl-goes.mp3",
+   "tekst": "Waar ligt Goes?"
+  },
+  "nl-waar-pl-goirle": {
+   "bestand": "nl-waar-pl-goirle.mp3",
+   "tekst": "Waar ligt Goirle?"
+  },
+  "nl-waar-pl-gorinchem": {
+   "bestand": "nl-waar-pl-gorinchem.mp3",
+   "tekst": "Waar ligt Gorinchem?"
+  },
+  "nl-waar-pl-gouda": {
+   "bestand": "nl-waar-pl-gouda.mp3",
+   "tekst": "Waar ligt Gouda?"
+  },
+  "nl-waar-pl-groningen": {
+   "bestand": "nl-waar-pl-groningen.mp3",
+   "tekst": "Waar ligt Groningen?"
+  },
+  "nl-waar-pl-haarlem": {
+   "bestand": "nl-waar-pl-haarlem.mp3",
+   "tekst": "Waar ligt Haarlem?"
+  },
+  "nl-waar-pl-harderwijk": {
+   "bestand": "nl-waar-pl-harderwijk.mp3",
+   "tekst": "Waar ligt Harderwijk?"
+  },
+  "nl-waar-pl-heemskerk": {
+   "bestand": "nl-waar-pl-heemskerk.mp3",
+   "tekst": "Waar ligt Heemskerk?"
+  },
+  "nl-waar-pl-heemstede": {
+   "bestand": "nl-waar-pl-heemstede.mp3",
+   "tekst": "Waar ligt Heemstede?"
+  },
+  "nl-waar-pl-heerenveen": {
+   "bestand": "nl-waar-pl-heerenveen.mp3",
+   "tekst": "Waar ligt Heerenveen?"
+  },
+  "nl-waar-pl-heerhugowaard": {
+   "bestand": "nl-waar-pl-heerhugowaard.mp3",
+   "tekst": "Waar ligt Heerhugowaard?"
+  },
+  "nl-waar-pl-heerlen": {
+   "bestand": "nl-waar-pl-heerlen.mp3",
+   "tekst": "Waar ligt Heerlen?"
+  },
+  "nl-waar-pl-heiloo": {
+   "bestand": "nl-waar-pl-heiloo.mp3",
+   "tekst": "Waar ligt Heiloo?"
+  },
+  "nl-waar-pl-hellevoetsluis": {
+   "bestand": "nl-waar-pl-hellevoetsluis.mp3",
+   "tekst": "Waar ligt Hellevoetsluis?"
+  },
+  "nl-waar-pl-helmond": {
+   "bestand": "nl-waar-pl-helmond.mp3",
+   "tekst": "Waar ligt Helmond?"
+  },
+  "nl-waar-pl-hendrik-ido-ambacht": {
+   "bestand": "nl-waar-pl-hendrik-ido-ambacht.mp3",
+   "tekst": "Waar ligt Hendrik-Ido-Ambacht?"
+  },
+  "nl-waar-pl-hengelo": {
+   "bestand": "nl-waar-pl-hengelo.mp3",
+   "tekst": "Waar ligt Hengelo?"
+  },
+  "nl-waar-pl-hillegom": {
+   "bestand": "nl-waar-pl-hillegom.mp3",
+   "tekst": "Waar ligt Hillegom?"
+  },
+  "nl-waar-pl-hilversum": {
+   "bestand": "nl-waar-pl-hilversum.mp3",
+   "tekst": "Waar ligt Hilversum?"
+  },
+  "nl-waar-pl-hoofddorp": {
+   "bestand": "nl-waar-pl-hoofddorp.mp3",
+   "tekst": "Waar ligt Hoofddorp?"
+  },
+  "nl-waar-pl-hoogeveen": {
+   "bestand": "nl-waar-pl-hoogeveen.mp3",
+   "tekst": "Waar ligt Hoogeveen?"
+  },
+  "nl-waar-pl-hoogezand": {
+   "bestand": "nl-waar-pl-hoogezand.mp3",
+   "tekst": "Waar ligt Hoogezand?"
+  },
+  "nl-waar-pl-hoorn": {
+   "bestand": "nl-waar-pl-hoorn.mp3",
+   "tekst": "Waar ligt Hoorn?"
+  },
+  "nl-waar-pl-houten": {
+   "bestand": "nl-waar-pl-houten.mp3",
+   "tekst": "Waar ligt Houten?"
+  },
+  "nl-waar-pl-huizen": {
+   "bestand": "nl-waar-pl-huizen.mp3",
+   "tekst": "Waar ligt Huizen?"
+  },
+  "nl-waar-pl-ijmuiden": {
+   "bestand": "nl-waar-pl-ijmuiden.mp3",
+   "tekst": "Waar ligt IJmuiden?"
+  },
+  "nl-waar-pl-ijsselstein": {
+   "bestand": "nl-waar-pl-ijsselstein.mp3",
+   "tekst": "Waar ligt IJsselstein?"
+  },
+  "nl-waar-pl-kampen": {
+   "bestand": "nl-waar-pl-kampen.mp3",
+   "tekst": "Waar ligt Kampen?"
+  },
+  "nl-waar-pl-katwijk": {
+   "bestand": "nl-waar-pl-katwijk.mp3",
+   "tekst": "Waar ligt Katwijk?"
+  },
+  "nl-waar-pl-kerkrade": {
+   "bestand": "nl-waar-pl-kerkrade.mp3",
+   "tekst": "Waar ligt Kerkrade?"
+  },
+  "nl-waar-pl-krimpen-aan-den-ijssel": {
+   "bestand": "nl-waar-pl-krimpen-aan-den-ijssel.mp3",
+   "tekst": "Waar ligt Krimpen aan den IJssel?"
+  },
+  "nl-waar-pl-landgraaf": {
+   "bestand": "nl-waar-pl-landgraaf.mp3",
+   "tekst": "Waar ligt Landgraaf?"
+  },
+  "nl-waar-pl-leeuwarden": {
+   "bestand": "nl-waar-pl-leeuwarden.mp3",
+   "tekst": "Waar ligt Leeuwarden?"
+  },
+  "nl-waar-pl-leiden": {
+   "bestand": "nl-waar-pl-leiden.mp3",
+   "tekst": "Waar ligt Leiden?"
+  },
+  "nl-waar-pl-leiderdorp": {
+   "bestand": "nl-waar-pl-leiderdorp.mp3",
+   "tekst": "Waar ligt Leiderdorp?"
+  },
+  "nl-waar-pl-leidschendam": {
+   "bestand": "nl-waar-pl-leidschendam.mp3",
+   "tekst": "Waar ligt Leidschendam?"
+  },
+  "nl-waar-pl-lelystad": {
+   "bestand": "nl-waar-pl-lelystad.mp3",
+   "tekst": "Waar ligt Lelystad?"
+  },
+  "nl-waar-pl-leusden": {
+   "bestand": "nl-waar-pl-leusden.mp3",
+   "tekst": "Waar ligt Leusden?"
+  },
+  "nl-waar-pl-lisse": {
+   "bestand": "nl-waar-pl-lisse.mp3",
+   "tekst": "Waar ligt Lisse?"
+  },
+  "nl-waar-pl-maarssen": {
+   "bestand": "nl-waar-pl-maarssen.mp3",
+   "tekst": "Waar ligt Maarssen?"
+  },
+  "nl-waar-pl-maassluis": {
+   "bestand": "nl-waar-pl-maassluis.mp3",
+   "tekst": "Waar ligt Maassluis?"
+  },
+  "nl-waar-pl-maastricht": {
+   "bestand": "nl-waar-pl-maastricht.mp3",
+   "tekst": "Waar ligt Maastricht?"
+  },
+  "nl-waar-pl-meppel": {
+   "bestand": "nl-waar-pl-meppel.mp3",
+   "tekst": "Waar ligt Meppel?"
+  },
+  "nl-waar-pl-middelburg": {
+   "bestand": "nl-waar-pl-middelburg.mp3",
+   "tekst": "Waar ligt Middelburg?"
+  },
+  "nl-waar-pl-naaldwijk": {
+   "bestand": "nl-waar-pl-naaldwijk.mp3",
+   "tekst": "Waar ligt Naaldwijk?"
+  },
+  "nl-waar-pl-nieuw-vennep": {
+   "bestand": "nl-waar-pl-nieuw-vennep.mp3",
+   "tekst": "Waar ligt Nieuw-Vennep?"
+  },
+  "nl-waar-pl-nieuwegein": {
+   "bestand": "nl-waar-pl-nieuwegein.mp3",
+   "tekst": "Waar ligt Nieuwegein?"
+  },
+  "nl-waar-pl-nieuwerkerk-aan-den-ijssel": {
+   "bestand": "nl-waar-pl-nieuwerkerk-aan-den-ijssel.mp3",
+   "tekst": "Waar ligt Nieuwerkerk aan den IJssel?"
+  },
+  "nl-waar-pl-nijkerk": {
+   "bestand": "nl-waar-pl-nijkerk.mp3",
+   "tekst": "Waar ligt Nijkerk?"
+  },
+  "nl-waar-pl-nijmegen": {
+   "bestand": "nl-waar-pl-nijmegen.mp3",
+   "tekst": "Waar ligt Nijmegen?"
+  },
+  "nl-waar-pl-nijverdal": {
+   "bestand": "nl-waar-pl-nijverdal.mp3",
+   "tekst": "Waar ligt Nijverdal?"
+  },
+  "nl-waar-pl-noordwijk": {
+   "bestand": "nl-waar-pl-noordwijk.mp3",
+   "tekst": "Waar ligt Noordwijk?"
+  },
+  "nl-waar-pl-nuenen": {
+   "bestand": "nl-waar-pl-nuenen.mp3",
+   "tekst": "Waar ligt Nuenen?"
+  },
+  "nl-waar-pl-oegstgeest": {
+   "bestand": "nl-waar-pl-oegstgeest.mp3",
+   "tekst": "Waar ligt Oegstgeest?"
+  },
+  "nl-waar-pl-oldenzaal": {
+   "bestand": "nl-waar-pl-oldenzaal.mp3",
+   "tekst": "Waar ligt Oldenzaal?"
+  },
+  "nl-waar-pl-oosterhout": {
+   "bestand": "nl-waar-pl-oosterhout.mp3",
+   "tekst": "Waar ligt Oosterhout?"
+  },
+  "nl-waar-pl-oss": {
+   "bestand": "nl-waar-pl-oss.mp3",
+   "tekst": "Waar ligt Oss?"
+  },
+  "nl-waar-pl-oud-beijerland": {
+   "bestand": "nl-waar-pl-oud-beijerland.mp3",
+   "tekst": "Waar ligt Oud-Beijerland?"
+  },
+  "nl-waar-pl-papendrecht": {
+   "bestand": "nl-waar-pl-papendrecht.mp3",
+   "tekst": "Waar ligt Papendrecht?"
+  },
+  "nl-waar-pl-pijnacker": {
+   "bestand": "nl-waar-pl-pijnacker.mp3",
+   "tekst": "Waar ligt Pijnacker?"
+  },
+  "nl-waar-pl-purmerend": {
+   "bestand": "nl-waar-pl-purmerend.mp3",
+   "tekst": "Waar ligt Purmerend?"
+  },
+  "nl-waar-pl-ridderkerk": {
+   "bestand": "nl-waar-pl-ridderkerk.mp3",
+   "tekst": "Waar ligt Ridderkerk?"
+  },
+  "nl-waar-pl-rijssen": {
+   "bestand": "nl-waar-pl-rijssen.mp3",
+   "tekst": "Waar ligt Rijssen?"
+  },
+  "nl-waar-pl-rijswijk": {
+   "bestand": "nl-waar-pl-rijswijk.mp3",
+   "tekst": "Waar ligt Rijswijk?"
+  },
+  "nl-waar-pl-roermond": {
+   "bestand": "nl-waar-pl-roermond.mp3",
+   "tekst": "Waar ligt Roermond?"
+  },
+  "nl-waar-pl-roosendaal": {
+   "bestand": "nl-waar-pl-roosendaal.mp3",
+   "tekst": "Waar ligt Roosendaal?"
+  },
+  "nl-waar-pl-rosmalen": {
+   "bestand": "nl-waar-pl-rosmalen.mp3",
+   "tekst": "Waar ligt Rosmalen?"
+  },
+  "nl-waar-pl-rotterdam": {
+   "bestand": "nl-waar-pl-rotterdam.mp3",
+   "tekst": "Waar ligt Rotterdam?"
+  },
+  "nl-waar-pl-s-gravenzande": {
+   "bestand": "nl-waar-pl-s-gravenzande.mp3",
+   "tekst": "Waar ligt 's-Gravenzande?"
+  },
+  "nl-waar-pl-s-hertogenbosch": {
+   "bestand": "nl-waar-pl-s-hertogenbosch.mp3",
+   "tekst": "Waar ligt 's-Hertogenbosch?"
+  },
+  "nl-waar-pl-schiedam": {
+   "bestand": "nl-waar-pl-schiedam.mp3",
+   "tekst": "Waar ligt Schiedam?"
+  },
+  "nl-waar-pl-schijndel": {
+   "bestand": "nl-waar-pl-schijndel.mp3",
+   "tekst": "Waar ligt Schijndel?"
+  },
+  "nl-waar-pl-sittard": {
+   "bestand": "nl-waar-pl-sittard.mp3",
+   "tekst": "Waar ligt Sittard?"
+  },
+  "nl-waar-pl-sliedrecht": {
+   "bestand": "nl-waar-pl-sliedrecht.mp3",
+   "tekst": "Waar ligt Sliedrecht?"
+  },
+  "nl-waar-pl-sneek": {
+   "bestand": "nl-waar-pl-sneek.mp3",
+   "tekst": "Waar ligt Sneek?"
+  },
+  "nl-waar-pl-soest": {
+   "bestand": "nl-waar-pl-soest.mp3",
+   "tekst": "Waar ligt Soest?"
+  },
+  "nl-waar-pl-spijkenisse": {
+   "bestand": "nl-waar-pl-spijkenisse.mp3",
+   "tekst": "Waar ligt Spijkenisse?"
+  },
+  "nl-waar-pl-terneuzen": {
+   "bestand": "nl-waar-pl-terneuzen.mp3",
+   "tekst": "Waar ligt Terneuzen?"
+  },
+  "nl-waar-pl-tiel": {
+   "bestand": "nl-waar-pl-tiel.mp3",
+   "tekst": "Waar ligt Tiel?"
+  },
+  "nl-waar-pl-tilburg": {
+   "bestand": "nl-waar-pl-tilburg.mp3",
+   "tekst": "Waar ligt Tilburg?"
+  },
+  "nl-waar-pl-uden": {
+   "bestand": "nl-waar-pl-uden.mp3",
+   "tekst": "Waar ligt Uden?"
+  },
+  "nl-waar-pl-uithoorn": {
+   "bestand": "nl-waar-pl-uithoorn.mp3",
+   "tekst": "Waar ligt Uithoorn?"
+  },
+  "nl-waar-pl-urk": {
+   "bestand": "nl-waar-pl-urk.mp3",
+   "tekst": "Waar ligt Urk?"
+  },
+  "nl-waar-pl-utrecht": {
+   "bestand": "nl-waar-pl-utrecht.mp3",
+   "tekst": "Waar ligt Utrecht?"
+  },
+  "nl-waar-pl-valkenswaard": {
+   "bestand": "nl-waar-pl-valkenswaard.mp3",
+   "tekst": "Waar ligt Valkenswaard?"
+  },
+  "nl-waar-pl-veendam": {
+   "bestand": "nl-waar-pl-veendam.mp3",
+   "tekst": "Waar ligt Veendam?"
+  },
+  "nl-waar-pl-veenendaal": {
+   "bestand": "nl-waar-pl-veenendaal.mp3",
+   "tekst": "Waar ligt Veenendaal?"
+  },
+  "nl-waar-pl-veghel": {
+   "bestand": "nl-waar-pl-veghel.mp3",
+   "tekst": "Waar ligt Veghel?"
+  },
+  "nl-waar-pl-veldhoven": {
+   "bestand": "nl-waar-pl-veldhoven.mp3",
+   "tekst": "Waar ligt Veldhoven?"
+  },
+  "nl-waar-pl-venlo": {
+   "bestand": "nl-waar-pl-venlo.mp3",
+   "tekst": "Waar ligt Venlo?"
+  },
+  "nl-waar-pl-venray": {
+   "bestand": "nl-waar-pl-venray.mp3",
+   "tekst": "Waar ligt Venray?"
+  },
+  "nl-waar-pl-vlaardingen": {
+   "bestand": "nl-waar-pl-vlaardingen.mp3",
+   "tekst": "Waar ligt Vlaardingen?"
+  },
+  "nl-waar-pl-vlissingen": {
+   "bestand": "nl-waar-pl-vlissingen.mp3",
+   "tekst": "Waar ligt Vlissingen?"
+  },
+  "nl-waar-pl-volendam": {
+   "bestand": "nl-waar-pl-volendam.mp3",
+   "tekst": "Waar ligt Volendam?"
+  },
+  "nl-waar-pl-voorburg": {
+   "bestand": "nl-waar-pl-voorburg.mp3",
+   "tekst": "Waar ligt Voorburg?"
+  },
+  "nl-waar-pl-voorschoten": {
+   "bestand": "nl-waar-pl-voorschoten.mp3",
+   "tekst": "Waar ligt Voorschoten?"
+  },
+  "nl-waar-pl-vught": {
+   "bestand": "nl-waar-pl-vught.mp3",
+   "tekst": "Waar ligt Vught?"
+  },
+  "nl-waar-pl-waalwijk": {
+   "bestand": "nl-waar-pl-waalwijk.mp3",
+   "tekst": "Waar ligt Waalwijk?"
+  },
+  "nl-waar-pl-waddinxveen": {
+   "bestand": "nl-waar-pl-waddinxveen.mp3",
+   "tekst": "Waar ligt Waddinxveen?"
+  },
+  "nl-waar-pl-wageningen": {
+   "bestand": "nl-waar-pl-wageningen.mp3",
+   "tekst": "Waar ligt Wageningen?"
+  },
+  "nl-waar-pl-wassenaar": {
+   "bestand": "nl-waar-pl-wassenaar.mp3",
+   "tekst": "Waar ligt Wassenaar?"
+  },
+  "nl-waar-pl-weert": {
+   "bestand": "nl-waar-pl-weert.mp3",
+   "tekst": "Waar ligt Weert?"
+  },
+  "nl-waar-pl-weesp": {
+   "bestand": "nl-waar-pl-weesp.mp3",
+   "tekst": "Waar ligt Weesp?"
+  },
+  "nl-waar-pl-wijchen": {
+   "bestand": "nl-waar-pl-wijchen.mp3",
+   "tekst": "Waar ligt Wijchen?"
+  },
+  "nl-waar-pl-winterswijk": {
+   "bestand": "nl-waar-pl-winterswijk.mp3",
+   "tekst": "Waar ligt Winterswijk?"
+  },
+  "nl-waar-pl-woerden": {
+   "bestand": "nl-waar-pl-woerden.mp3",
+   "tekst": "Waar ligt Woerden?"
+  },
+  "nl-waar-pl-zaandam": {
+   "bestand": "nl-waar-pl-zaandam.mp3",
+   "tekst": "Waar ligt Zaandam?"
+  },
+  "nl-waar-pl-zeewolde": {
+   "bestand": "nl-waar-pl-zeewolde.mp3",
+   "tekst": "Waar ligt Zeewolde?"
+  },
+  "nl-waar-pl-zeist": {
+   "bestand": "nl-waar-pl-zeist.mp3",
+   "tekst": "Waar ligt Zeist?"
+  },
+  "nl-waar-pl-zevenaar": {
+   "bestand": "nl-waar-pl-zevenaar.mp3",
+   "tekst": "Waar ligt Zevenaar?"
+  },
+  "nl-waar-pl-zoetermeer": {
+   "bestand": "nl-waar-pl-zoetermeer.mp3",
+   "tekst": "Waar ligt Zoetermeer?"
+  },
+  "nl-waar-pl-zutphen": {
+   "bestand": "nl-waar-pl-zutphen.mp3",
+   "tekst": "Waar ligt Zutphen?"
+  },
+  "nl-waar-pl-zwijndrecht": {
+   "bestand": "nl-waar-pl-zwijndrecht.mp3",
+   "tekst": "Waar ligt Zwijndrecht?"
+  },
+  "nl-waar-pl-zwolle": {
+   "bestand": "nl-waar-pl-zwolle.mp3",
+   "tekst": "Waar ligt Zwolle?"
+  },
+  "nl-waar-pv-drenthe": {
+   "bestand": "nl-waar-pv-drenthe.mp3",
+   "tekst": "Waar ligt Drenthe?"
+  },
+  "nl-waar-pv-flevoland": {
+   "bestand": "nl-waar-pv-flevoland.mp3",
+   "tekst": "Waar ligt Flevoland?"
+  },
+  "nl-waar-pv-friesland": {
+   "bestand": "nl-waar-pv-friesland.mp3",
+   "tekst": "Waar ligt Friesland?"
+  },
+  "nl-waar-pv-gelderland": {
+   "bestand": "nl-waar-pv-gelderland.mp3",
+   "tekst": "Waar ligt Gelderland?"
+  },
+  "nl-waar-pv-groningen": {
+   "bestand": "nl-waar-pv-groningen.mp3",
+   "tekst": "Waar ligt Groningen?"
+  },
+  "nl-waar-pv-limburg": {
+   "bestand": "nl-waar-pv-limburg.mp3",
+   "tekst": "Waar ligt Limburg?"
+  },
+  "nl-waar-pv-noord-brabant": {
+   "bestand": "nl-waar-pv-noord-brabant.mp3",
+   "tekst": "Waar ligt Noord-Brabant?"
+  },
+  "nl-waar-pv-noord-holland": {
+   "bestand": "nl-waar-pv-noord-holland.mp3",
+   "tekst": "Waar ligt Noord-Holland?"
+  },
+  "nl-waar-pv-overijssel": {
+   "bestand": "nl-waar-pv-overijssel.mp3",
+   "tekst": "Waar ligt Overijssel?"
+  },
+  "nl-waar-pv-utrecht": {
+   "bestand": "nl-waar-pv-utrecht.mp3",
+   "tekst": "Waar ligt Utrecht?"
+  },
+  "nl-waar-pv-zeeland": {
+   "bestand": "nl-waar-pv-zeeland.mp3",
+   "tekst": "Waar ligt Zeeland?"
+  },
+  "nl-waar-pv-zuid-holland": {
+   "bestand": "nl-waar-pv-zuid-holland.mp3",
+   "tekst": "Waar ligt Zuid-Holland?"
+  },
+  "nl-waar-st-achterhoek": {
+   "bestand": "nl-waar-st-achterhoek.mp3",
+   "tekst": "Waar ligt de Achterhoek?"
+  },
+  "nl-waar-st-alblasserwaard": {
+   "bestand": "nl-waar-st-alblasserwaard.mp3",
+   "tekst": "Waar ligt de Alblasserwaard?"
+  },
+  "nl-waar-st-betuwe": {
+   "bestand": "nl-waar-st-betuwe.mp3",
+   "tekst": "Waar ligt de Betuwe?"
+  },
+  "nl-waar-st-bollenstreek": {
+   "bestand": "nl-waar-st-bollenstreek.mp3",
+   "tekst": "Waar ligt de Bollenstreek?"
+  },
+  "nl-waar-st-bommelerwaard": {
+   "bestand": "nl-waar-st-bommelerwaard.mp3",
+   "tekst": "Waar ligt de Bommelerwaard?"
+  },
+  "nl-waar-st-gooi": {
+   "bestand": "nl-waar-st-gooi.mp3",
+   "tekst": "Waar ligt het Gooi?"
+  },
+  "nl-waar-st-haarlemmermeer": {
+   "bestand": "nl-waar-st-haarlemmermeer.mp3",
+   "tekst": "Waar ligt de Haarlemmermeer?"
+  },
+  "nl-waar-st-hogeland": {
+   "bestand": "nl-waar-st-hogeland.mp3",
+   "tekst": "Waar ligt het Hogeland?"
+  },
+  "nl-waar-st-kempen": {
+   "bestand": "nl-waar-st-kempen.mp3",
+   "tekst": "Waar ligt de Kempen?"
+  },
+  "nl-waar-st-kennemerland": {
+   "bestand": "nl-waar-st-kennemerland.mp3",
+   "tekst": "Waar ligt Kennemerland?"
+  },
+  "nl-waar-st-kop-van-noord-holland": {
+   "bestand": "nl-waar-st-kop-van-noord-holland.mp3",
+   "tekst": "Waar ligt de Kop van Noord-Holland?"
+  },
+  "nl-waar-st-krimpenerwaard": {
+   "bestand": "nl-waar-st-krimpenerwaard.mp3",
+   "tekst": "Waar ligt de Krimpenerwaard?"
+  },
+  "nl-waar-st-land-van-cuijk": {
+   "bestand": "nl-waar-st-land-van-cuijk.mp3",
+   "tekst": "Waar ligt het Land van Cuijk?"
+  },
+  "nl-waar-st-maas-en-waal": {
+   "bestand": "nl-waar-st-maas-en-waal.mp3",
+   "tekst": "Waar ligt het Land van Maas en Waal?"
+  },
+  "nl-waar-st-noordoostpolder": {
+   "bestand": "nl-waar-st-noordoostpolder.mp3",
+   "tekst": "Waar ligt de Noordoostpolder?"
+  },
+  "nl-waar-st-oldambt": {
+   "bestand": "nl-waar-st-oldambt.mp3",
+   "tekst": "Waar ligt het Oldambt?"
+  },
+  "nl-waar-st-salland": {
+   "bestand": "nl-waar-st-salland.mp3",
+   "tekst": "Waar ligt Salland?"
+  },
+  "nl-waar-st-twente": {
+   "bestand": "nl-waar-st-twente.mp3",
+   "tekst": "Waar ligt Twente?"
+  },
+  "nl-waar-st-veluwe": {
+   "bestand": "nl-waar-st-veluwe.mp3",
+   "tekst": "Waar ligt de Veluwe?"
+  },
+  "nl-waar-st-vijfheerenlanden": {
+   "bestand": "nl-waar-st-vijfheerenlanden.mp3",
+   "tekst": "Waar ligt de Vijfheerenlanden?"
+  },
+  "nl-waar-st-west-friesland": {
+   "bestand": "nl-waar-st-west-friesland.mp3",
+   "tekst": "Waar ligt West-Friesland?"
+  },
+  "nl-waar-st-westerkwartier": {
+   "bestand": "nl-waar-st-westerkwartier.mp3",
+   "tekst": "Waar ligt het Westerkwartier?"
+  },
+  "nl-waar-st-westerwolde": {
+   "bestand": "nl-waar-st-westerwolde.mp3",
+   "tekst": "Waar ligt Westerwolde?"
+  },
+  "nl-waar-st-westland": {
+   "bestand": "nl-waar-st-westland.mp3",
+   "tekst": "Waar ligt het Westland?"
+  },
+  "nl-waar-st-zaanstreek": {
+   "bestand": "nl-waar-st-zaanstreek.mp3",
+   "tekst": "Waar ligt de Zaanstreek?"
+  },
+  "nl-waar-st-zeeuws-vlaanderen": {
+   "bestand": "nl-waar-st-zeeuws-vlaanderen.mp3",
+   "tekst": "Waar ligt Zeeuws-Vlaanderen?"
+  },
+  "nl-waar-st-zuid-limburg": {
+   "bestand": "nl-waar-st-zuid-limburg.mp3",
+   "tekst": "Waar ligt Zuid-Limburg?"
+  },
+  "nl-waar-wa-alkmaardermeer": {
+   "bestand": "nl-waar-wa-alkmaardermeer.mp3",
+   "tekst": "Waar ligt het Alkmaardermeer?"
+  },
+  "nl-waar-wa-brielse-meer": {
+   "bestand": "nl-waar-wa-brielse-meer.mp3",
+   "tekst": "Waar ligt het Brielse Meer?"
+  },
+  "nl-waar-wa-eems-dollard": {
+   "bestand": "nl-waar-wa-eems-dollard.mp3",
+   "tekst": "Waar ligt de Eems-Dollard?"
+  },
+  "nl-waar-wa-grevelingenmeer": {
+   "bestand": "nl-waar-wa-grevelingenmeer.mp3",
+   "tekst": "Waar ligt het Grevelingenmeer?"
+  },
+  "nl-waar-wa-haringvliet": {
+   "bestand": "nl-waar-wa-haringvliet.mp3",
+   "tekst": "Waar ligt het Haringvliet?"
+  },
+  "nl-waar-wa-ijsselmeer": {
+   "bestand": "nl-waar-wa-ijsselmeer.mp3",
+   "tekst": "Waar ligt het IJsselmeer?"
+  },
+  "nl-waar-wa-kagerplassen": {
+   "bestand": "nl-waar-wa-kagerplassen.mp3",
+   "tekst": "Waar ligt de Kagerplassen?"
+  },
+  "nl-waar-wa-ketelmeer": {
+   "bestand": "nl-waar-wa-ketelmeer.mp3",
+   "tekst": "Waar ligt het Ketelmeer?"
+  },
+  "nl-waar-wa-lauwersmeer": {
+   "bestand": "nl-waar-wa-lauwersmeer.mp3",
+   "tekst": "Waar ligt het Lauwersmeer?"
+  },
+  "nl-waar-wa-loosdrechtse-plassen": {
+   "bestand": "nl-waar-wa-loosdrechtse-plassen.mp3",
+   "tekst": "Waar ligt de Loosdrechtse Plassen?"
+  },
+  "nl-waar-wa-markermeer": {
+   "bestand": "nl-waar-wa-markermeer.mp3",
+   "tekst": "Waar ligt het Markermeer?"
+  },
+  "nl-waar-wa-nieuwkoopse-plassen": {
+   "bestand": "nl-waar-wa-nieuwkoopse-plassen.mp3",
+   "tekst": "Waar ligt de Nieuwkoopse Plassen?"
+  },
+  "nl-waar-wa-noordzee": {
+   "bestand": "nl-waar-wa-noordzee.mp3",
+   "tekst": "Waar ligt de Noordzee?"
+  },
+  "nl-waar-wa-oldambtmeer": {
+   "bestand": "nl-waar-wa-oldambtmeer.mp3",
+   "tekst": "Waar ligt het Oldambtmeer?"
+  },
+  "nl-waar-wa-oosterschelde": {
+   "bestand": "nl-waar-wa-oosterschelde.mp3",
+   "tekst": "Waar ligt de Oosterschelde?"
+  },
+  "nl-waar-wa-paterswoldsemeer": {
+   "bestand": "nl-waar-wa-paterswoldsemeer.mp3",
+   "tekst": "Waar ligt het Paterswoldsemeer?"
+  },
+  "nl-waar-wa-randmeren": {
+   "bestand": "nl-waar-wa-randmeren.mp3",
+   "tekst": "Waar ligt de Randmeren?"
+  },
+  "nl-waar-wa-reeuwijkse-plassen": {
+   "bestand": "nl-waar-wa-reeuwijkse-plassen.mp3",
+   "tekst": "Waar ligt de Reeuwijkse Plassen?"
+  },
+  "nl-waar-wa-schildmeer": {
+   "bestand": "nl-waar-wa-schildmeer.mp3",
+   "tekst": "Waar ligt het Schildmeer?"
+  },
+  "nl-waar-wa-veerse-meer": {
+   "bestand": "nl-waar-wa-veerse-meer.mp3",
+   "tekst": "Waar ligt het Veerse Meer?"
+  },
+  "nl-waar-wa-vinkeveense-plassen": {
+   "bestand": "nl-waar-wa-vinkeveense-plassen.mp3",
+   "tekst": "Waar ligt de Vinkeveense Plassen?"
+  },
+  "nl-waar-wa-volkerak": {
+   "bestand": "nl-waar-wa-volkerak.mp3",
+   "tekst": "Waar ligt het Volkerak?"
+  },
+  "nl-waar-wa-waddenzee": {
+   "bestand": "nl-waar-wa-waddenzee.mp3",
+   "tekst": "Waar ligt de Waddenzee?"
+  },
+  "nl-waar-wa-westeinderplassen": {
+   "bestand": "nl-waar-wa-westeinderplassen.mp3",
+   "tekst": "Waar ligt de Westeinderplassen?"
+  },
+  "nl-waar-wa-westerschelde": {
+   "bestand": "nl-waar-wa-westerschelde.mp3",
+   "tekst": "Waar ligt de Westerschelde?"
+  },
+  "nl-waar-wa-zoommeer": {
+   "bestand": "nl-waar-wa-zoommeer.mp3",
+   "tekst": "Waar ligt het Zoommeer?"
+  },
+  "nl-waar-wa-zuidlaardermeer": {
+   "bestand": "nl-waar-wa-zuidlaardermeer.mp3",
+   "tekst": "Waar ligt het Zuidlaardermeer?"
+  },
+  "nl-waar-wa-zwarte-meer": {
+   "bestand": "nl-waar-wa-zwarte-meer.mp3",
+   "tekst": "Waar ligt het Zwarte Meer?"
+  },
   "passen-1": {
    "bestand": "passen-1.mp3",
    "tekst": "Past goed!"
@@ -914,6 +3062,58 @@
   "wiebel-magisch-bos-plus-tientallen": {
    "bestand": "wiebel-magisch-bos-plus-tientallen.mp3",
    "tekst": "Psst, ik ben Hoedje! Mijn hoedje gaat nooit af."
+  },
+  "wiebel-nl-drenthe": {
+   "bestand": "wiebel-nl-drenthe.mp3",
+   "tekst": "Hallo, ik ben Keitje! Ik fiets van hunebed naar hunebed."
+  },
+  "wiebel-nl-flevoland": {
+   "bestand": "wiebel-nl-flevoland.mp3",
+   "tekst": "Hoi, ik ben Poldertje! Waar ik woon, was vroeger zee."
+  },
+  "wiebel-nl-friesland": {
+   "bestand": "wiebel-nl-friesland.mp3",
+   "tekst": "Hoi, ik ben Elfje! Ik schaats het liefst langs de elf Friese steden."
+  },
+  "wiebel-nl-gelderland": {
+   "bestand": "wiebel-nl-gelderland.mp3",
+   "tekst": "Hallo, ik ben Eikeltje! Op de Veluwe zoek ik wilde zwijnen."
+  },
+  "wiebel-nl-groningen": {
+   "bestand": "wiebel-nl-groningen.mp3",
+   "tekst": "Hallo, ik ben Wadje! Bij eb loop ik over de bodem van de Waddenzee."
+  },
+  "wiebel-nl-limburg": {
+   "bestand": "wiebel-nl-limburg.mp3",
+   "tekst": "Hallo, ik ben Vlaaitje! Op de Vaalserberg sta ik in drie landen tegelijk."
+  },
+  "wiebel-nl-nederland": {
+   "bestand": "wiebel-nl-nederland.mp3",
+   "tekst": "Hoi, ik ben Tulpje! Ik ken alle provincies van Nederland."
+  },
+  "wiebel-nl-noord-brabant": {
+   "bestand": "wiebel-nl-noord-brabant.mp3",
+   "tekst": "Hoi, ik ben Confetti! Met carnaval dans ik de hele dag."
+  },
+  "wiebel-nl-noord-holland": {
+   "bestand": "wiebel-nl-noord-holland.mp3",
+   "tekst": "Hallo, ik ben Molentje! Ik kijk graag naar de molens in de Zaanstreek."
+  },
+  "wiebel-nl-overijssel": {
+   "bestand": "wiebel-nl-overijssel.mp3",
+   "tekst": "Psst, ik ben Fluistertje! Ik vaar heel zachtjes door Giethoorn."
+  },
+  "wiebel-nl-utrecht": {
+   "bestand": "wiebel-nl-utrecht.mp3",
+   "tekst": "Hoi, ik ben Torentje! Ik klim zo naar de top van de Domtoren."
+  },
+  "wiebel-nl-zeeland": {
+   "bestand": "wiebel-nl-zeeland.mp3",
+   "tekst": "Hallo, ik ben Bolusje! Ik eet het liefst een plakkerige Zeeuwse bolus."
+  },
+  "wiebel-nl-zuid-holland": {
+   "bestand": "wiebel-nl-zuid-holland.mp3",
+   "tekst": "Hoi, ik ben Kraantje! Ik tel de grote schepen in de haven van Rotterdam."
   },
   "wiebel-onderwater-baas-delen": {
    "bestand": "wiebel-onderwater-baas-delen.mp3",

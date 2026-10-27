@@ -1,5 +1,7 @@
 // Werelden, levels en startniveaus. Thema's bepalen alleen hoe dit eruitziet.
 
+import { nederlandLevel } from './nederland/wereld.js';
+
 export const VAARDIGHEDEN = ['plus', 'min', 'keer', 'delen', 'klok'];
 
 // Wat je in een wereld oefent; staat in elk thema bij de wereldnaam.
@@ -63,7 +65,9 @@ export const STARTNIVEAUS = {
   gevorderd: { label: 'Gevorderd', uitleg: 'Tot 1000, alle tafels, delen, op de minuut en 24-uursklok', niveaus: { plus: 2, min: 2, keer: 1, delen: 1, klok: 1 } },
 };
 
+// Een id met nl: is een onderdeel van de wereld Nederland (nederland/wereld.js).
 export function levelVan(id) {
+  if (id.startsWith('nl:')) return nederlandLevel(id);
   return LEVELS[id.split(':')[0]].find((l) => l.id === id);
 }
 

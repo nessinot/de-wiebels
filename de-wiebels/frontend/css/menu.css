@@ -29,8 +29,9 @@
 .wereld-0 { left: 0; top: 0; }
 .wereld-1 { left: 327px; top: 0; }
 .wereld-2 { left: 654px; top: 0; }
-.wereld-3 { left: 163px; top: 350px; }
-.wereld-4 { left: 490px; top: 350px; }
+.wereld-3 { left: 0; top: 350px; }
+.wereld-4 { left: 327px; top: 350px; }
+.wereld-5 { left: 654px; top: 350px; }
 .aanpassen-knop { position: absolute; left: 96px; top: 772px; width: 720px; height: 100px; padding: 0; }
 .hoofdmenu .onderbalk { bottom: 60px; gap: 24px; }
 /* Nieuwe Wiebels: een geel bolletje met het aantal, en af en toe een klein wiebeltje (alleen transform). */
@@ -51,6 +52,7 @@
 }
 /* Versiering op vrije plekken, niet achter het venster of de knoppen */
 .hoofdmenu .decor-0 { left: 1000px; top: 70px; }
+.hoofdmenu .decor-2 { left: 150px; top: 930px; }
 .hoofdmenu .decor-3 { left: 1720px; top: 890px; }
 
 /* Vliegen naar een wereld en inzoomen */

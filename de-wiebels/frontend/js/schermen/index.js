@@ -11,5 +11,7 @@ import { winkel } from './winkel.js';
 import { aanpassen } from './aanpassen.js';
 import { tijdrace, tijdraceKeuze } from './tijdrace.js';
 import { themakeuze } from './themakeuze.js';
+import { nederland } from './nederland.js';
+import { nederlandProvincie } from './nederland-provincie.js';
 
-export const schermen = { profielkeuze, eersteStart, intro, wereldkaart, levelkeuze, ronde, resultaat, eindbaas, collectie, winkel, aanpassen, tijdrace, tijdraceKeuze, themakeuze };
+export const schermen = { profielkeuze, eersteStart, intro, wereldkaart, levelkeuze, ronde, resultaat, eindbaas, collectie, winkel, aanpassen, tijdrace, tijdraceKeuze, themakeuze, nederland, nederlandProvincie };

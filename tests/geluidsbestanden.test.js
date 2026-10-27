@@ -20,7 +20,7 @@ test('stemBestand geeft null zonder opname of als de tekst is veranderd', () => 
 
 test('muziek normaal in de menu\'s, zacht in de sommen en het intro', () => {
   const pad = 'geluid/muziek/ruimte.mp3';
-  for (const scherm of ['wereldkaart', 'levelkeuze', 'collectie', 'winkel', 'aanpassen', 'themakeuze', 'tijdraceKeuze']) {
+  for (const scherm of ['wereldkaart', 'levelkeuze', 'collectie', 'winkel', 'aanpassen', 'themakeuze', 'tijdraceKeuze', 'nederland', 'nederlandProvincie']) {
     assert.deepEqual(muziekKeuze(MUZIEK, scherm, 'ruimte', true), { pad, volume: MUZIEK_NORMAAL }, scherm);
   }
   for (const scherm of ['ronde', 'eindbaas', 'tijdrace', 'resultaat', 'intro']) {

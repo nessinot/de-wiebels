@@ -23,6 +23,8 @@ export const MUZIEK_VOLUME = {
   aanpassen: MUZIEK_NORMAAL,
   themakeuze: MUZIEK_NORMAAL,
   tijdraceKeuze: MUZIEK_NORMAAL,
+  nederland: MUZIEK_NORMAAL,
+  nederlandProvincie: MUZIEK_NORMAAL,
   ronde: MUZIEK_ZACHT,
   eindbaas: MUZIEK_ZACHT,
   tijdrace: MUZIEK_ZACHT,

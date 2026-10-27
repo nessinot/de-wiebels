@@ -5,10 +5,11 @@
 
 import { esc, maakEl, opKlik } from '../dom.js';
 import {
-  HUISDIER_GRENZEN, gevangenBij, huisdierStadium, markeerGezien, nieuweWiebels, openingsZin, totVolgendStadium, vaardigheidVan, wiebelVoor,
+  ALLE_BELONINGEN, HUISDIER_GRENZEN, gevangenBij, huisdierStadium, markeerGezien, nieuweWiebels, openingsZin, totVolgendStadium, vaardigheidVan, wiebelVoor,
 } from '../beloningen.js';
 import { speel } from '../geluid.js';
-import { BELONINGEN } from '../levels.js';
+import { NEDERLAND } from '../nederland/wereld.js';
+import { GEVANGEN_ZIN } from '../nederland/wiebels.js';
 import { bewaar, staat } from '../opslag.js';
 import { rng } from '../scene.js';
 import { BALLON_HTML, maakBallon, maakSpreker } from '../spreekballon.js';
@@ -51,6 +52,9 @@ function lopersHtml(bevrijd, nieuw, t) {
   }).join('');
 }
 
+// De wereld van een Wiebel: uit het thema, of Nederland (in elk thema gelijk).
+const wereldVan = (t, v) => (v === 'nederland' ? NEDERLAND : t.werelden[v]);
+
 const rij = (label, waarde) => `<p class="wkaart-rij"><span>${label}:</span> ${esc(waarde)}</p>`;
 
 function bevrijdKaartHtml(w, wereld) {
@@ -78,7 +82,7 @@ function gevangenKaartHtml(w, wereld, plek, baas) {
     </div>
     <div class="wkaart-info">
       ${rij('🏠 Zit in', `${wereld.emoji} ${wereld.naam}`)}
-      ${plek.level ? rij('🎯 Level', plek.level.label) : rij('👑 Eindbaas', `${baas.emoji} ${baas.naam}`)}
+      ${plek.label ? rij('🎯 Level', plek.label) : plek.level ? rij('🎯 Level', plek.level.label) : rij('👑 Eindbaas', `${baas.emoji} ${baas.naam}`)}
       <div class="wkaart-knoppen">
         ${plek.open ? '<button class="knop knop-hoofd" data-focus data-actie="ga">Ga erheen →</button>' : ''}
         <button class="knop" data-focus data-actie="sluit">Klaar</button>
@@ -112,7 +116,7 @@ export const collectie = {
       const nog = totVolgendStadium(p.huisdier.xp);
       const vorige = HUISDIER_GRENZEN[stadium];
       const deel = nog === null ? 1 : (p.huisdier.xp - vorige) / (p.huisdier.xp - vorige + nog);
-      const bevrijd = p.verzameling.filter((id) => BELONINGEN.includes(id));
+      const bevrijd = p.verzameling.filter((id) => ALLE_BELONINGEN.includes(id));
       const nieuw = bevrijd.filter((id) => nieuwDitBezoek.has(id));
 
       el.innerHTML = `
@@ -121,7 +125,7 @@ export const collectie = {
           <button class="knop" data-focus data-actie="terug">← Terug</button>
           <h1>Bevrijde Wiebels</h1>
           <button class="knop" data-focus data-actie="feest" ${bevrijd.length ? '' : 'disabled'}>🎉 Feestje!</button>
-          <span class="teller">${bevrijd.length} / ${BELONINGEN.length}</span>
+          <span class="teller">${bevrijd.length} / ${ALLE_BELONINGEN.length}</span>
         </div>
         <div class="collectie-indeling">
           <div class="huisdier-paneel">
@@ -136,7 +140,7 @@ export const collectie = {
               ${bevrijd.length ? lopersHtml(bevrijd, nieuw, t) : '<p class="wei-leeg">Haal een level om je eerste Wiebel te bevrijden!</p>'}
             </div>
             <div class="wiebels">
-              ${BELONINGEN.map((id, i) => {
+              ${ALLE_BELONINGEN.map((id, i) => {
                 const vrij = p.verzameling.includes(id);
                 const w = wiebelVoor(id, t);
                 return `<button class="knop wiebeltje${vrij ? '' : ' gevangen'}" data-focus data-actie="kies" data-waarde="${id}" aria-label="${vrij ? esc(w.naam) : 'Gevangen Wiebel'}">
@@ -167,11 +171,12 @@ export const collectie = {
       ballon.stop();
       k.classList.toggle('gevangen-kaart', !vrij);
       if (vrij) {
-        k.innerHTML = bevrijdKaartHtml(w, t.werelden[v]);
+        k.innerHTML = bevrijdKaartHtml(w, wereldVan(t, v));
       } else {
         const plek = gevangenBij(p, id);
-        k.innerHTML = gevangenKaartHtml(w, t.werelden[v], plek, t.eindbazen[v]);
-        ballon.zeg(!plek.open ? 'gevangenDicht' : plek.level ? 'gevangenOpen' : 'gevangenBaas');
+        k.innerHTML = gevangenKaartHtml(w, wereldVan(t, v), plek, t.eindbazen[v]);
+        if (plek.vaardigheid === 'nederland') ballon.praat(GEVANGEN_ZIN.tekst, GEVANGEN_ZIN.id);
+        else ballon.zeg(!plek.open ? 'gevangenDicht' : plek.level ? 'gevangenOpen' : 'gevangenBaas');
       }
       k.hidden = false;
       kaart = { id, el: k, tegel, spreker: vrij ? maakSpreker(k, true) : null };
@@ -199,7 +204,10 @@ export const collectie = {
       const plek = gevangenBij(staat.profiel, kaart.id);
       naTerug = kaart.id;
       sluitKaart();
-      if (plek.level) toon('ronde', { levelId: plek.level.id });
+      if (plek.vaardigheid === 'nederland') {
+        if (plek.provincie) toon('nederlandProvincie', { provincie: plek.provincie });
+        else toon('nederland', {});
+      } else if (plek.level) toon('ronde', { levelId: plek.level.id });
       else toon('eindbaas', { vaardigheid: plek.vaardigheid });
     }
 

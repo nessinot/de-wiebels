@@ -1,7 +1,7 @@
 name: "De Wiebels"
-version: "0.10.1"
+version: "0.11.0"
 slug: "de-wiebels"
-description: "Oefen rekenen en klokkijken op de tv, met de afstandsbediening."
+description: "Oefen rekenen, klokkijken en topografie op de tv, met de afstandsbediening."
 url: "https://github.com/nessinot/de-wiebels"
 arch:
   - aarch64

@@ -175,3 +175,12 @@ input:not([type]), select {
   color: var(--achtergrond);
   transform: translateX(-50%);
 }
+
+/* Nederland: per provincie een uitklaplijst met een vinkje per plaats, streek, eiland en water. */
+.groep { border-top: 1px solid var(--rand); padding: 10px 0; }
+.groep summary { font-size: 16px; }
+.groep summary small { margin-left: auto; color: var(--zacht); font-weight: normal; }
+.groep .knoppen { margin: 0 0 4px; }
+.vinkjes { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0 16px; }
+.vinkjes .schakel { margin: 6px 0; }
+.vinkjes small { color: var(--zacht); }

@@ -3,8 +3,9 @@
 Gebruik (vanuit de root van de repo):
     ELEVENLABS_API_KEY=... python tools/maak-stemmen.py
 
-- Stem: leest alle zinnen uit de-wiebels/frontend/js/zinnen.js en de zin van elke Wiebel uit de
-  themabestanden (de-wiebels/frontend/js/themas/*.js), en maakt per zin een mp3 in
+- Stem: leest alle zinnen uit de-wiebels/frontend/js/zinnen.js, de zin van elke Wiebel uit de
+  themabestanden (de-wiebels/frontend/js/themas/*.js) en de zinnen van Nederland
+  (de-wiebels/frontend/js/nederland/*.js), en maakt per zin een mp3 in
   de-wiebels/frontend/geluid/stem/. Voor elke zin binnen een tekst komt de tag [excited], alleen
   bij het versturen (zinnen.js en het manifest blijven zonder tag). Alleen ontbrekende of gewijzigde
   zinnen worden opnieuw gemaakt; een andere stem, model of tag maakt alles opnieuw. Zinnen die niet
@@ -51,6 +52,7 @@ ROOT = Path(__file__).resolve().parent.parent
 FRONTEND = ROOT / "de-wiebels" / "frontend"
 ZINNEN_JS = FRONTEND / "js" / "zinnen.js"
 THEMAS_MAP = FRONTEND / "js" / "themas"
+NEDERLAND_MAP = FRONTEND / "js" / "nederland"
 STEM_MAP = FRONTEND / "geluid" / "stem"
 MUZIEK_MAP = FRONTEND / "geluid" / "muziek"
 API = "https://api.elevenlabs.io"
@@ -80,8 +82,8 @@ def andere_stem(manifest):
 
 
 def lees_alle_zinnen():
-    """De zinnen uit zinnen.js en uit de themabestanden samen; een id mag maar één keer voorkomen."""
-    bronnen = [ZINNEN_JS, *sorted(THEMAS_MAP.glob("*.js"))]
+    """De zinnen uit zinnen.js, de themabestanden en Nederland samen; een id mag maar één keer voorkomen."""
+    bronnen = [ZINNEN_JS, *sorted(THEMAS_MAP.glob("*.js")), *sorted(NEDERLAND_MAP.glob("*.js"))]
     return lees_zinnen("\n".join(pad.read_text("utf-8") for pad in bronnen))
 
 
