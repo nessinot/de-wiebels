@@ -18,7 +18,8 @@ Werkwijze:
 - Kaart: de grenzen van alle gemeenten worden in stukken geknipt waar de buurgemeente verandert.
   Elk stuk wordt één keer vereenvoudigd (Douglas-Peucker), zodat buren precies dezelfde grens
   houden. Provincies, streken en eilanden zijn groepen gemeenten; hun rand bestaat uit dezelfde
-  stukken. Water krijgt op dezelfde manier een eigen netwerk van grenzen.
+  stukken. Een los stuk van een gemeente kan een eigen vlak worden (LOSSE_STUKKEN). Water krijgt
+  op dezelfde manier een eigen netwerk van grenzen.
 - Coördinaten: RD (EPSG:28992), 1 eenheid = 50 m, x naar rechts en y naar beneden; paden met
   relatieve commando's.
 - Plaatsen: een plaats is een BAG-woonplaats. Het inwonertal telt alleen de buurten waarvan het
@@ -130,6 +131,7 @@ GEBIEDEN = [
     ("ei-zuid-beveland", "Zuid-Beveland", "Zuid-Beveland", "eiland", ["Borsele", "Goes", "Kapelle", "Reimerswaal"]),
     ("ei-schouwen-duiveland", "Schouwen-Duiveland", "Schouwen-Duiveland", "eiland", ["Schouwen-Duiveland"]),
     ("ei-tholen", "Tholen", "Tholen", "eiland", ["Tholen"]),
+    ("ei-neeltje-jans", "Neeltje Jans", "Neeltje Jans", "eiland", ["Neeltje Jans"]),
     ("st-zeeuws-vlaanderen", "Zeeuws-Vlaanderen", "Zeeuws-Vlaanderen", "streek", ("corop", "Zeeuwsch-Vlaanderen")),
     ("st-kempen", "Kempen", "de Kempen", "streek", ["Bergeijk", "Bladel", "Eersel", "Oirschot", "Reusel-De Mierden"]),
     ("st-land-van-cuijk", "Land van Cuijk", "het Land van Cuijk", "streek", ["Land van Cuijk"]),
@@ -170,7 +172,9 @@ WATER = [
 ]
 
 # Plaatsen die er altijd bij horen, ook onder de grens.
-EXTRA_PLAATSEN = ["Urk"]
+EXTRA_PLAATSEN = ["Urk", "Breskens", "Domburg", "Hulst", "Sluis", "Veere", "Yerseke", "Zierikzee"]
+# Losse stukken van een gemeente die een eigen vlak worden: naam: (gemeente, RD-punt in het stuk).
+LOSSE_STUKKEN = {"Neeltje Jans": ("Veere", (38_200, 406_000))}
 # Woonplaatsen die een wijk zijn van een stad in dezelfde gemeente: hun inwoners tellen bij die stad.
 SAMENVOEGEN = {"Hoogvliet Rotterdam": "Rotterdam", "Vleuten": "Utrecht", "De Meern": "Utrecht", "Zwaag": "Hoorn"}
 # Naam in het spel als die anders is dan de BAG-naam.
@@ -471,6 +475,16 @@ def afstand_tot(x, y, polys):
     return beste
 
 
+def splits_af(gemeenten, punt, stukken):
+    """Maakt van het losse stuk van een gemeente waarin een vast punt ligt een eigen vlak, met dat punt."""
+    for naam, (gemeente, (x, y)) in stukken.items():
+        (stuk,) = [p for p in gemeenten[gemeente] if in_vlakken(x, y, [p])]
+        gemeenten[gemeente] = [p for p in gemeenten[gemeente] if p is not stuk]
+        assert in_vlakken(*punt[gemeente], gemeenten[gemeente]), naam
+        gemeenten[naam] = [stuk]
+        punt[naam] = (x, y)
+
+
 def kader(polys):
     xs = [p[0] for poly in polys for p in poly[0]]
     ys = [p[1] for poly in polys for p in poly[0]]
@@ -688,6 +702,7 @@ def main():
     punt = {}
     for f in haal_wfs(dl, "gemeentepunt"):
         punt.setdefault(f["properties"]["statnaam"], f["geometry"]["coordinates"][:2])
+    splits_af(gemeenten, punt, LOSSE_STUKKEN)
     assert set(punt) == set(gemeenten)
 
     def leden_van(vlakken):

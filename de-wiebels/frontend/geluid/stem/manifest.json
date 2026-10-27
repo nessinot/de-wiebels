@@ -287,6 +287,10 @@
    "bestand": "nl-dat-ei-hoeksche-waard.mp3",
    "tekst": "Dat is de Hoeksche Waard."
   },
+  "nl-dat-ei-neeltje-jans": {
+   "bestand": "nl-dat-ei-neeltje-jans.mp3",
+   "tekst": "Dat is Neeltje Jans."
+  },
   "nl-dat-ei-noord-beveland": {
    "bestand": "nl-dat-ei-noord-beveland.mp3",
    "tekst": "Dat is Noord-Beveland."
@@ -423,6 +427,10 @@
    "bestand": "nl-dat-pl-breda.mp3",
    "tekst": "Dat is Breda."
   },
+  "nl-dat-pl-breskens": {
+   "bestand": "nl-dat-pl-breskens.mp3",
+   "tekst": "Dat is Breskens."
+  },
   "nl-dat-pl-brunssum": {
    "bestand": "nl-dat-pl-brunssum.mp3",
    "tekst": "Dat is Brunssum."
@@ -470,6 +478,10 @@
   "nl-dat-pl-doetinchem": {
    "bestand": "nl-dat-pl-doetinchem.mp3",
    "tekst": "Dat is Doetinchem."
+  },
+  "nl-dat-pl-domburg": {
+   "bestand": "nl-dat-pl-domburg.mp3",
+   "tekst": "Dat is Domburg."
   },
   "nl-dat-pl-dongen": {
    "bestand": "nl-dat-pl-dongen.mp3",
@@ -630,6 +642,10 @@
   "nl-dat-pl-huizen": {
    "bestand": "nl-dat-pl-huizen.mp3",
    "tekst": "Dat is Huizen."
+  },
+  "nl-dat-pl-hulst": {
+   "bestand": "nl-dat-pl-hulst.mp3",
+   "tekst": "Dat is Hulst."
   },
   "nl-dat-pl-ijmuiden": {
    "bestand": "nl-dat-pl-ijmuiden.mp3",
@@ -827,6 +843,10 @@
    "bestand": "nl-dat-pl-sliedrecht.mp3",
    "tekst": "Dat is Sliedrecht."
   },
+  "nl-dat-pl-sluis": {
+   "bestand": "nl-dat-pl-sluis.mp3",
+   "tekst": "Dat is Sluis."
+  },
   "nl-dat-pl-sneek": {
    "bestand": "nl-dat-pl-sneek.mp3",
    "tekst": "Dat is Sneek."
@@ -878,6 +898,10 @@
   "nl-dat-pl-veenendaal": {
    "bestand": "nl-dat-pl-veenendaal.mp3",
    "tekst": "Dat is Veenendaal."
+  },
+  "nl-dat-pl-veere": {
+   "bestand": "nl-dat-pl-veere.mp3",
+   "tekst": "Dat is Veere."
   },
   "nl-dat-pl-veghel": {
    "bestand": "nl-dat-pl-veghel.mp3",
@@ -955,6 +979,10 @@
    "bestand": "nl-dat-pl-woerden.mp3",
    "tekst": "Dat is Woerden."
   },
+  "nl-dat-pl-yerseke": {
+   "bestand": "nl-dat-pl-yerseke.mp3",
+   "tekst": "Dat is Yerseke."
+  },
   "nl-dat-pl-zaandam": {
    "bestand": "nl-dat-pl-zaandam.mp3",
    "tekst": "Dat is Zaandam."
@@ -970,6 +998,10 @@
   "nl-dat-pl-zevenaar": {
    "bestand": "nl-dat-pl-zevenaar.mp3",
    "tekst": "Dat is Zevenaar."
+  },
+  "nl-dat-pl-zierikzee": {
+   "bestand": "nl-dat-pl-zierikzee.mp3",
+   "tekst": "Dat is Zierikzee."
   },
   "nl-dat-pl-zoetermeer": {
    "bestand": "nl-dat-pl-zoetermeer.mp3",
@@ -1447,6 +1479,10 @@
    "bestand": "nl-waar-ei-hoeksche-waard.mp3",
    "tekst": "Waar ligt de Hoeksche Waard?"
   },
+  "nl-waar-ei-neeltje-jans": {
+   "bestand": "nl-waar-ei-neeltje-jans.mp3",
+   "tekst": "Waar ligt Neeltje Jans?"
+  },
   "nl-waar-ei-noord-beveland": {
    "bestand": "nl-waar-ei-noord-beveland.mp3",
    "tekst": "Waar ligt Noord-Beveland?"
@@ -1583,6 +1619,10 @@
    "bestand": "nl-waar-pl-breda.mp3",
    "tekst": "Waar ligt Breda?"
   },
+  "nl-waar-pl-breskens": {
+   "bestand": "nl-waar-pl-breskens.mp3",
+   "tekst": "Waar ligt Breskens?"
+  },
   "nl-waar-pl-brunssum": {
    "bestand": "nl-waar-pl-brunssum.mp3",
    "tekst": "Waar ligt Brunssum?"
@@ -1630,6 +1670,10 @@
   "nl-waar-pl-doetinchem": {
    "bestand": "nl-waar-pl-doetinchem.mp3",
    "tekst": "Waar ligt Doetinchem?"
+  },
+  "nl-waar-pl-domburg": {
+   "bestand": "nl-waar-pl-domburg.mp3",
+   "tekst": "Waar ligt Domburg?"
   },
   "nl-waar-pl-dongen": {
    "bestand": "nl-waar-pl-dongen.mp3",
@@ -1790,6 +1834,10 @@
   "nl-waar-pl-huizen": {
    "bestand": "nl-waar-pl-huizen.mp3",
    "tekst": "Waar ligt Huizen?"
+  },
+  "nl-waar-pl-hulst": {
+   "bestand": "nl-waar-pl-hulst.mp3",
+   "tekst": "Waar ligt Hulst?"
   },
   "nl-waar-pl-ijmuiden": {
    "bestand": "nl-waar-pl-ijmuiden.mp3",
@@ -1987,6 +2035,10 @@
    "bestand": "nl-waar-pl-sliedrecht.mp3",
    "tekst": "Waar ligt Sliedrecht?"
   },
+  "nl-waar-pl-sluis": {
+   "bestand": "nl-waar-pl-sluis.mp3",
+   "tekst": "Waar ligt Sluis?"
+  },
   "nl-waar-pl-sneek": {
    "bestand": "nl-waar-pl-sneek.mp3",
    "tekst": "Waar ligt Sneek?"
@@ -2038,6 +2090,10 @@
   "nl-waar-pl-veenendaal": {
    "bestand": "nl-waar-pl-veenendaal.mp3",
    "tekst": "Waar ligt Veenendaal?"
+  },
+  "nl-waar-pl-veere": {
+   "bestand": "nl-waar-pl-veere.mp3",
+   "tekst": "Waar ligt Veere?"
   },
   "nl-waar-pl-veghel": {
    "bestand": "nl-waar-pl-veghel.mp3",
@@ -2115,6 +2171,10 @@
    "bestand": "nl-waar-pl-woerden.mp3",
    "tekst": "Waar ligt Woerden?"
   },
+  "nl-waar-pl-yerseke": {
+   "bestand": "nl-waar-pl-yerseke.mp3",
+   "tekst": "Waar ligt Yerseke?"
+  },
   "nl-waar-pl-zaandam": {
    "bestand": "nl-waar-pl-zaandam.mp3",
    "tekst": "Waar ligt Zaandam?"
@@ -2130,6 +2190,10 @@
   "nl-waar-pl-zevenaar": {
    "bestand": "nl-waar-pl-zevenaar.mp3",
    "tekst": "Waar ligt Zevenaar?"
+  },
+  "nl-waar-pl-zierikzee": {
+   "bestand": "nl-waar-pl-zierikzee.mp3",
+   "tekst": "Waar ligt Zierikzee?"
   },
   "nl-waar-pl-zoetermeer": {
    "bestand": "nl-waar-pl-zoetermeer.mp3",

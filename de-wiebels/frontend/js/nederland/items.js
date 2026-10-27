@@ -1256,6 +1256,55 @@ export const ITEMS = [
     },
   },
   {
+    id: 'pl-zierikzee', naam: 'Zierikzee', noem: 'Zierikzee', soort: 'plaats', provincies: ['pv-zeeland'], stip: [832, 4269],
+    zinnen: {
+      waar: { id: 'nl-waar-pl-zierikzee', tekst: 'Waar ligt Zierikzee?' },
+      dat: { id: 'nl-dat-pl-zierikzee', tekst: 'Dat is Zierikzee.' },
+    },
+  },
+  {
+    id: 'pl-hulst', naam: 'Hulst', noem: 'Hulst', soort: 'plaats', provincies: ['pv-zeeland'], stip: [1014, 5086],
+    zinnen: {
+      waar: { id: 'nl-waar-pl-hulst', tekst: 'Waar ligt Hulst?' },
+      dat: { id: 'nl-dat-pl-hulst', tekst: 'Dat is Hulst.' },
+    },
+  },
+  {
+    id: 'pl-yerseke', naam: 'Yerseke', noem: 'Yerseke', soort: 'plaats', provincies: ['pv-zeeland'], stip: [1005, 4620],
+    zinnen: {
+      waar: { id: 'nl-waar-pl-yerseke', tekst: 'Waar ligt Yerseke?' },
+      dat: { id: 'nl-dat-pl-yerseke', tekst: 'Dat is Yerseke.' },
+    },
+  },
+  {
+    id: 'pl-breskens', naam: 'Breskens', noem: 'Breskens', soort: 'plaats', provincies: ['pv-zeeland'], stip: [322, 4824],
+    zinnen: {
+      waar: { id: 'nl-waar-pl-breskens', tekst: 'Waar ligt Breskens?' },
+      dat: { id: 'nl-dat-pl-breskens', tekst: 'Dat is Breskens.' },
+    },
+  },
+  {
+    id: 'pl-sluis', naam: 'Sluis', noem: 'Sluis', soort: 'plaats', provincies: ['pv-zeeland'], stip: [78, 5009],
+    zinnen: {
+      waar: { id: 'nl-waar-pl-sluis', tekst: 'Waar ligt Sluis?' },
+      dat: { id: 'nl-dat-pl-sluis', tekst: 'Dat is Sluis.' },
+    },
+  },
+  {
+    id: 'pl-domburg', naam: 'Domburg', noem: 'Domburg', soort: 'plaats', provincies: ['pv-zeeland'], stip: [251, 4450],
+    zinnen: {
+      waar: { id: 'nl-waar-pl-domburg', tekst: 'Waar ligt Domburg?' },
+      dat: { id: 'nl-dat-pl-domburg', tekst: 'Dat is Domburg.' },
+    },
+  },
+  {
+    id: 'pl-veere', naam: 'Veere', noem: 'Veere', soort: 'plaats', provincies: ['pv-zeeland'], stip: [474, 4497],
+    zinnen: {
+      waar: { id: 'nl-waar-pl-veere', tekst: 'Waar ligt Veere?' },
+      dat: { id: 'nl-dat-pl-veere', tekst: 'Dat is Veere.' },
+    },
+  },
+  {
     id: 'st-zeeuws-vlaanderen', naam: 'Zeeuws-Vlaanderen', noem: 'Zeeuws-Vlaanderen', soort: 'streek', provincies: ['pv-zeeland'], gebied: 'st-zeeuws-vlaanderen',
     zinnen: {
       waar: { id: 'nl-waar-st-zeeuws-vlaanderen', tekst: 'Waar ligt Zeeuws-Vlaanderen?' },
@@ -1295,6 +1344,13 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-ei-tholen', tekst: 'Waar ligt Tholen?' },
       dat: { id: 'nl-dat-ei-tholen', tekst: 'Dat is Tholen.' },
+    },
+  },
+  {
+    id: 'ei-neeltje-jans', naam: 'Neeltje Jans', noem: 'Neeltje Jans', soort: 'eiland', provincies: ['pv-zeeland'], gebied: 'ei-neeltje-jans',
+    zinnen: {
+      waar: { id: 'nl-waar-ei-neeltje-jans', tekst: 'Waar ligt Neeltje Jans?' },
+      dat: { id: 'nl-dat-ei-neeltje-jans', tekst: 'Dat is Neeltje Jans.' },
     },
   },
   {

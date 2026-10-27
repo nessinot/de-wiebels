@@ -64,6 +64,29 @@ class TopologieTest(unittest.TestCase):
         self.assertEqual(len(ringen), 1)
 
 
+class AfsplitsenTest(unittest.TestCase):
+    def test_los_stuk_wordt_een_eigen_vlak(self):
+        # Gemeente a heeft een los stuk rechts van b; dat stuk grenst aan b.
+        stuk = [[(20_000, 0), (30_000, 0), (30_000, 10_000), (20_000, 10_000)]]
+        gemeenten = {"a": [LINKS[0], stuk], "b": RECHTS}
+        punt = {"a": (5_000, 5_000), "b": (15_000, 5_000)}
+        mk.splits_af(gemeenten, punt, {"c": ("a", (25_000, 5_000))})
+        self.assertEqual(gemeenten["a"], LINKS)
+        self.assertEqual(gemeenten["c"], [stuk])
+        self.assertEqual(punt["c"], (25_000, 5_000))
+        kaart = mk.Kaart(0, 0, 30_000, 10_000)
+        groep = mk.netwerk(gemeenten, kaart)
+        (b,), (c,) = groep(["b"]), groep(["c"])
+        self.assertEqual(set(b) & set(c), {kaart.punt(20_000, 0), kaart.punt(20_000, 10_000)})
+        (samen,) = groep(["a", "b", "c"])
+        self.assertEqual(abs(mk.oppervlak(samen)) * mk.EENHEID ** 2, 300_000_000)
+
+    def test_punt_buiten_elk_stuk_faalt(self):
+        gemeenten, punt = {"a": LINKS}, {"a": (5_000, 5_000)}
+        with self.assertRaises(ValueError):
+            mk.splits_af(gemeenten, punt, {"c": ("a", (50_000, 5_000))})
+
+
 class OmzettenTest(unittest.TestCase):
     def test_rd_uit_etrs(self):
         # Labelpunten van twee provincies uit de PDOK-dienst, opgevraagd in EPSG:4258 en EPSG:28992.
