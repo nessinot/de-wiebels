@@ -1,5 +1,9 @@
 # Wijzigingen
 
+## 0.11.1
+
+Zeeland heeft er plaatsen bij: Breskens, Domburg, Hulst, Sluis, Veere, Yerseke en Zierikzee, en het eiland Neeltje Jans. Walcheren klopt nu precies op de kaart. Na een goed antwoord praat de Wiebel eerst uit voordat de volgende vraag komt. Lange namen passen op één regel in de knoppen, en op de ouderpagina staan de provincies op alfabet.
+
 ## 0.11.0
 
 Nieuwe wereld: Nederland! Leer de provincies, hun hoofdsteden en de grote plaatsen, streken, eilanden en wateren. Kies op de kaart een provincie of heel Nederland en oefen, of doe een toets. Soms licht iets op en kies je de naam, soms moet je het zelf aanwijzen met de pijltjes. Elke provincie die je kent, kleurt in op de kaart, en er zijn 13 nieuwe Wiebels te bevrijden. Op de ouderpagina zet je per plaats, streek, eiland of water aan of uit wat er in het spel voorkomt.
