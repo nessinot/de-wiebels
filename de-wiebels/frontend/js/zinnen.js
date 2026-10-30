@@ -2,6 +2,8 @@
 // namen, prijzen, werelden of spullen), zodat de stem hem vooraf kan inspreken. De id blijft altijd
 // gelijk: hij wordt de naam van het geluidsbestand. Een nieuwe zin krijgt een nieuwe id.
 
+import { schud } from './generators/opties.js';
+
 export const ZINNEN = {
   kleurGekozen: [
     { id: 'kleur-1', tekst: 'Hoi! Ik ben jouw Wiebel!' },
@@ -114,6 +116,30 @@ export const ZINNEN = {
     { id: 'goed-4', tekst: 'Super!' },
     { id: 'goed-5', tekst: 'Jij kunt dit!' },
     { id: 'goed-6', tekst: 'Joepie, goed!' },
+    { id: 'goed-7', tekst: 'Ja, dat klopt!' },
+    { id: 'goed-8', tekst: 'Precies goed!' },
+    { id: 'goed-9', tekst: 'Goed nagedacht!' },
+    { id: 'goed-10', tekst: 'Helemaal juist!' },
+    { id: 'goed-11', tekst: 'Wauw, knap hoor!' },
+    { id: 'goed-12', tekst: 'Keigoed!' },
+    { id: 'goed-13', tekst: 'Klopt als een bus!' },
+    { id: 'goed-14', tekst: 'Hoera, goed!' },
+    { id: 'goed-15', tekst: 'Mooi zo!' },
+    { id: 'goed-16', tekst: 'Netjes!' },
+    { id: 'goed-17', tekst: 'Dat wist je goed!' },
+    { id: 'goed-18', tekst: 'Jij bent een kanjer!' },
+    { id: 'goed-19', tekst: 'Dat ging lekker!' },
+    { id: 'goed-20', tekst: 'Bingo!' },
+    { id: 'goed-21', tekst: 'Yes, goed zo!' },
+    { id: 'goed-22', tekst: 'Die zit!' },
+    { id: 'goed-23', tekst: 'Hartstikke goed!' },
+    { id: 'goed-24', tekst: 'Wat goed van jou!' },
+    { id: 'goed-25', tekst: 'Daar ben ik blij mee!' },
+    { id: 'goed-26', tekst: 'Jaaa, goed!' },
+    { id: 'goed-27', tekst: 'Goed gevonden!' },
+    { id: 'goed-28', tekst: 'Je doet het geweldig!' },
+    { id: 'goed-29', tekst: 'Ik wist dat je het kon!' },
+    { id: 'goed-30', tekst: 'Toppie!' },
   ],
   // Geen straf: rustig laten zien hoe het zit.
   bijna: [
@@ -121,18 +147,50 @@ export const ZINNEN = {
     { id: 'bijna-2', tekst: 'Net niet. Kijk maar even mee.' },
     { id: 'bijna-3', tekst: 'Geeft niks! Zo is het.' },
     { id: 'bijna-4', tekst: 'Oei, bijna! Kijk eens.' },
+    { id: 'bijna-5', tekst: 'Oeps! Kijk, zo moet het.' },
+    { id: 'bijna-6', tekst: 'Bijna goed! Zo zit het.' },
+    { id: 'bijna-7', tekst: 'Dat was een lastige. Kijk maar.' },
+    { id: 'bijna-8', tekst: 'Niet erg, daar leer je van!' },
+    { id: 'bijna-9', tekst: 'Net ernaast! Kijk eens mee.' },
+    { id: 'bijna-10', tekst: 'Geeft niets, fouten maken mag!' },
+    { id: 'bijna-11', tekst: 'Oei! Kijk, zo is het goed.' },
+    { id: 'bijna-12', tekst: 'Die is lastig, hè? Zo zit het.' },
+    { id: 'bijna-13', tekst: 'Geen zorgen, kijk maar even.' },
+    { id: 'bijna-14', tekst: 'Bijna! Nu weet je het.' },
+    { id: 'bijna-15', tekst: 'Nét niet! Kijk maar.' },
+    { id: 'bijna-16', tekst: 'Hmm, dat klopt niet helemaal. Kijk eens.' },
+    { id: 'bijna-17', tekst: 'Oei, die was moeilijk! Zo is het.' },
+    { id: 'bijna-18', tekst: 'Geeft helemaal niks. Kijk mee!' },
+    { id: 'bijna-19', tekst: 'Ah, bijna! Zo zit het.' },
+    { id: 'bijna-20', tekst: 'Niet getreurd, kijk maar even.' },
+    { id: 'bijna-21', tekst: 'Dat is een goede om te onthouden!' },
+    { id: 'bijna-22', tekst: 'Oeps, mis! Kijk, zo moet het.' },
+    { id: 'bijna-23', tekst: 'Rustig maar, zo zit het.' },
+    { id: 'bijna-24', tekst: 'Bijna raak! Kijk eens goed.' },
   ],
   comboDrie: [
     { id: 'combo-drie-1', tekst: 'Drie op een rij!' },
     { id: 'combo-drie-2', tekst: 'Lekker bezig!' },
+    { id: 'combo-drie-3', tekst: 'Je bent op dreef!' },
+    { id: 'combo-drie-4', tekst: 'Het gaat als een trein!' },
+    { id: 'combo-drie-5', tekst: 'Drie goed! Ga zo door!' },
+    { id: 'combo-drie-6', tekst: 'Daar zit vaart in!' },
   ],
   comboVijf: [
     { id: 'combo-vijf-1', tekst: 'Vijf op een rij, wauw!' },
     { id: 'combo-vijf-2', tekst: 'Wat gaat dat goed!' },
+    { id: 'combo-vijf-3', tekst: 'Een hele hand vol goed!' },
+    { id: 'combo-vijf-4', tekst: 'Jij bent niet te stoppen!' },
+    { id: 'combo-vijf-5', tekst: 'Je bent echt op stoom!' },
+    { id: 'combo-vijf-6', tekst: 'Hoe doe je dat toch?' },
   ],
   comboTien: [
     { id: 'combo-tien-1', tekst: 'Tien op een rij! Kampioen!' },
     { id: 'combo-tien-2', tekst: 'Alles goed! Ongelofelijk!' },
+    { id: 'combo-tien-3', tekst: 'Tien keer goed! Jij bent een ster!' },
+    { id: 'combo-tien-4', tekst: 'Wauw, tien op een rij! Feest!' },
+    { id: 'combo-tien-5', tekst: 'Wat een topper ben jij!' },
+    { id: 'combo-tien-6', tekst: 'Tien! Ik word er helemaal blij van!' },
   ],
   baasRaak: [
     { id: 'baas-raak-1', tekst: 'Raak!' },
@@ -200,12 +258,22 @@ export const COMBO_ZINNEN = { 3: 'comboDrie', 5: 'comboVijf', 10: 'comboTien' };
 // Gebeurtenis bij het resultaat, per aantal sterren (0–3).
 export const RESULTAAT_ZINNEN = ['resultaatNul', 'resultaatEen', 'resultaatTwee', 'resultaatDrie'];
 
-// Kiest een zin voor de gebeurtenis, maar nooit dezelfde als de vorige keer bij die gebeurtenis.
+// Kiest een zin voor de gebeurtenis van een geschudde stapel: elke zin komt eerst één keer aan de
+// beurt voordat er een terugkomt. Is de stapel op, dan wordt opnieuw geschud, en de eerste van de
+// nieuwe stapel is nooit dezelfde als de vorige zin.
+const stapels = new Map();
 const vorige = new Map();
 export function kiesZin(gebeurtenis, rnd = Math.random) {
-  const lijst = ZINNEN[gebeurtenis];
-  const keuze = lijst.length > 1 ? lijst.filter((z) => z.id !== vorige.get(gebeurtenis)) : lijst;
-  const zin = keuze[Math.floor(rnd() * keuze.length)];
+  let stapel = stapels.get(gebeurtenis);
+  if (!stapel?.length) {
+    stapel = schud(ZINNEN[gebeurtenis], rnd);
+    if (stapel.length > 1 && stapel[0].id === vorige.get(gebeurtenis)) {
+      const j = 1 + Math.floor(rnd() * (stapel.length - 1));
+      [stapel[0], stapel[j]] = [stapel[j], stapel[0]];
+    }
+    stapels.set(gebeurtenis, stapel);
+  }
+  const zin = stapel.shift();
   vorige.set(gebeurtenis, zin.id);
   return zin;
 }

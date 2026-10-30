@@ -53,11 +53,12 @@
    VRAAGKAART_MAAT), rechts de vraag, de knoppen en de terugkoppeling. */
 .nl-vraag { display: flex; gap: 48px; align-items: center; }
 .kaartvak.nl-vraagkaart { width: 760px; height: 800px; }
-.nl-vraagkant { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 40px; }
-.vraag.vraag-nl { font-size: 64px; line-height: 1.25; }
-.opties.opties-nl { grid-template-columns: 560px; gap: 28px; }
-.opties-nl .optie { height: 130px; font-size: 56px; }
-.nl-vraagkant .terugkoppeling { flex-wrap: wrap; gap: 24px; font-size: 52px; text-align: center; }
+.nl-vraagkant { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+.vraag.vraag-nl { font-size: 60px; line-height: 1.25; }
+.nl-vraagkant .vraag { padding: 0 24px; }
+.opties.opties-nl { grid-template-columns: 560px; gap: 20px; }
+.opties-nl .optie { height: 110px; padding: 24px 24px; font-size: 56px; }
+.nl-vraagkant .terugkoppeling { flex-wrap: wrap; gap: 24px; font-size: 44px; text-align: center; }
 
 /* Wat oplicht bij "Welke plaats is dit?", en na het antwoord: goed groen, fout gekozen rood met een
    donkere rand; de rest van wat je kon aanwijzen wordt dan zachter. */

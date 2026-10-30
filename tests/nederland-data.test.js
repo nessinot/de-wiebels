@@ -81,7 +81,7 @@ test('elk item heeft zijn zinnen volgens het vaste patroon', () => {
   for (const it of ITEMS) {
     const z = it.zinnen;
     assert.deepEqual(z.waar, { id: `nl-waar-${it.id}`, tekst: `Waar ligt ${it.noem}?` });
-    assert.deepEqual(z.dat, { id: `nl-dat-${it.id}`, tekst: `Dat is ${it.noem}.` });
+    assert.deepEqual(z.dat, { id: `nl-dat-${it.id}`, tekst: `Het goede antwoord is ${it.noem}.` });
     if (it.soort === 'provincie') {
       assert.deepEqual(z.hoofdstad, { id: `nl-hoofdstad-${it.id}`, tekst: `Wat is de hoofdstad van ${it.noem}?` });
       assert.deepEqual(z.hoofdstadWaar, { id: `nl-hoofdstad-waar-${it.id}`, tekst: `Waar ligt de hoofdstad van ${it.noem}?` });
