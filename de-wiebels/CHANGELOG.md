@@ -1,5 +1,9 @@
 # Wijzigingen
 
+## 0.12.1
+
+De belletjes en de extra regeltjes in de menu's zijn weer weg, dus de menu's zijn weer rustig. Een Wiebel komt nog steeds vrij bij twee sterren. Haal je één ster, dan zie je op het eindscherm wie je met twee sterren had bevrijd. Het regeltje "Haal in elk level een ster" op de eindbaas blijft wat groter, zodat het goed te lezen is.
+
 ## 0.12.0
 
 Een Wiebel bevrijden is nu een echte uitdaging: je hebt **twee sterren** nodig in een level of in een toets. Een nieuw level gaat nog steeds open met één ster, en Wiebels die al vrij zijn, blijven vrij.
