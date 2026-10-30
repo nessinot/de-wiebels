@@ -1,5 +1,9 @@
 # Wijzigingen
 
+## 0.11.2
+
+Bij Nederland zegt de Wiebel na een fout antwoord nu "Het goede antwoord is …", net als op het scherm. De knop Verder staat daarbij altijd helemaal in beeld. De Wiebel heeft er veel nieuwe complimenten en aanmoedigingen bij, en zegt elk zinnetje eerst één keer voordat hij er een herhaalt.
+
 ## 0.11.1
 
 Zeeland heeft er plaatsen bij: Breskens, Domburg, Hulst, Sluis, Veere, Yerseke en Zierikzee, en het eiland Neeltje Jans. Walcheren klopt nu precies op de kaart. Na een goed antwoord praat de Wiebel eerst uit voordat de volgende vraag komt. Lange namen passen op één regel in de knoppen, en op de ouderpagina staan de provincies op alfabet.
