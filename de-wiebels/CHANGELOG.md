@@ -1,5 +1,9 @@
 # Wijzigingen
 
+## 0.11.4
+
+Bij Nederland staan de namen in de uitleg na een fout antwoord nu vetgedrukt, en een naam als Noord-Brabant wordt niet meer over twee regels verdeeld.
+
 ## 0.11.3
 
 Bij Nederland zegt de Wiebel na een fout antwoord op de kaart nu waar het goede antwoord ligt, bijvoorbeeld "De Veluwe ligt hier." of "Middelburg is de hoofdstad van Zeeland.". Dezelfde zin staat op het scherm. Wat je verkeerd aanwees wordt niet meer rood gekleurd: alleen het goede antwoord licht groen op.
