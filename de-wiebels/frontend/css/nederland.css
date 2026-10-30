@@ -48,6 +48,14 @@
 .nl-plaatsen .klein { flex-basis: 100%; order: 3; }
 .nl-onderdeel .nl-start { min-width: 280px; margin-right: auto; }
 .nl-onderdeel .knop { padding: 16px 32px; background: var(--vlak-licht); }
+/* De Wiebel van de provincie bij de Toets (js/bel.js): een eigen regel onder knop en sterren. */
+.nl-provincie .bij-knop { flex-basis: 100%; justify-content: flex-start; }
+/* Tulpje onder de rijen Provincies en Hoofdsteden, rechts onder de Toets-knoppen. Klein, en de
+   kolom iets dichter op elkaar, zodat Plaatsen nog binnen de safe area past. */
+.nl-scherm:not(.nl-provincie) .nl-kolom { gap: 20px; }
+.nl-tulpje { padding: 0 28px; }
+.nl-tulpje .bij-knop { justify-content: flex-end; }
+.nl-tulpje .vangbel, .nl-tulpje .vriendje { width: 64px; height: 64px; }
 
 /* Een vraag over Nederland in de ronde (js/vraagpaneel.js): links de kaart (760×800, ook in
    VRAAGKAART_MAAT), rechts de vraag, de knoppen en de terugkoppeling. */

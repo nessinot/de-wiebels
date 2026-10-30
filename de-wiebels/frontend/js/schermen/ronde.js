@@ -1,15 +1,14 @@
 // Oefenronde: tien vragen met vier antwoorden. Een fout wordt rustig verbeterd en later opnieuw gevraagd.
 // Ook de oefenronde en de toets van Nederland; bij een toets komt een fout niet terug.
 
-import { geefBeloning, voegXpToe } from '../beloningen.js';
+import { beloningNa, geefBeloning, voegXpToe, wiebelVan } from '../beloningen.js';
 import { maakEl, opKlik } from '../dom.js';
 import { speel } from '../geluid.js';
 import { maakVraag, maakVragen, vraagUitId } from '../generators/index.js';
 import { maakGids } from '../gids.js';
 import { registreer, teHerhalen, volgendeStap } from '../leitner.js';
-import { BELONINGEN, levelVan } from '../levels.js';
+import { STERREN_VRIJ, levelVan } from '../levels.js';
 import { nlVragen } from '../nederland/vragen.js';
-import { nlBeloningNa } from '../nederland/wiebels.js';
 import { bewaar, staat } from '../opslag.js';
 import { RONDE_LENGTE, beantwoord, gedaan, huidigeVraag, nieuweRonde, sterrenVoor } from '../ronde.js';
 import { themaAchtergrond } from '../thema-achtergrond.js';
@@ -83,12 +82,15 @@ export const ronde = {
       const sterren = sterrenVoor(r.goedEerst, r.aantal);
       p.sterren[level.id] = Math.max(p.sterren[level.id] || 0, sterren);
       p.munten += r.munten;
-      // Een Wiebel hebben alleen de levels en eindbazen (BELONINGEN) en de toetsen van Nederland.
-      const beloning = nederland ? nlBeloningNa(p, level.id) : BELONINGEN.includes(level.id) && level.id;
-      const nieuweWiebel = sterren >= 1 && beloning && geefBeloning(p, beloning) ? beloning : null;
+      // Een Wiebel hebben alleen de levels en eindbazen (BELONINGEN) en de toetsen van Nederland; hij
+      // komt vrij bij STERREN_VRIJ sterren. Bij minder ziet het kind wie er nog gevangen zit.
+      const vrij = beloningNa(p, level.id, sterren);
+      const nieuweWiebel = vrij && geefBeloning(p, vrij) ? vrij : null;
+      const gevangen = sterren < STERREN_VRIJ && wiebelVan(level.id);
+      const nogGevangen = gevangen && !p.verzameling.includes(gevangen) ? gevangen : null;
       const gegroeid = voegXpToe(p, r.goed);
       bewaar();
-      toon('resultaat', { levelId: level.id, goedEerst: r.goedEerst, aantal: r.aantal, sterren, munten: r.munten, nieuweWiebel, gegroeid }, { vervang: true });
+      toon('resultaat', { levelId: level.id, goedEerst: r.goedEerst, aantal: r.aantal, sterren, munten: r.munten, nieuweWiebel, nogGevangen, gegroeid }, { vervang: true });
     }
 
     // Na een reeks goed of meerdere fouten verandert de stap; nog niet gestelde nieuwe vragen

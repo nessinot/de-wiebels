@@ -2,7 +2,8 @@
 // gevangen zit, staat hij stil en zweeft de bel zacht op en neer; laatVrij() laat de bel knappen,
 // waarna de Wiebel blij opspringt en weer beweegt (css/wiebel.css).
 
-import { vriendjeStaat } from './weergave.js';
+import { esc } from './dom.js';
+import { vriendjeHtml, vriendjeStaat } from './weergave.js';
 import { wiebelSvg } from './wiebel.js';
 import { blij, rustig } from './wiebel-beweging.js';
 
@@ -17,6 +18,13 @@ export function belHtml(w, prefix) {
       </g>
     </g>
   </svg>`;
+}
+
+// De Wiebel die je bij een knop (een toets van Nederland) kunt bevrijden: gevangen in zijn bel met een
+// regeltje erbij, of na het bevrijden vrij, zonder regeltje. De maat zet elk scherm in de css.
+export function bijKnopHtml(w, vrij, regel, prefix) {
+  if (vrij) return `<div class="bij-knop">${vriendjeHtml(w, prefix, 'stil')}</div>`;
+  return `<div class="bij-knop">${belHtml(w, prefix)}<span class="bij-knop-regel">${esc(regel)}</span></div>`;
 }
 
 // bel: het <svg class="vangbel">. Geeft de bevrijde Wiebel terug.

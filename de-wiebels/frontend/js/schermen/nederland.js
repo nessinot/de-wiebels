@@ -1,11 +1,16 @@
 // De wereld Nederland: links de inkleurkaart met de provincies, rechts de onderdelen Provincies,
 // Hoofdsteden en Plaatsen. Voor Plaatsen kies je een provincie op de kaart of "Alle provincies".
+// Onder Provincies en Hoofdsteden zit Tulpje in zijn bel tot beide toetsen hem bevrijden.
 
+import { bijKnopHtml } from '../bel.js';
+import { wiebelVoor } from '../beloningen.js';
 import { maakEl, opKlik } from '../dom.js';
 import { maakKaartbediening } from '../nederland/bediening.js';
 import { PER_ID, PROVINCIES, kaartSvg } from '../nederland/kaartbeeld.js';
 import { NEDERLAND, inkleuring, sterId } from '../nederland/wereld.js';
+import { NL_WIEBEL } from '../nederland/wiebels.js';
 import { staat } from '../opslag.js';
+import { thema } from '../themas/index.js';
 import { themaAchtergrond } from '../thema-achtergrond.js';
 import { sterrenHtml, topbalk } from '../weergave.js';
 
@@ -50,6 +55,9 @@ export const nederland = {
                 <button class="knop" data-focus data-actie="oefen" data-waarde="${o.id}">Oefenen</button>
                 <button class="knop" data-focus data-actie="toets" data-waarde="${o.id}">Toets</button>
               </div>`).join('')}
+            <div class="nl-tulpje">
+              ${bijKnopHtml(wiebelVoor(NL_WIEBEL, thema(p.thema)), p.verzameling.includes(NL_WIEBEL), 'Bevrijd Tulpje! Haal beide toetsen.', 'nl-bel-tulpje')}
+            </div>
             <div class="nl-onderdeel nl-plaatsen">
               <span class="nl-onderdeel-naam">Plaatsen</span>
               <span class="klein">Kies een provincie op de kaart</span>

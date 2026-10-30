@@ -83,5 +83,8 @@ export function baasOpen(profiel, vaardigheid) {
   return LEVELS[vaardigheid].every((l) => (profiel.sterren[l.id] || 0) >= 1);
 }
 
+// Zoveel sterren in een level of toets bevrijden zijn Wiebel; openen gaat al bij 1.
+export const STERREN_VRIJ = 2;
+
 // Alle mogelijke beloningen in vaste volgorde: elk level en elke eindbaas.
 export const BELONINGEN = VAARDIGHEDEN.flatMap((v) => [...LEVELS[v].map((l) => l.id), `baas:${v}`]);

@@ -2,6 +2,7 @@
 // Zelfde vorm als de Wiebels van een thema (themas/*.js): { id, naam, kleur, spul, lievelingskleur,
 // eetHetLiefst, kanHeelGoed, geheimpje, zin }. De id is de beloning in profiel.verzameling.
 
+import { STERREN_VRIJ } from '../levels.js';
 import { sterId } from './wereld.js';
 
 // De Wiebel van heel Nederland; die van een provincie heeft als id de plaatsen-toets van die provincie.
@@ -90,18 +91,18 @@ export const WIEBELS_NL = [
 ];
 
 // Wat de eigen Wiebel zegt bij een gevangen Wiebel van Nederland (in de verzameling).
-export const GEVANGEN_ZIN = { id: 'nl-gevangen-toets', tekst: 'Die zit nog gevangen! Haal een ster bij die toets om hem te bevrijden.' };
+export const GEVANGEN_ZIN = { id: 'nl-gevangen-toets', tekst: 'Die zit nog gevangen! Haal twee sterren bij die toets om hem te bevrijden.' };
 
-// Welke toetsen samen een Wiebel van Nederland bevrijden: elk met minstens 1 ster. Een provincie:
-// haar plaatsen-toets; heel Nederland: de toets Provincies én de toets Hoofdsteden.
+// Welke toetsen samen een Wiebel van Nederland bevrijden: elk met minstens STERREN_VRIJ sterren. Een
+// provincie: haar plaatsen-toets; heel Nederland: de toets Provincies én de toets Hoofdsteden.
 export const BELONINGEN_NL = WIEBELS_NL.map((w) => ({
   id: w.id,
   toetsen: w.id === NL_WIEBEL ? [sterId('provincies', 'alle', true), sterId('hoofdsteden', 'alle', true)] : [w.id],
 }));
 
 // De Wiebel die na deze toets vrijkomt (zijn id), of null: alleen als de toets erbij hoort en alle
-// toetsen van die Wiebel nu minstens 1 ster hebben.
+// toetsen van die Wiebel nu minstens STERREN_VRIJ sterren hebben.
 export function nlBeloningNa(profiel, levelId) {
   const b = BELONINGEN_NL.find((x) => x.toetsen.includes(levelId));
-  return b && b.toetsen.every((id) => (profiel.sterren[id] || 0) >= 1) ? b.id : null;
+  return b && b.toetsen.every((id) => (profiel.sterren[id] || 0) >= STERREN_VRIJ) ? b.id : null;
 }

@@ -301,7 +301,7 @@
   },
   "gevangen-open-1": {
    "bestand": "gevangen-open-1.mp3",
-   "tekst": "Die zit nog gevangen! Haal dat level om hem te bevrijden."
+   "tekst": "Die zit nog gevangen! Haal twee sterren in dat level om hem te bevrijden."
   },
   "goed-1": {
    "bestand": "goed-1.mp3",
@@ -1513,7 +1513,7 @@
   },
   "nl-gevangen-toets": {
    "bestand": "nl-gevangen-toets.mp3",
-   "tekst": "Die zit nog gevangen! Haal een ster bij die toets om hem te bevrijden."
+   "tekst": "Die zit nog gevangen! Haal twee sterren bij die toets om hem te bevrijden."
   },
   "nl-herken-eiland": {
    "bestand": "nl-herken-eiland.mp3",

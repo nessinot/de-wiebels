@@ -74,10 +74,12 @@ test('wiebelVoor vindt een Wiebel van Nederland in elk thema, en die is overal g
   assert.equal(vaardigheidVan(toets('pv-zeeland')), 'nederland');
 });
 
-test('een provincie-Wiebel komt vrij bij een ster in haar plaatsen-toets', () => {
+test('een provincie-Wiebel komt vrij bij twee sterren in haar plaatsen-toets', () => {
   const p = profiel();
   assert.equal(nlBeloningNa(p, toets('pv-zeeland')), null, 'nog geen ster');
   p.sterren[toets('pv-zeeland')] = 1;
+  assert.equal(nlBeloningNa(p, toets('pv-zeeland')), null, 'één ster is niet genoeg');
+  p.sterren[toets('pv-zeeland')] = 2;
   assert.equal(nlBeloningNa(p, toets('pv-zeeland')), toets('pv-zeeland'));
   p.sterren[sterId('plaatsen', 'pv-limburg')] = 3;
   assert.equal(nlBeloningNa(p, sterId('plaatsen', 'pv-limburg')), null, 'oefenen bevrijdt niemand');
@@ -85,11 +87,13 @@ test('een provincie-Wiebel komt vrij bij een ster in haar plaatsen-toets', () =>
   assert.equal(nlBeloningNa(p, toets('alle')), null, 'alle provincies heeft geen eigen Wiebel');
 });
 
-test('de Wiebel van Nederland komt vrij bij een ster in de toets Provincies én in de toets Hoofdsteden', () => {
+test('de Wiebel van Nederland komt vrij bij twee sterren in de toets Provincies én in de toets Hoofdsteden', () => {
   const p = profiel();
   p.sterren[toets('alle', 'provincies')] = 2;
   assert.equal(nlBeloningNa(p, toets('alle', 'provincies')), null);
   p.sterren[toets('alle', 'hoofdsteden')] = 1;
+  assert.equal(nlBeloningNa(p, toets('alle', 'hoofdsteden')), null, 'één ster bij Hoofdsteden is niet genoeg');
+  p.sterren[toets('alle', 'hoofdsteden')] = 2;
   assert.equal(nlBeloningNa(p, toets('alle', 'hoofdsteden')), NL_WIEBEL);
   assert.equal(nlBeloningNa(p, toets('alle', 'provincies')), NL_WIEBEL);
 });

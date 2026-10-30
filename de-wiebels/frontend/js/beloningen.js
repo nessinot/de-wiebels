@@ -1,8 +1,8 @@
 // Wiebels bevrijden en het huisdier laten groeien. De verzameling is thema-onafhankelijk;
 // het thema bepaalt alleen hoe elke Wiebel eruitziet en wie hij is.
 
-import { BELONINGEN, LEVELS, baasOpen, levelOpen, levelVan } from './levels.js';
-import { BELONINGEN_NL, WIEBELS_NL } from './nederland/wiebels.js';
+import { BELONINGEN, LEVELS, STERREN_VRIJ, baasOpen, levelOpen, levelVan } from './levels.js';
+import { BELONINGEN_NL, WIEBELS_NL, nlBeloningNa } from './nederland/wiebels.js';
 
 export const HUISDIER_GRENZEN = [0, 50, 200, 500];
 
@@ -22,6 +22,19 @@ export function vaardigheidVan(beloningId) {
   const [soort, rest] = beloningId.split(':');
   if (soort === 'nl') return 'nederland';
   return soort === 'baas' ? rest : soort;
+}
+
+// De Wiebel die bij een level of toets van Nederland hoort (zijn id), of null (oefenen, "Alle provincies").
+export function wiebelVan(levelId) {
+  if (levelId.startsWith('nl:')) return BELONINGEN_NL.find((b) => b.toetsen.includes(levelId))?.id ?? null;
+  return BELONINGEN.includes(levelId) ? levelId : null;
+}
+
+// De Wiebel die na een ronde met zoveel sterren vrijkomt (zijn id), of null (Nederland: nlBeloningNa).
+export function beloningNa(profiel, levelId, sterren) {
+  if (sterren < STERREN_VRIJ) return null;
+  if (levelId.startsWith('nl:')) return nlBeloningNa(profiel, levelId);
+  return BELONINGEN.includes(levelId) ? levelId : null;
 }
 
 // Geeft true als de beloning nieuw is.

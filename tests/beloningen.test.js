@@ -1,9 +1,12 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  ALLE_BELONINGEN, geefBeloning, gevangenBij, huisdierStadium, markeerGezien, nieuweWiebels, openingsZin, totVolgendStadium, vaardigheidVan, voegXpToe, wiebelVoor,
+  ALLE_BELONINGEN, beloningNa, geefBeloning, gevangenBij, huisdierStadium, markeerGezien, nieuweWiebels, openingsZin, totVolgendStadium, vaardigheidVan, voegXpToe,
+  wiebelVan, wiebelVoor,
 } from '../de-wiebels/frontend/js/beloningen.js';
 import { BELONINGEN, LEVELS, VAARDIGHEDEN, levelVan } from '../de-wiebels/frontend/js/levels.js';
+import { sterId } from '../de-wiebels/frontend/js/nederland/wereld.js';
+import { NL_WIEBEL } from '../de-wiebels/frontend/js/nederland/wiebels.js';
 import { nieuwProfiel, vulAan } from '../de-wiebels/frontend/js/profiel.js';
 import { DRAAGBAAR, spul } from '../de-wiebels/frontend/js/spullen.js';
 import { THEMAS } from '../de-wiebels/frontend/js/themas/index.js';
@@ -15,6 +18,29 @@ test('een beloning wordt maar één keer gegeven', () => {
   assert.equal(geefBeloning(p, 'keer:5'), true);
   assert.equal(geefBeloning(p, 'keer:5'), false);
   assert.deepEqual(p.verzameling, ['keer:5']);
+});
+
+test('een Wiebel komt vrij bij twee sterren, in een level en in een toets van Nederland', () => {
+  const p = nieuwProfiel({ naam: 'Speler 1', avatar: '🐱' });
+  assert.equal(beloningNa(p, 'plus:10', 1), null);
+  assert.equal(beloningNa(p, 'plus:10', 2), 'plus:10');
+  const zeeland = sterId('plaatsen', 'pv-zeeland', true);
+  p.sterren[zeeland] = 1;
+  assert.equal(beloningNa(p, zeeland, 1), null);
+  p.sterren[zeeland] = 2;
+  assert.equal(beloningNa(p, zeeland, 2), zeeland);
+  const alle = sterId('plaatsen', 'alle', true);
+  p.sterren[alle] = 3;
+  assert.equal(beloningNa(p, alle, 3), null, 'alle provincies heeft geen eigen Wiebel');
+});
+
+test('de Wiebel die bij een level of toets hoort', () => {
+  assert.equal(wiebelVan('plus:10'), 'plus:10');
+  assert.equal(wiebelVan(sterId('plaatsen', 'pv-zeeland', true)), sterId('plaatsen', 'pv-zeeland', true));
+  assert.equal(wiebelVan(sterId('provincies', 'alle', true)), NL_WIEBEL);
+  assert.equal(wiebelVan(sterId('hoofdsteden', 'alle', true)), NL_WIEBEL);
+  assert.equal(wiebelVan(sterId('plaatsen', 'pv-zeeland')), null, 'oefenen');
+  assert.equal(wiebelVan(sterId('plaatsen', 'alle', true)), null, 'alle provincies');
 });
 
 test('huisdier groeit in vier stadia', () => {

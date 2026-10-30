@@ -243,7 +243,7 @@ export const ZINNEN = {
     { id: 'collectie-alles-1', tekst: 'Ze zijn allemaal vrij! Hoera!' },
   ],
   gevangenOpen: [
-    { id: 'gevangen-open-1', tekst: 'Die zit nog gevangen! Haal dat level om hem te bevrijden.' },
+    { id: 'gevangen-open-1', tekst: 'Die zit nog gevangen! Haal twee sterren in dat level om hem te bevrijden.' },
   ],
   gevangenBaas: [
     { id: 'gevangen-baas-1', tekst: 'Die houdt de eindbaas vast! Versla de eindbaas om hem te bevrijden.' },

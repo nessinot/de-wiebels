@@ -137,7 +137,7 @@ export const collectie = {
           </div>
           <div class="collectie-rechts">
             <div class="wei">
-              ${bevrijd.length ? lopersHtml(bevrijd, nieuw, t) : '<p class="wei-leeg">Haal een level om je eerste Wiebel te bevrijden!</p>'}
+              ${bevrijd.length ? lopersHtml(bevrijd, nieuw, t) : '<p class="wei-leeg">Haal twee sterren in een level om je eerste Wiebel te bevrijden!</p>'}
             </div>
             <div class="wiebels">
               ${ALLE_BELONINGEN.map((id, i) => {

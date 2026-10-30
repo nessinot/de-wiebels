@@ -1,6 +1,8 @@
 // Resultaat na een ronde: sterren en wat je verder kunt doen. De Wiebel viert linksonder mee; een
-// net bevrijde Wiebel springt erbij en bij groei laat hij zijn nieuwe stadium zien.
+// net bevrijde Wiebel springt erbij en bij groei laat hij zijn nieuwe stadium zien. Bij te weinig
+// sterren staat de Wiebel die nog gevangen zit er in zijn bel bij.
 
+import { belHtml } from '../bel.js';
 import { huisdierStadium, wiebelVoor } from '../beloningen.js';
 import { maakEl, opKlik } from '../dom.js';
 import { maakGids } from '../gids.js';
@@ -26,10 +28,12 @@ export const resultaat = {
     const volgendeOpen = volgende && levelOpen(p, volgende);
     const stadium = huisdierStadium(p.huisdier.xp);
     const nieuw = gegevens.nieuweWiebel ? wiebelVoor(gegevens.nieuweWiebel, t) : null;
+    const gevangen = gegevens.nogGevangen ? wiebelVoor(gegevens.nogGevangen, t) : null;
 
     function beloningen() {
       const delen = [];
       if (nieuw) delen.push(`<span class="beloning"><span class="wiebeltje">${vriendjeHtml(nieuw, 'res-vriend', 'stil')}</span> Je hebt ${nieuw.naam} bevrijd!</span>`);
+      if (gevangen) delen.push(`<span class="beloning"><span class="wiebeltje">${belHtml(gevangen, 'res-bel')}</span> Haal twee sterren om ${gevangen.naam} te bevrijden!</span>`);
       if (gegevens.gegroeid) delen.push(`<span class="beloning">Je Wiebel is gegroeid: ${STADIUM_NAMEN[stadium]}!</span>`);
       return delen.join('');
     }
