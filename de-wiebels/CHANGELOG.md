@@ -1,5 +1,12 @@
 # Wijzigingen
 
+## 0.13.0
+
+Munten verdien je nu vooral door verder te komen.
+- Elke nieuwe ster die je haalt, geeft **5 munten** extra.
+- Speel je een level of toets die je al helemaal kent (drie sterren), dan krijg je geen munt meer per goed antwoord, alleen nog munten voor drie en vijf goed op rij. Je Wiebel zegt dat aan het begin, en op het eindscherm staat dat een moeilijker level meer munten geeft.
+- De eindbaas geeft nog evenveel munten als eerst.
+
 ## 0.12.1
 
 De belletjes en de extra regeltjes in de menu's zijn weer weg, dus de menu's zijn weer rustig. Een Wiebel komt nog steeds vrij bij twee sterren. Haal je één ster, dan zie je op het eindscherm wie je met twee sterren had bevrijd. Het regeltje "Haal in elk level een ster" op de eindbaas blijft wat groter, zodat het goed te lezen is.
