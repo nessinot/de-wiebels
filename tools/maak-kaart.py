@@ -573,7 +573,7 @@ def zin(zin_id, tekst):
 
 def zinnen_van(item):
     i, noem = item["id"], item["noem"]
-    z = {"waar": zin(f"nl-waar-{i}", f"Waar ligt {noem}?"), "dat": zin(f"nl-dat-{i}", f"Dat is {noem}.")}
+    z = {"waar": zin(f"nl-waar-{i}", f"Waar ligt {noem}?"), "dat": zin(f"nl-dat-{i}", f"Het goede antwoord is {noem}.")}
     if item["soort"] == "provincie":
         z["hoofdstad"] = zin(f"nl-hoofdstad-{i}", f"Wat is de hoofdstad van {noem}?")
         z["hoofdstadWaar"] = zin(f"nl-hoofdstad-waar-{i}", f"Waar ligt de hoofdstad van {noem}?")

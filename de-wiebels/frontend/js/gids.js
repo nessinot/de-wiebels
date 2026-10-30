@@ -57,7 +57,7 @@ export function maakGids(profiel, prefix, { kort = false, stadium } = {}) {
     spreek(zin) {
       ballon?.praat(zin.tekst, zin.id);
     },
-    // Rustig knikken en naar het goede antwoord wijzen. Geen straf. Met een zin ("Dat is Middelburg.")
+    // Rustig knikken en naar het goede antwoord wijzen. Geen straf. Met een zin ("Het goede antwoord is Middelburg.")
     // zegt hij die in plaats van "bijna".
     fout(zin) {
       bijna(wiebel());

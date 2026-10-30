@@ -49,7 +49,7 @@ class ZinnenLezenTest(unittest.TestCase):
         zinnen = ms.lees_alle_zinnen()
         # Uit nederland/items.js, nederland/vragen.js en nederland/wiebels.js.
         self.assertEqual(zinnen["nl-waar-pv-zeeland"], "Waar ligt Zeeland?")
-        self.assertEqual(zinnen["nl-dat-pv-zeeland"], "Dat is Zeeland.")
+        self.assertEqual(zinnen["nl-dat-pv-zeeland"], "Het goede antwoord is Zeeland.")
         self.assertEqual(zinnen["nl-herken-gebied"], "Welk gebied is dit?")
         self.assertIn("nl-gevangen-toets", zinnen)
         self.assertEqual(len([z for z in zinnen if z.startswith("wiebel-nl-")]), 13)

@@ -58,12 +58,12 @@ test('levelVan herkent de levels van Nederland', () => {
   for (const id of LEVEL_IDS) assert.equal(levelVan(id).id, id);
 });
 
-test('elke vraag heeft een tekst, een zin en "Dat is …" voor de stem', () => {
+test('elke vraag heeft een tekst, een zin en "Het goede antwoord is …" voor de stem', () => {
   for (const id of LEVEL_IDS) {
     for (const v of alleVragen(nlVragen(profielMet(), levelVan(id), rng(7)))) {
       assert.ok(v.tekst && v.goedHtml, v.id);
       for (const zin of [v.zin, v.dat]) assert.match(zin.id, /^nl-[a-z0-9-]+$/, v.id);
-      assert.ok(v.zin.tekst.endsWith('?') && v.dat.tekst.startsWith('Dat is '), v.id);
+      assert.ok(v.zin.tekst.endsWith('?') && v.dat.tekst.startsWith('Het goede antwoord is '), v.id);
     }
   }
   for (const zin of Object.values(HERKEN_ZINNEN)) assert.match(zin.id, /^nl-herken-[a-z]+$/);

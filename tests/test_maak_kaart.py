@@ -124,9 +124,9 @@ class TekstTest(unittest.TestCase):
         self.assertEqual(mk.slug("Kop van Noord-Holland"), "kop-van-noord-holland")
 
     def test_zinnen_zijn_leesbaar_voor_het_stemscript(self):
-        bron = mk.zin("nl-waar-pl-s-hertogenbosch", "Waar ligt 's-Hertogenbosch?") + mk.zin("nl-dat-pl-urk", "Dat is Urk.")
+        bron = mk.zin("nl-waar-pl-s-hertogenbosch", "Waar ligt 's-Hertogenbosch?") + mk.zin("nl-dat-pl-urk", "Het goede antwoord is Urk.")
         self.assertEqual(ms.lees_zinnen(bron), {"nl-waar-pl-s-hertogenbosch": "Waar ligt 's-Hertogenbosch?",
-                                                "nl-dat-pl-urk": "Dat is Urk."})
+                                                "nl-dat-pl-urk": "Het goede antwoord is Urk."})
 
 
 class BurenTest(unittest.TestCase):
