@@ -128,6 +128,17 @@ class TekstTest(unittest.TestCase):
         self.assertEqual(ms.lees_zinnen(bron), {"nl-waar-pl-s-hertogenbosch": "Waar ligt 's-Hertogenbosch?",
                                                 "nl-dat-pl-urk": "Het goede antwoord is Urk."})
 
+    def test_zin_bij_een_fout_op_de_kaart(self):
+        def hier(item):
+            return ms.lees_zinnen(mk.zinnen_van(item)["hier"])[f"nl-hier-{item['id']}"]
+        self.assertEqual(hier({"id": "wa-kagerplassen", "noem": "de Kagerplassen", "soort": "water"}),
+                         "De Kagerplassen liggen hier.")
+        self.assertEqual(hier({"id": "st-veluwe", "noem": "de Veluwe", "soort": "streek"}), "De Veluwe ligt hier.")
+        stad = {"id": "pl-s-hertogenbosch", "noem": "'s-Hertogenbosch", "soort": "plaats", "hoofdstadVan": "pv-noord-brabant"}
+        zinnen = ms.lees_zinnen("".join(mk.zinnen_van(stad).values()))
+        self.assertEqual(zinnen["nl-hier-pl-s-hertogenbosch"], "'s-Hertogenbosch ligt hier.")
+        self.assertEqual(zinnen["nl-hoofdstad-is-pl-s-hertogenbosch"], "'s-Hertogenbosch is de hoofdstad van Noord-Brabant.")
+
 
 class BurenTest(unittest.TestCase):
     def test_voorstel_kiest_de_dichtste_in_de_richting(self):

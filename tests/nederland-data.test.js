@@ -7,6 +7,9 @@ const VOORVOEGSEL = { provincie: 'pv', plaats: 'pl', streek: 'st', eiland: 'ei',
 const provincies = ITEMS.filter((it) => it.soort === 'provincie');
 const perId = Object.fromEntries(ITEMS.map((it) => [it.id, it]));
 const alleZinnen = ITEMS.flatMap((it) => Object.values(it.zinnen));
+// Namen die "liggen hier" krijgen in plaats van "ligt hier".
+const MEERVOUD = ['st-vijfheerenlanden', 'st-kempen', 'wa-randmeren', 'wa-loosdrechtse-plassen', 'wa-vinkeveense-plassen',
+  'wa-westeinderplassen', 'wa-kagerplassen', 'wa-nieuwkoopse-plassen', 'wa-reeuwijkse-plassen'];
 
 // Een pad van maak-kaart.py: per ring "M x y", dan "l" met relatieve stappen, en "z".
 function ringen(d) {
@@ -65,8 +68,11 @@ test('twaalf provincies, elk met een hoofdstad in de eigen provincie', () => {
     assert.equal(stad?.soort, 'plaats', p.id);
     assert.deepEqual(stad.provincies, [p.id]);
     assert.ok(stad.zinnen.hoofdstadVan, stad.id);
+    assert.ok(stad.zinnen.hoofdstadIs, stad.id);
   }
   assert.equal(ITEMS.filter((it) => it.zinnen.hoofdstadVan).length, 12);
+  assert.equal(ITEMS.filter((it) => it.zinnen.hoofdstadIs).length, 12);
+  for (const it of ITEMS.filter((it) => it.zinnen.hoofdstadIs)) assert.ok(it.zinnen.hoofdstadVan, it.id);
 });
 
 test('elk item hoort bij bestaande provincies', () => {
@@ -82,14 +88,23 @@ test('elk item heeft zijn zinnen volgens het vaste patroon', () => {
     const z = it.zinnen;
     assert.deepEqual(z.waar, { id: `nl-waar-${it.id}`, tekst: `Waar ligt ${it.noem}?` });
     assert.deepEqual(z.dat, { id: `nl-dat-${it.id}`, tekst: `Het goede antwoord is ${it.noem}.` });
+    const naam = it.noem[0].toUpperCase() + it.noem.slice(1);
+    const ligt = MEERVOUD.includes(it.id) ? 'liggen' : 'ligt';
+    assert.deepEqual(z.hier, { id: `nl-hier-${it.id}`, tekst: `${naam} ${ligt} hier.` });
     if (it.soort === 'provincie') {
       assert.deepEqual(z.hoofdstad, { id: `nl-hoofdstad-${it.id}`, tekst: `Wat is de hoofdstad van ${it.noem}?` });
       assert.deepEqual(z.hoofdstadWaar, { id: `nl-hoofdstad-waar-${it.id}`, tekst: `Waar ligt de hoofdstad van ${it.noem}?` });
     }
     if (z.hoofdstadVan) {
       assert.deepEqual(z.hoofdstadVan, { id: `nl-hoofdstad-van-${it.id}`, tekst: `Van welke provincie is ${it.noem} de hoofdstad?` });
+      const provincie = provincies.find((p) => p.hoofdstad === it.id);
+      assert.deepEqual(z.hoofdstadIs, { id: `nl-hoofdstad-is-${it.id}`, tekst: `${it.noem} is de hoofdstad van ${provincie.naam}.` });
     }
   }
+});
+
+test('elke naam die "liggen" krijgt, bestaat', () => {
+  for (const id of MEERVOUD) assert.ok(perId[id], id);
 });
 
 test('zinnen zijn vaste tekst met unieke ids', () => {

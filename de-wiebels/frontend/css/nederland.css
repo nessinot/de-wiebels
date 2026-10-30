@@ -60,9 +60,8 @@
 .opties-nl .optie { height: 110px; padding: 24px 24px; font-size: 56px; }
 .nl-vraagkant .terugkoppeling { flex-wrap: wrap; gap: 24px; font-size: 44px; text-align: center; }
 
-/* Wat oplicht bij "Welke plaats is dit?", en na het antwoord: goed groen, fout gekozen rood met een
-   donkere rand; de rest van wat je kon aanwijzen wordt dan zachter. */
+/* Wat oplicht bij "Welke plaats is dit?", en na het antwoord: goed groen; de rest van wat je kon
+   aanwijzen wordt dan zachter, ook wat fout gekozen is. */
 .nl-kaart .nl-licht { fill: #ffd23f; stroke: #fff; stroke-width: 5px; }
 .nl-kaart .nl-goed { fill: #3fbf4f; stroke: #fff; stroke-width: 6px; }
-.nl-kaart .nl-fout { fill: #e8413c; stroke: #1a1a1a; stroke-width: 6px; }
-.nl-beantwoord .nl-doel:not(.nl-goed):not(.nl-fout) { opacity: .45; }
+.nl-beantwoord .nl-doel:not(.nl-goed) { opacity: .45; }

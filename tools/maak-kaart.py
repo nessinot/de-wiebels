@@ -171,6 +171,10 @@ WATER = [
     ("wa-westerschelde", "Westerschelde", "de Westerschelde", ["NL89_WESTSDE_OWL"]),
 ]
 
+# Namen die "liggen" krijgen in plaats van "ligt".
+MEERVOUD = {"st-vijfheerenlanden", "st-kempen", "wa-randmeren", "wa-loosdrechtse-plassen", "wa-vinkeveense-plassen",
+            "wa-westeinderplassen", "wa-kagerplassen", "wa-nieuwkoopse-plassen", "wa-reeuwijkse-plassen"}
+
 # Plaatsen die er altijd bij horen, ook onder de grens.
 EXTRA_PLAATSEN = ["Urk", "Breskens", "Domburg", "Hulst", "Sluis", "Veere", "Yerseke", "Zierikzee"]
 # Losse stukken van een gemeente die een eigen vlak worden: naam: (gemeente, RD-punt in het stuk).
@@ -574,11 +578,14 @@ def zin(zin_id, tekst):
 def zinnen_van(item):
     i, noem = item["id"], item["noem"]
     z = {"waar": zin(f"nl-waar-{i}", f"Waar ligt {noem}?"), "dat": zin(f"nl-dat-{i}", f"Het goede antwoord is {noem}.")}
+    z["hier"] = zin(f"nl-hier-{i}", f"{noem[:1].upper() + noem[1:]} {'liggen' if i in MEERVOUD else 'ligt'} hier.")
     if item["soort"] == "provincie":
         z["hoofdstad"] = zin(f"nl-hoofdstad-{i}", f"Wat is de hoofdstad van {noem}?")
         z["hoofdstadWaar"] = zin(f"nl-hoofdstad-waar-{i}", f"Waar ligt de hoofdstad van {noem}?")
     if item.get("hoofdstadVan"):
         z["hoofdstadVan"] = zin(f"nl-hoofdstad-van-{i}", f"Van welke provincie is {noem} de hoofdstad?")
+        provincienaam = next(naam for pid, naam, _ in PROVINCIES.values() if pid == item["hoofdstadVan"])
+        z["hoofdstadIs"] = zin(f"nl-hoofdstad-is-{i}", f"{noem} is de hoofdstad van {provincienaam}.")
     return z
 
 

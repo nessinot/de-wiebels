@@ -109,9 +109,9 @@ export function maakVraagpaneel({ zetFocus, opAntwoord }) {
     opAntwoord(sleutel, knop);
   }
 
-  // Op de kaart: het goede antwoord groen en bovenop, een fout gekozen ding rood. De kaart doet
-  // daarna niet meer mee met de focus, zodat OK naar Verder gaat.
-  function markeer(sleutel) {
+  // Op de kaart: het goede antwoord groen en bovenop. De kaart doet daarna niet meer mee met de
+  // focus, zodat OK naar Verder gaat.
+  function markeer() {
     el.querySelectorAll('.optie').forEach((o) => o.classList.add('gekozen-niet'));
     el.querySelector(`.optie[data-waarde="${vraag.goed}"]`)?.classList.replace('gekozen-niet', 'optie-goed');
     if (!bediening) return;
@@ -119,7 +119,6 @@ export function maakVraagpaneel({ zetFocus, opAntwoord }) {
     kaartvak().removeAttribute('data-focus');
     kaartvak().classList.remove('heeft-focus');
     kaartvak().querySelector('.nl-kaart').classList.add('nl-beantwoord');
-    if (sleutel !== vraag.goed) kaartvak().querySelector(`[data-doel="${sleutel}"]`)?.classList.add('nl-fout');
     const goed = kaartvak().querySelector(`[data-doel="${vraag.goed}"]`);
     goed?.parentNode.append(goed);
     goed?.classList.add('nl-goed');
@@ -146,20 +145,20 @@ export function maakVraagpaneel({ zetFocus, opAntwoord }) {
 
   function toonGoed(tekst) {
     bezig = true;
-    markeer(vraag.goed);
+    markeer();
     melding().textContent = tekst;
   }
 
   // Rustig het goede antwoord tonen; verder gaat met OK op de knop Verder.
   function toonFout(sleutel, knop, verder) {
     bezig = true;
-    markeer(sleutel);
+    markeer();
     knop?.classList.add('optie-fout');
     klokAnimatie(sleutel);
     const goedKnop = el.querySelector(`.optie[data-waarde="${vraag.goed}"]`);
     const goedHtml = goedKnop?.innerHTML ?? vraag.goedHtml ?? digitaal(vraag.klok.uur, vraag.klok.minuut);
     opVerder = verder;
-    melding().innerHTML = `<span>Het goede antwoord is <strong>${goedHtml}</strong>.</span>
+    melding().innerHTML = `<span>${vraag.foutHtml ?? `Het goede antwoord is <strong>${goedHtml}</strong>.`}</span>
       <button class="knop knop-hoofd" data-focus data-actie="verder">Verder</button>`;
     zetFocus(melding().querySelector('button'));
   }

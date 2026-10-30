@@ -100,7 +100,7 @@ function basis(id, goed, zin, dat) {
 }
 
 function aanwijzen(vraag, provincie, doelen, ctx) {
-  return { ...vraag, interactief: 'aanwijzen', opties: [], kaart: { provincie, doelen, begin: beginBij(doelen, vraag.goed, ctx) } };
+  return { ...vraag, interactief: 'aanwijzen', opties: [], foutHtml: esc(vraag.dat.tekst), kaart: { provincie, doelen, begin: beginBij(doelen, vraag.goed, ctx) } };
 }
 
 const VORMEN = {
@@ -113,7 +113,7 @@ const VORMEN = {
     };
   },
   wijs(item, ctx) {
-    const vraag = basis(`nl:wijs:${item.id}`, item.id, item.zinnen.waar, item.zinnen.dat);
+    const vraag = basis(`nl:wijs:${item.id}`, item.id, item.zinnen.waar, item.zinnen.hier);
     if (item.soort === 'provincie') return aanwijzen(vraag, null, PROVINCIES, ctx);
     const provincie = zoomVoor(item, ctx);
     return aanwijzen(vraag, provincie, aanwijsDoelen(item, provincie, ctx), ctx);
@@ -129,11 +129,11 @@ const VORMEN = {
     const stad = PER_ID[prov.hoofdstad];
     const doelen = ITEMS.filter((it) => it.soort === 'plaats' && it.provincies.includes(prov.id)
       && (it.id === stad.id || ctx.aan(it.id))).map((it) => it.id);
-    return aanwijzen(basis(`nl:hoofdstad-wijs:${prov.id}`, stad.id, prov.zinnen.hoofdstadWaar, stad.zinnen.dat), prov.id, doelen, ctx);
+    return aanwijzen(basis(`nl:hoofdstad-wijs:${prov.id}`, stad.id, prov.zinnen.hoofdstadWaar, stad.zinnen.hier), prov.id, doelen, ctx);
   },
   'hoofdstad-van'(stad, ctx) {
     const prov = PER_ID[HOOFDSTAD_VAN[stad.id]];
-    return aanwijzen(basis(`nl:hoofdstad-van:${stad.id}`, prov.id, stad.zinnen.hoofdstadVan, prov.zinnen.dat), null, PROVINCIES, ctx);
+    return aanwijzen(basis(`nl:hoofdstad-van:${stad.id}`, prov.id, stad.zinnen.hoofdstadVan, stad.zinnen.hoofdstadIs), null, PROVINCIES, ctx);
   },
 };
 

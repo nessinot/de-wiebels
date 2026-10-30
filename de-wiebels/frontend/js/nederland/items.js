@@ -8,6 +8,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pv-groningen', tekst: 'Waar ligt Groningen?' },
       dat: { id: 'nl-dat-pv-groningen', tekst: 'Het goede antwoord is Groningen.' },
+      hier: { id: 'nl-hier-pv-groningen', tekst: 'Groningen ligt hier.' },
       hoofdstad: { id: 'nl-hoofdstad-pv-groningen', tekst: 'Wat is de hoofdstad van Groningen?' },
       hoofdstadWaar: { id: 'nl-hoofdstad-waar-pv-groningen', tekst: 'Waar ligt de hoofdstad van Groningen?' },
     },
@@ -17,6 +18,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pv-friesland', tekst: 'Waar ligt Friesland?' },
       dat: { id: 'nl-dat-pv-friesland', tekst: 'Het goede antwoord is Friesland.' },
+      hier: { id: 'nl-hier-pv-friesland', tekst: 'Friesland ligt hier.' },
       hoofdstad: { id: 'nl-hoofdstad-pv-friesland', tekst: 'Wat is de hoofdstad van Friesland?' },
       hoofdstadWaar: { id: 'nl-hoofdstad-waar-pv-friesland', tekst: 'Waar ligt de hoofdstad van Friesland?' },
     },
@@ -26,6 +28,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pv-drenthe', tekst: 'Waar ligt Drenthe?' },
       dat: { id: 'nl-dat-pv-drenthe', tekst: 'Het goede antwoord is Drenthe.' },
+      hier: { id: 'nl-hier-pv-drenthe', tekst: 'Drenthe ligt hier.' },
       hoofdstad: { id: 'nl-hoofdstad-pv-drenthe', tekst: 'Wat is de hoofdstad van Drenthe?' },
       hoofdstadWaar: { id: 'nl-hoofdstad-waar-pv-drenthe', tekst: 'Waar ligt de hoofdstad van Drenthe?' },
     },
@@ -35,6 +38,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pv-overijssel', tekst: 'Waar ligt Overijssel?' },
       dat: { id: 'nl-dat-pv-overijssel', tekst: 'Het goede antwoord is Overijssel.' },
+      hier: { id: 'nl-hier-pv-overijssel', tekst: 'Overijssel ligt hier.' },
       hoofdstad: { id: 'nl-hoofdstad-pv-overijssel', tekst: 'Wat is de hoofdstad van Overijssel?' },
       hoofdstadWaar: { id: 'nl-hoofdstad-waar-pv-overijssel', tekst: 'Waar ligt de hoofdstad van Overijssel?' },
     },
@@ -44,6 +48,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pv-flevoland', tekst: 'Waar ligt Flevoland?' },
       dat: { id: 'nl-dat-pv-flevoland', tekst: 'Het goede antwoord is Flevoland.' },
+      hier: { id: 'nl-hier-pv-flevoland', tekst: 'Flevoland ligt hier.' },
       hoofdstad: { id: 'nl-hoofdstad-pv-flevoland', tekst: 'Wat is de hoofdstad van Flevoland?' },
       hoofdstadWaar: { id: 'nl-hoofdstad-waar-pv-flevoland', tekst: 'Waar ligt de hoofdstad van Flevoland?' },
     },
@@ -53,6 +58,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pv-gelderland', tekst: 'Waar ligt Gelderland?' },
       dat: { id: 'nl-dat-pv-gelderland', tekst: 'Het goede antwoord is Gelderland.' },
+      hier: { id: 'nl-hier-pv-gelderland', tekst: 'Gelderland ligt hier.' },
       hoofdstad: { id: 'nl-hoofdstad-pv-gelderland', tekst: 'Wat is de hoofdstad van Gelderland?' },
       hoofdstadWaar: { id: 'nl-hoofdstad-waar-pv-gelderland', tekst: 'Waar ligt de hoofdstad van Gelderland?' },
     },
@@ -62,6 +68,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pv-utrecht', tekst: 'Waar ligt Utrecht?' },
       dat: { id: 'nl-dat-pv-utrecht', tekst: 'Het goede antwoord is Utrecht.' },
+      hier: { id: 'nl-hier-pv-utrecht', tekst: 'Utrecht ligt hier.' },
       hoofdstad: { id: 'nl-hoofdstad-pv-utrecht', tekst: 'Wat is de hoofdstad van Utrecht?' },
       hoofdstadWaar: { id: 'nl-hoofdstad-waar-pv-utrecht', tekst: 'Waar ligt de hoofdstad van Utrecht?' },
     },
@@ -71,6 +78,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pv-noord-holland', tekst: 'Waar ligt Noord-Holland?' },
       dat: { id: 'nl-dat-pv-noord-holland', tekst: 'Het goede antwoord is Noord-Holland.' },
+      hier: { id: 'nl-hier-pv-noord-holland', tekst: 'Noord-Holland ligt hier.' },
       hoofdstad: { id: 'nl-hoofdstad-pv-noord-holland', tekst: 'Wat is de hoofdstad van Noord-Holland?' },
       hoofdstadWaar: { id: 'nl-hoofdstad-waar-pv-noord-holland', tekst: 'Waar ligt de hoofdstad van Noord-Holland?' },
     },
@@ -80,6 +88,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pv-zuid-holland', tekst: 'Waar ligt Zuid-Holland?' },
       dat: { id: 'nl-dat-pv-zuid-holland', tekst: 'Het goede antwoord is Zuid-Holland.' },
+      hier: { id: 'nl-hier-pv-zuid-holland', tekst: 'Zuid-Holland ligt hier.' },
       hoofdstad: { id: 'nl-hoofdstad-pv-zuid-holland', tekst: 'Wat is de hoofdstad van Zuid-Holland?' },
       hoofdstadWaar: { id: 'nl-hoofdstad-waar-pv-zuid-holland', tekst: 'Waar ligt de hoofdstad van Zuid-Holland?' },
     },
@@ -89,6 +98,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pv-zeeland', tekst: 'Waar ligt Zeeland?' },
       dat: { id: 'nl-dat-pv-zeeland', tekst: 'Het goede antwoord is Zeeland.' },
+      hier: { id: 'nl-hier-pv-zeeland', tekst: 'Zeeland ligt hier.' },
       hoofdstad: { id: 'nl-hoofdstad-pv-zeeland', tekst: 'Wat is de hoofdstad van Zeeland?' },
       hoofdstadWaar: { id: 'nl-hoofdstad-waar-pv-zeeland', tekst: 'Waar ligt de hoofdstad van Zeeland?' },
     },
@@ -98,6 +108,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pv-noord-brabant', tekst: 'Waar ligt Noord-Brabant?' },
       dat: { id: 'nl-dat-pv-noord-brabant', tekst: 'Het goede antwoord is Noord-Brabant.' },
+      hier: { id: 'nl-hier-pv-noord-brabant', tekst: 'Noord-Brabant ligt hier.' },
       hoofdstad: { id: 'nl-hoofdstad-pv-noord-brabant', tekst: 'Wat is de hoofdstad van Noord-Brabant?' },
       hoofdstadWaar: { id: 'nl-hoofdstad-waar-pv-noord-brabant', tekst: 'Waar ligt de hoofdstad van Noord-Brabant?' },
     },
@@ -107,6 +118,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pv-limburg', tekst: 'Waar ligt Limburg?' },
       dat: { id: 'nl-dat-pv-limburg', tekst: 'Het goede antwoord is Limburg.' },
+      hier: { id: 'nl-hier-pv-limburg', tekst: 'Limburg ligt hier.' },
       hoofdstad: { id: 'nl-hoofdstad-pv-limburg', tekst: 'Wat is de hoofdstad van Limburg?' },
       hoofdstadWaar: { id: 'nl-hoofdstad-waar-pv-limburg', tekst: 'Waar ligt de hoofdstad van Limburg?' },
     },
@@ -116,7 +128,9 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-groningen', tekst: 'Waar ligt Groningen?' },
       dat: { id: 'nl-dat-pl-groningen', tekst: 'Het goede antwoord is Groningen.' },
+      hier: { id: 'nl-hier-pl-groningen', tekst: 'Groningen ligt hier.' },
       hoofdstadVan: { id: 'nl-hoofdstad-van-pl-groningen', tekst: 'Van welke provincie is Groningen de hoofdstad?' },
+      hoofdstadIs: { id: 'nl-hoofdstad-is-pl-groningen', tekst: 'Groningen is de hoofdstad van Groningen.' },
     },
   },
   {
@@ -124,6 +138,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-hoogezand', tekst: 'Waar ligt Hoogezand?' },
       dat: { id: 'nl-dat-pl-hoogezand', tekst: 'Het goede antwoord is Hoogezand.' },
+      hier: { id: 'nl-hier-pl-hoogezand', tekst: 'Hoogezand ligt hier.' },
     },
   },
   {
@@ -131,6 +146,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-veendam', tekst: 'Waar ligt Veendam?' },
       dat: { id: 'nl-dat-pl-veendam', tekst: 'Het goede antwoord is Veendam.' },
+      hier: { id: 'nl-hier-pl-veendam', tekst: 'Veendam ligt hier.' },
     },
   },
   {
@@ -138,6 +154,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-hogeland', tekst: 'Waar ligt het Hogeland?' },
       dat: { id: 'nl-dat-st-hogeland', tekst: 'Het goede antwoord is het Hogeland.' },
+      hier: { id: 'nl-hier-st-hogeland', tekst: 'Het Hogeland ligt hier.' },
     },
   },
   {
@@ -145,6 +162,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-westerkwartier', tekst: 'Waar ligt het Westerkwartier?' },
       dat: { id: 'nl-dat-st-westerkwartier', tekst: 'Het goede antwoord is het Westerkwartier.' },
+      hier: { id: 'nl-hier-st-westerkwartier', tekst: 'Het Westerkwartier ligt hier.' },
     },
   },
   {
@@ -152,6 +170,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-oldambt', tekst: 'Waar ligt het Oldambt?' },
       dat: { id: 'nl-dat-st-oldambt', tekst: 'Het goede antwoord is het Oldambt.' },
+      hier: { id: 'nl-hier-st-oldambt', tekst: 'Het Oldambt ligt hier.' },
     },
   },
   {
@@ -159,6 +178,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-westerwolde', tekst: 'Waar ligt Westerwolde?' },
       dat: { id: 'nl-dat-st-westerwolde', tekst: 'Het goede antwoord is Westerwolde.' },
+      hier: { id: 'nl-hier-st-westerwolde', tekst: 'Westerwolde ligt hier.' },
     },
   },
   {
@@ -166,7 +186,9 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-leeuwarden', tekst: 'Waar ligt Leeuwarden?' },
       dat: { id: 'nl-dat-pl-leeuwarden', tekst: 'Het goede antwoord is Leeuwarden.' },
+      hier: { id: 'nl-hier-pl-leeuwarden', tekst: 'Leeuwarden ligt hier.' },
       hoofdstadVan: { id: 'nl-hoofdstad-van-pl-leeuwarden', tekst: 'Van welke provincie is Leeuwarden de hoofdstad?' },
+      hoofdstadIs: { id: 'nl-hoofdstad-is-pl-leeuwarden', tekst: 'Leeuwarden is de hoofdstad van Friesland.' },
     },
   },
   {
@@ -174,6 +196,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-drachten', tekst: 'Waar ligt Drachten?' },
       dat: { id: 'nl-dat-pl-drachten', tekst: 'Het goede antwoord is Drachten.' },
+      hier: { id: 'nl-hier-pl-drachten', tekst: 'Drachten ligt hier.' },
     },
   },
   {
@@ -181,6 +204,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-sneek', tekst: 'Waar ligt Sneek?' },
       dat: { id: 'nl-dat-pl-sneek', tekst: 'Het goede antwoord is Sneek.' },
+      hier: { id: 'nl-hier-pl-sneek', tekst: 'Sneek ligt hier.' },
     },
   },
   {
@@ -188,6 +212,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-heerenveen', tekst: 'Waar ligt Heerenveen?' },
       dat: { id: 'nl-dat-pl-heerenveen', tekst: 'Het goede antwoord is Heerenveen.' },
+      hier: { id: 'nl-hier-pl-heerenveen', tekst: 'Heerenveen ligt hier.' },
     },
   },
   {
@@ -195,6 +220,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-ei-vlieland', tekst: 'Waar ligt Vlieland?' },
       dat: { id: 'nl-dat-ei-vlieland', tekst: 'Het goede antwoord is Vlieland.' },
+      hier: { id: 'nl-hier-ei-vlieland', tekst: 'Vlieland ligt hier.' },
     },
   },
   {
@@ -202,6 +228,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-ei-terschelling', tekst: 'Waar ligt Terschelling?' },
       dat: { id: 'nl-dat-ei-terschelling', tekst: 'Het goede antwoord is Terschelling.' },
+      hier: { id: 'nl-hier-ei-terschelling', tekst: 'Terschelling ligt hier.' },
     },
   },
   {
@@ -209,6 +236,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-ei-ameland', tekst: 'Waar ligt Ameland?' },
       dat: { id: 'nl-dat-ei-ameland', tekst: 'Het goede antwoord is Ameland.' },
+      hier: { id: 'nl-hier-ei-ameland', tekst: 'Ameland ligt hier.' },
     },
   },
   {
@@ -216,6 +244,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-ei-schiermonnikoog', tekst: 'Waar ligt Schiermonnikoog?' },
       dat: { id: 'nl-dat-ei-schiermonnikoog', tekst: 'Het goede antwoord is Schiermonnikoog.' },
+      hier: { id: 'nl-hier-ei-schiermonnikoog', tekst: 'Schiermonnikoog ligt hier.' },
     },
   },
   {
@@ -223,7 +252,9 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-assen', tekst: 'Waar ligt Assen?' },
       dat: { id: 'nl-dat-pl-assen', tekst: 'Het goede antwoord is Assen.' },
+      hier: { id: 'nl-hier-pl-assen', tekst: 'Assen ligt hier.' },
       hoofdstadVan: { id: 'nl-hoofdstad-van-pl-assen', tekst: 'Van welke provincie is Assen de hoofdstad?' },
+      hoofdstadIs: { id: 'nl-hoofdstad-is-pl-assen', tekst: 'Assen is de hoofdstad van Drenthe.' },
     },
   },
   {
@@ -231,6 +262,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-emmen', tekst: 'Waar ligt Emmen?' },
       dat: { id: 'nl-dat-pl-emmen', tekst: 'Het goede antwoord is Emmen.' },
+      hier: { id: 'nl-hier-pl-emmen', tekst: 'Emmen ligt hier.' },
     },
   },
   {
@@ -238,6 +270,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-hoogeveen', tekst: 'Waar ligt Hoogeveen?' },
       dat: { id: 'nl-dat-pl-hoogeveen', tekst: 'Het goede antwoord is Hoogeveen.' },
+      hier: { id: 'nl-hier-pl-hoogeveen', tekst: 'Hoogeveen ligt hier.' },
     },
   },
   {
@@ -245,6 +278,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-meppel', tekst: 'Waar ligt Meppel?' },
       dat: { id: 'nl-dat-pl-meppel', tekst: 'Het goede antwoord is Meppel.' },
+      hier: { id: 'nl-hier-pl-meppel', tekst: 'Meppel ligt hier.' },
     },
   },
   {
@@ -252,6 +286,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-enschede', tekst: 'Waar ligt Enschede?' },
       dat: { id: 'nl-dat-pl-enschede', tekst: 'Het goede antwoord is Enschede.' },
+      hier: { id: 'nl-hier-pl-enschede', tekst: 'Enschede ligt hier.' },
     },
   },
   {
@@ -259,7 +294,9 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-zwolle', tekst: 'Waar ligt Zwolle?' },
       dat: { id: 'nl-dat-pl-zwolle', tekst: 'Het goede antwoord is Zwolle.' },
+      hier: { id: 'nl-hier-pl-zwolle', tekst: 'Zwolle ligt hier.' },
       hoofdstadVan: { id: 'nl-hoofdstad-van-pl-zwolle', tekst: 'Van welke provincie is Zwolle de hoofdstad?' },
+      hoofdstadIs: { id: 'nl-hoofdstad-is-pl-zwolle', tekst: 'Zwolle is de hoofdstad van Overijssel.' },
     },
   },
   {
@@ -267,6 +304,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-hengelo', tekst: 'Waar ligt Hengelo?' },
       dat: { id: 'nl-dat-pl-hengelo', tekst: 'Het goede antwoord is Hengelo.' },
+      hier: { id: 'nl-hier-pl-hengelo', tekst: 'Hengelo ligt hier.' },
     },
   },
   {
@@ -274,6 +312,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-deventer', tekst: 'Waar ligt Deventer?' },
       dat: { id: 'nl-dat-pl-deventer', tekst: 'Het goede antwoord is Deventer.' },
+      hier: { id: 'nl-hier-pl-deventer', tekst: 'Deventer ligt hier.' },
     },
   },
   {
@@ -281,6 +320,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-almelo', tekst: 'Waar ligt Almelo?' },
       dat: { id: 'nl-dat-pl-almelo', tekst: 'Het goede antwoord is Almelo.' },
+      hier: { id: 'nl-hier-pl-almelo', tekst: 'Almelo ligt hier.' },
     },
   },
   {
@@ -288,6 +328,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-kampen', tekst: 'Waar ligt Kampen?' },
       dat: { id: 'nl-dat-pl-kampen', tekst: 'Het goede antwoord is Kampen.' },
+      hier: { id: 'nl-hier-pl-kampen', tekst: 'Kampen ligt hier.' },
     },
   },
   {
@@ -295,6 +336,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-oldenzaal', tekst: 'Waar ligt Oldenzaal?' },
       dat: { id: 'nl-dat-pl-oldenzaal', tekst: 'Het goede antwoord is Oldenzaal.' },
+      hier: { id: 'nl-hier-pl-oldenzaal', tekst: 'Oldenzaal ligt hier.' },
     },
   },
   {
@@ -302,6 +344,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-rijssen', tekst: 'Waar ligt Rijssen?' },
       dat: { id: 'nl-dat-pl-rijssen', tekst: 'Het goede antwoord is Rijssen.' },
+      hier: { id: 'nl-hier-pl-rijssen', tekst: 'Rijssen ligt hier.' },
     },
   },
   {
@@ -309,6 +352,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-nijverdal', tekst: 'Waar ligt Nijverdal?' },
       dat: { id: 'nl-dat-pl-nijverdal', tekst: 'Het goede antwoord is Nijverdal.' },
+      hier: { id: 'nl-hier-pl-nijverdal', tekst: 'Nijverdal ligt hier.' },
     },
   },
   {
@@ -316,6 +360,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-borne', tekst: 'Waar ligt Borne?' },
       dat: { id: 'nl-dat-pl-borne', tekst: 'Het goede antwoord is Borne.' },
+      hier: { id: 'nl-hier-pl-borne', tekst: 'Borne ligt hier.' },
     },
   },
   {
@@ -323,6 +368,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-twente', tekst: 'Waar ligt Twente?' },
       dat: { id: 'nl-dat-st-twente', tekst: 'Het goede antwoord is Twente.' },
+      hier: { id: 'nl-hier-st-twente', tekst: 'Twente ligt hier.' },
     },
   },
   {
@@ -330,6 +376,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-salland', tekst: 'Waar ligt Salland?' },
       dat: { id: 'nl-dat-st-salland', tekst: 'Het goede antwoord is Salland.' },
+      hier: { id: 'nl-hier-st-salland', tekst: 'Salland ligt hier.' },
     },
   },
   {
@@ -337,6 +384,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-almere', tekst: 'Waar ligt Almere?' },
       dat: { id: 'nl-dat-pl-almere', tekst: 'Het goede antwoord is Almere.' },
+      hier: { id: 'nl-hier-pl-almere', tekst: 'Almere ligt hier.' },
     },
   },
   {
@@ -344,7 +392,9 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-lelystad', tekst: 'Waar ligt Lelystad?' },
       dat: { id: 'nl-dat-pl-lelystad', tekst: 'Het goede antwoord is Lelystad.' },
+      hier: { id: 'nl-hier-pl-lelystad', tekst: 'Lelystad ligt hier.' },
       hoofdstadVan: { id: 'nl-hoofdstad-van-pl-lelystad', tekst: 'Van welke provincie is Lelystad de hoofdstad?' },
+      hoofdstadIs: { id: 'nl-hoofdstad-is-pl-lelystad', tekst: 'Lelystad is de hoofdstad van Flevoland.' },
     },
   },
   {
@@ -352,6 +402,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-dronten', tekst: 'Waar ligt Dronten?' },
       dat: { id: 'nl-dat-pl-dronten', tekst: 'Het goede antwoord is Dronten.' },
+      hier: { id: 'nl-hier-pl-dronten', tekst: 'Dronten ligt hier.' },
     },
   },
   {
@@ -359,6 +410,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-emmeloord', tekst: 'Waar ligt Emmeloord?' },
       dat: { id: 'nl-dat-pl-emmeloord', tekst: 'Het goede antwoord is Emmeloord.' },
+      hier: { id: 'nl-hier-pl-emmeloord', tekst: 'Emmeloord ligt hier.' },
     },
   },
   {
@@ -366,6 +418,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-zeewolde', tekst: 'Waar ligt Zeewolde?' },
       dat: { id: 'nl-dat-pl-zeewolde', tekst: 'Het goede antwoord is Zeewolde.' },
+      hier: { id: 'nl-hier-pl-zeewolde', tekst: 'Zeewolde ligt hier.' },
     },
   },
   {
@@ -373,6 +426,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-urk', tekst: 'Waar ligt Urk?' },
       dat: { id: 'nl-dat-pl-urk', tekst: 'Het goede antwoord is Urk.' },
+      hier: { id: 'nl-hier-pl-urk', tekst: 'Urk ligt hier.' },
     },
   },
   {
@@ -380,6 +434,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-noordoostpolder', tekst: 'Waar ligt de Noordoostpolder?' },
       dat: { id: 'nl-dat-st-noordoostpolder', tekst: 'Het goede antwoord is de Noordoostpolder.' },
+      hier: { id: 'nl-hier-st-noordoostpolder', tekst: 'De Noordoostpolder ligt hier.' },
     },
   },
   {
@@ -387,6 +442,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-ei-flevopolder', tekst: 'Waar ligt de Flevopolder?' },
       dat: { id: 'nl-dat-ei-flevopolder', tekst: 'Het goede antwoord is de Flevopolder.' },
+      hier: { id: 'nl-hier-ei-flevopolder', tekst: 'De Flevopolder ligt hier.' },
     },
   },
   {
@@ -394,6 +450,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-nijmegen', tekst: 'Waar ligt Nijmegen?' },
       dat: { id: 'nl-dat-pl-nijmegen', tekst: 'Het goede antwoord is Nijmegen.' },
+      hier: { id: 'nl-hier-pl-nijmegen', tekst: 'Nijmegen ligt hier.' },
     },
   },
   {
@@ -401,7 +458,9 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-arnhem', tekst: 'Waar ligt Arnhem?' },
       dat: { id: 'nl-dat-pl-arnhem', tekst: 'Het goede antwoord is Arnhem.' },
+      hier: { id: 'nl-hier-pl-arnhem', tekst: 'Arnhem ligt hier.' },
       hoofdstadVan: { id: 'nl-hoofdstad-van-pl-arnhem', tekst: 'Van welke provincie is Arnhem de hoofdstad?' },
+      hoofdstadIs: { id: 'nl-hoofdstad-is-pl-arnhem', tekst: 'Arnhem is de hoofdstad van Gelderland.' },
     },
   },
   {
@@ -409,6 +468,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-apeldoorn', tekst: 'Waar ligt Apeldoorn?' },
       dat: { id: 'nl-dat-pl-apeldoorn', tekst: 'Het goede antwoord is Apeldoorn.' },
+      hier: { id: 'nl-hier-pl-apeldoorn', tekst: 'Apeldoorn ligt hier.' },
     },
   },
   {
@@ -416,6 +476,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-ede', tekst: 'Waar ligt Ede?' },
       dat: { id: 'nl-dat-pl-ede', tekst: 'Het goede antwoord is Ede.' },
+      hier: { id: 'nl-hier-pl-ede', tekst: 'Ede ligt hier.' },
     },
   },
   {
@@ -423,6 +484,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-harderwijk', tekst: 'Waar ligt Harderwijk?' },
       dat: { id: 'nl-dat-pl-harderwijk', tekst: 'Het goede antwoord is Harderwijk.' },
+      hier: { id: 'nl-hier-pl-harderwijk', tekst: 'Harderwijk ligt hier.' },
     },
   },
   {
@@ -430,6 +492,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-doetinchem', tekst: 'Waar ligt Doetinchem?' },
       dat: { id: 'nl-dat-pl-doetinchem', tekst: 'Het goede antwoord is Doetinchem.' },
+      hier: { id: 'nl-hier-pl-doetinchem', tekst: 'Doetinchem ligt hier.' },
     },
   },
   {
@@ -437,6 +500,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-tiel', tekst: 'Waar ligt Tiel?' },
       dat: { id: 'nl-dat-pl-tiel', tekst: 'Het goede antwoord is Tiel.' },
+      hier: { id: 'nl-hier-pl-tiel', tekst: 'Tiel ligt hier.' },
     },
   },
   {
@@ -444,6 +508,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-wageningen', tekst: 'Waar ligt Wageningen?' },
       dat: { id: 'nl-dat-pl-wageningen', tekst: 'Het goede antwoord is Wageningen.' },
+      hier: { id: 'nl-hier-pl-wageningen', tekst: 'Wageningen ligt hier.' },
     },
   },
   {
@@ -451,6 +516,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-wijchen', tekst: 'Waar ligt Wijchen?' },
       dat: { id: 'nl-dat-pl-wijchen', tekst: 'Het goede antwoord is Wijchen.' },
+      hier: { id: 'nl-hier-pl-wijchen', tekst: 'Wijchen ligt hier.' },
     },
   },
   {
@@ -458,6 +524,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-zutphen', tekst: 'Waar ligt Zutphen?' },
       dat: { id: 'nl-dat-pl-zutphen', tekst: 'Het goede antwoord is Zutphen.' },
+      hier: { id: 'nl-hier-pl-zutphen', tekst: 'Zutphen ligt hier.' },
     },
   },
   {
@@ -465,6 +532,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-barneveld', tekst: 'Waar ligt Barneveld?' },
       dat: { id: 'nl-dat-pl-barneveld', tekst: 'Het goede antwoord is Barneveld.' },
+      hier: { id: 'nl-hier-pl-barneveld', tekst: 'Barneveld ligt hier.' },
     },
   },
   {
@@ -472,6 +540,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-culemborg', tekst: 'Waar ligt Culemborg?' },
       dat: { id: 'nl-dat-pl-culemborg', tekst: 'Het goede antwoord is Culemborg.' },
+      hier: { id: 'nl-hier-pl-culemborg', tekst: 'Culemborg ligt hier.' },
     },
   },
   {
@@ -479,6 +548,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-nijkerk', tekst: 'Waar ligt Nijkerk?' },
       dat: { id: 'nl-dat-pl-nijkerk', tekst: 'Het goede antwoord is Nijkerk.' },
+      hier: { id: 'nl-hier-pl-nijkerk', tekst: 'Nijkerk ligt hier.' },
     },
   },
   {
@@ -486,6 +556,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-zevenaar', tekst: 'Waar ligt Zevenaar?' },
       dat: { id: 'nl-dat-pl-zevenaar', tekst: 'Het goede antwoord is Zevenaar.' },
+      hier: { id: 'nl-hier-pl-zevenaar', tekst: 'Zevenaar ligt hier.' },
     },
   },
   {
@@ -493,6 +564,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-ermelo', tekst: 'Waar ligt Ermelo?' },
       dat: { id: 'nl-dat-pl-ermelo', tekst: 'Het goede antwoord is Ermelo.' },
+      hier: { id: 'nl-hier-pl-ermelo', tekst: 'Ermelo ligt hier.' },
     },
   },
   {
@@ -500,6 +572,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-winterswijk', tekst: 'Waar ligt Winterswijk?' },
       dat: { id: 'nl-dat-pl-winterswijk', tekst: 'Het goede antwoord is Winterswijk.' },
+      hier: { id: 'nl-hier-pl-winterswijk', tekst: 'Winterswijk ligt hier.' },
     },
   },
   {
@@ -507,6 +580,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-elst', tekst: 'Waar ligt Elst?' },
       dat: { id: 'nl-dat-pl-elst', tekst: 'Het goede antwoord is Elst.' },
+      hier: { id: 'nl-hier-pl-elst', tekst: 'Elst ligt hier.' },
     },
   },
   {
@@ -514,6 +588,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-duiven', tekst: 'Waar ligt Duiven?' },
       dat: { id: 'nl-dat-pl-duiven', tekst: 'Het goede antwoord is Duiven.' },
+      hier: { id: 'nl-hier-pl-duiven', tekst: 'Duiven ligt hier.' },
     },
   },
   {
@@ -521,6 +596,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-veluwe', tekst: 'Waar ligt de Veluwe?' },
       dat: { id: 'nl-dat-st-veluwe', tekst: 'Het goede antwoord is de Veluwe.' },
+      hier: { id: 'nl-hier-st-veluwe', tekst: 'De Veluwe ligt hier.' },
     },
   },
   {
@@ -528,6 +604,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-achterhoek', tekst: 'Waar ligt de Achterhoek?' },
       dat: { id: 'nl-dat-st-achterhoek', tekst: 'Het goede antwoord is de Achterhoek.' },
+      hier: { id: 'nl-hier-st-achterhoek', tekst: 'De Achterhoek ligt hier.' },
     },
   },
   {
@@ -535,6 +612,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-betuwe', tekst: 'Waar ligt de Betuwe?' },
       dat: { id: 'nl-dat-st-betuwe', tekst: 'Het goede antwoord is de Betuwe.' },
+      hier: { id: 'nl-hier-st-betuwe', tekst: 'De Betuwe ligt hier.' },
     },
   },
   {
@@ -542,6 +620,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-bommelerwaard', tekst: 'Waar ligt de Bommelerwaard?' },
       dat: { id: 'nl-dat-st-bommelerwaard', tekst: 'Het goede antwoord is de Bommelerwaard.' },
+      hier: { id: 'nl-hier-st-bommelerwaard', tekst: 'De Bommelerwaard ligt hier.' },
     },
   },
   {
@@ -549,6 +628,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-maas-en-waal', tekst: 'Waar ligt het Land van Maas en Waal?' },
       dat: { id: 'nl-dat-st-maas-en-waal', tekst: 'Het goede antwoord is het Land van Maas en Waal.' },
+      hier: { id: 'nl-hier-st-maas-en-waal', tekst: 'Het Land van Maas en Waal ligt hier.' },
     },
   },
   {
@@ -556,7 +636,9 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-utrecht', tekst: 'Waar ligt Utrecht?' },
       dat: { id: 'nl-dat-pl-utrecht', tekst: 'Het goede antwoord is Utrecht.' },
+      hier: { id: 'nl-hier-pl-utrecht', tekst: 'Utrecht ligt hier.' },
       hoofdstadVan: { id: 'nl-hoofdstad-van-pl-utrecht', tekst: 'Van welke provincie is Utrecht de hoofdstad?' },
+      hoofdstadIs: { id: 'nl-hoofdstad-is-pl-utrecht', tekst: 'Utrecht is de hoofdstad van Utrecht.' },
     },
   },
   {
@@ -564,6 +646,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-amersfoort', tekst: 'Waar ligt Amersfoort?' },
       dat: { id: 'nl-dat-pl-amersfoort', tekst: 'Het goede antwoord is Amersfoort.' },
+      hier: { id: 'nl-hier-pl-amersfoort', tekst: 'Amersfoort ligt hier.' },
     },
   },
   {
@@ -571,6 +654,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-veenendaal', tekst: 'Waar ligt Veenendaal?' },
       dat: { id: 'nl-dat-pl-veenendaal', tekst: 'Het goede antwoord is Veenendaal.' },
+      hier: { id: 'nl-hier-pl-veenendaal', tekst: 'Veenendaal ligt hier.' },
     },
   },
   {
@@ -578,6 +662,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-nieuwegein', tekst: 'Waar ligt Nieuwegein?' },
       dat: { id: 'nl-dat-pl-nieuwegein', tekst: 'Het goede antwoord is Nieuwegein.' },
+      hier: { id: 'nl-hier-pl-nieuwegein', tekst: 'Nieuwegein ligt hier.' },
     },
   },
   {
@@ -585,6 +670,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-zeist', tekst: 'Waar ligt Zeist?' },
       dat: { id: 'nl-dat-pl-zeist', tekst: 'Het goede antwoord is Zeist.' },
+      hier: { id: 'nl-hier-pl-zeist', tekst: 'Zeist ligt hier.' },
     },
   },
   {
@@ -592,6 +678,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-houten', tekst: 'Waar ligt Houten?' },
       dat: { id: 'nl-dat-pl-houten', tekst: 'Het goede antwoord is Houten.' },
+      hier: { id: 'nl-hier-pl-houten', tekst: 'Houten ligt hier.' },
     },
   },
   {
@@ -599,6 +686,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-maarssen', tekst: 'Waar ligt Maarssen?' },
       dat: { id: 'nl-dat-pl-maarssen', tekst: 'Het goede antwoord is Maarssen.' },
+      hier: { id: 'nl-hier-pl-maarssen', tekst: 'Maarssen ligt hier.' },
     },
   },
   {
@@ -606,6 +694,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-woerden', tekst: 'Waar ligt Woerden?' },
       dat: { id: 'nl-dat-pl-woerden', tekst: 'Het goede antwoord is Woerden.' },
+      hier: { id: 'nl-hier-pl-woerden', tekst: 'Woerden ligt hier.' },
     },
   },
   {
@@ -613,6 +702,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-soest', tekst: 'Waar ligt Soest?' },
       dat: { id: 'nl-dat-pl-soest', tekst: 'Het goede antwoord is Soest.' },
+      hier: { id: 'nl-hier-pl-soest', tekst: 'Soest ligt hier.' },
     },
   },
   {
@@ -620,6 +710,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-ijsselstein', tekst: 'Waar ligt IJsselstein?' },
       dat: { id: 'nl-dat-pl-ijsselstein', tekst: 'Het goede antwoord is IJsselstein.' },
+      hier: { id: 'nl-hier-pl-ijsselstein', tekst: 'IJsselstein ligt hier.' },
     },
   },
   {
@@ -627,6 +718,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-leusden', tekst: 'Waar ligt Leusden?' },
       dat: { id: 'nl-dat-pl-leusden', tekst: 'Het goede antwoord is Leusden.' },
+      hier: { id: 'nl-hier-pl-leusden', tekst: 'Leusden ligt hier.' },
     },
   },
   {
@@ -634,6 +726,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-baarn', tekst: 'Waar ligt Baarn?' },
       dat: { id: 'nl-dat-pl-baarn', tekst: 'Het goede antwoord is Baarn.' },
+      hier: { id: 'nl-hier-pl-baarn', tekst: 'Baarn ligt hier.' },
     },
   },
   {
@@ -641,6 +734,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-bilthoven', tekst: 'Waar ligt Bilthoven?' },
       dat: { id: 'nl-dat-pl-bilthoven', tekst: 'Het goede antwoord is Bilthoven.' },
+      hier: { id: 'nl-hier-pl-bilthoven', tekst: 'Bilthoven ligt hier.' },
     },
   },
   {
@@ -648,6 +742,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-vijfheerenlanden', tekst: 'Waar ligt de Vijfheerenlanden?' },
       dat: { id: 'nl-dat-st-vijfheerenlanden', tekst: 'Het goede antwoord is de Vijfheerenlanden.' },
+      hier: { id: 'nl-hier-st-vijfheerenlanden', tekst: 'De Vijfheerenlanden liggen hier.' },
     },
   },
   {
@@ -655,6 +750,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-amsterdam', tekst: 'Waar ligt Amsterdam?' },
       dat: { id: 'nl-dat-pl-amsterdam', tekst: 'Het goede antwoord is Amsterdam.' },
+      hier: { id: 'nl-hier-pl-amsterdam', tekst: 'Amsterdam ligt hier.' },
     },
   },
   {
@@ -662,7 +758,9 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-haarlem', tekst: 'Waar ligt Haarlem?' },
       dat: { id: 'nl-dat-pl-haarlem', tekst: 'Het goede antwoord is Haarlem.' },
+      hier: { id: 'nl-hier-pl-haarlem', tekst: 'Haarlem ligt hier.' },
       hoofdstadVan: { id: 'nl-hoofdstad-van-pl-haarlem', tekst: 'Van welke provincie is Haarlem de hoofdstad?' },
+      hoofdstadIs: { id: 'nl-hoofdstad-is-pl-haarlem', tekst: 'Haarlem is de hoofdstad van Noord-Holland.' },
     },
   },
   {
@@ -670,6 +768,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-alkmaar', tekst: 'Waar ligt Alkmaar?' },
       dat: { id: 'nl-dat-pl-alkmaar', tekst: 'Het goede antwoord is Alkmaar.' },
+      hier: { id: 'nl-hier-pl-alkmaar', tekst: 'Alkmaar ligt hier.' },
     },
   },
   {
@@ -677,6 +776,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-hilversum', tekst: 'Waar ligt Hilversum?' },
       dat: { id: 'nl-dat-pl-hilversum', tekst: 'Het goede antwoord is Hilversum.' },
+      hier: { id: 'nl-hier-pl-hilversum', tekst: 'Hilversum ligt hier.' },
     },
   },
   {
@@ -684,6 +784,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-amstelveen', tekst: 'Waar ligt Amstelveen?' },
       dat: { id: 'nl-dat-pl-amstelveen', tekst: 'Het goede antwoord is Amstelveen.' },
+      hier: { id: 'nl-hier-pl-amstelveen', tekst: 'Amstelveen ligt hier.' },
     },
   },
   {
@@ -691,6 +792,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-purmerend', tekst: 'Waar ligt Purmerend?' },
       dat: { id: 'nl-dat-pl-purmerend', tekst: 'Het goede antwoord is Purmerend.' },
+      hier: { id: 'nl-hier-pl-purmerend', tekst: 'Purmerend ligt hier.' },
     },
   },
   {
@@ -698,6 +800,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-zaandam', tekst: 'Waar ligt Zaandam?' },
       dat: { id: 'nl-dat-pl-zaandam', tekst: 'Het goede antwoord is Zaandam.' },
+      hier: { id: 'nl-hier-pl-zaandam', tekst: 'Zaandam ligt hier.' },
     },
   },
   {
@@ -705,6 +808,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-hoofddorp', tekst: 'Waar ligt Hoofddorp?' },
       dat: { id: 'nl-dat-pl-hoofddorp', tekst: 'Het goede antwoord is Hoofddorp.' },
+      hier: { id: 'nl-hier-pl-hoofddorp', tekst: 'Hoofddorp ligt hier.' },
     },
   },
   {
@@ -712,6 +816,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-hoorn', tekst: 'Waar ligt Hoorn?' },
       dat: { id: 'nl-dat-pl-hoorn', tekst: 'Het goede antwoord is Hoorn.' },
+      hier: { id: 'nl-hier-pl-hoorn', tekst: 'Hoorn ligt hier.' },
     },
   },
   {
@@ -719,6 +824,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-heerhugowaard', tekst: 'Waar ligt Heerhugowaard?' },
       dat: { id: 'nl-dat-pl-heerhugowaard', tekst: 'Het goede antwoord is Heerhugowaard.' },
+      hier: { id: 'nl-hier-pl-heerhugowaard', tekst: 'Heerhugowaard ligt hier.' },
     },
   },
   {
@@ -726,6 +832,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-huizen', tekst: 'Waar ligt Huizen?' },
       dat: { id: 'nl-dat-pl-huizen', tekst: 'Het goede antwoord is Huizen.' },
+      hier: { id: 'nl-hier-pl-huizen', tekst: 'Huizen ligt hier.' },
     },
   },
   {
@@ -733,6 +840,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-den-helder', tekst: 'Waar ligt Den Helder?' },
       dat: { id: 'nl-dat-pl-den-helder', tekst: 'Het goede antwoord is Den Helder.' },
+      hier: { id: 'nl-hier-pl-den-helder', tekst: 'Den Helder ligt hier.' },
     },
   },
   {
@@ -740,6 +848,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-beverwijk', tekst: 'Waar ligt Beverwijk?' },
       dat: { id: 'nl-dat-pl-beverwijk', tekst: 'Het goede antwoord is Beverwijk.' },
+      hier: { id: 'nl-hier-pl-beverwijk', tekst: 'Beverwijk ligt hier.' },
     },
   },
   {
@@ -747,6 +856,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-heemskerk', tekst: 'Waar ligt Heemskerk?' },
       dat: { id: 'nl-dat-pl-heemskerk', tekst: 'Het goede antwoord is Heemskerk.' },
+      hier: { id: 'nl-hier-pl-heemskerk', tekst: 'Heemskerk ligt hier.' },
     },
   },
   {
@@ -754,6 +864,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-bussum', tekst: 'Waar ligt Bussum?' },
       dat: { id: 'nl-dat-pl-bussum', tekst: 'Het goede antwoord is Bussum.' },
+      hier: { id: 'nl-hier-pl-bussum', tekst: 'Bussum ligt hier.' },
     },
   },
   {
@@ -761,6 +872,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-diemen', tekst: 'Waar ligt Diemen?' },
       dat: { id: 'nl-dat-pl-diemen', tekst: 'Het goede antwoord is Diemen.' },
+      hier: { id: 'nl-hier-pl-diemen', tekst: 'Diemen ligt hier.' },
     },
   },
   {
@@ -768,6 +880,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-nieuw-vennep', tekst: 'Waar ligt Nieuw-Vennep?' },
       dat: { id: 'nl-dat-pl-nieuw-vennep', tekst: 'Het goede antwoord is Nieuw-Vennep.' },
+      hier: { id: 'nl-hier-pl-nieuw-vennep', tekst: 'Nieuw-Vennep ligt hier.' },
     },
   },
   {
@@ -775,6 +888,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-ijmuiden', tekst: 'Waar ligt IJmuiden?' },
       dat: { id: 'nl-dat-pl-ijmuiden', tekst: 'Het goede antwoord is IJmuiden.' },
+      hier: { id: 'nl-hier-pl-ijmuiden', tekst: 'IJmuiden ligt hier.' },
     },
   },
   {
@@ -782,6 +896,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-heemstede', tekst: 'Waar ligt Heemstede?' },
       dat: { id: 'nl-dat-pl-heemstede', tekst: 'Het goede antwoord is Heemstede.' },
+      hier: { id: 'nl-hier-pl-heemstede', tekst: 'Heemstede ligt hier.' },
     },
   },
   {
@@ -789,6 +904,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-uithoorn', tekst: 'Waar ligt Uithoorn?' },
       dat: { id: 'nl-dat-pl-uithoorn', tekst: 'Het goede antwoord is Uithoorn.' },
+      hier: { id: 'nl-hier-pl-uithoorn', tekst: 'Uithoorn ligt hier.' },
     },
   },
   {
@@ -796,6 +912,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-assendelft', tekst: 'Waar ligt Assendelft?' },
       dat: { id: 'nl-dat-pl-assendelft', tekst: 'Het goede antwoord is Assendelft.' },
+      hier: { id: 'nl-hier-pl-assendelft', tekst: 'Assendelft ligt hier.' },
     },
   },
   {
@@ -803,6 +920,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-heiloo', tekst: 'Waar ligt Heiloo?' },
       dat: { id: 'nl-dat-pl-heiloo', tekst: 'Het goede antwoord is Heiloo.' },
+      hier: { id: 'nl-hier-pl-heiloo', tekst: 'Heiloo ligt hier.' },
     },
   },
   {
@@ -810,6 +928,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-castricum', tekst: 'Waar ligt Castricum?' },
       dat: { id: 'nl-dat-pl-castricum', tekst: 'Het goede antwoord is Castricum.' },
+      hier: { id: 'nl-hier-pl-castricum', tekst: 'Castricum ligt hier.' },
     },
   },
   {
@@ -817,6 +936,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-volendam', tekst: 'Waar ligt Volendam?' },
       dat: { id: 'nl-dat-pl-volendam', tekst: 'Het goede antwoord is Volendam.' },
+      hier: { id: 'nl-hier-pl-volendam', tekst: 'Volendam ligt hier.' },
     },
   },
   {
@@ -824,6 +944,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-weesp', tekst: 'Waar ligt Weesp?' },
       dat: { id: 'nl-dat-pl-weesp', tekst: 'Het goede antwoord is Weesp.' },
+      hier: { id: 'nl-hier-pl-weesp', tekst: 'Weesp ligt hier.' },
     },
   },
   {
@@ -831,6 +952,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-aalsmeer', tekst: 'Waar ligt Aalsmeer?' },
       dat: { id: 'nl-dat-pl-aalsmeer', tekst: 'Het goede antwoord is Aalsmeer.' },
+      hier: { id: 'nl-hier-pl-aalsmeer', tekst: 'Aalsmeer ligt hier.' },
     },
   },
   {
@@ -838,6 +960,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-kop-van-noord-holland', tekst: 'Waar ligt de Kop van Noord-Holland?' },
       dat: { id: 'nl-dat-st-kop-van-noord-holland', tekst: 'Het goede antwoord is de Kop van Noord-Holland.' },
+      hier: { id: 'nl-hier-st-kop-van-noord-holland', tekst: 'De Kop van Noord-Holland ligt hier.' },
     },
   },
   {
@@ -845,6 +968,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-west-friesland', tekst: 'Waar ligt West-Friesland?' },
       dat: { id: 'nl-dat-st-west-friesland', tekst: 'Het goede antwoord is West-Friesland.' },
+      hier: { id: 'nl-hier-st-west-friesland', tekst: 'West-Friesland ligt hier.' },
     },
   },
   {
@@ -852,6 +976,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-zaanstreek', tekst: 'Waar ligt de Zaanstreek?' },
       dat: { id: 'nl-dat-st-zaanstreek', tekst: 'Het goede antwoord is de Zaanstreek.' },
+      hier: { id: 'nl-hier-st-zaanstreek', tekst: 'De Zaanstreek ligt hier.' },
     },
   },
   {
@@ -859,6 +984,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-kennemerland', tekst: 'Waar ligt Kennemerland?' },
       dat: { id: 'nl-dat-st-kennemerland', tekst: 'Het goede antwoord is Kennemerland.' },
+      hier: { id: 'nl-hier-st-kennemerland', tekst: 'Kennemerland ligt hier.' },
     },
   },
   {
@@ -866,6 +992,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-haarlemmermeer', tekst: 'Waar ligt de Haarlemmermeer?' },
       dat: { id: 'nl-dat-st-haarlemmermeer', tekst: 'Het goede antwoord is de Haarlemmermeer.' },
+      hier: { id: 'nl-hier-st-haarlemmermeer', tekst: 'De Haarlemmermeer ligt hier.' },
     },
   },
   {
@@ -873,6 +1000,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-gooi', tekst: 'Waar ligt het Gooi?' },
       dat: { id: 'nl-dat-st-gooi', tekst: 'Het goede antwoord is het Gooi.' },
+      hier: { id: 'nl-hier-st-gooi', tekst: 'Het Gooi ligt hier.' },
     },
   },
   {
@@ -880,6 +1008,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-ei-texel', tekst: 'Waar ligt Texel?' },
       dat: { id: 'nl-dat-ei-texel', tekst: 'Het goede antwoord is Texel.' },
+      hier: { id: 'nl-hier-ei-texel', tekst: 'Texel ligt hier.' },
     },
   },
   {
@@ -887,6 +1016,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-rotterdam', tekst: 'Waar ligt Rotterdam?' },
       dat: { id: 'nl-dat-pl-rotterdam', tekst: 'Het goede antwoord is Rotterdam.' },
+      hier: { id: 'nl-hier-pl-rotterdam', tekst: 'Rotterdam ligt hier.' },
     },
   },
   {
@@ -894,7 +1024,9 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-den-haag', tekst: 'Waar ligt Den Haag?' },
       dat: { id: 'nl-dat-pl-den-haag', tekst: 'Het goede antwoord is Den Haag.' },
+      hier: { id: 'nl-hier-pl-den-haag', tekst: 'Den Haag ligt hier.' },
       hoofdstadVan: { id: 'nl-hoofdstad-van-pl-den-haag', tekst: 'Van welke provincie is Den Haag de hoofdstad?' },
+      hoofdstadIs: { id: 'nl-hoofdstad-is-pl-den-haag', tekst: 'Den Haag is de hoofdstad van Zuid-Holland.' },
     },
   },
   {
@@ -902,6 +1034,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-leiden', tekst: 'Waar ligt Leiden?' },
       dat: { id: 'nl-dat-pl-leiden', tekst: 'Het goede antwoord is Leiden.' },
+      hier: { id: 'nl-hier-pl-leiden', tekst: 'Leiden ligt hier.' },
     },
   },
   {
@@ -909,6 +1042,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-zoetermeer', tekst: 'Waar ligt Zoetermeer?' },
       dat: { id: 'nl-dat-pl-zoetermeer', tekst: 'Het goede antwoord is Zoetermeer.' },
+      hier: { id: 'nl-hier-pl-zoetermeer', tekst: 'Zoetermeer ligt hier.' },
     },
   },
   {
@@ -916,6 +1050,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-dordrecht', tekst: 'Waar ligt Dordrecht?' },
       dat: { id: 'nl-dat-pl-dordrecht', tekst: 'Het goede antwoord is Dordrecht.' },
+      hier: { id: 'nl-hier-pl-dordrecht', tekst: 'Dordrecht ligt hier.' },
     },
   },
   {
@@ -923,6 +1058,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-delft', tekst: 'Waar ligt Delft?' },
       dat: { id: 'nl-dat-pl-delft', tekst: 'Het goede antwoord is Delft.' },
+      hier: { id: 'nl-hier-pl-delft', tekst: 'Delft ligt hier.' },
     },
   },
   {
@@ -930,6 +1066,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-schiedam', tekst: 'Waar ligt Schiedam?' },
       dat: { id: 'nl-dat-pl-schiedam', tekst: 'Het goede antwoord is Schiedam.' },
+      hier: { id: 'nl-hier-pl-schiedam', tekst: 'Schiedam ligt hier.' },
     },
   },
   {
@@ -937,6 +1074,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-vlaardingen', tekst: 'Waar ligt Vlaardingen?' },
       dat: { id: 'nl-dat-pl-vlaardingen', tekst: 'Het goede antwoord is Vlaardingen.' },
+      hier: { id: 'nl-hier-pl-vlaardingen', tekst: 'Vlaardingen ligt hier.' },
     },
   },
   {
@@ -944,6 +1082,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-gouda', tekst: 'Waar ligt Gouda?' },
       dat: { id: 'nl-dat-pl-gouda', tekst: 'Het goede antwoord is Gouda.' },
+      hier: { id: 'nl-hier-pl-gouda', tekst: 'Gouda ligt hier.' },
     },
   },
   {
@@ -951,6 +1090,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-alphen-aan-den-rijn', tekst: 'Waar ligt Alphen aan den Rijn?' },
       dat: { id: 'nl-dat-pl-alphen-aan-den-rijn', tekst: 'Het goede antwoord is Alphen aan den Rijn.' },
+      hier: { id: 'nl-hier-pl-alphen-aan-den-rijn', tekst: 'Alphen aan den Rijn ligt hier.' },
     },
   },
   {
@@ -958,6 +1098,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-spijkenisse', tekst: 'Waar ligt Spijkenisse?' },
       dat: { id: 'nl-dat-pl-spijkenisse', tekst: 'Het goede antwoord is Spijkenisse.' },
+      hier: { id: 'nl-hier-pl-spijkenisse', tekst: 'Spijkenisse ligt hier.' },
     },
   },
   {
@@ -965,6 +1106,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-capelle-aan-den-ijssel', tekst: 'Waar ligt Capelle aan den IJssel?' },
       dat: { id: 'nl-dat-pl-capelle-aan-den-ijssel', tekst: 'Het goede antwoord is Capelle aan den IJssel.' },
+      hier: { id: 'nl-hier-pl-capelle-aan-den-ijssel', tekst: 'Capelle aan den IJssel ligt hier.' },
     },
   },
   {
@@ -972,6 +1114,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-rijswijk', tekst: 'Waar ligt Rijswijk?' },
       dat: { id: 'nl-dat-pl-rijswijk', tekst: 'Het goede antwoord is Rijswijk.' },
+      hier: { id: 'nl-hier-pl-rijswijk', tekst: 'Rijswijk ligt hier.' },
     },
   },
   {
@@ -979,6 +1122,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-barendrecht', tekst: 'Waar ligt Barendrecht?' },
       dat: { id: 'nl-dat-pl-barendrecht', tekst: 'Het goede antwoord is Barendrecht.' },
+      hier: { id: 'nl-hier-pl-barendrecht', tekst: 'Barendrecht ligt hier.' },
     },
   },
   {
@@ -986,6 +1130,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-ridderkerk', tekst: 'Waar ligt Ridderkerk?' },
       dat: { id: 'nl-dat-pl-ridderkerk', tekst: 'Het goede antwoord is Ridderkerk.' },
+      hier: { id: 'nl-hier-pl-ridderkerk', tekst: 'Ridderkerk ligt hier.' },
     },
   },
   {
@@ -993,6 +1138,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-voorburg', tekst: 'Waar ligt Voorburg?' },
       dat: { id: 'nl-dat-pl-voorburg', tekst: 'Het goede antwoord is Voorburg.' },
+      hier: { id: 'nl-hier-pl-voorburg', tekst: 'Voorburg ligt hier.' },
     },
   },
   {
@@ -1000,6 +1146,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-katwijk', tekst: 'Waar ligt Katwijk?' },
       dat: { id: 'nl-dat-pl-katwijk', tekst: 'Het goede antwoord is Katwijk.' },
+      hier: { id: 'nl-hier-pl-katwijk', tekst: 'Katwijk ligt hier.' },
     },
   },
   {
@@ -1007,6 +1154,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-zwijndrecht', tekst: 'Waar ligt Zwijndrecht?' },
       dat: { id: 'nl-dat-pl-zwijndrecht', tekst: 'Het goede antwoord is Zwijndrecht.' },
+      hier: { id: 'nl-hier-pl-zwijndrecht', tekst: 'Zwijndrecht ligt hier.' },
     },
   },
   {
@@ -1014,6 +1162,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-hellevoetsluis', tekst: 'Waar ligt Hellevoetsluis?' },
       dat: { id: 'nl-dat-pl-hellevoetsluis', tekst: 'Het goede antwoord is Hellevoetsluis.' },
+      hier: { id: 'nl-hier-pl-hellevoetsluis', tekst: 'Hellevoetsluis ligt hier.' },
     },
   },
   {
@@ -1021,6 +1170,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-gorinchem', tekst: 'Waar ligt Gorinchem?' },
       dat: { id: 'nl-dat-pl-gorinchem', tekst: 'Het goede antwoord is Gorinchem.' },
+      hier: { id: 'nl-hier-pl-gorinchem', tekst: 'Gorinchem ligt hier.' },
     },
   },
   {
@@ -1028,6 +1178,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-maassluis', tekst: 'Waar ligt Maassluis?' },
       dat: { id: 'nl-dat-pl-maassluis', tekst: 'Het goede antwoord is Maassluis.' },
+      hier: { id: 'nl-hier-pl-maassluis', tekst: 'Maassluis ligt hier.' },
     },
   },
   {
@@ -1035,6 +1186,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-papendrecht', tekst: 'Waar ligt Papendrecht?' },
       dat: { id: 'nl-dat-pl-papendrecht', tekst: 'Het goede antwoord is Papendrecht.' },
+      hier: { id: 'nl-hier-pl-papendrecht', tekst: 'Papendrecht ligt hier.' },
     },
   },
   {
@@ -1042,6 +1194,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-hendrik-ido-ambacht', tekst: 'Waar ligt Hendrik-Ido-Ambacht?' },
       dat: { id: 'nl-dat-pl-hendrik-ido-ambacht', tekst: 'Het goede antwoord is Hendrik-Ido-Ambacht.' },
+      hier: { id: 'nl-hier-pl-hendrik-ido-ambacht', tekst: 'Hendrik-Ido-Ambacht ligt hier.' },
     },
   },
   {
@@ -1049,6 +1202,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-berkel-en-rodenrijs', tekst: 'Waar ligt Berkel en Rodenrijs?' },
       dat: { id: 'nl-dat-pl-berkel-en-rodenrijs', tekst: 'Het goede antwoord is Berkel en Rodenrijs.' },
+      hier: { id: 'nl-hier-pl-berkel-en-rodenrijs', tekst: 'Berkel en Rodenrijs ligt hier.' },
     },
   },
   {
@@ -1056,6 +1210,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-leidschendam', tekst: 'Waar ligt Leidschendam?' },
       dat: { id: 'nl-dat-pl-leidschendam', tekst: 'Het goede antwoord is Leidschendam.' },
+      hier: { id: 'nl-hier-pl-leidschendam', tekst: 'Leidschendam ligt hier.' },
     },
   },
   {
@@ -1063,6 +1218,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-waddinxveen', tekst: 'Waar ligt Waddinxveen?' },
       dat: { id: 'nl-dat-pl-waddinxveen', tekst: 'Het goede antwoord is Waddinxveen.' },
+      hier: { id: 'nl-hier-pl-waddinxveen', tekst: 'Waddinxveen ligt hier.' },
     },
   },
   {
@@ -1070,6 +1226,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-krimpen-aan-den-ijssel', tekst: 'Waar ligt Krimpen aan den IJssel?' },
       dat: { id: 'nl-dat-pl-krimpen-aan-den-ijssel', tekst: 'Het goede antwoord is Krimpen aan den IJssel.' },
+      hier: { id: 'nl-hier-pl-krimpen-aan-den-ijssel', tekst: 'Krimpen aan den IJssel ligt hier.' },
     },
   },
   {
@@ -1077,6 +1234,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-pijnacker', tekst: 'Waar ligt Pijnacker?' },
       dat: { id: 'nl-dat-pl-pijnacker', tekst: 'Het goede antwoord is Pijnacker.' },
+      hier: { id: 'nl-hier-pl-pijnacker', tekst: 'Pijnacker ligt hier.' },
     },
   },
   {
@@ -1084,6 +1242,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-leiderdorp', tekst: 'Waar ligt Leiderdorp?' },
       dat: { id: 'nl-dat-pl-leiderdorp', tekst: 'Het goede antwoord is Leiderdorp.' },
+      hier: { id: 'nl-hier-pl-leiderdorp', tekst: 'Leiderdorp ligt hier.' },
     },
   },
   {
@@ -1091,6 +1250,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-noordwijk', tekst: 'Waar ligt Noordwijk?' },
       dat: { id: 'nl-dat-pl-noordwijk', tekst: 'Het goede antwoord is Noordwijk.' },
+      hier: { id: 'nl-hier-pl-noordwijk', tekst: 'Noordwijk ligt hier.' },
     },
   },
   {
@@ -1098,6 +1258,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-sliedrecht', tekst: 'Waar ligt Sliedrecht?' },
       dat: { id: 'nl-dat-pl-sliedrecht', tekst: 'Het goede antwoord is Sliedrecht.' },
+      hier: { id: 'nl-hier-pl-sliedrecht', tekst: 'Sliedrecht ligt hier.' },
     },
   },
   {
@@ -1105,6 +1266,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-wassenaar', tekst: 'Waar ligt Wassenaar?' },
       dat: { id: 'nl-dat-pl-wassenaar', tekst: 'Het goede antwoord is Wassenaar.' },
+      hier: { id: 'nl-hier-pl-wassenaar', tekst: 'Wassenaar ligt hier.' },
     },
   },
   {
@@ -1112,6 +1274,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-oegstgeest', tekst: 'Waar ligt Oegstgeest?' },
       dat: { id: 'nl-dat-pl-oegstgeest', tekst: 'Het goede antwoord is Oegstgeest.' },
+      hier: { id: 'nl-hier-pl-oegstgeest', tekst: 'Oegstgeest ligt hier.' },
     },
   },
   {
@@ -1119,6 +1282,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-voorschoten', tekst: 'Waar ligt Voorschoten?' },
       dat: { id: 'nl-dat-pl-voorschoten', tekst: 'Het goede antwoord is Voorschoten.' },
+      hier: { id: 'nl-hier-pl-voorschoten', tekst: 'Voorschoten ligt hier.' },
     },
   },
   {
@@ -1126,6 +1290,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-oud-beijerland', tekst: 'Waar ligt Oud-Beijerland?' },
       dat: { id: 'nl-dat-pl-oud-beijerland', tekst: 'Het goede antwoord is Oud-Beijerland.' },
+      hier: { id: 'nl-hier-pl-oud-beijerland', tekst: 'Oud-Beijerland ligt hier.' },
     },
   },
   {
@@ -1133,6 +1298,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-lisse', tekst: 'Waar ligt Lisse?' },
       dat: { id: 'nl-dat-pl-lisse', tekst: 'Het goede antwoord is Lisse.' },
+      hier: { id: 'nl-hier-pl-lisse', tekst: 'Lisse ligt hier.' },
     },
   },
   {
@@ -1140,6 +1306,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-nieuwerkerk-aan-den-ijssel', tekst: 'Waar ligt Nieuwerkerk aan den IJssel?' },
       dat: { id: 'nl-dat-pl-nieuwerkerk-aan-den-ijssel', tekst: 'Het goede antwoord is Nieuwerkerk aan den IJssel.' },
+      hier: { id: 'nl-hier-pl-nieuwerkerk-aan-den-ijssel', tekst: 'Nieuwerkerk aan den IJssel ligt hier.' },
     },
   },
   {
@@ -1147,6 +1314,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-naaldwijk', tekst: 'Waar ligt Naaldwijk?' },
       dat: { id: 'nl-dat-pl-naaldwijk', tekst: 'Het goede antwoord is Naaldwijk.' },
+      hier: { id: 'nl-hier-pl-naaldwijk', tekst: 'Naaldwijk ligt hier.' },
     },
   },
   {
@@ -1154,6 +1322,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-hillegom', tekst: 'Waar ligt Hillegom?' },
       dat: { id: 'nl-dat-pl-hillegom', tekst: 'Het goede antwoord is Hillegom.' },
+      hier: { id: 'nl-hier-pl-hillegom', tekst: 'Hillegom ligt hier.' },
     },
   },
   {
@@ -1161,6 +1330,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-alblasserdam', tekst: 'Waar ligt Alblasserdam?' },
       dat: { id: 'nl-dat-pl-alblasserdam', tekst: 'Het goede antwoord is Alblasserdam.' },
+      hier: { id: 'nl-hier-pl-alblasserdam', tekst: 'Alblasserdam ligt hier.' },
     },
   },
   {
@@ -1168,6 +1338,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-s-gravenzande', tekst: "Waar ligt 's-Gravenzande?" },
       dat: { id: 'nl-dat-pl-s-gravenzande', tekst: "Het goede antwoord is 's-Gravenzande." },
+      hier: { id: 'nl-hier-pl-s-gravenzande', tekst: "'s-Gravenzande ligt hier." },
     },
   },
   {
@@ -1175,6 +1346,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-westland', tekst: 'Waar ligt het Westland?' },
       dat: { id: 'nl-dat-st-westland', tekst: 'Het goede antwoord is het Westland.' },
+      hier: { id: 'nl-hier-st-westland', tekst: 'Het Westland ligt hier.' },
     },
   },
   {
@@ -1182,6 +1354,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-bollenstreek', tekst: 'Waar ligt de Bollenstreek?' },
       dat: { id: 'nl-dat-st-bollenstreek', tekst: 'Het goede antwoord is de Bollenstreek.' },
+      hier: { id: 'nl-hier-st-bollenstreek', tekst: 'De Bollenstreek ligt hier.' },
     },
   },
   {
@@ -1189,6 +1362,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-alblasserwaard', tekst: 'Waar ligt de Alblasserwaard?' },
       dat: { id: 'nl-dat-st-alblasserwaard', tekst: 'Het goede antwoord is de Alblasserwaard.' },
+      hier: { id: 'nl-hier-st-alblasserwaard', tekst: 'De Alblasserwaard ligt hier.' },
     },
   },
   {
@@ -1196,6 +1370,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-krimpenerwaard', tekst: 'Waar ligt de Krimpenerwaard?' },
       dat: { id: 'nl-dat-st-krimpenerwaard', tekst: 'Het goede antwoord is de Krimpenerwaard.' },
+      hier: { id: 'nl-hier-st-krimpenerwaard', tekst: 'De Krimpenerwaard ligt hier.' },
     },
   },
   {
@@ -1203,6 +1378,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-ei-goeree-overflakkee', tekst: 'Waar ligt Goeree-Overflakkee?' },
       dat: { id: 'nl-dat-ei-goeree-overflakkee', tekst: 'Het goede antwoord is Goeree-Overflakkee.' },
+      hier: { id: 'nl-hier-ei-goeree-overflakkee', tekst: 'Goeree-Overflakkee ligt hier.' },
     },
   },
   {
@@ -1210,6 +1386,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-ei-voorne-putten', tekst: 'Waar ligt Voorne-Putten?' },
       dat: { id: 'nl-dat-ei-voorne-putten', tekst: 'Het goede antwoord is Voorne-Putten.' },
+      hier: { id: 'nl-hier-ei-voorne-putten', tekst: 'Voorne-Putten ligt hier.' },
     },
   },
   {
@@ -1217,6 +1394,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-ei-hoeksche-waard', tekst: 'Waar ligt de Hoeksche Waard?' },
       dat: { id: 'nl-dat-ei-hoeksche-waard', tekst: 'Het goede antwoord is de Hoeksche Waard.' },
+      hier: { id: 'nl-hier-ei-hoeksche-waard', tekst: 'De Hoeksche Waard ligt hier.' },
     },
   },
   {
@@ -1224,6 +1402,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-ei-dordrecht', tekst: 'Waar ligt het Eiland van Dordrecht?' },
       dat: { id: 'nl-dat-ei-dordrecht', tekst: 'Het goede antwoord is het Eiland van Dordrecht.' },
+      hier: { id: 'nl-hier-ei-dordrecht', tekst: 'Het Eiland van Dordrecht ligt hier.' },
     },
   },
   {
@@ -1231,7 +1410,9 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-middelburg', tekst: 'Waar ligt Middelburg?' },
       dat: { id: 'nl-dat-pl-middelburg', tekst: 'Het goede antwoord is Middelburg.' },
+      hier: { id: 'nl-hier-pl-middelburg', tekst: 'Middelburg ligt hier.' },
       hoofdstadVan: { id: 'nl-hoofdstad-van-pl-middelburg', tekst: 'Van welke provincie is Middelburg de hoofdstad?' },
+      hoofdstadIs: { id: 'nl-hoofdstad-is-pl-middelburg', tekst: 'Middelburg is de hoofdstad van Zeeland.' },
     },
   },
   {
@@ -1239,6 +1420,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-vlissingen', tekst: 'Waar ligt Vlissingen?' },
       dat: { id: 'nl-dat-pl-vlissingen', tekst: 'Het goede antwoord is Vlissingen.' },
+      hier: { id: 'nl-hier-pl-vlissingen', tekst: 'Vlissingen ligt hier.' },
     },
   },
   {
@@ -1246,6 +1428,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-goes', tekst: 'Waar ligt Goes?' },
       dat: { id: 'nl-dat-pl-goes', tekst: 'Het goede antwoord is Goes.' },
+      hier: { id: 'nl-hier-pl-goes', tekst: 'Goes ligt hier.' },
     },
   },
   {
@@ -1253,6 +1436,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-terneuzen', tekst: 'Waar ligt Terneuzen?' },
       dat: { id: 'nl-dat-pl-terneuzen', tekst: 'Het goede antwoord is Terneuzen.' },
+      hier: { id: 'nl-hier-pl-terneuzen', tekst: 'Terneuzen ligt hier.' },
     },
   },
   {
@@ -1260,6 +1444,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-zierikzee', tekst: 'Waar ligt Zierikzee?' },
       dat: { id: 'nl-dat-pl-zierikzee', tekst: 'Het goede antwoord is Zierikzee.' },
+      hier: { id: 'nl-hier-pl-zierikzee', tekst: 'Zierikzee ligt hier.' },
     },
   },
   {
@@ -1267,6 +1452,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-hulst', tekst: 'Waar ligt Hulst?' },
       dat: { id: 'nl-dat-pl-hulst', tekst: 'Het goede antwoord is Hulst.' },
+      hier: { id: 'nl-hier-pl-hulst', tekst: 'Hulst ligt hier.' },
     },
   },
   {
@@ -1274,6 +1460,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-yerseke', tekst: 'Waar ligt Yerseke?' },
       dat: { id: 'nl-dat-pl-yerseke', tekst: 'Het goede antwoord is Yerseke.' },
+      hier: { id: 'nl-hier-pl-yerseke', tekst: 'Yerseke ligt hier.' },
     },
   },
   {
@@ -1281,6 +1468,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-breskens', tekst: 'Waar ligt Breskens?' },
       dat: { id: 'nl-dat-pl-breskens', tekst: 'Het goede antwoord is Breskens.' },
+      hier: { id: 'nl-hier-pl-breskens', tekst: 'Breskens ligt hier.' },
     },
   },
   {
@@ -1288,6 +1476,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-sluis', tekst: 'Waar ligt Sluis?' },
       dat: { id: 'nl-dat-pl-sluis', tekst: 'Het goede antwoord is Sluis.' },
+      hier: { id: 'nl-hier-pl-sluis', tekst: 'Sluis ligt hier.' },
     },
   },
   {
@@ -1295,6 +1484,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-domburg', tekst: 'Waar ligt Domburg?' },
       dat: { id: 'nl-dat-pl-domburg', tekst: 'Het goede antwoord is Domburg.' },
+      hier: { id: 'nl-hier-pl-domburg', tekst: 'Domburg ligt hier.' },
     },
   },
   {
@@ -1302,6 +1492,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-veere', tekst: 'Waar ligt Veere?' },
       dat: { id: 'nl-dat-pl-veere', tekst: 'Het goede antwoord is Veere.' },
+      hier: { id: 'nl-hier-pl-veere', tekst: 'Veere ligt hier.' },
     },
   },
   {
@@ -1309,6 +1500,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-zeeuws-vlaanderen', tekst: 'Waar ligt Zeeuws-Vlaanderen?' },
       dat: { id: 'nl-dat-st-zeeuws-vlaanderen', tekst: 'Het goede antwoord is Zeeuws-Vlaanderen.' },
+      hier: { id: 'nl-hier-st-zeeuws-vlaanderen', tekst: 'Zeeuws-Vlaanderen ligt hier.' },
     },
   },
   {
@@ -1316,6 +1508,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-ei-walcheren', tekst: 'Waar ligt Walcheren?' },
       dat: { id: 'nl-dat-ei-walcheren', tekst: 'Het goede antwoord is Walcheren.' },
+      hier: { id: 'nl-hier-ei-walcheren', tekst: 'Walcheren ligt hier.' },
     },
   },
   {
@@ -1323,6 +1516,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-ei-noord-beveland', tekst: 'Waar ligt Noord-Beveland?' },
       dat: { id: 'nl-dat-ei-noord-beveland', tekst: 'Het goede antwoord is Noord-Beveland.' },
+      hier: { id: 'nl-hier-ei-noord-beveland', tekst: 'Noord-Beveland ligt hier.' },
     },
   },
   {
@@ -1330,6 +1524,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-ei-zuid-beveland', tekst: 'Waar ligt Zuid-Beveland?' },
       dat: { id: 'nl-dat-ei-zuid-beveland', tekst: 'Het goede antwoord is Zuid-Beveland.' },
+      hier: { id: 'nl-hier-ei-zuid-beveland', tekst: 'Zuid-Beveland ligt hier.' },
     },
   },
   {
@@ -1337,6 +1532,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-ei-schouwen-duiveland', tekst: 'Waar ligt Schouwen-Duiveland?' },
       dat: { id: 'nl-dat-ei-schouwen-duiveland', tekst: 'Het goede antwoord is Schouwen-Duiveland.' },
+      hier: { id: 'nl-hier-ei-schouwen-duiveland', tekst: 'Schouwen-Duiveland ligt hier.' },
     },
   },
   {
@@ -1344,6 +1540,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-ei-tholen', tekst: 'Waar ligt Tholen?' },
       dat: { id: 'nl-dat-ei-tholen', tekst: 'Het goede antwoord is Tholen.' },
+      hier: { id: 'nl-hier-ei-tholen', tekst: 'Tholen ligt hier.' },
     },
   },
   {
@@ -1351,6 +1548,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-ei-neeltje-jans', tekst: 'Waar ligt Neeltje Jans?' },
       dat: { id: 'nl-dat-ei-neeltje-jans', tekst: 'Het goede antwoord is Neeltje Jans.' },
+      hier: { id: 'nl-hier-ei-neeltje-jans', tekst: 'Neeltje Jans ligt hier.' },
     },
   },
   {
@@ -1358,6 +1556,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-eindhoven', tekst: 'Waar ligt Eindhoven?' },
       dat: { id: 'nl-dat-pl-eindhoven', tekst: 'Het goede antwoord is Eindhoven.' },
+      hier: { id: 'nl-hier-pl-eindhoven', tekst: 'Eindhoven ligt hier.' },
     },
   },
   {
@@ -1365,6 +1564,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-tilburg', tekst: 'Waar ligt Tilburg?' },
       dat: { id: 'nl-dat-pl-tilburg', tekst: 'Het goede antwoord is Tilburg.' },
+      hier: { id: 'nl-hier-pl-tilburg', tekst: 'Tilburg ligt hier.' },
     },
   },
   {
@@ -1372,6 +1572,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-breda', tekst: 'Waar ligt Breda?' },
       dat: { id: 'nl-dat-pl-breda', tekst: 'Het goede antwoord is Breda.' },
+      hier: { id: 'nl-hier-pl-breda', tekst: 'Breda ligt hier.' },
     },
   },
   {
@@ -1379,7 +1580,9 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-s-hertogenbosch', tekst: "Waar ligt 's-Hertogenbosch?" },
       dat: { id: 'nl-dat-pl-s-hertogenbosch', tekst: "Het goede antwoord is 's-Hertogenbosch." },
+      hier: { id: 'nl-hier-pl-s-hertogenbosch', tekst: "'s-Hertogenbosch ligt hier." },
       hoofdstadVan: { id: 'nl-hoofdstad-van-pl-s-hertogenbosch', tekst: "Van welke provincie is 's-Hertogenbosch de hoofdstad?" },
+      hoofdstadIs: { id: 'nl-hoofdstad-is-pl-s-hertogenbosch', tekst: "'s-Hertogenbosch is de hoofdstad van Noord-Brabant." },
     },
   },
   {
@@ -1387,6 +1590,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-helmond', tekst: 'Waar ligt Helmond?' },
       dat: { id: 'nl-dat-pl-helmond', tekst: 'Het goede antwoord is Helmond.' },
+      hier: { id: 'nl-hier-pl-helmond', tekst: 'Helmond ligt hier.' },
     },
   },
   {
@@ -1394,6 +1598,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-roosendaal', tekst: 'Waar ligt Roosendaal?' },
       dat: { id: 'nl-dat-pl-roosendaal', tekst: 'Het goede antwoord is Roosendaal.' },
+      hier: { id: 'nl-hier-pl-roosendaal', tekst: 'Roosendaal ligt hier.' },
     },
   },
   {
@@ -1401,6 +1606,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-oss', tekst: 'Waar ligt Oss?' },
       dat: { id: 'nl-dat-pl-oss', tekst: 'Het goede antwoord is Oss.' },
+      hier: { id: 'nl-hier-pl-oss', tekst: 'Oss ligt hier.' },
     },
   },
   {
@@ -1408,6 +1614,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-bergen-op-zoom', tekst: 'Waar ligt Bergen op Zoom?' },
       dat: { id: 'nl-dat-pl-bergen-op-zoom', tekst: 'Het goede antwoord is Bergen op Zoom.' },
+      hier: { id: 'nl-hier-pl-bergen-op-zoom', tekst: 'Bergen op Zoom ligt hier.' },
     },
   },
   {
@@ -1415,6 +1622,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-oosterhout', tekst: 'Waar ligt Oosterhout?' },
       dat: { id: 'nl-dat-pl-oosterhout', tekst: 'Het goede antwoord is Oosterhout.' },
+      hier: { id: 'nl-hier-pl-oosterhout', tekst: 'Oosterhout ligt hier.' },
     },
   },
   {
@@ -1422,6 +1630,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-veldhoven', tekst: 'Waar ligt Veldhoven?' },
       dat: { id: 'nl-dat-pl-veldhoven', tekst: 'Het goede antwoord is Veldhoven.' },
+      hier: { id: 'nl-hier-pl-veldhoven', tekst: 'Veldhoven ligt hier.' },
     },
   },
   {
@@ -1429,6 +1638,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-etten-leur', tekst: 'Waar ligt Etten-Leur?' },
       dat: { id: 'nl-dat-pl-etten-leur', tekst: 'Het goede antwoord is Etten-Leur.' },
+      hier: { id: 'nl-hier-pl-etten-leur', tekst: 'Etten-Leur ligt hier.' },
     },
   },
   {
@@ -1436,6 +1646,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-rosmalen', tekst: 'Waar ligt Rosmalen?' },
       dat: { id: 'nl-dat-pl-rosmalen', tekst: 'Het goede antwoord is Rosmalen.' },
+      hier: { id: 'nl-hier-pl-rosmalen', tekst: 'Rosmalen ligt hier.' },
     },
   },
   {
@@ -1443,6 +1654,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-uden', tekst: 'Waar ligt Uden?' },
       dat: { id: 'nl-dat-pl-uden', tekst: 'Het goede antwoord is Uden.' },
+      hier: { id: 'nl-hier-pl-uden', tekst: 'Uden ligt hier.' },
     },
   },
   {
@@ -1450,6 +1662,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-waalwijk', tekst: 'Waar ligt Waalwijk?' },
       dat: { id: 'nl-dat-pl-waalwijk', tekst: 'Het goede antwoord is Waalwijk.' },
+      hier: { id: 'nl-hier-pl-waalwijk', tekst: 'Waalwijk ligt hier.' },
     },
   },
   {
@@ -1457,6 +1670,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-veghel', tekst: 'Waar ligt Veghel?' },
       dat: { id: 'nl-dat-pl-veghel', tekst: 'Het goede antwoord is Veghel.' },
+      hier: { id: 'nl-hier-pl-veghel', tekst: 'Veghel ligt hier.' },
     },
   },
   {
@@ -1464,6 +1678,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-valkenswaard', tekst: 'Waar ligt Valkenswaard?' },
       dat: { id: 'nl-dat-pl-valkenswaard', tekst: 'Het goede antwoord is Valkenswaard.' },
+      hier: { id: 'nl-hier-pl-valkenswaard', tekst: 'Valkenswaard ligt hier.' },
     },
   },
   {
@@ -1471,6 +1686,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-best', tekst: 'Waar ligt Best?' },
       dat: { id: 'nl-dat-pl-best', tekst: 'Het goede antwoord is Best.' },
+      hier: { id: 'nl-hier-pl-best', tekst: 'Best ligt hier.' },
     },
   },
   {
@@ -1478,6 +1694,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-geldrop', tekst: 'Waar ligt Geldrop?' },
       dat: { id: 'nl-dat-pl-geldrop', tekst: 'Het goede antwoord is Geldrop.' },
+      hier: { id: 'nl-hier-pl-geldrop', tekst: 'Geldrop ligt hier.' },
     },
   },
   {
@@ -1485,6 +1702,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-boxtel', tekst: 'Waar ligt Boxtel?' },
       dat: { id: 'nl-dat-pl-boxtel', tekst: 'Het goede antwoord is Boxtel.' },
+      hier: { id: 'nl-hier-pl-boxtel', tekst: 'Boxtel ligt hier.' },
     },
   },
   {
@@ -1492,6 +1710,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-vught', tekst: 'Waar ligt Vught?' },
       dat: { id: 'nl-dat-pl-vught', tekst: 'Het goede antwoord is Vught.' },
+      hier: { id: 'nl-hier-pl-vught', tekst: 'Vught ligt hier.' },
     },
   },
   {
@@ -1499,6 +1718,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-nuenen', tekst: 'Waar ligt Nuenen?' },
       dat: { id: 'nl-dat-pl-nuenen', tekst: 'Het goede antwoord is Nuenen.' },
+      hier: { id: 'nl-hier-pl-nuenen', tekst: 'Nuenen ligt hier.' },
     },
   },
   {
@@ -1506,6 +1726,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-dongen', tekst: 'Waar ligt Dongen?' },
       dat: { id: 'nl-dat-pl-dongen', tekst: 'Het goede antwoord is Dongen.' },
+      hier: { id: 'nl-hier-pl-dongen', tekst: 'Dongen ligt hier.' },
     },
   },
   {
@@ -1513,6 +1734,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-deurne', tekst: 'Waar ligt Deurne?' },
       dat: { id: 'nl-dat-pl-deurne', tekst: 'Het goede antwoord is Deurne.' },
+      hier: { id: 'nl-hier-pl-deurne', tekst: 'Deurne ligt hier.' },
     },
   },
   {
@@ -1520,6 +1742,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-schijndel', tekst: 'Waar ligt Schijndel?' },
       dat: { id: 'nl-dat-pl-schijndel', tekst: 'Het goede antwoord is Schijndel.' },
+      hier: { id: 'nl-hier-pl-schijndel', tekst: 'Schijndel ligt hier.' },
     },
   },
   {
@@ -1527,6 +1750,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-goirle', tekst: 'Waar ligt Goirle?' },
       dat: { id: 'nl-dat-pl-goirle', tekst: 'Het goede antwoord is Goirle.' },
+      hier: { id: 'nl-hier-pl-goirle', tekst: 'Goirle ligt hier.' },
     },
   },
   {
@@ -1534,6 +1758,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-kempen', tekst: 'Waar ligt de Kempen?' },
       dat: { id: 'nl-dat-st-kempen', tekst: 'Het goede antwoord is de Kempen.' },
+      hier: { id: 'nl-hier-st-kempen', tekst: 'De Kempen liggen hier.' },
     },
   },
   {
@@ -1541,6 +1766,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-land-van-cuijk', tekst: 'Waar ligt het Land van Cuijk?' },
       dat: { id: 'nl-dat-st-land-van-cuijk', tekst: 'Het goede antwoord is het Land van Cuijk.' },
+      hier: { id: 'nl-hier-st-land-van-cuijk', tekst: 'Het Land van Cuijk ligt hier.' },
     },
   },
   {
@@ -1548,7 +1774,9 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-maastricht', tekst: 'Waar ligt Maastricht?' },
       dat: { id: 'nl-dat-pl-maastricht', tekst: 'Het goede antwoord is Maastricht.' },
+      hier: { id: 'nl-hier-pl-maastricht', tekst: 'Maastricht ligt hier.' },
       hoofdstadVan: { id: 'nl-hoofdstad-van-pl-maastricht', tekst: 'Van welke provincie is Maastricht de hoofdstad?' },
+      hoofdstadIs: { id: 'nl-hoofdstad-is-pl-maastricht', tekst: 'Maastricht is de hoofdstad van Limburg.' },
     },
   },
   {
@@ -1556,6 +1784,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-heerlen', tekst: 'Waar ligt Heerlen?' },
       dat: { id: 'nl-dat-pl-heerlen', tekst: 'Het goede antwoord is Heerlen.' },
+      hier: { id: 'nl-hier-pl-heerlen', tekst: 'Heerlen ligt hier.' },
     },
   },
   {
@@ -1563,6 +1792,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-venlo', tekst: 'Waar ligt Venlo?' },
       dat: { id: 'nl-dat-pl-venlo', tekst: 'Het goede antwoord is Venlo.' },
+      hier: { id: 'nl-hier-pl-venlo', tekst: 'Venlo ligt hier.' },
     },
   },
   {
@@ -1570,6 +1800,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-weert', tekst: 'Waar ligt Weert?' },
       dat: { id: 'nl-dat-pl-weert', tekst: 'Het goede antwoord is Weert.' },
+      hier: { id: 'nl-hier-pl-weert', tekst: 'Weert ligt hier.' },
     },
   },
   {
@@ -1577,6 +1808,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-roermond', tekst: 'Waar ligt Roermond?' },
       dat: { id: 'nl-dat-pl-roermond', tekst: 'Het goede antwoord is Roermond.' },
+      hier: { id: 'nl-hier-pl-roermond', tekst: 'Roermond ligt hier.' },
     },
   },
   {
@@ -1584,6 +1816,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-kerkrade', tekst: 'Waar ligt Kerkrade?' },
       dat: { id: 'nl-dat-pl-kerkrade', tekst: 'Het goede antwoord is Kerkrade.' },
+      hier: { id: 'nl-hier-pl-kerkrade', tekst: 'Kerkrade ligt hier.' },
     },
   },
   {
@@ -1591,6 +1824,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-sittard', tekst: 'Waar ligt Sittard?' },
       dat: { id: 'nl-dat-pl-sittard', tekst: 'Het goede antwoord is Sittard.' },
+      hier: { id: 'nl-hier-pl-sittard', tekst: 'Sittard ligt hier.' },
     },
   },
   {
@@ -1598,6 +1832,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-landgraaf', tekst: 'Waar ligt Landgraaf?' },
       dat: { id: 'nl-dat-pl-landgraaf', tekst: 'Het goede antwoord is Landgraaf.' },
+      hier: { id: 'nl-hier-pl-landgraaf', tekst: 'Landgraaf ligt hier.' },
     },
   },
   {
@@ -1605,6 +1840,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-geleen', tekst: 'Waar ligt Geleen?' },
       dat: { id: 'nl-dat-pl-geleen', tekst: 'Het goede antwoord is Geleen.' },
+      hier: { id: 'nl-hier-pl-geleen', tekst: 'Geleen ligt hier.' },
     },
   },
   {
@@ -1612,6 +1848,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-brunssum', tekst: 'Waar ligt Brunssum?' },
       dat: { id: 'nl-dat-pl-brunssum', tekst: 'Het goede antwoord is Brunssum.' },
+      hier: { id: 'nl-hier-pl-brunssum', tekst: 'Brunssum ligt hier.' },
     },
   },
   {
@@ -1619,6 +1856,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-pl-venray', tekst: 'Waar ligt Venray?' },
       dat: { id: 'nl-dat-pl-venray', tekst: 'Het goede antwoord is Venray.' },
+      hier: { id: 'nl-hier-pl-venray', tekst: 'Venray ligt hier.' },
     },
   },
   {
@@ -1626,6 +1864,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-st-zuid-limburg', tekst: 'Waar ligt Zuid-Limburg?' },
       dat: { id: 'nl-dat-st-zuid-limburg', tekst: 'Het goede antwoord is Zuid-Limburg.' },
+      hier: { id: 'nl-hier-st-zuid-limburg', tekst: 'Zuid-Limburg ligt hier.' },
     },
   },
   {
@@ -1633,6 +1872,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-noordzee', tekst: 'Waar ligt de Noordzee?' },
       dat: { id: 'nl-dat-wa-noordzee', tekst: 'Het goede antwoord is de Noordzee.' },
+      hier: { id: 'nl-hier-wa-noordzee', tekst: 'De Noordzee ligt hier.' },
     },
   },
   {
@@ -1640,6 +1880,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-waddenzee', tekst: 'Waar ligt de Waddenzee?' },
       dat: { id: 'nl-dat-wa-waddenzee', tekst: 'Het goede antwoord is de Waddenzee.' },
+      hier: { id: 'nl-hier-wa-waddenzee', tekst: 'De Waddenzee ligt hier.' },
     },
   },
   {
@@ -1647,6 +1888,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-eems-dollard', tekst: 'Waar ligt de Eems-Dollard?' },
       dat: { id: 'nl-dat-wa-eems-dollard', tekst: 'Het goede antwoord is de Eems-Dollard.' },
+      hier: { id: 'nl-hier-wa-eems-dollard', tekst: 'De Eems-Dollard ligt hier.' },
     },
   },
   {
@@ -1654,6 +1896,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-ijsselmeer', tekst: 'Waar ligt het IJsselmeer?' },
       dat: { id: 'nl-dat-wa-ijsselmeer', tekst: 'Het goede antwoord is het IJsselmeer.' },
+      hier: { id: 'nl-hier-wa-ijsselmeer', tekst: 'Het IJsselmeer ligt hier.' },
     },
   },
   {
@@ -1661,6 +1904,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-markermeer', tekst: 'Waar ligt het Markermeer?' },
       dat: { id: 'nl-dat-wa-markermeer', tekst: 'Het goede antwoord is het Markermeer.' },
+      hier: { id: 'nl-hier-wa-markermeer', tekst: 'Het Markermeer ligt hier.' },
     },
   },
   {
@@ -1668,6 +1912,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-ketelmeer', tekst: 'Waar ligt het Ketelmeer?' },
       dat: { id: 'nl-dat-wa-ketelmeer', tekst: 'Het goede antwoord is het Ketelmeer.' },
+      hier: { id: 'nl-hier-wa-ketelmeer', tekst: 'Het Ketelmeer ligt hier.' },
     },
   },
   {
@@ -1675,6 +1920,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-zwarte-meer', tekst: 'Waar ligt het Zwarte Meer?' },
       dat: { id: 'nl-dat-wa-zwarte-meer', tekst: 'Het goede antwoord is het Zwarte Meer.' },
+      hier: { id: 'nl-hier-wa-zwarte-meer', tekst: 'Het Zwarte Meer ligt hier.' },
     },
   },
   {
@@ -1682,6 +1928,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-randmeren', tekst: 'Waar ligt de Randmeren?' },
       dat: { id: 'nl-dat-wa-randmeren', tekst: 'Het goede antwoord is de Randmeren.' },
+      hier: { id: 'nl-hier-wa-randmeren', tekst: 'De Randmeren liggen hier.' },
     },
   },
   {
@@ -1689,6 +1936,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-lauwersmeer', tekst: 'Waar ligt het Lauwersmeer?' },
       dat: { id: 'nl-dat-wa-lauwersmeer', tekst: 'Het goede antwoord is het Lauwersmeer.' },
+      hier: { id: 'nl-hier-wa-lauwersmeer', tekst: 'Het Lauwersmeer ligt hier.' },
     },
   },
   {
@@ -1696,6 +1944,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-zuidlaardermeer', tekst: 'Waar ligt het Zuidlaardermeer?' },
       dat: { id: 'nl-dat-wa-zuidlaardermeer', tekst: 'Het goede antwoord is het Zuidlaardermeer.' },
+      hier: { id: 'nl-hier-wa-zuidlaardermeer', tekst: 'Het Zuidlaardermeer ligt hier.' },
     },
   },
   {
@@ -1703,6 +1952,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-paterswoldsemeer', tekst: 'Waar ligt het Paterswoldsemeer?' },
       dat: { id: 'nl-dat-wa-paterswoldsemeer', tekst: 'Het goede antwoord is het Paterswoldsemeer.' },
+      hier: { id: 'nl-hier-wa-paterswoldsemeer', tekst: 'Het Paterswoldsemeer ligt hier.' },
     },
   },
   {
@@ -1710,6 +1960,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-schildmeer', tekst: 'Waar ligt het Schildmeer?' },
       dat: { id: 'nl-dat-wa-schildmeer', tekst: 'Het goede antwoord is het Schildmeer.' },
+      hier: { id: 'nl-hier-wa-schildmeer', tekst: 'Het Schildmeer ligt hier.' },
     },
   },
   {
@@ -1717,6 +1968,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-oldambtmeer', tekst: 'Waar ligt het Oldambtmeer?' },
       dat: { id: 'nl-dat-wa-oldambtmeer', tekst: 'Het goede antwoord is het Oldambtmeer.' },
+      hier: { id: 'nl-hier-wa-oldambtmeer', tekst: 'Het Oldambtmeer ligt hier.' },
     },
   },
   {
@@ -1724,6 +1976,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-alkmaardermeer', tekst: 'Waar ligt het Alkmaardermeer?' },
       dat: { id: 'nl-dat-wa-alkmaardermeer', tekst: 'Het goede antwoord is het Alkmaardermeer.' },
+      hier: { id: 'nl-hier-wa-alkmaardermeer', tekst: 'Het Alkmaardermeer ligt hier.' },
     },
   },
   {
@@ -1731,6 +1984,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-loosdrechtse-plassen', tekst: 'Waar ligt de Loosdrechtse Plassen?' },
       dat: { id: 'nl-dat-wa-loosdrechtse-plassen', tekst: 'Het goede antwoord is de Loosdrechtse Plassen.' },
+      hier: { id: 'nl-hier-wa-loosdrechtse-plassen', tekst: 'De Loosdrechtse Plassen liggen hier.' },
     },
   },
   {
@@ -1738,6 +1992,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-vinkeveense-plassen', tekst: 'Waar ligt de Vinkeveense Plassen?' },
       dat: { id: 'nl-dat-wa-vinkeveense-plassen', tekst: 'Het goede antwoord is de Vinkeveense Plassen.' },
+      hier: { id: 'nl-hier-wa-vinkeveense-plassen', tekst: 'De Vinkeveense Plassen liggen hier.' },
     },
   },
   {
@@ -1745,6 +2000,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-westeinderplassen', tekst: 'Waar ligt de Westeinderplassen?' },
       dat: { id: 'nl-dat-wa-westeinderplassen', tekst: 'Het goede antwoord is de Westeinderplassen.' },
+      hier: { id: 'nl-hier-wa-westeinderplassen', tekst: 'De Westeinderplassen liggen hier.' },
     },
   },
   {
@@ -1752,6 +2008,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-kagerplassen', tekst: 'Waar ligt de Kagerplassen?' },
       dat: { id: 'nl-dat-wa-kagerplassen', tekst: 'Het goede antwoord is de Kagerplassen.' },
+      hier: { id: 'nl-hier-wa-kagerplassen', tekst: 'De Kagerplassen liggen hier.' },
     },
   },
   {
@@ -1759,6 +2016,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-nieuwkoopse-plassen', tekst: 'Waar ligt de Nieuwkoopse Plassen?' },
       dat: { id: 'nl-dat-wa-nieuwkoopse-plassen', tekst: 'Het goede antwoord is de Nieuwkoopse Plassen.' },
+      hier: { id: 'nl-hier-wa-nieuwkoopse-plassen', tekst: 'De Nieuwkoopse Plassen liggen hier.' },
     },
   },
   {
@@ -1766,6 +2024,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-reeuwijkse-plassen', tekst: 'Waar ligt de Reeuwijkse Plassen?' },
       dat: { id: 'nl-dat-wa-reeuwijkse-plassen', tekst: 'Het goede antwoord is de Reeuwijkse Plassen.' },
+      hier: { id: 'nl-hier-wa-reeuwijkse-plassen', tekst: 'De Reeuwijkse Plassen liggen hier.' },
     },
   },
   {
@@ -1773,6 +2032,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-brielse-meer', tekst: 'Waar ligt het Brielse Meer?' },
       dat: { id: 'nl-dat-wa-brielse-meer', tekst: 'Het goede antwoord is het Brielse Meer.' },
+      hier: { id: 'nl-hier-wa-brielse-meer', tekst: 'Het Brielse Meer ligt hier.' },
     },
   },
   {
@@ -1780,6 +2040,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-haringvliet', tekst: 'Waar ligt het Haringvliet?' },
       dat: { id: 'nl-dat-wa-haringvliet', tekst: 'Het goede antwoord is het Haringvliet.' },
+      hier: { id: 'nl-hier-wa-haringvliet', tekst: 'Het Haringvliet ligt hier.' },
     },
   },
   {
@@ -1787,6 +2048,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-grevelingenmeer', tekst: 'Waar ligt het Grevelingenmeer?' },
       dat: { id: 'nl-dat-wa-grevelingenmeer', tekst: 'Het goede antwoord is het Grevelingenmeer.' },
+      hier: { id: 'nl-hier-wa-grevelingenmeer', tekst: 'Het Grevelingenmeer ligt hier.' },
     },
   },
   {
@@ -1794,6 +2056,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-volkerak', tekst: 'Waar ligt het Volkerak?' },
       dat: { id: 'nl-dat-wa-volkerak', tekst: 'Het goede antwoord is het Volkerak.' },
+      hier: { id: 'nl-hier-wa-volkerak', tekst: 'Het Volkerak ligt hier.' },
     },
   },
   {
@@ -1801,6 +2064,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-zoommeer', tekst: 'Waar ligt het Zoommeer?' },
       dat: { id: 'nl-dat-wa-zoommeer', tekst: 'Het goede antwoord is het Zoommeer.' },
+      hier: { id: 'nl-hier-wa-zoommeer', tekst: 'Het Zoommeer ligt hier.' },
     },
   },
   {
@@ -1808,6 +2072,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-oosterschelde', tekst: 'Waar ligt de Oosterschelde?' },
       dat: { id: 'nl-dat-wa-oosterschelde', tekst: 'Het goede antwoord is de Oosterschelde.' },
+      hier: { id: 'nl-hier-wa-oosterschelde', tekst: 'De Oosterschelde ligt hier.' },
     },
   },
   {
@@ -1815,6 +2080,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-veerse-meer', tekst: 'Waar ligt het Veerse Meer?' },
       dat: { id: 'nl-dat-wa-veerse-meer', tekst: 'Het goede antwoord is het Veerse Meer.' },
+      hier: { id: 'nl-hier-wa-veerse-meer', tekst: 'Het Veerse Meer ligt hier.' },
     },
   },
   {
@@ -1822,6 +2088,7 @@ export const ITEMS = [
     zinnen: {
       waar: { id: 'nl-waar-wa-westerschelde', tekst: 'Waar ligt de Westerschelde?' },
       dat: { id: 'nl-dat-wa-westerschelde', tekst: 'Het goede antwoord is de Westerschelde.' },
+      hier: { id: 'nl-hier-wa-westerschelde', tekst: 'De Westerschelde ligt hier.' },
     },
   },
 ];

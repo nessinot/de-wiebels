@@ -58,12 +58,25 @@ test('levelVan herkent de levels van Nederland', () => {
   for (const id of LEVEL_IDS) assert.equal(levelVan(id).id, id);
 });
 
-test('elke vraag heeft een tekst, een zin en "Het goede antwoord is …" voor de stem', () => {
+test('elke vraag heeft een tekst, een zin en bij een fout de goede zin per vraagvorm', () => {
   for (const id of LEVEL_IDS) {
     for (const v of alleVragen(nlVragen(profielMet(), levelVan(id), rng(7)))) {
       assert.ok(v.tekst && v.goedHtml, v.id);
       for (const zin of [v.zin, v.dat]) assert.match(zin.id, /^nl-[a-z0-9-]+$/, v.id);
-      assert.ok(v.zin.tekst.endsWith('?') && v.dat.tekst.startsWith('Het goede antwoord is '), v.id);
+      assert.ok(v.zin.tekst.endsWith('?'), v.id);
+      if (vorm(v) === 'herken' || vorm(v) === 'hoofdstad') {
+        assert.ok(v.dat.tekst.startsWith('Het goede antwoord is '), v.id);
+        assert.equal(v.foutHtml, undefined, v.id);
+        continue;
+      }
+      assert.ok(v.foutHtml, v.id);
+      if (vorm(v) === 'hoofdstad-van') {
+        assert.ok(v.dat.id.startsWith('nl-hoofdstad-is-'), v.id);
+        assert.ok(v.dat.tekst.includes(PER_ID[v.goed].naam), v.id);
+      } else {
+        assert.equal(v.dat.id, `nl-hier-${v.goed}`, v.id);
+        assert.ok(v.dat.tekst.endsWith(' hier.'), v.id);
+      }
     }
   }
   for (const zin of Object.values(HERKEN_ZINNEN)) assert.match(zin.id, /^nl-herken-[a-z]+$/);
