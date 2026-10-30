@@ -18,6 +18,10 @@ Gebruik het IP-adres van Home Assistant, niet een `.local`-adres. Tip: zet de pa
 - **Cijfertoetsen**: antwoord intypen.
 - **Magic Remote**: aanwijzen en klikken werkt ook.
 
+## Sterren en munten
+
+Elk level en elke toets geeft 0 tot 3 sterren. Elke nieuwe ster levert 5 munten op. In een level of toets met al 3 sterren krijgt je kind geen munt meer per goed antwoord, alleen nog munten voor een reeks goede antwoorden op rij. Zo loont het om nieuwe levels te proberen.
+
 ## Ouderpagina in Home Assistant
 
 Open **De Wiebels** in de zijbalk van Home Assistant. Daar beheer je alles, ook vanaf je telefoon:

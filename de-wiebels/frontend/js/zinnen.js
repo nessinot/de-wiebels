@@ -220,6 +220,10 @@ export const ZINNEN = {
     { id: 'resultaat-drie-1', tekst: 'Drie sterren! Fantastisch!' },
     { id: 'resultaat-drie-2', tekst: 'Alles in een keer goed!' },
   ],
+  // Bij de start van een level of toets die je al kent (3 sterren): geen munt per goed antwoord.
+  alGekend: [
+    { id: 'al-gekend-1', tekst: 'Deze ken je al! Hier krijg je alleen munten voor reeksen op rij.' },
+  ],
   // Een Wiebel komt vrij (resultaat na een level, eindbaas verslagen)
   bevrijd: [
     { id: 'bevrijd-1', tekst: 'Hoera, weer een Wiebel bevrijd!' },

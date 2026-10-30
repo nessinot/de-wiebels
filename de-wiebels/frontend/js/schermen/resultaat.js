@@ -1,6 +1,7 @@
 // Resultaat na een ronde: sterren en wat je verder kunt doen. De Wiebel viert linksonder mee; een
 // net bevrijde Wiebel springt erbij en bij groei laat hij zijn nieuwe stadium zien. Bij te weinig
-// sterren staat de Wiebel die nog gevangen zit er in zijn bel bij.
+// sterren staat de Wiebel die nog gevangen zit er in zijn bel bij. Onder de munten van de ronde
+// staat de bonus voor nieuwe sterren, of bij een level dat je al kende dat iets nieuws meer geeft.
 
 import { belHtml } from '../bel.js';
 import { huisdierStadium, wiebelVoor } from '../beloningen.js';
@@ -30,6 +31,17 @@ export const resultaat = {
     const nieuw = gegevens.nieuweWiebel ? wiebelVoor(gegevens.nieuweWiebel, t) : null;
     const gevangen = gegevens.nogGevangen ? wiebelVoor(gegevens.nogGevangen, t) : null;
 
+    // Hooguit één regel: wie al 3 sterren had, kan geen nieuwe ster halen.
+    function muntRegel() {
+      if (gegevens.alGekend) {
+        const tekst = level.vaardigheid === 'nederland' ? 'Dit ken je al. Iets nieuws geeft meer munten!'
+          : 'Dit level ken je al. Een moeilijker level geeft meer munten!';
+        return `<p class="ondertitel">${tekst}</p>`;
+      }
+      if (!gegevens.sterBonus) return '';
+      return `<p class="ondertitel">+${gegevens.sterBonus} 🪙 voor je nieuwe ${gegevens.sterBonus > 5 ? 'sterren' : 'ster'}!</p>`;
+    }
+
     function beloningen() {
       const delen = [];
       if (nieuw) delen.push(`<span class="beloning"><span class="wiebeltje">${vriendjeHtml(nieuw, 'res-vriend', 'stil')}</span> Je hebt ${nieuw.naam} bevrijd!</span>`);
@@ -42,6 +54,7 @@ export const resultaat = {
       <h1 class="titel-groot">${TEKSTEN[gegevens.sterren]}</h1>
       <div class="resultaat-sterren">${sterrenHtml(gegevens.sterren)}</div>
       <p class="ondertitel">${gegevens.goedEerst} van de ${gegevens.aantal} in één keer goed · +${gegevens.munten} 🪙</p>
+      ${muntRegel()}
       <div class="knoppenrij beloningen">${beloningen()}</div>
       <div class="knoppenrij">
         ${volgendeOpen ? '<button class="knop knop-hoofd" data-focus data-actie="volgende">Volgend level →</button>' : ''}

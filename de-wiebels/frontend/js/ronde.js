@@ -4,11 +4,17 @@ export const RONDE_LENGTE = 10;
 
 // Bonusmunten bij een reeks goede antwoorden op rij.
 export const COMBO_BONUS = { 3: 2, 5: 5, 10: 10 };
+// In een level of toets die je al kent (3 sterren) alleen de bonussen voor 3 en 5 op rij.
+export const KEN_BONUS = { 3: 2, 5: 5 };
+// Bonusmunten, eenmalig per nieuwe ster in een level of toets.
+export const STER_BONUS = 5;
 
 // De reserve levert tussenvragen: als een foute vraag de laatste was, komt er eerst een andere.
 // herkansing: false voor een toets: een foute vraag komt niet terug.
-export function nieuweRonde(vragen, reserve = [], { herkansing = true } = {}) {
-  return { wachtrij: [...vragen], aantal: vragen.length, reserve: [...reserve], herkansing, gesteld: [], fouten: new Set(), goedEerst: 0, goed: 0, combo: 0, munten: 0 };
+// muntPerGoed en bonussen: false en KEN_BONUS in een level met al 3 sterren: dan alleen de bonussen
+// voor reeksen op rij.
+export function nieuweRonde(vragen, reserve = [], { herkansing = true, muntPerGoed = true, bonussen = COMBO_BONUS } = {}) {
+  return { wachtrij: [...vragen], aantal: vragen.length, reserve: [...reserve], herkansing, muntPerGoed, bonussen, gesteld: [], fouten: new Set(), goedEerst: 0, goed: 0, combo: 0, munten: 0 };
 }
 
 export function huidigeVraag(ronde) {
@@ -38,9 +44,9 @@ export function beantwoord(ronde, sleutel) {
     ronde.goed += 1;
     if (eersteKeer) {
       ronde.goedEerst += 1;
-      munten += 1;
+      if (ronde.muntPerGoed) munten += 1;
     }
-    munten += COMBO_BONUS[ronde.combo] || 0;
+    munten += ronde.bonussen[ronde.combo] || 0;
     ronde.munten += munten;
   } else {
     ronde.combo = 0;
@@ -55,7 +61,7 @@ export function beantwoord(ronde, sleutel) {
       ronde.wachtrij.splice(Math.min(2, ronde.wachtrij.length), 0, vraag);
     }
   }
-  const bonus = goed ? COMBO_BONUS[ronde.combo] || 0 : 0;
+  const bonus = goed ? ronde.bonussen[ronde.combo] || 0 : 0;
   return { goed, eersteKeer, vraag, munten, bonus, combo: ronde.combo, klaar: ronde.wachtrij.length === 0 };
 }
 
@@ -65,4 +71,9 @@ export function sterrenVoor(goedEerst, aantal = RONDE_LENGTE) {
   if (deel >= 0.8) return 2;
   if (deel >= 0.5) return 1;
   return 0;
+}
+
+// De munten voor de sterren die er in deze ronde bij zijn gekomen (oud: het aantal vóór de ronde).
+export function sterBonus(oud, nieuw) {
+  return STER_BONUS * Math.max(0, nieuw - oud);
 }

@@ -10,7 +10,7 @@ import { registreer, teHerhalen, volgendeStap } from '../leitner.js';
 import { STERREN_VRIJ, levelVan } from '../levels.js';
 import { nlVragen } from '../nederland/vragen.js';
 import { bewaar, staat } from '../opslag.js';
-import { RONDE_LENGTE, beantwoord, gedaan, huidigeVraag, nieuweRonde, sterrenVoor } from '../ronde.js';
+import { COMBO_BONUS, KEN_BONUS, RONDE_LENGTE, beantwoord, gedaan, huidigeVraag, nieuweRonde, sterBonus, sterrenVoor } from '../ronde.js';
 import { themaAchtergrond } from '../thema-achtergrond.js';
 import { vliegNaar } from '../vliegen.js';
 import { maakVraagpaneel } from '../vraagpaneel.js';
@@ -46,7 +46,10 @@ export const ronde = {
     let reeksFout = 0;
     const nederland = level.vaardigheid === 'nederland';
     const { vragen, reserve } = stelRondeSamen(p, level, stap);
-    const r = nieuweRonde(vragen, reserve, { herkansing: !level.toets });
+    // Een level of toets die je al kent (3 sterren vóór de ronde) geeft geen munt per goed antwoord,
+    // alleen de bonussen voor 3 en 5 op rij.
+    const alGekend = (p.sterren[level.id] || 0) >= 3;
+    const r = nieuweRonde(vragen, reserve, { herkansing: !level.toets, muntPerGoed: !alGekend, bonussen: alGekend ? KEN_BONUS : COMBO_BONUS });
     const rondeIds = new Set([...vragen, ...reserve].map((v) => v.id)); // alle vragen van deze ronde, ook al gestelde en de reserve
 
     const el = maakEl(`
@@ -60,28 +63,33 @@ export const ronde = {
     el.classList.add('met-gids');
     const paneel = maakVraagpaneel({ zetFocus, opAntwoord: antwoord });
     const gids = maakGids(p, 'gids-ronde');
+    // Bij een level dat je al kent zegt de Wiebel eerst waarom er minder munten zijn.
+    const begin = alGekend ? gids.zeg('alGekend') : null;
     // Het pijltje staat na het vraagpaneel, zodat het eerste antwoord de focus krijgt.
     el.append(paneel.el, gids.el);
     el.insertAdjacentHTML('beforeend', '<button class="knop terugpijl" data-focus data-actie="terug" aria-label="Terug">←</button>');
     const teller = el.querySelector('.munt-teller');
     opKlik(el, { terug: () => terug() });
 
-    function teken() {
+    // spreek: false voor de eerste vraag na de startzin; die spreekt de Wiebel pas na die zin uit.
+    function teken(spreek = true) {
       const klaar = gedaan(r);
       // Bij een lange toets (Nederland) past een bolletje per vraag niet: dan een teller.
       el.querySelector('.voortgang').innerHTML = r.aantal > MAX_BOLLETJES ? `${klaar} van ${r.aantal}`
         : Array.from({ length: r.aantal }, (_, i) => `<span class="${i < klaar ? 'vol' : ''}"></span>`).join('');
       paneel.toon(huidigeVraag(r));
       // Een vraag over Nederland zegt de Wiebel hardop (zonder opname alleen in de ballon).
-      if (huidigeVraag(r).zin) gids.spreek(huidigeVraag(r).zin);
+      if (spreek && huidigeVraag(r).zin) gids.spreek(huidigeVraag(r).zin);
     }
 
     function volgende() {
       if (!el.isConnected) return; // het scherm is al verlaten
       if (r.wachtrij.length) return teken();
       const sterren = sterrenVoor(r.goedEerst, r.aantal);
-      p.sterren[level.id] = Math.max(p.sterren[level.id] || 0, sterren);
-      p.munten += r.munten;
+      const oud = p.sterren[level.id] || 0;
+      p.sterren[level.id] = Math.max(oud, sterren);
+      const bonus = sterBonus(oud, sterren);
+      p.munten += r.munten + bonus;
       // Een Wiebel hebben alleen de levels en eindbazen (BELONINGEN) en de toetsen van Nederland; hij
       // komt vrij bij STERREN_VRIJ sterren. Bij minder ziet het kind wie er nog gevangen zit.
       const vrij = beloningNa(p, level.id, sterren);
@@ -90,7 +98,7 @@ export const ronde = {
       const nogGevangen = gevangen && !p.verzameling.includes(gevangen) ? gevangen : null;
       const gegroeid = voegXpToe(p, r.goed);
       bewaar();
-      toon('resultaat', { levelId: level.id, goedEerst: r.goedEerst, aantal: r.aantal, sterren, munten: r.munten, nieuweWiebel, nogGevangen, gegroeid }, { vervang: true });
+      toon('resultaat', { levelId: level.id, goedEerst: r.goedEerst, aantal: r.aantal, sterren, munten: r.munten, alGekend, sterBonus: bonus, nieuweWiebel, nogGevangen, gegroeid }, { vervang: true });
     }
 
     // Na een reeks goed of meerdere fouten verandert de stap; nog niet gestelde nieuwe vragen
@@ -145,8 +153,10 @@ export const ronde = {
       const goedEl = el.querySelector(`.optie[data-waarde="${uitslag.vraag.goed}"], .kaartvak [data-doel="${uitslag.vraag.goed}"]`);
       if (uitslag.munten) vliegMunten(uitslag.munten, goedEl ?? knop);
       const muntTekst = uitslag.munten ? ` +${uitslag.munten} 🪙` : '';
-      paneel.toonGoed(uitslag.bonus ? `${uitslag.combo} op rij!${muntTekst}` : `Goed zo!${muntTekst}`);
-      if (uitslag.bonus) {
+      // Het feest bij 3, 5 en 10 op rij blijft, ook als er in een gekend level geen munten bij horen.
+      const feest = COMBO_BONUS[uitslag.combo];
+      paneel.toonGoed(feest ? `${uitslag.combo} op rij!${muntTekst}` : `Goed zo!${muntTekst}`);
+      if (feest) {
         speel('combo');
         vuurwerk(el);
         naLof(gids.combo(uitslag.combo), PAUZE_GOED * 1.6);
@@ -164,7 +174,13 @@ export const ronde = {
       Promise.all([wacht(pauze), Promise.race([lof, wacht(MAX_LOF)])]).then(volgende);
     }
 
-    teken();
+    // De eerste vraag staat meteen in beeld; na de startzin spreekt de Wiebel hem uit, maar alleen als
+    // het scherm er nog is en die vraag nog aan de beurt is (een snel antwoord breekt de zin af).
+    const eerste = huidigeVraag(r);
+    teken(!begin);
+    begin?.then(() => {
+      if (el.isConnected && huidigeVraag(r) === eerste && eerste.zin) gids.spreek(eerste.zin);
+    });
     return { el, bijToets: paneel.bijToets, bijFocus: paneel.bijFocus };
   },
 };

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { nieuweRonde, beantwoord, huidigeVraag, gedaan, sterrenVoor } from '../de-wiebels/frontend/js/ronde.js';
+import { KEN_BONUS, nieuweRonde, beantwoord, huidigeVraag, gedaan, sterrenVoor, sterBonus } from '../de-wiebels/frontend/js/ronde.js';
 
 const vragen = Array.from({ length: 10 }, (_, i) => ({ id: `v${i}`, goed: 'g' }));
 const reserve = Array.from({ length: 3 }, (_, i) => ({ id: `r${i}`, goed: 'g' }));
@@ -166,4 +166,24 @@ test('toets: de laatste vraag fout maakt de ronde klaar, zonder tussenvraag', ()
   totLaatste(r);
   assert.equal(beantwoord(r, 'fout').klaar, true);
   assert.equal(r.reserve.length, 3);
+});
+
+test('in een level dat je al kent: geen munt per goed, alleen de bonus voor 3 en 5 op rij', () => {
+  const r = nieuweRonde(vragen, [], { muntPerGoed: false, bonussen: KEN_BONUS });
+  const uitslagen = [];
+  while (r.wachtrij.length) uitslagen.push(beantwoord(r, 'g'));
+  assert.deepEqual(uitslagen.map((u) => u.munten), [0, 0, 2, 0, 5, 0, 0, 0, 0, 0]);
+  assert.equal(uitslagen[9].combo, 10);
+  assert.equal(r.munten, 2 + 5);
+  assert.equal(r.goedEerst, 10);
+  assert.equal(sterrenVoor(r.goedEerst, r.aantal), 3);
+});
+
+test('sterBonus: 5 munten per nieuwe ster, niets bij gelijk of minder', () => {
+  assert.equal(sterBonus(0, 1), 5);
+  assert.equal(sterBonus(0, 3), 15);
+  assert.equal(sterBonus(1, 3), 10);
+  assert.equal(sterBonus(2, 2), 0);
+  assert.equal(sterBonus(3, 1), 0);
+  assert.equal(sterBonus(0, 2), 10);
 });
