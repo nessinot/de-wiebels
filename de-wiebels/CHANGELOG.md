@@ -1,5 +1,9 @@
 # Wijzigingen
 
+## 0.11.3
+
+Bij Nederland zegt de Wiebel na een fout antwoord op de kaart nu waar het goede antwoord ligt, bijvoorbeeld "De Veluwe ligt hier." of "Middelburg is de hoofdstad van Zeeland.". Dezelfde zin staat op het scherm. Wat je verkeerd aanwees wordt niet meer rood gekleurd: alleen het goede antwoord licht groen op.
+
 ## 0.11.2
 
 Bij Nederland zegt de Wiebel na een fout antwoord nu "Het goede antwoord is …", net als op het scherm. De knop Verder staat daarbij altijd helemaal in beeld. De Wiebel heeft er veel nieuwe complimenten en aanmoedigingen bij, en zegt elk zinnetje eerst één keer voordat hij er een herhaalt.
