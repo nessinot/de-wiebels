@@ -165,12 +165,6 @@
 .baas-bel { position: absolute; left: 58%; top: 60px; width: 200px; height: 200px; }
 .baas-bel .vangbel { width: 100%; height: 100%; }
 
-/* Bij een knop (bijKnopHtml in js/bel.js): de gevangen Wiebel in zijn bel met een regeltje, of vrij.
-   Een scherm kan de maat van bel en Wiebel zelf zetten (css/nederland.css). */
-.bij-knop { display: flex; align-items: center; justify-content: center; gap: 12px; }
-.bij-knop .vangbel, .bij-knop .vriendje { flex: none; width: 100px; height: 100px; }
-.bij-knop-regel { font-size: 40px; font-weight: bold; color: var(--tekst); }
-
 /* Verzameling: bovenin de wei met rondlopende Wiebels, daaronder alle Wiebels stil. */
 .collectie-rechts { display: flex; flex-direction: column; gap: 24px; }
 .wei { position: relative; width: 1236px; height: 290px; border-radius: 32px; background: var(--vlak); overflow: hidden; }

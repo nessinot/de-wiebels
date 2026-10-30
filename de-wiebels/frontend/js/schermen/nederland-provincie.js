@@ -1,15 +1,12 @@
 // Eén provincie ingezoomd (of met provincie null heel Nederland), met haar plaatsen, streken,
 // eilanden en water. Je kunt alles aanwijzen en ziet de naam; rechts de knoppen Oefenen en Toets,
-// elk met de sterren erbij. Bij de Toets van een provincie zit haar Wiebel in zijn bel tot hij vrij is.
+// elk met de sterren erbij.
 
-import { bijKnopHtml } from '../bel.js';
-import { wiebelVoor } from '../beloningen.js';
 import { maakEl, opKlik } from '../dom.js';
 import { maakKaartbediening } from '../nederland/bediening.js';
 import { PER_ID, doelenVoor, kaartSvg, zoomVak } from '../nederland/kaartbeeld.js';
 import { sterId } from '../nederland/wereld.js';
 import { staat } from '../opslag.js';
-import { thema } from '../themas/index.js';
 import { themaAchtergrond } from '../thema-achtergrond.js';
 import { sterrenHtml, topbalk } from '../weergave.js';
 
@@ -28,13 +25,6 @@ export const nederlandProvincie = {
     const titel = provincie ? PER_ID[provincie].naam : 'Alle provincies';
     const leeg = doelen.length ? '' : ' disabled';
     const sterren = (toets) => sterrenHtml(Math.min(3, p.sterren[sterId('plaatsen', keuze, toets)] || 0));
-    // De Wiebel van de provincie (niet bij "Alle provincies"); zijn id is de plaatsen-toets.
-    const wiebelId = provincie && sterId('plaatsen', provincie, true);
-    const bijToetsHtml = () => {
-      if (!wiebelId) return '';
-      const w = wiebelVoor(wiebelId, thema(p.thema));
-      return bijKnopHtml(w, p.verzameling.includes(wiebelId), `Bevrijd ${w.naam}!`, `nl-bel-${provincie}`);
-    };
 
     el.innerHTML = `
       ${themaAchtergrond(p.thema, 'nederland', 'ab-nl')}
@@ -56,7 +46,6 @@ export const nederlandProvincie = {
           <div class="nl-onderdeel">
             <button class="knop nl-start" data-focus data-actie="toets"${leeg}>Toets</button>
             <span class="nl-sterren-toets">${sterren(true)}</span>
-            ${bijToetsHtml()}
           </div>
         </div>
       </div>
@@ -118,8 +107,6 @@ export const nederlandProvincie = {
         el.querySelector('.topbalk').outerHTML = topbalk(p);
         el.querySelector('.nl-sterren-oefen').innerHTML = sterren(false);
         el.querySelector('.nl-sterren-toets').innerHTML = sterren(true);
-        // Een net bevrijde Wiebel staat er nu vrij bij.
-        if (wiebelId) el.querySelector('.bij-knop').outerHTML = bijToetsHtml();
         if (gestart) zetFocus(knop(gestart));
         gestart = null;
       },

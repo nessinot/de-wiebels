@@ -125,7 +125,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px 36px;
-  align-items: start;
 }
 
 .levelknop {
@@ -139,12 +138,6 @@
 
 .levelknop .sterren { font-size: 52px; }
 .baasknop { background: var(--vlak-licht); }
-/* De Wiebel van de eindbaas zit op de hoek van de knop, maar is er geen deel van: zo blijft hij ook
-   op slot helder. */
-.baasplek { position: relative; }
-.baasplek .baasknop { width: 100%; }
-.baas-hoek { position: absolute; top: -16px; right: 0; width: 80px; height: 80px; pointer-events: none; }
-.baas-hoek .vangbel { width: 100%; height: 100%; }
 .baasknop .klein { font-size: 40px; }
 .klein { font-size: 32px; color: var(--tekst-zacht); }
 /* Naast de wereldnaam: eronder past de derde rij levels niet meer binnen de safe area. */
