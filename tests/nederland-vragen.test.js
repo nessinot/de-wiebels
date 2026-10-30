@@ -1,5 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { esc } from '../de-wiebels/frontend/js/dom.js';
 import { ITEMS } from '../de-wiebels/frontend/js/nederland/items.js';
 import { PER_ID, PROVINCIES } from '../de-wiebels/frontend/js/nederland/kaartbeeld.js';
 import { HERKEN_ZINNEN, TOETS_MAX, maakContext, nlVraagUitId, nlVragen } from '../de-wiebels/frontend/js/nederland/vragen.js';
@@ -80,6 +81,24 @@ test('elke vraag heeft een tekst, een zin en bij een fout de goede zin per vraag
     }
   }
   for (const zin of Object.values(HERKEN_ZINNEN)) assert.match(zin.id, /^nl-herken-[a-z]+$/);
+});
+
+test('fout bij aanwijzen: dezelfde zin, de namen vet en na elk streepje in een naam een woordverbinder', () => {
+  const ctx = maakContext(profielMet(), levelVan(sterId('plaatsen', 'alle')), rng(3));
+  const ids = [
+    ...ITEMS.map((it) => `nl:wijs:${it.id}`),
+    ...PROVINCIES.flatMap((p) => [`nl:hoofdstad-wijs:${p}`, `nl:hoofdstad-van:${PER_ID[p].hoofdstad}`]),
+  ];
+  for (const v of ids.map((id) => nlVraagUitId(id, ctx))) {
+    assert.equal(v.foutHtml.replace(/<\/?strong>|\u2060/g, ''), esc(v.dat.tekst), v.id);
+    assert.ok(v.foutHtml.includes('<strong>'), v.id);
+    for (const naam of v.foutHtml.match(/<strong>.*?<\/strong>/g)) {
+      assert.ok(!/-(?!\u2060)/.test(naam), `${v.id}: ${naam}`);
+    }
+  }
+  assert.equal(nlVraagUitId('nl:hoofdstad-van:pl-s-hertogenbosch', ctx).foutHtml,
+    '<strong>&#39;s-\u2060Hertogenbosch</strong> is de hoofdstad van <strong>Noord-\u2060Brabant</strong>.');
+  assert.equal(nlVraagUitId('nl:wijs:wa-kagerplassen', ctx).foutHtml, '<strong>De Kagerplassen</strong> liggen hier.');
 });
 
 test('knoppen: drie verschillende, precies één goede; aanwijzen: het goede antwoord staat op de kaart', () => {

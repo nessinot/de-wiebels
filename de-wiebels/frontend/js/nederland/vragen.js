@@ -99,8 +99,21 @@ function basis(id, goed, zin, dat) {
   return { id, soort: 'nl', goed, goedHtml: esc(PER_ID[goed].naam), tekst: esc(zin.tekst), zin, dat };
 }
 
+// Na een streepje in een naam een woordverbinder: Noord-Brabant breekt niet af (op een spatie wel).
+export const heleNaam = (html) => html.replaceAll('-', '-\u2060');
+// Een naam vet in de terugkoppeling.
+const naamHtml = (naam) => `<strong>${heleNaam(esc(naam))}</strong>`;
+
+// De zin na een fout bij aanwijzen, met de namen vet: "X ligt hier." of "X is de hoofdstad van Y."
+function foutHtml(tekst) {
+  const [, stad, provincie] = tekst.match(/^(.+) is de hoofdstad van (.+)\.$/) ?? [];
+  if (stad) return `${naamHtml(stad)} is de hoofdstad van ${naamHtml(provincie)}.`;
+  const [, naam, rest] = tekst.match(/^(.+)( ligt| liggen) hier\.$/);
+  return `${naamHtml(naam)}${rest} hier.`;
+}
+
 function aanwijzen(vraag, provincie, doelen, ctx) {
-  return { ...vraag, interactief: 'aanwijzen', opties: [], foutHtml: esc(vraag.dat.tekst), kaart: { provincie, doelen, begin: beginBij(doelen, vraag.goed, ctx) } };
+  return { ...vraag, interactief: 'aanwijzen', opties: [], foutHtml: foutHtml(vraag.dat.tekst), kaart: { provincie, doelen, begin: beginBij(doelen, vraag.goed, ctx) } };
 }
 
 const VORMEN = {

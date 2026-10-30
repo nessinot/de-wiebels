@@ -5,6 +5,7 @@ import { maakEl, opKlik } from './dom.js';
 import { digitaal, zetKlok } from './klok.js';
 import { maakKaartbediening } from './nederland/bediening.js';
 import { kaartSvg, zoomVak } from './nederland/kaartbeeld.js';
+import { heleNaam } from './nederland/vragen.js';
 
 const KLOK_ANIMATIE = 400;
 const CIJFER_WACHT = 1500;
@@ -156,7 +157,8 @@ export function maakVraagpaneel({ zetFocus, opAntwoord }) {
     knop?.classList.add('optie-fout');
     klokAnimatie(sleutel);
     const goedKnop = el.querySelector(`.optie[data-waarde="${vraag.goed}"]`);
-    const goedHtml = goedKnop?.innerHTML ?? vraag.goedHtml ?? digitaal(vraag.klok.uur, vraag.klok.minuut);
+    let goedHtml = goedKnop?.innerHTML ?? vraag.goedHtml ?? digitaal(vraag.klok.uur, vraag.klok.minuut);
+    if (vraag.soort === 'nl') goedHtml = heleNaam(goedHtml);
     opVerder = verder;
     melding().innerHTML = `<span>${vraag.foutHtml ?? `Het goede antwoord is <strong>${goedHtml}</strong>.`}</span>
       <button class="knop knop-hoofd" data-focus data-actie="verder">Verder</button>`;
