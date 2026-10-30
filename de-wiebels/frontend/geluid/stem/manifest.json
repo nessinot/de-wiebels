@@ -91,9 +91,69 @@
    "bestand": "bijna-1.mp3",
    "tekst": "Bijna! Kijk, zo zit het."
   },
+  "bijna-10": {
+   "bestand": "bijna-10.mp3",
+   "tekst": "Geeft niets, fouten maken mag!"
+  },
+  "bijna-11": {
+   "bestand": "bijna-11.mp3",
+   "tekst": "Oei! Kijk, zo is het goed."
+  },
+  "bijna-12": {
+   "bestand": "bijna-12.mp3",
+   "tekst": "Die is lastig, hè? Zo zit het."
+  },
+  "bijna-13": {
+   "bestand": "bijna-13.mp3",
+   "tekst": "Geen zorgen, kijk maar even."
+  },
+  "bijna-14": {
+   "bestand": "bijna-14.mp3",
+   "tekst": "Bijna! Nu weet je het."
+  },
+  "bijna-15": {
+   "bestand": "bijna-15.mp3",
+   "tekst": "Nét niet! Kijk maar."
+  },
+  "bijna-16": {
+   "bestand": "bijna-16.mp3",
+   "tekst": "Hmm, dat klopt niet helemaal. Kijk eens."
+  },
+  "bijna-17": {
+   "bestand": "bijna-17.mp3",
+   "tekst": "Oei, die was moeilijk! Zo is het."
+  },
+  "bijna-18": {
+   "bestand": "bijna-18.mp3",
+   "tekst": "Geeft helemaal niks. Kijk mee!"
+  },
+  "bijna-19": {
+   "bestand": "bijna-19.mp3",
+   "tekst": "Ah, bijna! Zo zit het."
+  },
   "bijna-2": {
    "bestand": "bijna-2.mp3",
    "tekst": "Net niet. Kijk maar even mee."
+  },
+  "bijna-20": {
+   "bestand": "bijna-20.mp3",
+   "tekst": "Niet getreurd, kijk maar even."
+  },
+  "bijna-21": {
+   "bestand": "bijna-21.mp3",
+   "tekst": "Dat is een goede om te onthouden!"
+  },
+  "bijna-22": {
+   "bestand": "bijna-22.mp3",
+   "tekst": "Oeps, mis! Kijk, zo moet het."
+  },
+  "bijna-23": {
+   "bestand": "bijna-23.mp3",
+   "tekst": "Rustig maar, zo zit het."
+  },
+  "bijna-24": {
+   "bestand": "bijna-24.mp3",
+   "tekst": "Bijna raak! Kijk eens goed."
   },
   "bijna-3": {
    "bestand": "bijna-3.mp3",
@@ -102,6 +162,26 @@
   "bijna-4": {
    "bestand": "bijna-4.mp3",
    "tekst": "Oei, bijna! Kijk eens."
+  },
+  "bijna-5": {
+   "bestand": "bijna-5.mp3",
+   "tekst": "Oeps! Kijk, zo moet het."
+  },
+  "bijna-6": {
+   "bestand": "bijna-6.mp3",
+   "tekst": "Bijna goed! Zo zit het."
+  },
+  "bijna-7": {
+   "bestand": "bijna-7.mp3",
+   "tekst": "Dat was een lastige. Kijk maar."
+  },
+  "bijna-8": {
+   "bestand": "bijna-8.mp3",
+   "tekst": "Niet erg, daar leer je van!"
+  },
+  "bijna-9": {
+   "bestand": "bijna-9.mp3",
+   "tekst": "Net ernaast! Kijk eens mee."
   },
   "collectie-alles-1": {
    "bestand": "collectie-alles-1.mp3",
@@ -123,6 +203,22 @@
    "bestand": "combo-drie-2.mp3",
    "tekst": "Lekker bezig!"
   },
+  "combo-drie-3": {
+   "bestand": "combo-drie-3.mp3",
+   "tekst": "Je bent op dreef!"
+  },
+  "combo-drie-4": {
+   "bestand": "combo-drie-4.mp3",
+   "tekst": "Het gaat als een trein!"
+  },
+  "combo-drie-5": {
+   "bestand": "combo-drie-5.mp3",
+   "tekst": "Drie goed! Ga zo door!"
+  },
+  "combo-drie-6": {
+   "bestand": "combo-drie-6.mp3",
+   "tekst": "Daar zit vaart in!"
+  },
   "combo-tien-1": {
    "bestand": "combo-tien-1.mp3",
    "tekst": "Tien op een rij! Kampioen!"
@@ -131,6 +227,22 @@
    "bestand": "combo-tien-2.mp3",
    "tekst": "Alles goed! Ongelofelijk!"
   },
+  "combo-tien-3": {
+   "bestand": "combo-tien-3.mp3",
+   "tekst": "Tien keer goed! Jij bent een ster!"
+  },
+  "combo-tien-4": {
+   "bestand": "combo-tien-4.mp3",
+   "tekst": "Wauw, tien op een rij! Feest!"
+  },
+  "combo-tien-5": {
+   "bestand": "combo-tien-5.mp3",
+   "tekst": "Wat een topper ben jij!"
+  },
+  "combo-tien-6": {
+   "bestand": "combo-tien-6.mp3",
+   "tekst": "Tien! Ik word er helemaal blij van!"
+  },
   "combo-vijf-1": {
    "bestand": "combo-vijf-1.mp3",
    "tekst": "Vijf op een rij, wauw!"
@@ -138,6 +250,22 @@
   "combo-vijf-2": {
    "bestand": "combo-vijf-2.mp3",
    "tekst": "Wat gaat dat goed!"
+  },
+  "combo-vijf-3": {
+   "bestand": "combo-vijf-3.mp3",
+   "tekst": "Een hele hand vol goed!"
+  },
+  "combo-vijf-4": {
+   "bestand": "combo-vijf-4.mp3",
+   "tekst": "Jij bent niet te stoppen!"
+  },
+  "combo-vijf-5": {
+   "bestand": "combo-vijf-5.mp3",
+   "tekst": "Je bent echt op stoom!"
+  },
+  "combo-vijf-6": {
+   "bestand": "combo-vijf-6.mp3",
+   "tekst": "Hoe doe je dat toch?"
   },
   "droog-1": {
    "bestand": "droog-1.mp3",
@@ -179,13 +307,97 @@
    "bestand": "goed-1.mp3",
    "tekst": "Goed zo!"
   },
+  "goed-10": {
+   "bestand": "goed-10.mp3",
+   "tekst": "Helemaal juist!"
+  },
+  "goed-11": {
+   "bestand": "goed-11.mp3",
+   "tekst": "Wauw, knap hoor!"
+  },
+  "goed-12": {
+   "bestand": "goed-12.mp3",
+   "tekst": "Keigoed!"
+  },
+  "goed-13": {
+   "bestand": "goed-13.mp3",
+   "tekst": "Klopt als een bus!"
+  },
+  "goed-14": {
+   "bestand": "goed-14.mp3",
+   "tekst": "Hoera, goed!"
+  },
+  "goed-15": {
+   "bestand": "goed-15.mp3",
+   "tekst": "Mooi zo!"
+  },
+  "goed-16": {
+   "bestand": "goed-16.mp3",
+   "tekst": "Netjes!"
+  },
+  "goed-17": {
+   "bestand": "goed-17.mp3",
+   "tekst": "Dat wist je goed!"
+  },
+  "goed-18": {
+   "bestand": "goed-18.mp3",
+   "tekst": "Jij bent een kanjer!"
+  },
+  "goed-19": {
+   "bestand": "goed-19.mp3",
+   "tekst": "Dat ging lekker!"
+  },
   "goed-2": {
    "bestand": "goed-2.mp3",
    "tekst": "Knap gedaan!"
   },
+  "goed-20": {
+   "bestand": "goed-20.mp3",
+   "tekst": "Bingo!"
+  },
+  "goed-21": {
+   "bestand": "goed-21.mp3",
+   "tekst": "Yes, goed zo!"
+  },
+  "goed-22": {
+   "bestand": "goed-22.mp3",
+   "tekst": "Die zit!"
+  },
+  "goed-23": {
+   "bestand": "goed-23.mp3",
+   "tekst": "Hartstikke goed!"
+  },
+  "goed-24": {
+   "bestand": "goed-24.mp3",
+   "tekst": "Wat goed van jou!"
+  },
+  "goed-25": {
+   "bestand": "goed-25.mp3",
+   "tekst": "Daar ben ik blij mee!"
+  },
+  "goed-26": {
+   "bestand": "goed-26.mp3",
+   "tekst": "Jaaa, goed!"
+  },
+  "goed-27": {
+   "bestand": "goed-27.mp3",
+   "tekst": "Goed gevonden!"
+  },
+  "goed-28": {
+   "bestand": "goed-28.mp3",
+   "tekst": "Je doet het geweldig!"
+  },
+  "goed-29": {
+   "bestand": "goed-29.mp3",
+   "tekst": "Ik wist dat je het kon!"
+  },
   "goed-3": {
    "bestand": "goed-3.mp3",
    "tekst": "Ja, helemaal goed!"
+  },
+  "goed-30": {
+   "bestand": "goed-30.mp3",
+   "tekst": "Toppie!"
   },
   "goed-4": {
    "bestand": "goed-4.mp3",
@@ -198,6 +410,18 @@
   "goed-6": {
    "bestand": "goed-6.mp3",
    "tekst": "Joepie, goed!"
+  },
+  "goed-7": {
+   "bestand": "goed-7.mp3",
+   "tekst": "Ja, dat klopt!"
+  },
+  "goed-8": {
+   "bestand": "goed-8.mp3",
+   "tekst": "Precies goed!"
+  },
+  "goed-9": {
+   "bestand": "goed-9.mp3",
+   "tekst": "Goed nagedacht!"
   },
   "intro-baas-1": {
    "bestand": "intro-baas-1.mp3",

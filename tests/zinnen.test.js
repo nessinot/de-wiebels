@@ -24,6 +24,44 @@ test('zinnen zijn vaste tekst zonder in te vullen delen', () => {
   for (const zin of alle) assert.doesNotMatch(zin.tekst, /[{}$<>%]|\d/, zin.id);
 });
 
+// Vaste willekeur, zodat de uitkomst altijd gelijk is.
+function rng(zaad) {
+  let s = zaad;
+  return () => {
+    s = (s * 1103515245 + 12345) % 2147483648;
+    return s / 2147483648;
+  };
+}
+
+// De stapels zijn moduletoestand: deze tests staan bovenaan, voordat andere tests er zinnen van trekken.
+test('kiesZin zegt elke zin eerst één keer voordat er een terugkomt', () => {
+  const r = rng(7);
+  const ids = ZINNEN.goed.map((z) => z.id);
+  assert.equal(ids.length, 30);
+  let vorige;
+  for (let blok = 0; blok < 3; blok++) {
+    const getrokken = [];
+    for (let i = 0; i < 30; i++) {
+      const zin = kiesZin('goed', r);
+      assert.notEqual(zin.id, vorige, `blok ${blok}, trekking ${i}`);
+      getrokken.push(zin.id);
+      vorige = zin.id;
+    }
+    assert.deepEqual([...getrokken].sort(), [...ids].sort(), `blok ${blok}`);
+  }
+});
+
+test('kiesZin herhaalt bij twee zinnen nooit dezelfde achter elkaar', () => {
+  const gebeurtenis = Object.keys(ZINNEN).find((g) => ZINNEN[g].length === 2);
+  const r = rng(11);
+  let vorige;
+  for (let i = 0; i < 100; i++) {
+    const zin = kiesZin(gebeurtenis, r);
+    assert.notEqual(zin.id, vorige, `trekking ${i}`);
+    vorige = zin.id;
+  }
+});
+
 test('kiesZin kiest een zin van de gebeurtenis', () => {
   for (let i = 0; i < 20; i++) assert.ok(ZINNEN.kleurGekozen.includes(kiesZin('kleurGekozen')));
 });
