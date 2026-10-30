@@ -1,5 +1,13 @@
 # Wijzigingen
 
+## 0.12.0
+
+Een Wiebel bevrijden is nu een echte uitdaging: je hebt **twee sterren** nodig in een level of in een toets. Een nieuw level gaat nog steeds open met één ster, en Wiebels die al vrij zijn, blijven vrij.
+
+Je ziet nu ook vooraf wie er gevangen zit. Bij de sommen zit de Wiebel van de eindbaas in zijn bel naast de eindbaas, ook als die nog op slot zit. Bij Nederland is de toets van een provincie de eindbaas: bij de knop Toets zit de Wiebel van die provincie in zijn bel. Op de kaart van heel Nederland zit Tulpje gevangen; die komt vrij als je bij Provincies én bij Hoofdsteden twee sterren haalt. Is een Wiebel bevrijd, dan staat hij er vrij bij.
+
+Haal je één ster, dan zie je op het eindscherm wie je met twee sterren had bevrijd.
+
 ## 0.11.4
 
 Bij Nederland staan de namen in de uitleg na een fout antwoord nu vetgedrukt, en een naam als Noord-Brabant wordt niet meer over twee regels verdeeld.
