@@ -69,7 +69,8 @@ h1 {
   cursor: pointer;
 }
 
-.knop.heeft-focus { background: var(--vlak-licht); }
+/* Met focus een laag hoger: de rand ligt boven de knoppen ernaast en boven de gids met zijn ballon (laag 1). */
+.knop.heeft-focus { background: var(--vlak-licht); z-index: 2; }
 
 /* Focusrand: los vlak eromheen dat pulseert via transform. */
 .knop.heeft-focus::after {

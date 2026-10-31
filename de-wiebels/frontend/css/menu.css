@@ -99,5 +99,6 @@
   background: var(--accent); color: var(--achtergrond); font-size: 48px; font-weight: bold;
   box-shadow: 0 8px 0 rgba(0, 0, 0, .3);
 }
-.koopknop.heeft-focus { background: var(--accent); }
+/* Met focus houdt hij zijn eigen laag 3, anders zakt hij naar laag 2 van .knop.heeft-focus. */
+.koopknop.heeft-focus { background: var(--accent); z-index: 3; }
 .koopknop:disabled { opacity: 1; background: var(--vlak); color: var(--tekst-zacht); }
