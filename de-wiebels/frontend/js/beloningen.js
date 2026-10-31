@@ -37,6 +37,21 @@ export function beloningNa(profiel, levelId, sterren) {
   return BELONINGEN.includes(levelId) ? levelId : null;
 }
 
+// De Wiebel die tijdens deze toets van Nederland in zijn bel zit (zijn id), of null: niet bij oefenen,
+// "Alle provincies", de sommen of een Wiebel die al vrij is.
+export function belInToets(profiel, levelId) {
+  if (!levelId.startsWith('nl:')) return null;
+  const id = wiebelVan(levelId);
+  return id && !profiel.verzameling.includes(id) ? id : null;
+}
+
+// Wat de bel aan het eind van de toets doet: 'knap', 'nogEen' (twee sterren, maar zijn andere toets
+// nog niet: alleen Tulpje) of 'schud'.
+export function afloopBel(sterren, nieuweWiebel) {
+  if (nieuweWiebel) return 'knap';
+  return sterren >= STERREN_VRIJ ? 'nogEen' : 'schud';
+}
+
 // Geeft true als de beloning nieuw is.
 export function geefBeloning(profiel, beloningId) {
   if (profiel.verzameling.includes(beloningId)) return false;

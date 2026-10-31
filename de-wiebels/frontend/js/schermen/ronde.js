@@ -1,7 +1,10 @@
 // Oefenronde: tien vragen met vier antwoorden. Een fout wordt rustig verbeterd en later opnieuw gevraagd.
 // Ook de oefenronde en de toets van Nederland; bij een toets komt een fout niet terug.
+// Bij een toets van Nederland zit de Wiebel die je kunt bevrijden in zijn bel naast de kaart; aan het
+// eind knapt de bel of schudt hij.
 
-import { beloningNa, geefBeloning, voegXpToe, wiebelVan } from '../beloningen.js';
+import { belHtml, laatVrij, schud } from '../bel.js';
+import { afloopBel, belInToets, beloningNa, geefBeloning, voegXpToe, wiebelVan, wiebelVoor } from '../beloningen.js';
 import { maakEl, opKlik } from '../dom.js';
 import { speel } from '../geluid.js';
 import { maakVraag, maakVragen, vraagUitId } from '../generators/index.js';
@@ -9,9 +12,11 @@ import { maakGids } from '../gids.js';
 import { registreer, teHerhalen, volgendeStap } from '../leitner.js';
 import { STERREN_VRIJ, levelVan } from '../levels.js';
 import { nlVragen } from '../nederland/vragen.js';
+import { NOG_EEN_TOETS_ZIN } from '../nederland/wiebels.js';
 import { bewaar, staat } from '../opslag.js';
 import { COMBO_BONUS, KEN_BONUS, RONDE_LENGTE, beantwoord, gedaan, huidigeVraag, nieuweRonde, sterBonus, sterrenVoor } from '../ronde.js';
 import { themaAchtergrond } from '../thema-achtergrond.js';
+import { thema } from '../themas/index.js';
 import { vliegNaar } from '../vliegen.js';
 import { maakVraagpaneel } from '../vraagpaneel.js';
 import { vuurwerk } from '../vuurwerk.js';
@@ -22,6 +27,7 @@ const MAX_LOF = 4000; // langer wacht een vraag over Nederland niet op de lof
 const MAX_HERHALING = 4;
 const MAX_MUNTEN = 5; // zoveel munten vliegen er hooguit tegelijk naar de teller
 const MAX_BOLLETJES = 20; // meer vragen passen niet als bolletjes in de kop
+const NA_BEL = 1600; // ms: na het knappen of schudden, dan het resultaat
 
 // Vragen voor een ronde: eerst wat aan de beurt is om te herhalen, de rest nieuw. Alles na de
 // eerste tien is reserve voor tussenvragen. Geeft { vragen, reserve }.
@@ -51,6 +57,7 @@ export const ronde = {
     const alGekend = (p.sterren[level.id] || 0) >= 3;
     const r = nieuweRonde(vragen, reserve, { herkansing: !level.toets, muntPerGoed: !alGekend, bonussen: alGekend ? KEN_BONUS : COMBO_BONUS });
     const rondeIds = new Set([...vragen, ...reserve].map((v) => v.id)); // alle vragen van deze ronde, ook al gestelde en de reserve
+    const belId = belInToets(p, level.id);
 
     const el = maakEl(`
       ${themaAchtergrond(p.thema, level.vaardigheid, 'ab-ronde')}
@@ -65,6 +72,11 @@ export const ronde = {
     const gids = maakGids(p, 'gids-ronde');
     // Bij een level dat je al kent zegt de Wiebel eerst waarom er minder munten zijn.
     const begin = alGekend ? gids.zeg('alGekend') : null;
+    // De bel staat vóór de gids, zodat de ballon er altijd overheen valt.
+    if (belId) {
+      const w = wiebelVoor(belId, thema(p.thema));
+      el.insertAdjacentHTML('beforeend', `<div class="toets-bel">${belHtml(w, 'toetsbel')}<span class="toets-bel-naam">${w.naam}</span></div>`);
+    }
     // Het pijltje staat na het vraagpaneel, zodat het eerste antwoord de focus krijgt.
     el.append(paneel.el, gids.el);
     el.insertAdjacentHTML('beforeend', '<button class="knop terugpijl" data-focus data-actie="terug" aria-label="Terug">←</button>');
@@ -98,7 +110,27 @@ export const ronde = {
       const nogGevangen = gevangen && !p.verzameling.includes(gevangen) ? gevangen : null;
       const gegroeid = voegXpToe(p, r.goed);
       bewaar();
-      toon('resultaat', { levelId: level.id, goedEerst: r.goedEerst, aantal: r.aantal, sterren, munten: r.munten, alGekend, sterBonus: bonus, nieuweWiebel, nogGevangen, gegroeid }, { vervang: true });
+      const naarResultaat = (belGeknapt = false) => toon('resultaat', {
+        levelId: level.id, goedEerst: r.goedEerst, aantal: r.aantal, sterren, munten: r.munten, alGekend, sterBonus: bonus, nieuweWiebel, nogGevangen, gegroeid, belGeknapt,
+      }, { vervang: true });
+      if (!belId) return naarResultaat();
+      // Bij twee sterren knapt de bel en zegt de gids een bevrijd-zin; bij Tulpje na de eerste toets
+      // schudt hij en zegt de gids dat er nog één toets is; bij minder sterren schudt hij alleen.
+      const bel = el.querySelector('.toets-bel .vangbel');
+      const afloop = afloopBel(sterren, nieuweWiebel);
+      let zin = null;
+      if (afloop === 'knap') {
+        laatVrij(bel);
+        gids.blij();
+        zin = gids.zeg('bevrijd');
+      } else {
+        schud(bel);
+        if (afloop === 'nogEen') zin = gids.spreek(NOG_EEN_TOETS_ZIN);
+      }
+      const wacht = (ms) => new Promise((klaar) => { setTimeout(klaar, ms); });
+      Promise.all([wacht(NA_BEL), zin ? Promise.race([zin, wacht(MAX_LOF)]) : null]).then(() => {
+        if (el.isConnected) naarResultaat(afloop === 'knap');
+      });
     }
 
     // Na een reeks goed of meerdere fouten verandert de stap; nog niet gestelde nieuwe vragen

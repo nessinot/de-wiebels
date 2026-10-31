@@ -8,7 +8,7 @@ import { ITEMS } from '../de-wiebels/frontend/js/nederland/items.js';
 import { PROVINCIES } from '../de-wiebels/frontend/js/nederland/kaartbeeld.js';
 import { HERKEN_ZINNEN } from '../de-wiebels/frontend/js/nederland/vragen.js';
 import { sterId } from '../de-wiebels/frontend/js/nederland/wereld.js';
-import { BELONINGEN_NL, GEVANGEN_ZIN, NL_WIEBEL, WIEBELS_NL, nlBeloningNa } from '../de-wiebels/frontend/js/nederland/wiebels.js';
+import { BELONINGEN_NL, GEVANGEN_ZIN, NL_WIEBEL, NOG_EEN_TOETS_ZIN, WIEBELS_NL, nlBeloningNa } from '../de-wiebels/frontend/js/nederland/wiebels.js';
 import { nieuwProfiel } from '../de-wiebels/frontend/js/profiel.js';
 import { DRAAGBAAR, spul } from '../de-wiebels/frontend/js/spullen.js';
 import { THEMAS } from '../de-wiebels/frontend/js/themas/index.js';
@@ -54,6 +54,7 @@ test('elke Wiebel van Nederland heeft vier weetjes en een vaste zin met zijn naa
     ...ITEMS.flatMap((it) => Object.values(it.zinnen)),
     ...Object.values(HERKEN_ZINNEN),
     GEVANGEN_ZIN,
+    NOG_EEN_TOETS_ZIN,
   ].map((z) => z.id));
   for (const w of WIEBELS_NL) {
     for (const veld of ['lievelingskleur', 'eetHetLiefst', 'kanHeelGoed', 'geheimpje']) assert.ok(w[veld]?.trim(), `${w.naam}: ${veld}`);
@@ -108,9 +109,12 @@ test('een gevangen Wiebel van Nederland zegt bij welke toets hij zit', () => {
   });
 });
 
-test('de zin bij een gevangen Wiebel van Nederland is vaste tekst', () => {
-  assert.match(GEVANGEN_ZIN.id, /^nl-[a-z-]+$/);
-  assert.doesNotMatch(GEVANGEN_ZIN.tekst, /[{}$<>%']|\d/);
+test('de zinnen bij een gevangen Wiebel van Nederland zijn vaste tekst', () => {
+  assert.notEqual(GEVANGEN_ZIN.id, NOG_EEN_TOETS_ZIN.id);
+  for (const zin of [GEVANGEN_ZIN, NOG_EEN_TOETS_ZIN]) {
+    assert.match(zin.id, /^nl-[a-z-]+$/);
+    assert.doesNotMatch(zin.tekst, /[{}$<>%']|\d/, zin.id);
+  }
 });
 
 test('nieuw bevrijde Wiebels van Nederland tellen mee, en "alles bevrijd" pas bij alle 60', () => {

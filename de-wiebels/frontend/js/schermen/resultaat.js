@@ -2,6 +2,7 @@
 // net bevrijde Wiebel springt erbij en bij groei laat hij zijn nieuwe stadium zien. Bij te weinig
 // sterren staat de Wiebel die nog gevangen zit er in zijn bel bij. Onder de munten van de ronde
 // staat de bonus voor nieuwe sterren, of bij een level dat je al kende dat iets nieuws meer geeft.
+// Is de bel in de toets al geknapt, dan springt hij hier niet nog een keer.
 
 import { belHtml } from '../bel.js';
 import { huisdierStadium, wiebelVoor } from '../beloningen.js';
@@ -71,7 +72,7 @@ export const resultaat = {
       if (gegevens.sterren) gids.blij();
       gids.zeg(RESULTAAT_ZINNEN[gegevens.sterren]);
     }];
-    if (nieuw) stappen.push(() => gids.vriend(vriendjeHtml(nieuw, 'res-vriend-gids')));
+    if (nieuw && !gegevens.belGeknapt) stappen.push(() => gids.vriend(vriendjeHtml(nieuw, 'res-vriend-gids')));
     if (gegevens.gegroeid) stappen.push(() => gids.groei(stadium));
     stappen.forEach((stap, i) => setTimeout(() => el.isConnected && stap(), 400 + i * STAP));
 

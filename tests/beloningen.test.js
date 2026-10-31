@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  ALLE_BELONINGEN, beloningNa, geefBeloning, gevangenBij, huisdierStadium, markeerGezien, nieuweWiebels, openingsZin, totVolgendStadium, vaardigheidVan, voegXpToe,
+  ALLE_BELONINGEN, afloopBel, belInToets, beloningNa, geefBeloning, gevangenBij, huisdierStadium, markeerGezien, nieuweWiebels, openingsZin, totVolgendStadium, vaardigheidVan, voegXpToe,
   wiebelVan, wiebelVoor,
 } from '../de-wiebels/frontend/js/beloningen.js';
 import { BELONINGEN, LEVELS, VAARDIGHEDEN, levelVan } from '../de-wiebels/frontend/js/levels.js';
@@ -41,6 +41,39 @@ test('de Wiebel die bij een level of toets hoort', () => {
   assert.equal(wiebelVan(sterId('hoofdsteden', 'alle', true)), NL_WIEBEL);
   assert.equal(wiebelVan(sterId('plaatsen', 'pv-zeeland')), null, 'oefenen');
   assert.equal(wiebelVan(sterId('plaatsen', 'alle', true)), null, 'alle provincies');
+});
+
+test('tijdens een toets van Nederland zit de Wiebel in zijn bel tot hij vrij is', () => {
+  const p = nieuwProfiel({ naam: 'Speler 1', avatar: '🐱' });
+  const overijssel = sterId('plaatsen', 'pv-overijssel', true);
+  assert.equal(belInToets(p, overijssel), overijssel);
+  assert.equal(belInToets(p, sterId('provincies', 'alle', true)), NL_WIEBEL);
+  assert.equal(belInToets(p, sterId('hoofdsteden', 'alle', true)), NL_WIEBEL);
+  assert.equal(belInToets(p, sterId('plaatsen', 'pv-overijssel')), null, 'oefenen');
+  assert.equal(belInToets(p, sterId('plaatsen', 'alle', true)), null, 'alle provincies');
+  assert.equal(belInToets(p, 'plus:10'), null, 'een somlevel');
+  assert.equal(belInToets(p, 'baas:plus'), null, 'een eindbaas');
+  geefBeloning(p, overijssel);
+  assert.equal(belInToets(p, overijssel), null, 'al vrij');
+});
+
+test('aan het eind van de toets knapt de bel, schudt hij, of nog één toets bij Tulpje', () => {
+  const p = nieuwProfiel({ naam: 'Speler 1', avatar: '🐱' });
+  // Zoals het rondescherm: eerst de sterren bewaren, dan kijken wie er vrijkomt.
+  const afloop = (levelId, sterren) => {
+    p.sterren[levelId] = Math.max(p.sterren[levelId] || 0, sterren);
+    const vrij = beloningNa(p, levelId, sterren);
+    return afloopBel(sterren, vrij && geefBeloning(p, vrij) ? vrij : null);
+  };
+  const overijssel = sterId('plaatsen', 'pv-overijssel', true);
+  assert.equal(afloop(overijssel, 1), 'schud');
+  assert.equal(afloop(overijssel, 2), 'knap');
+  const provincies = sterId('provincies', 'alle', true);
+  const hoofdsteden = sterId('hoofdsteden', 'alle', true);
+  assert.equal(afloop(provincies, 2), 'nogEen');
+  assert.equal(afloop(hoofdsteden, 1), 'schud');
+  assert.equal(afloop(hoofdsteden, 2), 'knap');
+  assert.ok(p.verzameling.includes(NL_WIEBEL));
 });
 
 test('huisdier groeit in vier stadia', () => {

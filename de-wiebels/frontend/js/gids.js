@@ -53,9 +53,9 @@ export function maakGids(profiel, prefix, { kort = false, stadium } = {}) {
       dans(wiebel());
       return zeg(COMBO_ZINNEN[aantal]);
     },
-    // Een vaste zin { id, tekst } zeggen, zoals een vraag over Nederland.
+    // Een vaste zin { id, tekst } zeggen, zoals een vraag over Nederland; geeft de belofte van de ballon terug.
     spreek(zin) {
-      ballon?.praat(zin.tekst, zin.id);
+      return ballon?.praat(zin.tekst, zin.id);
     },
     // Rustig knikken en naar het goede antwoord wijzen. Geen straf. Met een zin ("Het goede antwoord is Middelburg.")
     // zegt hij die in plaats van "bijna".

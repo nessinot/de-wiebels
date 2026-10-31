@@ -60,6 +60,12 @@
 .opties-nl .optie { height: 110px; padding: 24px 24px; font-size: 56px; }
 .nl-vraagkant .terugkoppeling { flex-wrap: wrap; gap: 24px; font-size: 44px; text-align: center; }
 
+/* De gevangen Wiebel tijdens een toets (js/schermen/ronde.js): bovenaan in de strook links naast de kaart,
+   zodat ook een ballon van vijf regels boven de gids er niet tegenaan komt. */
+.toets-bel { position: absolute; left: 96px; top: 166px; width: 280px; height: 374px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 8px; pointer-events: none; }
+.toets-bel .vangbel { width: 200px; height: 200px; transform-origin: 50% 97%; }
+.toets-bel-naam { font-size: 40px; font-weight: bold; color: var(--tekst); white-space: nowrap; }
+
 /* Wat oplicht bij "Welke plaats is dit?", en na het antwoord: goed groen; de rest van wat je kon
    aanwijzen wordt dan zachter, ook wat fout gekozen is. */
 .nl-kaart .nl-licht { fill: #ffd23f; stroke: #fff; stroke-width: 5px; }

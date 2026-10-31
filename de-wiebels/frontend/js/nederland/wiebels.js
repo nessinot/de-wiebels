@@ -92,6 +92,8 @@ export const WIEBELS_NL = [
 
 // Wat de eigen Wiebel zegt bij een gevangen Wiebel van Nederland (in de verzameling).
 export const GEVANGEN_ZIN = { id: 'nl-gevangen-toets', tekst: 'Die zit nog gevangen! Haal twee sterren bij die toets om hem te bevrijden.' };
+// Wat de eigen Wiebel zegt na twee sterren bij de ene toets van Tulpje, als de andere nog niet zover is.
+export const NOG_EEN_TOETS_ZIN = { id: 'nl-nog-een-toets', tekst: 'Nog één toets, dan is Tulpje vrij!' };
 
 // Welke toetsen samen een Wiebel van Nederland bevrijden: elk met minstens STERREN_VRIJ sterren. Een
 // provincie: haar plaatsen-toets; heel Nederland: de toets Provincies én de toets Hoofdsteden.

@@ -1,6 +1,7 @@
-// Een gevangen Wiebel in een bel (bij de eindbaas en in het verhaal aan het begin). Zolang hij
-// gevangen zit, staat hij stil en zweeft de bel zacht op en neer; laatVrij() laat de bel knappen,
-// waarna de Wiebel blij opspringt en weer beweegt (css/wiebel.css).
+// Een gevangen Wiebel in een bel (bij de eindbaas, in het verhaal aan het begin en tijdens de toets
+// van Nederland). Zolang hij gevangen zit, staat hij stil en zweeft de bel zacht op en neer; laatVrij()
+// laat de bel knappen, waarna de Wiebel blij opspringt en weer beweegt (css/wiebel.css). schud() laat
+// de bel even schudden en hij blijft zitten.
 
 import { vriendjeStaat } from './weergave.js';
 import { wiebelSvg } from './wiebel.js';
@@ -32,4 +33,14 @@ export function laatVrij(bel) {
   }
   blij(w);
   return w;
+}
+
+// Een rustige schud van de hele bel rond de onderkant van het glas (te weinig sterren); de Wiebel blijft stil.
+// bel: het <svg class="vangbel">, met transform-origin 50% 97% in de css.
+export function schud(bel) {
+  if (rustig()) return;
+  bel.animate([
+    { transform: 'rotate(0deg)' }, { transform: 'rotate(-5deg)', offset: 0.15 }, { transform: 'rotate(5deg)', offset: 0.35 },
+    { transform: 'rotate(-3.5deg)', offset: 0.55 }, { transform: 'rotate(2deg)', offset: 0.75 }, { transform: 'rotate(0deg)' },
+  ], { duration: 900, easing: 'ease-in-out' });
 }
