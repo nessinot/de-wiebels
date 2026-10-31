@@ -1,5 +1,23 @@
 # Wijzigingen
 
+## 0.15.0
+
+Het scherm van Nederland is opnieuw opgezet: je kiest nu met grote knoppen in plaats van op de kaart.
+- Bovenaan staan **Provincies** en **Hoofdsteden**, elk één knop met zijn sterren. Elk is één ronde met alle twaalf. Een fout komt later in de ronde terug, en sterren krijg je voor wat in één keer goed gaat. Sterren die je eerder bij Oefenen haalde, tellen mee.
+- Daaronder kies je bij "Wat ligt er in…?" een provincie, op alfabet, of **Heel Nederland**.
+- De kaart ernaast kleurt geel bij de provincie van de knop waar je op staat.
+- Tulpje komt nog steeds vrij met twee sterren bij Provincies én bij Hoofdsteden.
+
+Ook in de sommen zie je nu tijdens een level wie je kunt bevrijden: de Wiebel van dat level zit in zijn bel naast de som.
+- Haal je twee sterren, dan knapt de bel aan het eind en springt hij vrij. Haal je er minder, dan schudt de bel even.
+- Een Wiebel die al vrij is, zit niet meer in een bel. Bij de eindbaas blijft alles zoals het was.
+
+Duidelijker over munten:
+- Speel je een level dat je al helemaal kent, dan zegt je Wiebel nu: "Al drie sterren! Een moeilijker level geeft meer munten." Bij Nederland: "Iets nieuws geeft meer munten." Na zo'n ronde staat de keuze meteen op terug naar de levels (of de kaart), tenzij er een volgend level open is.
+- Heb je twee sterren, dan staat op het eindscherm dat de derde ster nog 5 munten extra geeft.
+
+De gele rand om de knop waar je op staat, valt niet meer half achter een knop ernaast. Hij ligt nu altijd bovenop.
+
 ## 0.14.0
 
 Bij de toets van een provincie zie je nu tijdens de toets wie je kunt bevrijden: de Wiebel van die provincie zit in zijn bel naast de kaart, met zijn naam eronder.
