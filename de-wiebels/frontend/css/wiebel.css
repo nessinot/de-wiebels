@@ -165,6 +165,13 @@
 .baas-bel { position: absolute; left: 58%; top: 60px; width: 200px; height: 200px; }
 .baas-bel .vangbel { width: 100%; height: 100%; }
 
+/* De gevangen Wiebel tijdens een somlevel of een toets van Nederland (js/schermen/ronde.js): bovenaan in de
+   strook links naast de som of de kaart, boven de gids, zodat ook een lange ballon er niet tegenaan komt.
+   320 breed (tot de rechterrand van de ballon), zodat ook de langste naam op één regel past. */
+.toets-bel { position: absolute; left: 96px; top: 166px; width: 320px; height: 374px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 8px; pointer-events: none; }
+.toets-bel .vangbel { width: 200px; height: 200px; transform-origin: 50% 97%; }
+.toets-bel-naam { font-size: 40px; font-weight: bold; color: var(--tekst); white-space: nowrap; }
+
 /* Verzameling: bovenin de wei met rondlopende Wiebels, daaronder alle Wiebels stil. */
 .collectie-rechts { display: flex; flex-direction: column; gap: 24px; }
 .wei { position: relative; width: 1236px; height: 290px; border-radius: 32px; background: var(--vlak); overflow: hidden; }

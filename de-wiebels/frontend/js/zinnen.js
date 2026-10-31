@@ -222,7 +222,10 @@ export const ZINNEN = {
   ],
   // Bij de start van een level of toets die je al kent (3 sterren): geen munt per goed antwoord.
   alGekend: [
-    { id: 'al-gekend-1', tekst: 'Deze ken je al! Hier krijg je alleen munten voor reeksen op rij.' },
+    { id: 'al-gekend-sommen-1', tekst: 'Al drie sterren! Een moeilijker level geeft meer munten.' },
+  ],
+  alGekendNl: [
+    { id: 'al-gekend-nl-1', tekst: 'Al drie sterren! Iets nieuws geeft meer munten.' },
   ],
   // Een Wiebel komt vrij (resultaat na een level, eindbaas verslagen)
   bevrijd: [

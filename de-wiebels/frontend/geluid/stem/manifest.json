@@ -43,9 +43,13 @@
    "bestand": "achtergrond-2.mp3",
    "tekst": "Hier vind ik het fijn!"
   },
-  "al-gekend-1": {
-   "bestand": "al-gekend-1.mp3",
-   "tekst": "Deze ken je al! Hier krijg je alleen munten voor reeksen op rij."
+  "al-gekend-nl-1": {
+   "bestand": "al-gekend-nl-1.mp3",
+   "tekst": "Al drie sterren! Iets nieuws geeft meer munten."
+  },
+  "al-gekend-sommen-1": {
+   "bestand": "al-gekend-sommen-1.mp3",
+   "tekst": "Al drie sterren! Een moeilijker level geeft meer munten."
   },
   "al-gekocht-1": {
    "bestand": "al-gekocht-1.mp3",

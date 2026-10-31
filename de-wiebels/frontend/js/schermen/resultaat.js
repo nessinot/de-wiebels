@@ -1,8 +1,10 @@
 // Resultaat na een ronde: sterren en wat je verder kunt doen. De Wiebel viert linksonder mee; een
 // net bevrijde Wiebel springt erbij en bij groei laat hij zijn nieuwe stadium zien. Bij te weinig
 // sterren staat de Wiebel die nog gevangen zit er in zijn bel bij. Onder de munten van de ronde
-// staat de bonus voor nieuwe sterren, of bij een level dat je al kende dat iets nieuws meer geeft.
-// Is de bel in de toets al geknapt, dan springt hij hier niet nog een keer.
+// staat de bonus voor nieuwe sterren, of bij een level dat je al kende dat iets nieuws meer geeft,
+// of bij twee sterren dat de derde ster nog munten geeft. Is de bel in de ronde al geknapt, dan
+// springt hij hier niet nog een keer. Na een ronde in een level met drie sterren zonder volgend
+// level staat de focus op terug.
 
 import { belHtml } from '../bel.js';
 import { huisdierStadium, wiebelVoor } from '../beloningen.js';
@@ -28,19 +30,22 @@ export const resultaat = {
     const lijst = LEVELS[level.vaardigheid] ?? [];
     const volgende = lijst[lijst.indexOf(level) + 1];
     const volgendeOpen = volgende && levelOpen(p, volgende);
+    const drieSterren = (p.sterren[level.id] || 0) >= 3;
     const stadium = huisdierStadium(p.huisdier.xp);
     const nieuw = gegevens.nieuweWiebel ? wiebelVoor(gegevens.nieuweWiebel, t) : null;
     const gevangen = gegevens.nogGevangen ? wiebelVoor(gegevens.nogGevangen, t) : null;
 
-    // Hooguit één regel: wie al 3 sterren had, kan geen nieuwe ster halen.
+    // Hooguit één regel: wie al 3 sterren had, kan geen nieuwe ster halen; anders de bonus voor nieuwe
+    // sterren, of bij twee sterren dat de derde nog munten geeft.
     function muntRegel() {
       if (gegevens.alGekend) {
-        const tekst = level.vaardigheid === 'nederland' ? 'Dit ken je al. Iets nieuws geeft meer munten!'
-          : 'Dit level ken je al. Een moeilijker level geeft meer munten!';
+        const tekst = level.vaardigheid === 'nederland' ? 'Hier had je al drie sterren. Iets nieuws geeft meer munten!'
+          : 'Hier had je al drie sterren. Een moeilijker level geeft meer munten!';
         return `<p class="ondertitel">${tekst}</p>`;
       }
-      if (!gegevens.sterBonus) return '';
-      return `<p class="ondertitel">+${gegevens.sterBonus} 🪙 voor je nieuwe ${gegevens.sterBonus > 5 ? 'sterren' : 'ster'}!</p>`;
+      if (gegevens.sterBonus) return `<p class="ondertitel">+${gegevens.sterBonus} 🪙 voor je nieuwe ${gegevens.sterBonus > 5 ? 'sterren' : 'ster'}!</p>`;
+      if ((p.sterren[level.id] || 0) === 2) return '<p class="ondertitel">Haal drie sterren voor 5 extra munten!</p>';
+      return '';
     }
 
     function beloningen() {
@@ -60,7 +65,7 @@ export const resultaat = {
       <div class="knoppenrij">
         ${volgendeOpen ? '<button class="knop knop-hoofd" data-focus data-actie="volgende">Volgend level →</button>' : ''}
         <button class="knop" data-focus data-actie="opnieuw">Nog een keer</button>
-        <button class="knop" data-focus data-actie="levels">${level.vaardigheid === 'nederland' ? 'Naar de kaart' : 'Naar de levels'}</button>
+        <button class="knop" ${drieSterren && !volgendeOpen ? 'data-focus="eerst"' : 'data-focus'} data-actie="levels">${level.vaardigheid === 'nederland' ? 'Naar de kaart' : 'Naar de levels'}</button>
       </div>
     `);
     el.classList.add('resultaat');

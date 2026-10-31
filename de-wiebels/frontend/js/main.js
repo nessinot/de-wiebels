@@ -40,12 +40,14 @@ function zetFocus(el) {
   laag.inst.bijFocus?.(el);
 }
 
-// Na het opnieuw tekenen van een scherm: focus terugzetten als het element weg is.
+// Na het opnieuw tekenen van een scherm: focus terugzetten als het element weg is. Bij binnenkomst
+// krijgt een element met data-focus="eerst" de focus, anders het eerste.
 function herstelFocus() {
   const laag = actief();
   if (laag.focus && laag.el.contains(laag.focus) && !laag.focus.disabled) return;
   laag.focus = null;
-  zetFocus(focusbaar()[0]);
+  const kandidaten = focusbaar();
+  zetFocus(kandidaten.find((el) => el.dataset.focus === 'eerst') ?? kandidaten[0]);
 }
 
 function verplaatsFocus(richting) {

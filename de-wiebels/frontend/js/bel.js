@@ -1,5 +1,5 @@
-// Een gevangen Wiebel in een bel (bij de eindbaas, in het verhaal aan het begin en tijdens de toets
-// van Nederland). Zolang hij gevangen zit, staat hij stil en zweeft de bel zacht op en neer; laatVrij()
+// Een gevangen Wiebel in een bel (bij de eindbaas, in het verhaal aan het begin en tijdens een somlevel
+// en de toets van Nederland). Zolang hij gevangen zit, staat hij stil en zweeft de bel zacht op en neer; laatVrij()
 // laat de bel knappen, waarna de Wiebel blij opspringt en weer beweegt (css/wiebel.css). schud() laat
 // de bel even schudden en hij blijft zitten.
 
