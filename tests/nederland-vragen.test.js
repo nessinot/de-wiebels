@@ -4,10 +4,10 @@ import { esc } from '../de-wiebels/frontend/js/dom.js';
 import { ITEMS } from '../de-wiebels/frontend/js/nederland/items.js';
 import { PER_ID, PROVINCIES } from '../de-wiebels/frontend/js/nederland/kaartbeeld.js';
 import { HERKEN_ZINNEN, TOETS_MAX, maakContext, nlVraagUitId, nlVragen } from '../de-wiebels/frontend/js/nederland/vragen.js';
-import { sterId } from '../de-wiebels/frontend/js/nederland/wereld.js';
+import { sterId, sterrenVan } from '../de-wiebels/frontend/js/nederland/wereld.js';
 import { levelVan } from '../de-wiebels/frontend/js/levels.js';
-import { nieuwProfiel } from '../de-wiebels/frontend/js/profiel.js';
-import { RONDE_LENGTE } from '../de-wiebels/frontend/js/ronde.js';
+import { nieuwProfiel, vulAan } from '../de-wiebels/frontend/js/profiel.js';
+import { RONDE_LENGTE, beantwoord, huidigeVraag, nieuweRonde, sterrenVoor } from '../de-wiebels/frontend/js/ronde.js';
 
 // Vaste willekeur, zodat een fout altijd terugkomt.
 function rng(zaad) {
@@ -53,10 +53,55 @@ test('levelVan herkent de levels van Nederland', () => {
   assert.equal(zeeland.leitner, 'nl:plaatsen');
   assert.equal(zeeland.label, 'Zeeland · Oefenen');
   assert.equal(levelVan('nl:plaatsen:alle:toets').toets, true);
-  assert.equal(levelVan('nl:hoofdsteden:alle:toets').label, 'Hoofdsteden · Toets');
+  assert.equal(levelVan('nl:hoofdsteden:alle:toets').label, 'Hoofdsteden');
+  assert.equal(levelVan('nl:provincies:alle').label, 'Provincies · Oefenen');
+  assert.equal(levelVan('nl:plaatsen:pv-zeeland:toets').label, 'Zeeland · Toets');
+  assert.equal(levelVan('nl:plaatsen:alle:toets').label, 'Heel Nederland · Toets');
   assert.equal(levelVan('nl:onbekend:alle'), undefined);
   assert.equal(levelVan('nl:plaatsen:pv-nergens'), undefined);
   for (const id of LEVEL_IDS) assert.equal(levelVan(id).id, id);
+});
+
+test('een fout komt terug, behalve bij de toets van een provincie of van heel Nederland', () => {
+  assert.equal(levelVan('nl:provincies:alle:toets').herkansing, true);
+  assert.equal(levelVan('nl:hoofdsteden:alle:toets').herkansing, true);
+  assert.equal(levelVan('nl:plaatsen:pv-zeeland:toets').herkansing, false);
+  assert.equal(levelVan('nl:plaatsen:alle:toets').herkansing, false);
+  assert.equal(levelVan('nl:plaatsen:pv-zeeland').herkansing, true);
+});
+
+test('de ronde Provincies vraagt alle twaalf, een fout komt later terug en sterren tellen in één keer goed', () => {
+  const level = levelVan('nl:provincies:alle:toets');
+  const { vragen, reserve } = nlVragen(profielMet(), level, rng(5));
+  assert.equal(vragen.length, 12);
+  assert.equal(new Set(vragen.map(eenheid)).size, 12);
+  assert.ok(vragen.every((v) => PROVINCIES.includes(eenheid(v))));
+  const r = nieuweRonde(vragen, reserve, { herkansing: level.herkansing });
+  const fout = huidigeVraag(r);
+  beantwoord(r, 'fout');
+  assert.ok(r.wachtrij.some((v) => v.id === fout.id), 'de foute vraag komt terug');
+  while (r.wachtrij.length) beantwoord(r, huidigeVraag(r).goed);
+  assert.equal(r.aantal, 12);
+  assert.equal(r.goedEerst, 11);
+  assert.equal(sterrenVoor(r.goedEerst, r.aantal), 2);
+});
+
+test('sterrenVan: bij Provincies en Hoofdsteden telt de beste van oefenen en toets', () => {
+  const p = profielMet();
+  p.sterren[sterId('provincies', 'alle')] = 3;
+  p.sterren[sterId('provincies', 'alle', true)] = 1;
+  p.sterren[sterId('hoofdsteden', 'alle', true)] = 2;
+  p.sterren[sterId('plaatsen', 'pv-zeeland')] = 3;
+  p.sterren[sterId('plaatsen', 'pv-zeeland', true)] = 1;
+  p.sterren['plus:10'] = 2;
+  const voor = structuredClone(p.sterren);
+  assert.equal(sterrenVan(p, sterId('provincies', 'alle', true)), 3);
+  assert.equal(sterrenVan(p, sterId('hoofdsteden', 'alle', true)), 2);
+  assert.equal(sterrenVan(profielMet(), sterId('provincies', 'alle', true)), 0);
+  assert.equal(sterrenVan(p, sterId('plaatsen', 'pv-zeeland', true)), 1);
+  assert.equal(sterrenVan(p, 'plus:10'), 2);
+  vulAan(p);
+  assert.deepEqual(p.sterren, voor, 'vulAan zet geen sterren over');
 });
 
 test('elke vraag heeft een tekst, een zin en bij een fout de goede zin per vraagvorm', () => {

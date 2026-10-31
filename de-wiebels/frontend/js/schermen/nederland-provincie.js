@@ -22,7 +22,7 @@ export const nederlandProvincie = {
     const p = staat.profiel;
     const [breedte, hoogte] = KAART_MAAT;
     const doelen = doelenVoor(provincie, p.nederland?.uit ?? []);
-    const titel = provincie ? PER_ID[provincie].naam : 'Alle provincies';
+    const titel = provincie ? PER_ID[provincie].naam : 'Heel Nederland';
     const leeg = doelen.length ? '' : ' disabled';
     const sterren = (toets) => sterrenHtml(Math.min(3, p.sterren[sterId('plaatsen', keuze, toets)] || 0));
 

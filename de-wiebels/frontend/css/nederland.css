@@ -1,5 +1,5 @@
-/* De wereld Nederland: links het kaartvak, rechts de onderdelen. De maat van het kaartvak staat ook
-   in schermen/nederland.js (680×840) en schermen/nederland-provincie.js (1000×840). */
+/* De wereld Nederland: links het kaartvak, rechts de knoppen. De maat van het kaartvak staat ook
+   in schermen/nederland.js (440×544) en schermen/nederland-provincie.js (1000×840). */
 
 .nl-indeling { flex: 1; min-height: 0; display: flex; gap: 48px; }
 .nl-kolom { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 28px; }
@@ -45,11 +45,41 @@
   display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
   padding: 20px 28px; border-radius: 24px; background: var(--vlak);
 }
-.nl-onderdeel-naam { font-size: 48px; font-weight: bold; margin-right: auto; }
 .nl-onderdeel .sterren { font-size: 48px; }
-.nl-plaatsen .klein { flex-basis: 100%; order: 3; }
 .nl-onderdeel .nl-start { min-width: 280px; margin-right: auto; }
 .nl-onderdeel .knop { padding: 16px 32px; background: var(--vlak-licht); }
+
+/* Het keuzescherm (schermen/nederland.js). Vaste regelhoogtes, zodat het lettertype van de tv de
+   hoogtes niet verandert. Onder de kopregel links de kaart (440×544, in het midden van de kolom), die
+   alleen meeleest; rechts de knoppen Provincies en Hoofdsteden, het kopje "Wat ligt er in…?", een knop
+   per provincie in vier kolommen en Heel Nederland. */
+.nk-inhoud { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 16px; }
+.nk-onder { display: flex; gap: 40px; align-items: center; }
+.kaartvak.nk-kaart { align-self: center; width: 440px; height: 544px; }
+.nk-kaart .nl-doel { cursor: default; }
+.nk-kolom { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+/* Provincies en Hoofdsteden op hetzelfde raster als de provincieknoppen, elk over twee kolommen, zodat
+   de randen precies uitlijnen. Het gat eronder is 16, net als boven de kopregel. */
+.nk-boven { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 16px; margin-bottom: 4px; }
+.nk-hoofd {
+  grid-column: span 2; min-width: 0; display: flex; align-items: center; justify-content: center; gap: 28px;
+  padding: 16px 32px; line-height: 64px; font-size: 48px;
+}
+.nk-kopje { margin: 0; font-size: 44px; line-height: 52px; font-weight: bold; white-space: nowrap; }
+.nk-raster { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px 16px; }
+/* Een knop per provincie, zoals .levelknop: naam boven, sterren eronder. */
+.nk-pv {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 12px 8px; font-size: 40px; min-width: 0;
+}
+.nk-naam { line-height: 54px; white-space: nowrap; }
+.nk-hoofd .sterren, .nk-alle .sterren { font-size: 48px; }
+.nk-pv .sterren { font-size: 48px; line-height: 56px; }
+/* Heel Nederland: breed onder het raster, zoals de eindbaas onder de levels. */
+.nk-alle {
+  display: flex; align-items: center; justify-content: center; gap: 32px;
+  padding: 16px 32px; line-height: 64px; background: var(--vlak-licht);
+}
 
 /* Een vraag over Nederland in de ronde (js/vraagpaneel.js): links de kaart (760×800, ook in
    VRAAGKAART_MAAT), rechts de vraag, de knoppen en de terugkoppeling. */

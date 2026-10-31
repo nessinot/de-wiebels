@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  ALLE_BELONINGEN, gevangenBij, nieuweWiebels, openingsZin, vaardigheidVan, wiebelVoor,
+  ALLE_BELONINGEN, beloningNa, gevangenBij, nieuweWiebels, openingsZin, vaardigheidVan, wiebelVoor,
 } from '../de-wiebels/frontend/js/beloningen.js';
 import { BELONINGEN } from '../de-wiebels/frontend/js/levels.js';
 import { ITEMS } from '../de-wiebels/frontend/js/nederland/items.js';
@@ -97,6 +97,15 @@ test('de Wiebel van Nederland komt vrij bij twee sterren in de toets Provincies 
   p.sterren[toets('alle', 'hoofdsteden')] = 2;
   assert.equal(nlBeloningNa(p, toets('alle', 'hoofdsteden')), NL_WIEBEL);
   assert.equal(nlBeloningNa(p, toets('alle', 'provincies')), NL_WIEBEL);
+});
+
+test('voor Tulpje tellen de sterren van vroeger bij Oefenen mee, maar hij komt pas vrij na een ronde met twee sterren', () => {
+  const p = profiel();
+  p.sterren[sterId('provincies', 'alle')] = 2;
+  assert.equal(nlBeloningNa(p, toets('alle', 'provincies')), null, 'Hoofdsteden heeft nog niets');
+  p.sterren[sterId('hoofdsteden', 'alle')] = 2;
+  assert.equal(nlBeloningNa(p, toets('alle', 'provincies')), NL_WIEBEL);
+  assert.equal(beloningNa(p, toets('alle', 'provincies'), 1), null, 'niet stil vrij na een ronde met één ster');
 });
 
 test('een gevangen Wiebel van Nederland zegt bij welke toets hij zit', () => {

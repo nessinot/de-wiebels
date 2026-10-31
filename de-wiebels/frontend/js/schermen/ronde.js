@@ -1,5 +1,6 @@
 // Oefenronde: tien vragen met vier antwoorden. Een fout wordt rustig verbeterd en later opnieuw gevraagd.
-// Ook de oefenronde en de toets van Nederland; bij een toets komt een fout niet terug.
+// Ook de oefenronde en de toets van Nederland; bij de toets van een provincie of van Heel Nederland komt
+// een fout niet terug; bij Provincies en Hoofdsteden (één ronde met alle twaalf) wel.
 // Bij een somlevel en bij een toets van Nederland zit de Wiebel die je kunt bevrijden in zijn bel links
 // naast de som of de kaart; aan het eind knapt de bel of schudt hij.
 
@@ -12,6 +13,7 @@ import { maakGids } from '../gids.js';
 import { registreer, teHerhalen, volgendeStap } from '../leitner.js';
 import { STERREN_VRIJ, levelVan } from '../levels.js';
 import { nlVragen } from '../nederland/vragen.js';
+import { sterrenVan } from '../nederland/wereld.js';
 import { NOG_EEN_TOETS_ZIN } from '../nederland/wiebels.js';
 import { bewaar, staat } from '../opslag.js';
 import { COMBO_BONUS, KEN_BONUS, RONDE_LENGTE, beantwoord, gedaan, huidigeVraag, nieuweRonde, sterBonus, sterrenVoor } from '../ronde.js';
@@ -54,8 +56,8 @@ export const ronde = {
     const { vragen, reserve } = stelRondeSamen(p, level, stap);
     // Een level of toets die je al kent (3 sterren vóór de ronde) geeft geen munt per goed antwoord,
     // alleen de bonussen voor 3 en 5 op rij.
-    const alGekend = (p.sterren[level.id] || 0) >= 3;
-    const r = nieuweRonde(vragen, reserve, { herkansing: !level.toets, muntPerGoed: !alGekend, bonussen: alGekend ? KEN_BONUS : COMBO_BONUS });
+    const alGekend = sterrenVan(p, level.id) >= 3;
+    const r = nieuweRonde(vragen, reserve, { herkansing: level.herkansing ?? true, muntPerGoed: !alGekend, bonussen: alGekend ? KEN_BONUS : COMBO_BONUS });
     const rondeIds = new Set([...vragen, ...reserve].map((v) => v.id)); // alle vragen van deze ronde, ook al gestelde en de reserve
     const belId = belInToets(p, level.id);
 
@@ -98,8 +100,9 @@ export const ronde = {
       if (!el.isConnected) return; // het scherm is al verlaten
       if (r.wachtrij.length) return teken();
       const sterren = sterrenVoor(r.goedEerst, r.aantal);
-      const oud = p.sterren[level.id] || 0;
-      p.sterren[level.id] = Math.max(oud, sterren);
+      // De bonus volgt de sterren die het kind zag; opgeslagen wordt per id.
+      const oud = sterrenVan(p, level.id);
+      p.sterren[level.id] = Math.max(p.sterren[level.id] || 0, sterren);
       const bonus = sterBonus(oud, sterren);
       p.munten += r.munten + bonus;
       // Een Wiebel hebben alleen de levels en eindbazen (BELONINGEN) en de toetsen van Nederland; hij

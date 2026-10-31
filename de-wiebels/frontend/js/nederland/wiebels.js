@@ -3,7 +3,7 @@
 // eetHetLiefst, kanHeelGoed, geheimpje, zin }. De id is de beloning in profiel.verzameling.
 
 import { STERREN_VRIJ } from '../levels.js';
-import { sterId } from './wereld.js';
+import { sterId, sterrenVan } from './wereld.js';
 
 // De Wiebel van heel Nederland; die van een provincie heeft als id de plaatsen-toets van die provincie.
 export const NL_WIEBEL = 'nl:nederland';
@@ -103,8 +103,9 @@ export const BELONINGEN_NL = WIEBELS_NL.map((w) => ({
 }));
 
 // De Wiebel die na deze toets vrijkomt (zijn id), of null: alleen als de toets erbij hoort en alle
-// toetsen van die Wiebel nu minstens STERREN_VRIJ sterren hebben.
+// toetsen van die Wiebel nu minstens STERREN_VRIJ sterren hebben. Bij Provincies en Hoofdsteden tellen
+// de sterren van vroeger bij Oefenen mee (sterrenVan).
 export function nlBeloningNa(profiel, levelId) {
   const b = BELONINGEN_NL.find((x) => x.toetsen.includes(levelId));
-  return b && b.toetsen.every((id) => (profiel.sterren[id] || 0) >= STERREN_VRIJ) ? b.id : null;
+  return b && b.toetsen.every((id) => sterrenVan(profiel, id) >= STERREN_VRIJ) ? b.id : null;
 }

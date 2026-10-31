@@ -11,6 +11,7 @@ import { huisdierStadium, wiebelVoor } from '../beloningen.js';
 import { maakEl, opKlik } from '../dom.js';
 import { maakGids } from '../gids.js';
 import { LEVELS, levelOpen, levelVan } from '../levels.js';
+import { sterrenVan } from '../nederland/wereld.js';
 import { staat } from '../opslag.js';
 import { thema } from '../themas/index.js';
 import { sterrenHtml, vriendjeHtml } from '../weergave.js';
@@ -30,7 +31,7 @@ export const resultaat = {
     const lijst = LEVELS[level.vaardigheid] ?? [];
     const volgende = lijst[lijst.indexOf(level) + 1];
     const volgendeOpen = volgende && levelOpen(p, volgende);
-    const drieSterren = (p.sterren[level.id] || 0) >= 3;
+    const drieSterren = sterrenVan(p, level.id) >= 3;
     const stadium = huisdierStadium(p.huisdier.xp);
     const nieuw = gegevens.nieuweWiebel ? wiebelVoor(gegevens.nieuweWiebel, t) : null;
     const gevangen = gegevens.nogGevangen ? wiebelVoor(gegevens.nogGevangen, t) : null;
@@ -44,7 +45,7 @@ export const resultaat = {
         return `<p class="ondertitel">${tekst}</p>`;
       }
       if (gegevens.sterBonus) return `<p class="ondertitel">+${gegevens.sterBonus} 🪙 voor je nieuwe ${gegevens.sterBonus > 5 ? 'sterren' : 'ster'}!</p>`;
-      if ((p.sterren[level.id] || 0) === 2) return '<p class="ondertitel">Haal drie sterren voor 5 extra munten!</p>';
+      if (sterrenVan(p, level.id) === 2) return '<p class="ondertitel">Haal drie sterren voor 5 extra munten!</p>';
       return '';
     }
 
