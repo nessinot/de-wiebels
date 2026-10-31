@@ -37,15 +37,15 @@ export function beloningNa(profiel, levelId, sterren) {
   return BELONINGEN.includes(levelId) ? levelId : null;
 }
 
-// De Wiebel die tijdens deze toets van Nederland in zijn bel zit (zijn id), of null: niet bij oefenen,
-// "Alle provincies", de sommen of een Wiebel die al vrij is.
+// De Wiebel die tijdens deze ronde in zijn bel zit (zijn id), of null: niet bij oefenen, "Alle provincies"
+// of een Wiebel die al vrij is. De eindbaas heeft zijn eigen bel (schermen/eindbaas.js).
 export function belInToets(profiel, levelId) {
-  if (!levelId.startsWith('nl:')) return null;
+  if (levelId.startsWith('baas:')) return null;
   const id = wiebelVan(levelId);
   return id && !profiel.verzameling.includes(id) ? id : null;
 }
 
-// Wat de bel aan het eind van de toets doet: 'knap', 'nogEen' (twee sterren, maar zijn andere toets
+// Wat de bel aan het eind van de ronde doet: 'knap', 'nogEen' (twee sterren, maar zijn andere toets
 // nog niet: alleen Tulpje) of 'schud'.
 export function afloopBel(sterren, nieuweWiebel) {
   if (nieuweWiebel) return 'knap';

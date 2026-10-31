@@ -1,7 +1,7 @@
 // Oefenronde: tien vragen met vier antwoorden. Een fout wordt rustig verbeterd en later opnieuw gevraagd.
 // Ook de oefenronde en de toets van Nederland; bij een toets komt een fout niet terug.
-// Bij een toets van Nederland zit de Wiebel die je kunt bevrijden in zijn bel naast de kaart; aan het
-// eind knapt de bel of schudt hij.
+// Bij een somlevel en bij een toets van Nederland zit de Wiebel die je kunt bevrijden in zijn bel links
+// naast de som of de kaart; aan het eind knapt de bel of schudt hij.
 
 import { belHtml, laatVrij, schud } from '../bel.js';
 import { afloopBel, belInToets, beloningNa, geefBeloning, voegXpToe, wiebelVan, wiebelVoor } from '../beloningen.js';
@@ -71,7 +71,7 @@ export const ronde = {
     const paneel = maakVraagpaneel({ zetFocus, opAntwoord: antwoord });
     const gids = maakGids(p, 'gids-ronde');
     // Bij een level dat je al kent zegt de Wiebel eerst waarom er minder munten zijn.
-    const begin = alGekend ? gids.zeg('alGekend') : null;
+    const begin = alGekend ? gids.zeg(nederland ? 'alGekendNl' : 'alGekend') : null;
     // De bel staat vóór de gids, zodat de ballon er altijd overheen valt.
     if (belId) {
       const w = wiebelVoor(belId, thema(p.thema));
@@ -199,9 +199,10 @@ export const ronde = {
     }
 
     // Verder na de pauze. Bij Nederland spreekt de Wiebel de volgende vraag uit; die wacht ook tot
-    // de lof klaar is (hooguit MAX_LOF), zodat de vraag de lof niet afbreekt.
+    // de lof klaar is (hooguit MAX_LOF), zodat de vraag de lof niet afbreekt. Bij de laatste vraag met een
+    // bel wachten ook de sommen, zodat de zin bij het knappen de lof niet afbreekt.
     function naLof(lof, pauze) {
-      if (!nederland) return setTimeout(volgende, pauze);
+      if (!nederland && !(belId && !r.wachtrij.length)) return setTimeout(volgende, pauze);
       const wacht = (ms) => new Promise((klaar) => { setTimeout(klaar, ms); });
       Promise.all([wacht(pauze), Promise.race([lof, wacht(MAX_LOF)])]).then(volgende);
     }
