@@ -1,5 +1,12 @@
 # Wijzigingen
 
+## 0.14.0
+
+Bij de toets van een provincie zie je nu tijdens de toets wie je kunt bevrijden: de Wiebel van die provincie zit in zijn bel naast de kaart, met zijn naam eronder.
+- Haal je twee sterren, dan knapt de bel aan het eind van de toets en springt de Wiebel vrij.
+- Haal je er minder, dan schudt de bel even en blijft hij zitten tot de volgende keer.
+- Bij de toetsen Provincies en Hoofdsteden zit Tulpje in de bel. Die komt pas vrij als je bij allebei twee sterren haalt. Heb je de eerste gehaald, dan hoor je: "Nog één toets, dan is Tulpje vrij!"
+
 ## 0.13.0
 
 Munten verdien je nu vooral door verder te komen.
